@@ -1,14 +1,16 @@
 extends KinematicBody2D
-
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
 
-export var MOTION_SPEED = 500
+var NORMAL_SPEED = 500
+var MOTION_SPEED = NORMAL_SPEED
+onready var SpriteNode = get_node("Sprite")
 var movedir = Vector2(0,0)
 var RayNode
 var timer
 var dashAvailable
+var DASH_DELAY = 1
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -22,13 +24,15 @@ func _physics_process(delta):
 	controls_loop()
 	movement_loop()
 	speed_decay()
-	dash_delay(3, delta)
+	dash_delay(DASH_DELAY, delta)
 
 func speed_decay():
-	if MOTION_SPEED > 500:
-		MOTION_SPEED *= 0.95
+	if MOTION_SPEED > NORMAL_SPEED:
+		SpriteNode.set("modulate",Color(233.0/255,0,0,1))
+		MOTION_SPEED *= 0.90
 	else:
-		MOTION_SPEED = 500
+		SpriteNode.set("modulate",Color(233.0/255,255,255,1))
+		MOTION_SPEED = NORMAL_SPEED
 
 func dash_delay(sec, delta):
 	timer += delta
@@ -46,7 +50,7 @@ func controls_loop():
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
 	if dash && dashAvailable:
-		MOTION_SPEED = 1000
+		MOTION_SPEED = 2000
 		dashAvailable = 0
 	dash = 0
 	
