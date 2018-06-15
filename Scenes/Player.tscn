@@ -2,14 +2,16 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Sprite.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 31.5, 31.5 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
 
 input_pickable = false
 collision_layer = 2
@@ -17,6 +19,7 @@ collision_mask = 5
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
+NORMAL_SPEED = 500
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 

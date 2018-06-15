@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
+
+[node name="Room2" type="TileMap" index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -524288, 0, 0, -524287, 0, 0, -393222, 0, 0, -458751, 0, 0, -327686, 0, 0, -327682, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262150, 0, 0, -327671, 0, 0, -196615, 0, 0, -196614, 0, 0, -196612, 0, 0, -262135, 0, 0, -131085, 0, 0, -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 0, -196599, 0, 0, -65549, 0, 0, -131070, 0, 0, -131063, 0, 0, -13, 0, 0, -12, 0, 0, -11, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -1, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65527, 0, 0, 65531, 0, 0, 1, 0, 0, 4, 0, 0, 5, 0, 0, 9, 0, 0, 131066, 0, 0, 131067, 0, 0, 65537, 0, 0, 65539, 0, 0, 65540, 0, 0, 65545, 0, 0, 196602, 0, 0, 196603, 0, 0, 131073, 0, 0, 131075, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 262139, 0, 0, 262140, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196611, 0, 0, 196613, 0, 0, 196614, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0 )
+
+[node name="EnemyMob" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 65.8605, -277.168 )
+
+[node name="EnemyMob2" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 123.602, -168.822 )
+
+[node name="EnemyMob3" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -110.036, 51.2495 )
+
+[node name="EnemyMob4" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 137.168, -235.145 )
+
+[node name="TransferPointA" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -736.843, -99.7231 )
+sceneName = "Room1"
+transferGoal = "TransferGoalA"
+
+[node name="TransferGoalA" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -609.419, -96.399 )
+
+[node name="TransferPointB" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 286.981, 230.471 )
+sceneName = "Room1"
+transferGoal = "TransferGoalB"
+
+[node name="TransferGoalB" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 354.571, 160.665 )
+
+

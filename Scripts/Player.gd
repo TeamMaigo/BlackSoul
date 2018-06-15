@@ -1,7 +1,7 @@
 extends KinematicBody2D
 # class member variables go here, for example:
 
-var NORMAL_SPEED = 500
+export var NORMAL_SPEED = 500
 var MOTION_SPEED = NORMAL_SPEED
 onready var SpriteNode = get_node("Sprite")
 var movedir = Vector2(0,0)
@@ -22,7 +22,7 @@ func _ready():
 	set_physics_process(true)
 	dashTimer = 0
 	swapTimer = 0
-	RayNode = get_node("RayCast2D")	#For directions
+	#RayNode = get_node("RayCast2D")	#For directions
 	CollisionNode = get_node("Collision")
 	dashAvailable = 1
 	swapAvailable = 1
@@ -31,7 +31,7 @@ func _physics_process(delta):
 	controls_loop()
 	movement_loop()
 	speed_decay()
-	dash_delay(DASH_DELAY, delta)	# Check if dash can be renabled 
+	dash_delay(DASH_DELAY, delta)	# Check if dash can be renabled
 	swap_delay(SWAP_DELAY, delta)
 	CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 
@@ -42,7 +42,7 @@ func controls_loop():
 	var DOWN	= Input.is_action_pressed("ui_down")
 	var DASH = Input.is_action_pressed("ui_dash")
 	var SWAP = Input.is_action_pressed("ui_swap")
-	
+
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
 
@@ -52,7 +52,7 @@ func controls_loop():
 	if DASH && dashAvailable:
 		MOTION_SPEED = 2000
 		dashAvailable = 0
-	
+
 	if SWAP && swapAvailable:
 		playerPos = SpriteNode.position
 		mousePos = get_global_mouse_position()
@@ -61,7 +61,7 @@ func controls_loop():
 		if result:
 			if result.collider.is_in_group("EnemyGroup"):
 				swapPlaces(self, result.collider)
-		
+
 		swapAvailable = 0
 		SpriteNode.set("modulate",Color(50.0/120,150,0,1))
 
@@ -91,7 +91,7 @@ func swap_delay(sec, delta):
 		swapAvailable = 1
 		SpriteNode.set("modulate",Color(233.0/255,255,255,1))
 		swapTimer = 0
-		
+
 func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	CollisionNode.disabled = true	# Disable collision to avoid displacement bug after teleport
 	var tempEnemyPos = enemy.position
