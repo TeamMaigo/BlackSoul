@@ -6,7 +6,7 @@ extends KinematicBody2D
 var frame
 var direction
 var movedir = Vector2(0,0)
-var MOTION_SPEED = 200
+var MOTION_SPEED = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
