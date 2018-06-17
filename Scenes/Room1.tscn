@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
 
-[node name="Room1" type="TileMap"]
+[node name="Room1" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -39,18 +39,18 @@ position = Vector2( 288.09, -226.039 )
 sceneName = "Room2"
 transferGoal = "TransferGoalA"
 
-[node name="TransferGoalA" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 155.125, -220.499 )
-
-[node name="TransferGoalB" parent="." index="4" instance=ExtResource( 4 )]
-
-position = Vector2( -1182.49, -404.185 )
-
-[node name="TransferPoint" parent="." index="5" instance=ExtResource( 3 )]
+[node name="TransferPointB" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -1182.49, -476.004 )
 sceneName = "Room2"
 transferGoal = "TransferGoalB"
+
+[node name="TransferGoalA" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 155.125, -220.499 )
+
+[node name="TransferGoalB" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -1173.63, -344.351 )
 
 

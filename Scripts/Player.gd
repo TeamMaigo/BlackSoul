@@ -42,12 +42,13 @@ func controls_loop():
 	var DOWN	= Input.is_action_pressed("ui_down")
 	var DASH = Input.is_action_pressed("ui_dash")
 	var SWAP = Input.is_action_pressed("ui_swap")
+	var SWING = Input.is_action_pressed("ui_swing_weapon")
 
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
 
-	#mousePos = get_global_mouse_position() #If we want player to rotate to face mouse
-	#look_at(mousePos)
+	mousePos = get_global_mouse_position() #If we want player to rotate to face mouse
+	look_at(mousePos)
 
 	if DASH && dashAvailable:
 		MOTION_SPEED = 2000
@@ -59,11 +60,14 @@ func controls_loop():
 		var space_state = get_world_2d().direct_space_state
 		var result = space_state.intersect_ray(position, mousePos, [self], collision_mask)
 		if result:
-			if result.collider.is_in_group("EnemyGroup"):
+			if result.collider.is_in_group("Enemy"):
 				swapPlaces(self, result.collider)
 
 		swapAvailable = 0
 		SpriteNode.set("modulate",Color(50.0/120,150,0,1))
+		
+	if SWING:
+		get_node("WeaponSwing").attack()
 
 func movement_loop():
 	var motion = movedir.normalized() * MOTION_SPEED
