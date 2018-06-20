@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
+
+[node name="Room3" type="Node2D" index="0"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -262153, 0, 0, -262152, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -196617, 0, 0, -262135, 0, 0, -131081, 0, 0, -131080, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -4, 0, 0, -65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0 )
+
+[node name="TileMap2" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 8
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262144, 1, 0, -196608, 1, 0, -131072, 1, 0, -65536, 1, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="EnemyMob" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 128.336, -137.42 )
+
+[node name="TransferPoint" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 545.767, -222.134 )
+sceneName = "Room1"
+transferGoal = "TransferGoalB"
+
+[node name="TransferGoalA" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( -410.05, -225.731 )
+
+[node name="TransferGoalB" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 407.615, -223.024 )
+
+

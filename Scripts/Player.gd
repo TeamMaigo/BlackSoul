@@ -58,7 +58,7 @@ func controls_loop():
 		playerPos = SpriteNode.position
 		mousePos = get_global_mouse_position()
 		var space_state = get_world_2d().direct_space_state
-		var result = space_state.intersect_ray(position, mousePos, [self], collision_mask)
+		var result = space_state.intersect_ray(position, mousePos, [self], 5)
 		if result:
 			if result.collider.is_in_group("Enemy"):
 				swapPlaces(self, result.collider)

@@ -44,6 +44,7 @@ ui_swing_weapon=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="See Through"
 
 [rendering]
 

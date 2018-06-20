@@ -5,18 +5,18 @@
 [ext_resource path="res://Scripts/Sprite.gd" type="Script" id=3]
 [ext_resource path="res://WeaponSwing.tscn" type="PackedScene" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 28, 28 )
+radius = 30.0
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
 
 input_pickable = false
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
