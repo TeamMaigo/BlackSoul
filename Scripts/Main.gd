@@ -5,6 +5,9 @@ extends Node2D
 # var b = "textvar"
 onready var current_scene = get_node("Room1")
 onready var player = get_node("Player")
+onready var camera = get_node("Player/Camera2D")
+onready var pauseMenu = get_node("Player/Camera2D/pausePopup")
+
 var transferGoal
 var transferGoalPath
 
@@ -12,6 +15,15 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
+
+func _process(delta):
+	# Called every frame. Delta is time since last frame.
+	# Update game logic here.
+	var pause = Input.is_action_pressed("ui_pause")
+	if pause:
+		#updatePauseMenuLocation()
+		get_tree().paused = true
+		$Player/Camera2D/pausePopup.show()
 
 func goto_scene(path, transferGoalPath):
 	#pass
@@ -24,7 +36,6 @@ func goto_scene(path, transferGoalPath):
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
 	call_deferred("_deferred_goto_scene",path, transferGoalPath)
-
 
 func _deferred_goto_scene(path, transferGoalPath):
 	#pass
@@ -45,3 +56,17 @@ func _deferred_goto_scene(path, transferGoalPath):
 
     # optional, to make it compatible with the SceneTree.change_scene() API
 	get_tree().set_current_scene( current_scene )
+
+func _on_Unpause_pressed():
+	$Player/Camera2D/pausePopup.hide()
+	get_tree().paused = false
+
+func updatePauseMenuLocation():
+	# Meant to identify where should the pausePopup go.
+	# TODO
+	var pauseMenuPos = Vector2()
+	#pauseMenuPos.x = camera.get_viewport().get_visible_rect().size.x/2 - pauseMenu.get_size().x/2
+	#pauseMenuPos.y = camera.get_viewport().get_visible_rect().size.y/2# - pauseMenu.get_size().height/2
+	#print(pauseMenuPos)
+	#pauseMenu.set_rotation(180)#(player.get_rid())
+	#pauseMenu.rect_position = camPos
