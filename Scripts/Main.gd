@@ -6,7 +6,7 @@ extends Node2D
 onready var current_scene = get_node("Room1")
 onready var player = get_node("Player")
 onready var camera = get_node("Player/Camera2D")
-onready var pauseMenu = get_node("Player/Camera2D/pausePopup")
+onready var pauseMenu = get_node("Control/pausePopup")
 
 var transferGoal
 var transferGoalPath
@@ -21,9 +21,9 @@ func _process(delta):
 	# Update game logic here.
 	var pause = Input.is_action_pressed("ui_pause")
 	if pause:
-		#updatePauseMenuLocation()
+		updatePauseMenuLocation()
 		get_tree().paused = true
-		$Player/Camera2D/pausePopup.show()
+		$Control/pausePopup.show()
 
 func goto_scene(path, transferGoalPath):
 	#pass
@@ -38,7 +38,6 @@ func goto_scene(path, transferGoalPath):
 	call_deferred("_deferred_goto_scene",path, transferGoalPath)
 
 func _deferred_goto_scene(path, transferGoalPath):
-	#pass
     # Immediately free the current scene,
     # there is no risk here.
 	current_scene.queue_free()
@@ -58,15 +57,23 @@ func _deferred_goto_scene(path, transferGoalPath):
 	get_tree().set_current_scene( current_scene )
 
 func _on_Unpause_pressed():
-	$Player/Camera2D/pausePopup.hide()
+	$Control/pausePopup.hide()
 	get_tree().paused = false
 
 func updatePauseMenuLocation():
+	
+	pass
 	# Meant to identify where should the pausePopup go.
 	# TODO
 	var pauseMenuPos = Vector2()
-	#pauseMenuPos.x = camera.get_viewport().get_visible_rect().size.x/2 - pauseMenu.get_size().x/2
+	pauseMenuPos = _get_camera_center()
+	#pauseMenuPos = camera.get_camera_position()#size.x/2 - pauseMenu.get_size().x/2
 	#pauseMenuPos.y = camera.get_viewport().get_visible_rect().size.y/2# - pauseMenu.get_size().height/2
-	#print(pauseMenuPos)
+	print(pauseMenuPos)
 	#pauseMenu.set_rotation(180)#(player.get_rid())
-	#pauseMenu.rect_position = camPos
+	pauseMenu.rect_position = pauseMenuPos
+func _get_camera_center():
+    var vtrans = get_canvas_transform()
+    var top_left = -vtrans.get_origin() / vtrans.get_scale()
+    var vsize = get_viewport_rect().size
+    return top_left + 0.5*vsize/vtrans.get_scale()
