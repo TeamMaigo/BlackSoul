@@ -21,9 +21,9 @@ func _process(delta):
 	# Update game logic here.
 	var pause = Input.is_action_pressed("ui_pause")
 	if pause:
-		updatePauseMenuLocation()
+		#updatePauseMenuLocation()
 		get_tree().paused = true
-		$Control/pausePopup.show()
+		$CanvasLayer/Control/pausePopup.show()
 
 func goto_scene(path, transferGoalPath):
 	#pass
@@ -57,7 +57,7 @@ func _deferred_goto_scene(path, transferGoalPath):
 	get_tree().set_current_scene( current_scene )
 
 func _on_Unpause_pressed():
-	$Control/pausePopup.hide()
+	$CanvasLayer/Control/pausePopup.hide()
 	get_tree().paused = false
 
 func updatePauseMenuLocation():
