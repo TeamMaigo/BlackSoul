@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/TurretLinear.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BulletLinear.tscn" type="PackedScene" id=2]
@@ -9,7 +9,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="TurretLinear" type="KinematicBody2D"]
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 300.0
+
+[node name="TurretLinear" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 4
@@ -48,11 +53,17 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility" index="0"]
 
+shape = SubResource( 2 )
+
 [node name="ShootTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
+
+[connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
 
 

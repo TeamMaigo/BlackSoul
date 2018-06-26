@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=5]
 
-[node name="Room1" type="TileMap" index="0"]
+[node name="Room1" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -29,7 +29,7 @@ tile_data = PoolIntArray( -524308, 0, 0, -524307, 0, 0, -524306, 0, 0, -458772, 
 [node name="TurretLinear" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 0, 96 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="EnemyMob" parent="." index="1" instance=ExtResource( 3 )]
 

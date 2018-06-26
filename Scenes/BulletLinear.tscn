@@ -8,8 +8,10 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
-"Enemy",
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="Bullet" type="KinematicBody2D" parent="." index="0" groups=[
+"Bullet",
 ]]
 
 scale = Vector2( 0.6, 0.2 )
@@ -20,14 +22,14 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="Bullet" index="0"]
 
 rotation = -1.5708
 texture = ExtResource( 2 )
 flip_v = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet" index="1"]
 
 shape = SubResource( 1 )
 
