@@ -21,7 +21,6 @@ func _process(delta):
 	# Update game logic here.
 	var pause = Input.is_action_pressed("ui_pause")
 	if pause:
-		#updatePauseMenuLocation()
 		get_tree().paused = true
 		$CanvasLayer/Control/pausePopup.show()
 
@@ -60,20 +59,13 @@ func _on_Unpause_pressed():
 	$CanvasLayer/Control/pausePopup.hide()
 	get_tree().paused = false
 
-func updatePauseMenuLocation():
-	
-	pass
-	# Meant to identify where should the pausePopup go.
-	# TODO
-	var pauseMenuPos = Vector2()
-	pauseMenuPos = _get_camera_center()
-	#pauseMenuPos = camera.get_camera_position()#size.x/2 - pauseMenu.get_size().x/2
-	#pauseMenuPos.y = camera.get_viewport().get_visible_rect().size.y/2# - pauseMenu.get_size().height/2
-	print(pauseMenuPos)
-	#pauseMenu.set_rotation(180)#(player.get_rid())
-	pauseMenu.rect_position = pauseMenuPos
 func _get_camera_center():
     var vtrans = get_canvas_transform()
     var top_left = -vtrans.get_origin() / vtrans.get_scale()
     var vsize = get_viewport_rect().size
     return top_left + 0.5*vsize/vtrans.get_scale()
+
+func _on_Quit_pressed():
+	#TODO Save Data?
+	get_tree().paused = false	# Unpause stuff, otherwises the menus won't work!
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")
