@@ -8,10 +8,10 @@ var velocity = Vector2()
 func _ready():
 	_physics_process(true)
 
-func start(pos, dir):
+func start(pos, dir, bulletSpeed):
 	position = pos
 	rotation = dir
-	print("started")
+	speed = bulletSpeed
 	velocity = Vector2(speed, 0).rotated(dir).normalized()
 
 func _physics_process(delta):

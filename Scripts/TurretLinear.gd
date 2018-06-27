@@ -5,12 +5,13 @@ export (int) var detect_radius  # size of the visibility circle
 export (float) var fire_rate  # delay time (s) between bullets
 export (PackedScene) var BulletLinear
 export var bulletType = "Linear"
+export var bulletSpeed = 1
 #export var bulletDelay = 50
 #var currentDelay = 0
 #var bulletTimer = 0
 #var playerPos
 var defeated = false
-
+onready var timer = get_node("ShootTimer")
 var target  # who are we shooting at?
 var can_shoot = true
 var vis_color = Color(.867, .91, .247, 0.1)
@@ -25,7 +26,7 @@ func _ready():
 	var shape = CircleShape2D.new()
 	shape.radius = detect_radius
 	$Visibility/CollisionShape2D.shape = shape
-	$ShootTimer.wait_time = fire_rate
+	timer.wait_time = fire_rate
 
 func _physics_process(delta):
 	update()
@@ -67,14 +68,20 @@ func shootBullet(pos):
 	#Shoots a bullet in the direction it's facing
 	var b = BulletLinear.instance()
 	var a = (pos - global_position).angle()
-	b.start(global_position, a + rand_range(-0.05, 0.05))
+	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	get_parent().add_child(b)
 	can_shoot = false
-	$ShootTimer.start()
+	waitToSpawn(fire_rate)
 
 func _draw():
 	# display the visibility area
 	draw_circle(Vector2(), detect_radius, vis_color)
 
 func _on_ShootTimer_timeout():
+	pass#can_shoot = true
+	
+func waitToSpawn(sec):
+	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	timer.start() # Start the Timer counting down
+	yield(timer, "timeout") # Wait for the timer to wind down
 	can_shoot = true
