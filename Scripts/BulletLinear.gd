@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 # Required to pass editor info to collider child of object
 
@@ -12,11 +12,11 @@ func start(pos, dir):
 	position = pos
 	rotation = dir
 	print("started")
-	velocity = Vector2(speed, 1).rotated(dir).normalized()
+	velocity = Vector2(speed, 0).rotated(dir).normalized()
 
 func _physics_process(delta):
 	#position += velocity * delta
-	var movedir = Vector2(0,-1)
+	var movedir = velocity
 	var motion = movedir.normalized() * speed
 	move_and_collide(motion)#, Vector2(0,0))
 	

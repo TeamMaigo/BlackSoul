@@ -67,7 +67,7 @@ func shootBullet(pos):
 	#Shoots a bullet in the direction it's facing
 	var b = BulletLinear.instance()
 	var a = (pos - global_position).angle()
-	#b.start(global_position, a + rand_range(-0.05, 0.05))
+	b.start(global_position, a + rand_range(-0.05, 0.05))
 	get_parent().add_child(b)
 	can_shoot = false
 	$ShootTimer.start()
