@@ -30,6 +30,9 @@ tile_data = PoolIntArray( -524308, 0, 0, -524307, 0, 0, -524306, 0, 0, -458772, 
 
 position = Vector2( 0, 96 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 0.8
+bulletSpeed = 20
 
 [node name="EnemyMob" parent="." index="1" instance=ExtResource( 3 )]
 

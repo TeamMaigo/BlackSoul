@@ -6,7 +6,7 @@ extends Node2D
 onready var current_scene = get_node("Room1")
 onready var player = get_node("Player")
 onready var camera = get_node("Player/Camera2D")
-onready var pauseMenu = get_node("Control/pausePopup")
+onready var pauseMenu = get_node("CanvasLayer/Control/pausePopup")
 
 var transferGoal
 var transferGoalPath

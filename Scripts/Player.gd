@@ -15,6 +15,7 @@ var playerPos
 var mousePos
 var DASH_DELAY = 1	# in seconds
 var SWAP_DELAY = 1
+var health = 3
 
 func _ready():
 	# Called every time the node is added to the scene.

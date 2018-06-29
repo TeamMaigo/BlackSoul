@@ -14,7 +14,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 radius = 300.0
 
-[node name="TurretLinear" type="KinematicBody2D" index="0"]
+[node name="TurretLinear" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 16
@@ -22,7 +22,7 @@ collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
-detect_radius = 250
+detect_radius = 120
 fire_rate = 0.5
 BulletLinear = ExtResource( 2 )
 bulletType = "Linear"

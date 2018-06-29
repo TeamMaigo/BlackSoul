@@ -1,9 +1,8 @@
 extends KinematicBody2D
 
-# Required to pass editor info to collider child of object
-
 var speed = 1
 var velocity = Vector2()
+var player
 
 func _ready():
 	_physics_process(true)
@@ -18,7 +17,22 @@ func _physics_process(delta):
 	#position += velocity * delta
 	var movedir = velocity
 	var motion = movedir.normalized() * speed
-	move_and_collide(motion)#, Vector2(0,0))
+	var collision = move_and_collide(motion)#, Vector2(0,0))
+	if collision:
+		if collision.collider.is_in_group("Player"):
+			player = collision.collider.get_node("../Player")
+			player.health -= 1
+			print("HP: ", player.health)
+			queue_free()	#Destroys the bullet
+		elif collision.collider.is_in_group("Enemy"):
+			print("Enemy hit!")
+			queue_free()
+		elif collision.collider.is_class("TileMap"):
+			print("Wall hit")
+			queue_free()
+		else:
+			print("What was that? Hit: ", collision.collider)
+			queue_free()
 	
 	
 func _on_Bullet_body_entered(body):
