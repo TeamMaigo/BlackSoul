@@ -21,8 +21,7 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.is_in_group("Player"):
 			player = collision.collider.get_node("../Player")
-			player.health -= 1
-			print("HP: ", player.health)
+			player.takeDamage(1)
 			queue_free()	#Destroys the bullet
 		elif collision.collider.is_in_group("Enemy"):
 			print("Enemy hit!")

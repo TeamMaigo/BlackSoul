@@ -45,13 +45,12 @@ position = Vector2( -366.284, -161.285 )
 [node name="TransferPointA" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 288.09, -226.039 )
-sceneName = "Room2"
-transferGoal = "TransferGoalA"
+newScene = "Room2"
 
 [node name="TransferPointB" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( -1182.49, -476.004 )
-sceneName = "Room3"
+newScene = "Room3"
 transferGoal = "TransferGoalB"
 
 [node name="TransferGoalA" parent="." index="5" instance=ExtResource( 5 )]

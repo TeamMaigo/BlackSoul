@@ -66,7 +66,6 @@ _sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 [node name="pausePopup" type="Panel" parent="CanvasLayer/Control" index="0"]
 
 pause_mode = 2
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -85,7 +84,6 @@ _sections_unfolded = [ "Pause", "Rect", "Visibility" ]
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/pausePopup" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -104,15 +102,14 @@ use_top_left = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/pausePopup/CenterContainer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 261.0
-margin_top = 267.0
+margin_top = 255.0
 margin_right = 339.0
-margin_bottom = 329.0
+margin_bottom = 341.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -165,7 +162,7 @@ text = "Unpause"
 flat = false
 align = 1
 
-[node name="Quit" type="Button" parent="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer" index="2"]
+[node name="Options" type="Button" parent="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -185,11 +182,37 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Options"
+flat = false
+align = 1
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 66.0
+margin_right = 78.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
 text = "Exit"
 flat = false
 align = 1
 
 [connection signal="pressed" from="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]
+
+[connection signal="pressed" from="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 
 [connection signal="pressed" from="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 

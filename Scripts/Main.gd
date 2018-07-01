@@ -34,7 +34,7 @@ func goto_scene(path, transferGoalPath):
 
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
-	call_deferred("_deferred_goto_scene",path, transferGoalPath)
+	call_deferred("_deferred_goto_scene", path, transferGoalPath)
 
 func _deferred_goto_scene(path, transferGoalPath):
     # Immediately free the current scene,
@@ -51,6 +51,7 @@ func _deferred_goto_scene(path, transferGoalPath):
 	get_tree().get_root().add_child(current_scene)
 	transferGoal = current_scene.get_node(transferGoalPath)
 	player.position = transferGoal.position
+	player.lastTransferPoint = transferGoal.position
 
     # optional, to make it compatible with the SceneTree.change_scene() API
 	get_tree().set_current_scene( current_scene )
@@ -69,3 +70,7 @@ func _on_Quit_pressed():
 	#TODO Save Data?
 	get_tree().paused = false	# Unpause stuff, otherwises the menus won't work!
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+
+
+func _on_Options_pressed():
+	pass # replace with function body
