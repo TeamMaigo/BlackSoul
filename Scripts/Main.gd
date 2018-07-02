@@ -3,13 +3,15 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-onready var current_scene = get_node("Room1")
+onready var currentScene = get_node("LabRoom")
 onready var player = get_node("Player")
 onready var camera = get_node("Player/Camera2D")
 onready var pauseMenu = get_node("CanvasLayer/Control/pausePopup")
 
+var scene = load("res://Scenes/Rooms/Room1.tscn")
 var transferGoal
 var transferGoalPath
+onready var respawnPoint = player.position
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -39,22 +41,29 @@ func goto_scene(path, transferGoalPath):
 func _deferred_goto_scene(path, transferGoalPath):
     # Immediately free the current scene,
     # there is no risk here.
-	current_scene.queue_free()
+	currentScene.queue_free()
 
     # Load new scene
-	var scene = load(path)
+	scene = load(path)
 
     # Instance the new scene
-	current_scene = scene.instance()
+	currentScene = scene.instance()
 
     # Add it to the active scene, as child of root
-	get_tree().get_root().add_child(current_scene)
-	transferGoal = current_scene.get_node(transferGoalPath)
+	get_tree().get_root().add_child(currentScene)
+	transferGoal = currentScene.get_node(transferGoalPath)
 	player.position = transferGoal.position
 	player.lastTransferPoint = transferGoal.position
+	respawnPoint = transferGoal.position
 
     # optional, to make it compatible with the SceneTree.change_scene() API
-	get_tree().set_current_scene( current_scene )
+	get_tree().set_current_scene( currentScene )
+
+func reloadLastScene():
+	currentScene.queue_free()
+	currentScene = scene.instance()
+	get_tree().get_root().add_child(currentScene)
+	player.position = respawnPoint
 
 func _on_Unpause_pressed():
 	$CanvasLayer/Control/pausePopup.hide()

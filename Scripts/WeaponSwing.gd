@@ -40,9 +40,9 @@ func _physics_process(delta):
 			return
 		if is_owner(body):	#Can't hit yourself
 			return
-		body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
 		if body.is_in_group("Projectile"):	# Hit a projectile
 			body.setDirection(activation_vector)
+			body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
 	#set_physics_process(false)	#Limits to one enemy hit per swing. Probably need to redo
 
 func is_owner(node):

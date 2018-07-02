@@ -23,10 +23,13 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 detect_radius = 120
-fire_rate = 0.5
+fire_rate = 1.0
+firstShotDelay = 0
 BulletLinear = ExtResource( 2 )
 bulletType = "Linear"
-bulletSpeed = 55
+bulletSpeed = 15
+rotatingTurret = true
+usesVision = true
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -41,6 +44,7 @@ shape = SubResource( 1 )
 
 [node name="Visibility" type="Area2D" parent="." index="2"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -50,7 +54,7 @@ collision_layer = 16
 collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility" index="0"]
 

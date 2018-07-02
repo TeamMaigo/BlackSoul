@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow.png-9a52328c9c8f79a188b7fabb13b1f3fc.stex"
+path="res://.import/arrow.png-5405b2f4a5090f6ebaea005362d7d52b.stex"
 
 [deps]
 
-source_file="res://arrow.png"
+source_file="res://Sprites/arrow.png"
 source_md5="a0b81d6a014f9d1f3ae8da2ab3576d7b"
 
-dest_files=[ "res://.import/arrow.png-9a52328c9c8f79a188b7fabb13b1f3fc.stex" ]
+dest_files=[ "res://.import/arrow.png-5405b2f4a5090f6ebaea005362d7d52b.stex" ]
 dest_md5="6138ac02040bf3f990520110d675a018"
 
 [params]

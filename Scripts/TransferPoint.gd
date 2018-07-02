@@ -4,14 +4,15 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 export(String) var newScene = "Room1"
-export var transferGoal = "TransferGoalA"
+export var transferGoalTemp = "A"
+var transferGoal
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	transferGoal = "TransferGoal" + transferGoalTemp
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):	#Check for player
-		newScene = "res://Scenes/" + newScene + ".tscn"
+		newScene = "res://Scenes/Rooms/" + newScene + ".tscn"
 		get_node("/root/World/").goto_scene(newScene, transferGoal)

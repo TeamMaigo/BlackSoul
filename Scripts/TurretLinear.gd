@@ -2,61 +2,58 @@ extends KinematicBody2D
 
 # Required to pass editor info to collider child of object
 export (int) var detect_radius  # size of the visibility circle
-export (float) var fire_rate  # delay time (s) between bullets
+export (float) var fire_rate = 1  # delay time (s) between bullets
+export (float) var firstShotDelay = 0
 export (PackedScene) var BulletLinear
 export var bulletType = "Linear"
 export var bulletSpeed = 1
-#export var bulletDelay = 50
-#var currentDelay = 0
-#var bulletTimer = 0
-#var playerPos
+export var rotatingTurret = true
+export var usesVision = true
+
 var defeated = false
 onready var timer = get_node("ShootTimer")
 var target  # who are we shooting at?
-var can_shoot = true
+var can_shoot = false
 var vis_color = Color(.867, .91, .247, 0.1)
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_physics_process(true)
-#	currentDelay = 0
-#	bulletTimer = 0
-	#RayNode = get_node("RayCast2D")	#For directions
-	var shape = CircleShape2D.new()
-	shape.radius = detect_radius
-	$Visibility/CollisionShape2D.shape = shape
-	timer.wait_time = fire_rate
+	if usesVision:
+		var shape = CircleShape2D.new()
+		shape.radius = detect_radius
+		$Visibility/CollisionShape2D.shape = shape
+	else:
+		$Visibility.visible == false
+	if firstShotDelay > 0:
+		waitToSpawn(firstShotDelay)
+	else:
+		can_shoot = true
 
 func _physics_process(delta):
-	update()
+	#update()
 	if(defeated == false):
-		#Look at player unless defeated
-		#var playerNode = get_node("Player")
-		#playerPos = playerNode.get_global_pos()
-#		playerPos = get_global_mouse_position()
-#		look_at(playerPos)
-		
 		#Shoot bullets at a consistent rate of fire
 		if target:
-			rotation = (target.position - position).angle()
+			if rotatingTurret:
+				rotation = (target.position - position).angle()
 			if can_shoot:
 				shootBullet(target.position)
-#		if(currentDelay == bulletDelay and target):
-#			shootBullet(target.position)
-#			currentDelay = 0
-#		else:
-#			currentDelay += 1
-	#movement_loop()
-	#speed_decay()
-	#dash_delay(DASH_DELAY, delta)	# Check if dash can be renabled
+		elif not usesVision:
+			if can_shoot:
+				shootBulletStraight()
+		else:
+			pass
+
 
 func _on_Visibility_body_entered(body):
 	# connect this to the "body_entered" signal
 	if target:
 		return
-	target = body
-	#$Sprite.self_modulate.r = 1.0
+	if usesVision:
+		target = body
+	$Sprite.self_modulate.r = 1.0
 
 func _on_Visibility_body_exited(body):
 	# connect this to the "body_exited" signal
@@ -73,12 +70,19 @@ func shootBullet(pos):
 	can_shoot = false
 	waitToSpawn(fire_rate)
 
+func shootBulletStraight():
+	#Shoots a bullet in the direction it's facing
+	var b = BulletLinear.instance()
+	b.start(global_position, self.get_global_transform().get_rotation(), bulletSpeed)
+	get_parent().add_child(b)
+	can_shoot = false
+	waitToSpawn(fire_rate)
+
 func _draw():
 	# display the visibility area
-	draw_circle(Vector2(), detect_radius, vis_color)
+	if usesVision:
+		draw_circle(Vector2(), detect_radius, vis_color)
 
-func _on_ShootTimer_timeout():
-	pass#can_shoot = true
 	
 func waitToSpawn(sec):
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds

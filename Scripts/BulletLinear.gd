@@ -21,14 +21,12 @@ func _physics_process(delta):
 	var collision = move_and_collide(motion)#, Vector2(0,0))
 	if collision:
 		if collision.collider.is_in_group("Player"):
-			player = collision.collider.get_node("../Player")
-			player.takeDamage(damage)
-			queue_free()	#Destroys the bullet
+			hitPlayer(collision.collider.get_node("../Player"))
 		elif collision.collider.is_in_group("Enemy"):
 			print("Enemy hit!")
 			queue_free()
 		elif collision.collider.is_class("TileMap"):
-			print("Wall hit")
+			#print("Wall hit")
 			queue_free()
 		else:
 			print("What was that? Hit: ", collision.collider)
@@ -39,6 +37,6 @@ func setDirection(directionVector):
 	velocity = directionVector
 	rotation_degrees = rad2deg(directionVector.angle())
 	
-	
-func _on_Bullet_body_entered(body):
-	queue_free()
+func hitPlayer(player):
+		player.takeDamage(damage)
+		queue_free()	#Destroys the bullet

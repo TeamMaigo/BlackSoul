@@ -76,11 +76,11 @@ func movement_loop():
 	move_and_slide(motion)
 	for i in range(get_slide_count()):
 		var collisions = get_slide_collision(i)
-		if collisions:
-			if collisions.collider.is_in_group("Projectile"):
-				var projectile = collisions.collider.get_node("./")
-				takeDamage(projectile.damage)
-				projectile.queue_free()
+#		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
+		# you get hit twice. This can be solved through invulnerability frames after being hit.
+#			if collisions.collider.is_in_group("Projectile"):
+#				var projectile = collisions.collider.get_node("./")
+#				projectile.hitPlayer(self)
 
 func speed_decay():
 	if MOTION_SPEED > NORMAL_SPEED:
@@ -120,4 +120,4 @@ func takeDamage(damage):
 
 func respawn():
 	health = maxHealth
-	position = lastTransferPoint
+	get_node("../").reloadLastScene()
