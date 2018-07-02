@@ -6,13 +6,15 @@ onready var animation_player = $AnimationPlayer
 
 enum STATES {IDLE, ATTACK}
 var current_state = IDLE
+var activation_vector = null
 
 func _ready():
 	set_physics_process(false)
 
-func attack():
+func attack(directionVector):
 	# Called when the player users the attack func
 	if current_state != ATTACK:
+		activation_vector = directionVector
 		_change_state(ATTACK)
 
 func attackIsActive():
@@ -22,6 +24,7 @@ func _change_state(new_state):
 	current_state = new_state
 	match current_state:
 		IDLE:
+			activation_vector = null
 			set_physics_process(false)
 		ATTACK:
 			set_physics_process(true)
@@ -48,3 +51,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if name == "WeaponSwing":
 		_change_state(IDLE)
 		emit_signal("attack_finished")
+
+
+func _on_PlayerWeapon_body_entered(body):
+	if current_state == IDLE:
+		return
+	if body.is_in_group("Projectile"):
+		body.setDirection(activation_vector)

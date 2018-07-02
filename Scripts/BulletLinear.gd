@@ -34,5 +34,10 @@ func _physics_process(delta):
 			queue_free()
 	
 	
+func setDirection(directionVector):
+	velocity = directionVector
+	rotation_degrees = rad2deg(directionVector.angle())
+	
+	
 func _on_Bullet_body_entered(body):
 	queue_free()

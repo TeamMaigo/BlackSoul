@@ -32,7 +32,7 @@ position = Vector2( 0, 96 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 detect_radius = 410
 fire_rate = 0.8
-bulletSpeed = 5
+bulletSpeed = 10
 
 [node name="EnemyMob" parent="." index="1" instance=ExtResource( 3 )]
 

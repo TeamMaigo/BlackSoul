@@ -71,7 +71,9 @@ func controls_loop():
 		SpriteNode.set("modulate",Color(50.0/120,150,0,1))
 		
 	if SWING:
-		get_node("WeaponSwing").attack()
+		var attackDirection = Vector2(1, 0).rotated(deg2rad(rotation_degrees))
+		print(attackDirection)
+		get_node("WeaponSwing").attack(attackDirection)
 
 func movement_loop():
 	var motion = movedir.normalized() * MOTION_SPEED
