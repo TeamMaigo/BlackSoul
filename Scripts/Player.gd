@@ -1,5 +1,4 @@
 extends KinematicBody2D
-# class member variables go here, for example:
 
 export var NORMAL_SPEED = 500
 var MOTION_SPEED = NORMAL_SPEED
@@ -20,8 +19,6 @@ var health = maxHealth
 var lastTransferPoint
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	set_physics_process(true)
 	dashTimer = 0
 	swapTimer = 0
@@ -42,11 +39,11 @@ func _physics_process(delta):
 func controls_loop():
 	var LEFT	= Input.is_action_pressed("ui_left")
 	var RIGHT	= Input.is_action_pressed("ui_right")
-	var UP	= Input.is_action_pressed("ui_up")
+	var UP		= Input.is_action_pressed("ui_up")
 	var DOWN	= Input.is_action_pressed("ui_down")
-	var DASH = Input.is_action_pressed("ui_dash")
-	var SWAP = Input.is_action_pressed("ui_swap")
-	var SWING = Input.is_action_pressed("ui_swing_weapon")
+	var DASH	= Input.is_action_pressed("ui_dash")
+	var SWAP	= Input.is_action_pressed("ui_swap")
+	var SWING	= Input.is_action_pressed("ui_swing_weapon")
 
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
@@ -72,12 +69,18 @@ func controls_loop():
 		
 	if SWING:
 		var attackDirection = Vector2(1, 0).rotated(deg2rad(rotation_degrees))
-		print(attackDirection)
 		get_node("WeaponSwing").attack(attackDirection)
 
 func movement_loop():
 	var motion = movedir.normalized() * MOTION_SPEED
-	move_and_slide(motion)#, Vector2(0,0))
+	move_and_slide(motion)
+	for i in range(get_slide_count()):
+		var collisions = get_slide_collision(i)
+		if collisions:
+			if collisions.collider.is_in_group("Projectile"):
+				var projectile = collisions.collider.get_node("./")
+				takeDamage(projectile.damage)
+				projectile.queue_free()
 
 func speed_decay():
 	if MOTION_SPEED > NORMAL_SPEED:
@@ -109,9 +112,9 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	position = tempEnemyPos
 
 func takeDamage(damage):
-	health -= 1
+	health -= damage
 	print("Current HP: ", health)
-	if health == 0:
+	if health <= 0:
 		print("You died!")
 		respawn()
 

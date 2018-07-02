@@ -3,6 +3,7 @@ extends KinematicBody2D
 var speed = 1
 var velocity = Vector2()
 var player
+export var damage = 1
 
 func _ready():
 	_physics_process(true)
@@ -21,7 +22,7 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.is_in_group("Player"):
 			player = collision.collider.get_node("../Player")
-			player.takeDamage(1)
+			player.takeDamage(damage)
 			queue_free()	#Destroys the bullet
 		elif collision.collider.is_in_group("Enemy"):
 			print("Enemy hit!")

@@ -35,13 +35,15 @@ func _physics_process(delta):
 	if not overlapping_bodies:
 		return
 	for body in overlapping_bodies:
-		if not body.is_in_group("Enemy"):
+		if body.is_in_group("Enemy"):
+			body.get_node("Sprite").set("modulate",Color(0.5,0.3,0.8)) # Temp to visualize hit
 			return
 		if is_owner(body):	#Can't hit yourself
 			return
 		body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
-		#body.reflectProjectile() #Handle reflecting projectiles
-	set_physics_process(false)	#Limits to one enemy hit per swing. Probably need to redo
+		if body.is_in_group("Projectile"):	# Hit a projectile
+			body.setDirection(activation_vector)
+	#set_physics_process(false)	#Limits to one enemy hit per swing. Probably need to redo
 
 func is_owner(node):
 	return node.get_path() == get_path()
@@ -51,10 +53,3 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if name == "WeaponSwing":
 		_change_state(IDLE)
 		emit_signal("attack_finished")
-
-
-func _on_PlayerWeapon_body_entered(body):
-	if current_state == IDLE:
-		return
-	if body.is_in_group("Projectile"):
-		body.setDirection(activation_vector)
