@@ -52,7 +52,8 @@ func controls_loop():
 	movedir.y = -int(UP) + int(DOWN)
 
 	mousePos = get_global_mouse_position() #If we want player to rotate to face mouse
-	look_at(mousePos)
+	if not $WeaponSwing.attackIsActive():
+		look_at(mousePos)
 
 	if DASH && dashAvailable:
 		MOTION_SPEED = 2000

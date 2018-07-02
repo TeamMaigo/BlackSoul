@@ -15,6 +15,9 @@ func attack():
 	if current_state != ATTACK:
 		_change_state(ATTACK)
 
+func attackIsActive():
+	return current_state == ATTACK
+
 func _change_state(new_state):
 	current_state = new_state
 	match current_state:
