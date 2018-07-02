@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/BulletLinear.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://arrow.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Bullet" type="KinematicBody2D" groups=[
+[node name="Bullet" type="KinematicBody2D" index="0" groups=[
 "Projectile",
 ]]
 
@@ -18,7 +18,7 @@ collision_layer = 4
 collision_mask = 7
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
