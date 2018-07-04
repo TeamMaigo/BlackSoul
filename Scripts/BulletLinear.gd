@@ -25,6 +25,10 @@ func _physics_process(delta):
 		elif collision.collider.is_in_group("Enemy"):
 			print("Enemy hit!")
 			queue_free()
+		elif collision.collider.is_in_group("Breakable"):
+			print("BREAK!")
+			collision.collider.queue_free()
+			queue_free()
 		elif collision.collider.is_class("TileMap"):
 			#print("Wall hit")
 			queue_free()

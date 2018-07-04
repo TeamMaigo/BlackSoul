@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( 0, -1.50732 )
 mode = 0

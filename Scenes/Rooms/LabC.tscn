@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/TurretLinear.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/TurretLinear.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( 0, -1.50732 )
 mode = 0
@@ -25,18 +26,24 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -262148, 0, 0, -327679, 0, 0, -196612, 0, 0, -262143, 0, 0, -131076, 0, 0, -196607, 0, 0, -65540, 0, 0, -131071, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -65535, 0, 0, 65530, 0, 0, 1, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 65537, 0, 0, 196604, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 262140, 0, 0, 196611, 0, 0, 327676, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 393212, 0, 0, 327681, 0, 0, 458748, 0, 0, 393217, 0, 0, 524284, 0, 0, 458753, 0, 0, 589820, 0, 0, 524289, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0 )
+_sections_unfolded = [ "Collision" ]
 
-[node name="TransferPointA" parent="." index="0" instance=ExtResource( 2 )]
+[node name="BreakableMob" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -24.3976, 136.745 )
+scale = Vector2( 2, 2 )
+
+[node name="TransferPointA" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -65.9895, 470.589 )
 newScene = "LabD"
 transferGoalTemp = "A"
 
-[node name="TransferGoalA" parent="." index="1" instance=ExtResource( 3 )]
+[node name="TransferGoalA" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -56.0211, -233.988 )
 
-[node name="TurretLinear" parent="." index="2" instance=ExtResource( 4 )]
+[node name="TurretLinear" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( -287.195, 33.6202 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -44,7 +51,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesVision = false
 
-[node name="TurretLinear2" parent="." index="3" instance=ExtResource( 4 )]
+[node name="TurretLinear2" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 165.811, 224.073 )
 rotation = 3.14159
@@ -53,7 +60,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesVision = false
 
-[node name="Label" type="Label" parent="." index="4"]
+[node name="Label" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
