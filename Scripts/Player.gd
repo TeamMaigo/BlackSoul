@@ -3,6 +3,9 @@ extends KinematicBody2D
 export var NORMAL_SPEED = 500
 var MOTION_SPEED = NORMAL_SPEED
 onready var SpriteNode = get_node("Sprite")
+onready var AnimNode = get_node("AnimationPlayer")
+onready var WeaponNode = get_node("RotationNode/WeaponSwing")
+onready var RotationNode = get_node("RotationNode")
 var movedir = Vector2(0,0)
 var RayNode
 var CollisionNode
@@ -17,6 +20,8 @@ var SWAP_DELAY = 1
 var maxHealth = 3
 var health = maxHealth
 var lastTransferPoint
+var anim = "Idle"
+var animNew = ""
 
 func _ready():
 	set_physics_process(true)
@@ -48,9 +53,9 @@ func controls_loop():
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
 
-	mousePos = get_global_mouse_position() #If we want player to rotate to face mouse
-	if not $WeaponSwing.attackIsActive():
-		look_at(mousePos)
+
+	#if not $WeaponSwing.attackIsActive():
+	#	look_at(mousePos) #If we want player to rotate to face mouse
 
 	if DASH && dashAvailable:
 		MOTION_SPEED = 2000
@@ -65,15 +70,24 @@ func controls_loop():
 			if result.collider.is_in_group("Enemy"):
 				swapPlaces(self, result.collider)
 		swapAvailable = false
-		SpriteNode.set("modulate",Color(50.0/120,150,0,1))
+		#SpriteNode.set("modulate",Color(50.0/120,150,0,1))
 		
 	if SWING:
-		var attackDirection = Vector2(1, 0).rotated(deg2rad(rotation_degrees))
-		get_node("WeaponSwing").attack(attackDirection)
+		mousePos = get_global_mouse_position()
+		var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
+		RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
+		WeaponNode.attack(attackDirection)
 
 func movement_loop():
 	var motion = movedir.normalized() * MOTION_SPEED
 	move_and_slide(motion)
+	if movedir != Vector2():
+		anim = "PlayerWalkingRight"
+	else:
+		anim = "Idle"
+	if anim != animNew:
+		animNew = anim
+		AnimNode.play(anim)
 	for i in range(get_slide_count()):
 		var collisions = get_slide_collision(i)
 #		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
@@ -84,12 +98,12 @@ func movement_loop():
 
 func speed_decay():
 	if MOTION_SPEED > NORMAL_SPEED:
-		SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
+		#SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
 		MOTION_SPEED *= 0.90
 	elif MOTION_SPEED == NORMAL_SPEED:
 		pass
 	else:
-		SpriteNode.set("modulate",Color(233.0/255,255,255,1))
+		#SpriteNode.set("modulate",Color(233.0/255,255,255,1))
 		MOTION_SPEED = NORMAL_SPEED
 
 func dash_delay(sec, delta):
@@ -102,7 +116,7 @@ func swap_delay(sec, delta):
 	swapTimer += delta
 	if swapTimer > sec:
 		swapAvailable = true
-		SpriteNode.set("modulate",Color(233.0/255,255,255,1))
+		#SpriteNode.set("modulate",Color(233.0/255,255,255,1))
 		swapTimer = 0
 
 func swapPlaces(player, enemy): # Takes in player node and enemy collider
