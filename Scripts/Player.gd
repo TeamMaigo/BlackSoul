@@ -52,7 +52,15 @@ func controls_loop():
 
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
-
+	
+	if movedir.y > 0:
+		anim = "PlayerWalkingDown"
+	elif movedir.y < 0:
+		anim = "PlayerWalkingUp"
+	if movedir.x > 0:
+		anim = "PlayerWalkingRight"
+	elif movedir.x < 0:
+		anim = "PlayerWalkingLeft"
 
 	#if not $WeaponSwing.attackIsActive():
 	#	look_at(mousePos) #If we want player to rotate to face mouse
@@ -81,9 +89,7 @@ func controls_loop():
 func movement_loop():
 	var motion = movedir.normalized() * MOTION_SPEED
 	move_and_slide(motion)
-	if movedir != Vector2():
-		anim = "PlayerWalkingRight"
-	else:
+	if movedir == Vector2():
 		anim = "Idle"
 	if anim != animNew:
 		animNew = anim
