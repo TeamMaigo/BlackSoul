@@ -12,6 +12,7 @@ var scene = load("res://Scenes/Rooms/Room1.tscn")
 var transferGoal
 var transferGoalPath
 onready var respawnPoint = player.position
+var pauseState = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -21,10 +22,8 @@ func _ready():
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	var pause = Input.is_action_pressed("ui_pause")
-	if pause:
-		get_tree().paused = true
-		$CanvasLayer/Control/pausePopup.show()
+	
+	pass
 
 func goto_scene(path, transferGoalPath):
 	#pass
@@ -65,21 +64,8 @@ func reloadLastScene():
 	get_tree().get_root().add_child(currentScene)
 	player.position = respawnPoint
 
-func _on_Unpause_pressed():
-	$CanvasLayer/Control/pausePopup.hide()
-	get_tree().paused = false
-
 func _get_camera_center():
     var vtrans = get_canvas_transform()
     var top_left = -vtrans.get_origin() / vtrans.get_scale()
     var vsize = get_viewport_rect().size
     return top_left + 0.5*vsize/vtrans.get_scale()
-
-func _on_Quit_pressed():
-	#TODO Save Data?
-	get_tree().paused = false	# Unpause stuff, otherwises the menus won't work!
-	get_tree().change_scene("res://Scenes/MainMenu.tscn")
-
-
-func _on_Options_pressed():
-	pass # replace with function body
