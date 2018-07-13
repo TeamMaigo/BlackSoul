@@ -48,7 +48,7 @@ func controls_loop():
 	var DOWN	= Input.is_action_pressed("ui_down")
 	var DASH	= Input.is_action_pressed("ui_dash")
 	var SWAP	= Input.is_action_pressed("ui_swap")
-	var SWING	= Input.is_action_pressed("ui_swing_weapon")
+	var BARRIER	= Input.is_action_pressed("ui_barrier")
 
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
@@ -80,7 +80,7 @@ func controls_loop():
 		swapAvailable = false
 		#SpriteNode.set("modulate",Color(50.0/120,150,0,1))
 		
-	if SWING:
+	if BARRIER:
 		mousePos = get_global_mouse_position()
 		var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
 		RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))

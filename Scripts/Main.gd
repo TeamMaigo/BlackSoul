@@ -6,7 +6,6 @@ extends Node2D
 onready var currentScene = get_node("LabRoom")
 onready var player = get_node("Player")
 onready var camera = get_node("Player/Camera2D")
-onready var pauseMenu = get_node("CanvasLayer/Control/pausePopup")
 
 var scene = load("res://Scenes/Rooms/Room1.tscn")
 var transferGoal

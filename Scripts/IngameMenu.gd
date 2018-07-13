@@ -1,11 +1,20 @@
 extends Control
 
 var pauseState = 0
+const INPUT_ACTIONS = ["ui_up", "ui_left", "ui_down", "ui_right", "ui_dash", "ui_swap", "ui_barrier"]
+const DEFAULT_BUTTONS = ["w", "a", "s", "d", "shift", "space", "f"]
+var button
+var action
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	for action in INPUT_ACTIONS:
+#		# We assume that the key binding that we want is the first one (0), if there are several
+		var input_event = InputMap.get_action_list(action)[0]
+		button = get_node("optionsPopup/RebindControls/" + action)
+		button.connect("pressed", self, "wait_for_input", [action])
+	set_process_input(false)
 
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -26,6 +35,31 @@ func _process(delta):
 			print("Check IngameMenu.gd, unknown case thrown!")
 			_on_Unpause_pressed()
 			pauseState = 0
+
+func wait_for_input(action_bind):
+	action = action_bind
+	button = get_node("optionsPopup/RebindControls/" + action)
+	#get_node("contextual_help").text = "Press a key to assign to the '" + action + "' action."
+	set_process_input(true)
+
+func _input(event):
+	# Handle the first pressed key
+	if event is InputEventKey:
+		# Register the event as handled and stop polling
+		get_tree().set_input_as_handled()
+		set_process_input(false)
+		# Reinitialise the contextual help label
+		#get_node("contextual_help").text = "Click a key binding to reassign it, or press the Cancel action."
+		if not event.is_action("ui_cancel"):
+			# Display the string corresponding to the pressed key
+			var scancode = OS.get_scancode_string(event.scancode)
+			button.text = scancode
+			# Start by removing previously key binding(s)
+			for old_event in InputMap.get_action_list(action):
+				InputMap.action_erase_event(action, old_event)
+			# Add the new key binding
+			InputMap.action_add_event(action, event)
+			#save_to_config("input", action, scancode)
 
 func _on_Unpause_pressed():
 	$pausePopup.hide()
@@ -69,3 +103,11 @@ func _on_AspectButton_item_selected(ID):
 		pass
 	if ID == 2: # expand
 		pass
+
+
+func _on_Reset_pressed():
+	for action in range(INPUT_ACTIONS):
+		var input_event = InputMap.get_action_list(action)[0]
+		button = get_node("optionsPopup/RebindControls/" + action)
+		button.connect("pressed", self, "wait_for_input", [action])
+	set_process_input(false)

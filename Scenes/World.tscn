@@ -50,7 +50,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+[node name="Options" type="Control" parent="CanvasLayer" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -66,7 +66,7 @@ size_flags_vertical = 3
 script = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Margin", "Pause", "Size Flags" ]
 
-[node name="pausePopup" type="Panel" parent="CanvasLayer/Control" index="0"]
+[node name="pausePopup" type="Panel" parent="CanvasLayer/Options" index="0"]
 
 editor/display_folded = true
 visible = false
@@ -85,7 +85,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Pause", "Rect", "Visibility" ]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/pausePopup" index="0"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Options/pausePopup" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -103,7 +103,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/pausePopup/CenterContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Options/pausePopup/CenterContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -122,7 +122,7 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer" index="0"]
+[node name="Label" type="Label" parent="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -142,7 +142,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Unpause" type="Button" parent="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer" index="1"]
+[node name="Unpause" type="Button" parent="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -166,7 +166,7 @@ text = "Unpause"
 flat = false
 align = 1
 
-[node name="Options" type="Button" parent="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer" index="2"]
+[node name="Options" type="Button" parent="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -190,7 +190,7 @@ text = "Options"
 flat = false
 align = 1
 
-[node name="Quit" type="Button" parent="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer" index="3"]
+[node name="Quit" type="Button" parent="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -214,9 +214,8 @@ text = "Exit"
 flat = false
 align = 1
 
-[node name="optionsPopup" type="Panel" parent="CanvasLayer/Control" index="1"]
+[node name="optionsPopup" type="Panel" parent="CanvasLayer/Options" index="1"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -232,7 +231,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Pause", "Rect", "Visibility" ]
 
-[node name="OptionsText" type="Label" parent="CanvasLayer/Control/optionsPopup" index="0"]
+[node name="OptionsText" type="Label" parent="CanvasLayer/Options/optionsPopup" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -254,7 +253,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="WindowText" type="Label" parent="CanvasLayer/Control/optionsPopup" index="1"]
+[node name="WindowText" type="Label" parent="CanvasLayer/Options/optionsPopup" index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -277,7 +276,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="WindowButton" type="OptionButton" parent="CanvasLayer/Control/optionsPopup/WindowText" index="0"]
+[node name="WindowButton" type="OptionButton" parent="CanvasLayer/Options/optionsPopup/WindowText" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -305,8 +304,9 @@ align = 0
 items = [ "Windowed", null, false, 0, null, "Borderless", null, false, 1, null, "Fullscreen", null, false, 2, null ]
 selected = 0
 
-[node name="Aspect Ratio" type="Label" parent="CanvasLayer/Control/optionsPopup" index="2"]
+[node name="Aspect Ratio" type="Label" parent="CanvasLayer/Options/optionsPopup" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -327,7 +327,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="AspectButton" type="OptionButton" parent="CanvasLayer/Control/optionsPopup/Aspect Ratio" index="0"]
+[node name="AspectButton" type="OptionButton" parent="CanvasLayer/Options/optionsPopup/Aspect Ratio" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -354,7 +354,7 @@ align = 0
 items = [ "Ignore", null, false, 0, null, "Keep", null, false, 1, null, "Expand", null, false, 2, null ]
 selected = 0
 
-[node name="SoundText" type="Label" parent="CanvasLayer/Control/optionsPopup" index="3"]
+[node name="SoundText" type="Label" parent="CanvasLayer/Options/optionsPopup" index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -377,7 +377,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SoundSlider" type="HSlider" parent="CanvasLayer/Control/optionsPopup/SoundText" index="0"]
+[node name="SoundSlider" type="HSlider" parent="CanvasLayer/Options/optionsPopup/SoundText" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -406,7 +406,7 @@ tick_count = 10
 ticks_on_borders = true
 focus_mode = 2
 
-[node name="MusicText2" type="Label" parent="CanvasLayer/Control/optionsPopup" index="4"]
+[node name="MusicText" type="Label" parent="CanvasLayer/Options/optionsPopup" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -414,9 +414,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 120.0
-margin_top = 380.0
+margin_top = 357.0
 margin_right = 171.0
-margin_bottom = 394.0
+margin_bottom = 371.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -429,7 +429,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SoundSlider" type="HSlider" parent="CanvasLayer/Control/optionsPopup/MusicText2" index="0"]
+[node name="SoundSlider" type="HSlider" parent="CanvasLayer/Options/optionsPopup/MusicText" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -458,7 +458,395 @@ tick_count = 10
 ticks_on_borders = true
 focus_mode = 2
 
-[node name="Back" type="Button" parent="CanvasLayer/Control/optionsPopup" index="5"]
+[node name="RebindControls" type="Label" parent="CanvasLayer/Options/optionsPopup" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 427.0
+margin_right = 221.0
+margin_bottom = 441.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Rebind Controls"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ui_left" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.0
+margin_right = 297.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "A"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="LeftText" type="Label" parent="CanvasLayer/Options/optionsPopup/RebindControls/ui_left" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -30.0
+margin_top = 5.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Left"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ui_up" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 307.0
+margin_top = -32.0
+margin_right = 367.0
+margin_bottom = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "W"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="UpText" type="Label" parent="CanvasLayer/Options/optionsPopup/RebindControls/ui_up" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -15.0
+margin_right = 60.0
+margin_bottom = 5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Up"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ui_right" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 377.0
+margin_right = 437.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "D"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="RightText" type="Label" parent="CanvasLayer/Options/optionsPopup/RebindControls/ui_right" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Right"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ui_down" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 307.0
+margin_right = 367.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "S"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="DownText" type="Label" parent="CanvasLayer/Options/optionsPopup/RebindControls/ui_down" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 25.0
+margin_right = 60.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Down"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ui_dash" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.0
+margin_top = 50.0
+margin_right = 297.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Shift"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="DashText" type="Label" parent="CanvasLayer/Options/optionsPopup/RebindControls/ui_dash" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 25.0
+margin_right = 60.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Dash"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ui_swap" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 307.0
+margin_top = 50.0
+margin_right = 367.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Space"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="SwapText" type="Label" parent="CanvasLayer/Options/optionsPopup/RebindControls/ui_swap" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 25.0
+margin_right = 60.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Swap"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ui_barrier" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 377.0
+margin_top = 50.0
+margin_right = 437.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "F"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="BarrierText" type="Label" parent="CanvasLayer/Options/optionsPopup/RebindControls/ui_barrier" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 25.0
+margin_right = 60.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Barrier"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Reset" type="Button" parent="CanvasLayer/Options/optionsPopup/RebindControls" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 285.0
+margin_top = 104.0
+margin_right = 390.0
+margin_bottom = 124.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Reset Controls"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Back" type="Button" parent="CanvasLayer/Options/optionsPopup" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -485,16 +873,18 @@ align = 1
 
 [node name="LabRoom" parent="." index="2" instance=ExtResource( 4 )]
 
-[connection signal="pressed" from="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer/Unpause" to="CanvasLayer/Control" method="_on_Unpause_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer/Unpause" to="CanvasLayer/Options" method="_on_Unpause_pressed"]
 
-[connection signal="pressed" from="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer/Options" to="CanvasLayer/Control" method="_on_Options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer/Options" to="CanvasLayer/Options" method="_on_Options_pressed"]
 
-[connection signal="pressed" from="CanvasLayer/Control/pausePopup/CenterContainer/VBoxContainer/Quit" to="CanvasLayer/Control" method="_on_Quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer/Quit" to="CanvasLayer/Options" method="_on_Quit_pressed"]
 
-[connection signal="item_selected" from="CanvasLayer/Control/optionsPopup/WindowText/WindowButton" to="CanvasLayer/Control" method="_on_WindowButton_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Options/optionsPopup/WindowText/WindowButton" to="CanvasLayer/Options" method="_on_WindowButton_item_selected"]
 
-[connection signal="item_selected" from="CanvasLayer/Control/optionsPopup/Aspect Ratio/AspectButton" to="CanvasLayer/Control" method="_on_AspectButton_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Options/optionsPopup/Aspect Ratio/AspectButton" to="CanvasLayer/Options" method="_on_AspectButton_item_selected"]
 
-[connection signal="pressed" from="CanvasLayer/Control/optionsPopup/Back" to="CanvasLayer/Control" method="_on_Back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options/optionsPopup/RebindControls/Reset" to="CanvasLayer/Options" method="_on_Reset_pressed"]
+
+[connection signal="pressed" from="CanvasLayer/Options/optionsPopup/Back" to="CanvasLayer/Options" method="_on_Back_pressed"]
 
 
