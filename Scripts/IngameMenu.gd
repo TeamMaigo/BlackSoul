@@ -2,7 +2,8 @@ extends Control
 
 var pauseState = 0
 const INPUT_ACTIONS = ["ui_up", "ui_left", "ui_down", "ui_right", "ui_dash", "ui_swap", "ui_barrier"]
-const DEFAULT_BUTTONS = ["w", "a", "s", "d", "shift", "space", "f"]
+const INPUT_USER_NAMES = ["Up", "Left", "Down", "Right", "Dash", "Swap", "Barrier"]
+const DEFAULT_BUTTONS = ["W", "A", "S", "D", "Shift", "Space", "F"]
 var button
 var action
 
@@ -39,7 +40,8 @@ func _process(delta):
 func wait_for_input(action_bind):
 	action = action_bind
 	button = get_node("optionsPopup/RebindControls/" + action)
-	#get_node("contextual_help").text = "Press a key to assign to the '" + action + "' action."
+	var pos = INPUT_ACTIONS.find(action)
+	$optionsPopup/RebindControls/HelpText.text = "Press a key to assign to the '" + INPUT_USER_NAMES[pos] + "' action."
 	set_process_input(true)
 
 func _input(event):
@@ -49,7 +51,7 @@ func _input(event):
 		get_tree().set_input_as_handled()
 		set_process_input(false)
 		# Reinitialise the contextual help label
-		#get_node("contextual_help").text = "Click a key binding to reassign it, or press the Cancel action."
+		$optionsPopup/RebindControls/HelpText.text = "Click a key binding to reassign it."
 		if not event.is_action("ui_cancel"):
 			# Display the string corresponding to the pressed key
 			var scancode = OS.get_scancode_string(event.scancode)
@@ -74,7 +76,7 @@ func _on_Options_pressed():
 
 
 func _on_Quit_pressed():
-	#TODO Save Data?
+	#TODO Save Data
 	get_tree().paused = false	# Unpause stuff, otherwises the menus won't work!
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
@@ -96,7 +98,7 @@ func _on_WindowButton_item_selected(ID):
 		OS.window_borderless = true
 
 
-func _on_AspectButton_item_selected(ID):
+func _on_AspectButton_item_selected(ID): #TODO?
 	if ID == 0: # Ignore
 		pass
 	if ID == 1: # Keep
@@ -106,8 +108,11 @@ func _on_AspectButton_item_selected(ID):
 
 
 func _on_Reset_pressed():
-	for action in range(INPUT_ACTIONS):
+	InputMap.load_from_globals()
+	var i = 0
+	for action in INPUT_ACTIONS:
+#		# We assume that the key binding that we want is the first one (0), if there are several
 		var input_event = InputMap.get_action_list(action)[0]
 		button = get_node("optionsPopup/RebindControls/" + action)
-		button.connect("pressed", self, "wait_for_input", [action])
-	set_process_input(false)
+		button.text = DEFAULT_BUTTONS[i]
+		i += 1
