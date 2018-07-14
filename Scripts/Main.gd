@@ -10,6 +10,7 @@ onready var camera = get_node("Player/Camera2D")
 var scene = load("res://Scenes/Rooms/Room1.tscn")
 var transferGoal
 var transferGoalPath
+var path
 onready var respawnPoint = player.position
 var pauseState = 0
 
@@ -34,6 +35,12 @@ func goto_scene(path, transferGoalPath):
 
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
+	#$AnimationPlayer.play("Scene Transition")
+	$CanvasLayer/ScenePlayer.play("Scene Transition")
+	self.transferGoalPath = transferGoalPath
+	self.path = path
+
+func sceneTransition():
 	call_deferred("_deferred_goto_scene", path, transferGoalPath)
 
 func _deferred_goto_scene(path, transferGoalPath):
@@ -53,7 +60,6 @@ func _deferred_goto_scene(path, transferGoalPath):
 	player.position = transferGoal.position
 	player.lastTransferPoint = transferGoal.position
 	respawnPoint = transferGoal.position
-
     # optional, to make it compatible with the SceneTree.change_scene() API
 	#get_tree().set_current_scene( currentScene ) # Currently gives debug message...?
 
@@ -68,3 +74,7 @@ func _get_camera_center():
     var top_left = -vtrans.get_origin() / vtrans.get_scale()
     var vsize = get_viewport_rect().size
     return top_left + 0.5*vsize/vtrans.get_scale()
+
+func _on_ScenePlayer_animation_finished(anim_name):
+	if anim_name == "Scene Transition":
+		$Player.playerControlEnabled = true

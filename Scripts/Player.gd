@@ -22,6 +22,7 @@ var health = maxHealth
 var lastTransferPoint
 var anim = "Idle"
 var animNew = ""
+export var playerControlEnabled = true
 
 func _ready():
 	set_physics_process(true)
@@ -34,8 +35,9 @@ func _ready():
 	lastTransferPoint = position
 
 func _physics_process(delta):
-	controls_loop()
-	movement_loop()
+	if playerControlEnabled:
+		controls_loop()
+		movement_loop()
 	speed_decay()
 	dash_delay(DASH_DELAY, delta)	# Check if dash can be renabled
 	swap_delay(SWAP_DELAY, delta)
