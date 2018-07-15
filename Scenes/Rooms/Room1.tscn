@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TurretLinear.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=7]
 
 [node name="Room1" type="TileMap" index="0"]
 
@@ -78,5 +79,9 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesVision = false
+
+[node name="HealthPickup" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( -614.889, 92.5054 )
 
 

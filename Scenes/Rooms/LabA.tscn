@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
 
 [node name="LabRoom" type="TileMap"]
 
@@ -75,5 +76,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+
+[node name="Pickup" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 540.36, -46.471 )
 
 

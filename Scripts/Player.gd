@@ -98,11 +98,15 @@ func movement_loop():
 		AnimNode.play(anim)
 	for i in range(get_slide_count()):
 		var collisions = get_slide_collision(i)
-#		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
+		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
 		# you get hit twice. This can be solved through invulnerability frames after being hit.
 #			if collisions.collider.is_in_group("Projectile"):
 #				var projectile = collisions.collider.get_node("./")
 #				projectile.hitPlayer(self)
+			if collisions.collider.is_in_group("Pickup"):
+				var collider = collisions.collider.get_node("./")
+				collider.applyEffect(self)
+		pass
 
 func speed_decay():
 	if MOTION_SPEED > NORMAL_SPEED:
