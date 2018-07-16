@@ -3,10 +3,16 @@ extends KinematicBody2D
 var speed = 1
 var velocity = Vector2()
 var player
+export var degreesPerFrame = 4
 export var damage = 1
+
+onready var turnSpeed = deg2rad(degreesPerFrame)
 
 func _ready():
 	_physics_process(true)
+
+func setTarget(target): #TODO: Arrange bullet objects better so we can delete this function
+	return
 
 func start(pos, dir, bulletSpeed):
 	position = pos

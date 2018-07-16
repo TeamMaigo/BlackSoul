@@ -114,6 +114,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 NORMAL_SPEED = 500
+playerControlEnabled = true
 
 [node name="Collision" type="CollisionShape2D" parent="." index="0"]
 

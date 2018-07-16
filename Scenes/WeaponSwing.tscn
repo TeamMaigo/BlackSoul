@@ -39,7 +39,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="PlayerWeapon" type="Area2D" index="0"]
+[node name="PlayerWeapon" type="Area2D"]
 
 visible = false
 rotation = 2.79253

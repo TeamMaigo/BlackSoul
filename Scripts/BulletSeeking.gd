@@ -5,6 +5,8 @@ var velocity = Vector2()
 var player
 var target #Should be a Node2D
 export var damage = 1
+export var degreesPerFrame = 4
+onready var rotationSpeed = deg2rad(degreesPerFrame)
 
 func _ready():
 	_physics_process(true)
@@ -20,8 +22,15 @@ func setTarget(target):
 
 func _physics_process(delta):
 	if target:
-		print(target.position)
-		rotation = Vector2(target.position.x - position.x, target.position.y - position.y).angle()
+		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
+		if abs(angleToTarget) > PI/2:
+			angleToTarget = angleToTarget - (sign(angleToTarget) * PI*2)
+		
+		print(rad2deg(angleToTarget))
+		rotation += min(abs(angleToTarget), rotationSpeed) * sign(angleToTarget)
+		
+		velocity = Vector2(speed, 0).rotated(rotation)
+		
 	#position += velocity * delta
 	var movedir = velocity
 	var motion = movedir.normalized() * speed
