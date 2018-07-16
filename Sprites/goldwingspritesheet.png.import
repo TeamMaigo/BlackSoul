@@ -7,10 +7,7 @@ path="res://.import/goldwingspritesheet.png-458202e61a6ef661914639ebb96deb9d.ste
 [deps]
 
 source_file="res://Sprites/goldwingspritesheet.png"
-source_md5="7dfb6f59d17b9b36ef2f88ca058b1fc7"
-
 dest_files=[ "res://.import/goldwingspritesheet.png-458202e61a6ef661914639ebb96deb9d.stex" ]
-dest_md5="38eaedbf82de290ec99ea46b23c59fc4"
 
 [params]
 

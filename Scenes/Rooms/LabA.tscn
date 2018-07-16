@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TurretSeeking.tscn" type="PackedScene" id=4]
 
 [node name="LabRoom" type="TileMap"]
 
@@ -80,5 +81,11 @@ _sections_unfolded = [ "Rect" ]
 [node name="Pickup" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 540.36, -46.471 )
+
+[node name="TurretSeeking" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 360, -58.4927 )
+detect_radius = 240
+bulletSpeed = 4
 
 
