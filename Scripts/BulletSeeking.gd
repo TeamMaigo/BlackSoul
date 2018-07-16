@@ -23,7 +23,7 @@ func setTarget(target):
 func _physics_process(delta):
 	if target:
 		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
-		if abs(angleToTarget) > PI/2:
+		if abs(angleToTarget) > PI:
 			angleToTarget = angleToTarget - (sign(angleToTarget) * PI*2)
 		
 		print(rad2deg(angleToTarget))
