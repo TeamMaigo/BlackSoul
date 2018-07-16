@@ -7,6 +7,7 @@ var target #Should be a Node2D
 export var damage = 1
 export var degreesPerFrame = 4
 onready var rotationSpeed = deg2rad(degreesPerFrame)
+export var maxRotationDiff = 20
 
 func _ready():
 	_physics_process(true)
@@ -25,9 +26,8 @@ func _physics_process(delta):
 		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
 		if abs(angleToTarget) > PI:
 			angleToTarget = angleToTarget - (sign(angleToTarget) * PI*2)
-		
-		print(rad2deg(angleToTarget))
-		rotation += min(abs(angleToTarget), rotationSpeed) * sign(angleToTarget)
+		if rad2deg(angleToTarget) < maxRotationDiff and rad2deg(angleToTarget) > -maxRotationDiff:
+			rotation += min(abs(angleToTarget), rotationSpeed) * sign(angleToTarget)
 		
 		velocity = Vector2(speed, 0).rotated(rotation)
 		

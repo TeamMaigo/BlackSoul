@@ -7,7 +7,10 @@ path="res://.import/arrow2.png-30ac0441a7442ccb4d621a124726ed83.stex"
 [deps]
 
 source_file="res://Sprites/arrow2.png"
+source_md5="d0b0f81c2d1f1aa46f7a08d39c0b9c88"
+
 dest_files=[ "res://.import/arrow2.png-30ac0441a7442ccb4d621a124726ed83.stex" ]
+dest_md5="21b1079d46f3d04608a88d71a548a939"
 
 [params]
 

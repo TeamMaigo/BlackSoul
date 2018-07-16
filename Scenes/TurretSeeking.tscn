@@ -14,7 +14,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 radius = 300.0
 
-[node name="TurretSeeking" type="KinematicBody2D"]
+[node name="TurretSeeking" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 16

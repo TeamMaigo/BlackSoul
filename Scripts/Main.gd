@@ -7,7 +7,7 @@ onready var currentScene = get_node("LabRoom")
 onready var player = get_node("Player")
 onready var camera = get_node("Player/Camera2D")
 
-var scene = load("res://Scenes/Rooms/Room1.tscn")
+var scene = load("res://Scenes/Rooms/LabA.tscn")
 var transferGoal
 var transferGoalPath
 var path
