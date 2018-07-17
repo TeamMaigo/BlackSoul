@@ -13,7 +13,7 @@ func _ready():
 	for action in INPUT_ACTIONS:
 #		# We assume that the key binding that we want is the first one (0), if there are several
 		var input_event = InputMap.get_action_list(action)[0]
-		button = get_node("optionsPopup/RebindControls/" + action)
+		button = get_node("optionsPopup/Container/RebindControls/" + action)
 		button.connect("pressed", self, "wait_for_input", [action])
 	set_process_input(false)
 
