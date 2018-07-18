@@ -116,3 +116,8 @@ func _on_Reset_pressed():
 		button = get_node("optionsPopup/RebindControls/" + action)
 		button.text = DEFAULT_BUTTONS[i]
 		i += 1
+
+func _on_SoundSlider_value_changed(value):
+	#TODO Sound needs to probably pass through a master script that all audio goes through?
+	# Alternatively a global audio stream player?
+	get_tree().get_root().get_node("World/Player/PlayerAudio").volume_db = (value*0.1)-5

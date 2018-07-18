@@ -75,7 +75,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -281,7 +281,6 @@ align = 1
 
 [node name="optionsPopup" type="Panel" parent="CanvasLayer/Options" index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.2
 anchor_top = 0.0
@@ -437,7 +436,6 @@ selected = 0
 
 [node name="SoundText" type="Label" parent="CanvasLayer/Options/optionsPopup/Container" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -478,7 +476,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 0
 min_value = 0.0
 max_value = 100.0
-step = 10.0
+step = 2.0
 page = 0.0
 value = 50.0
 exp_edit = false
@@ -1027,6 +1025,8 @@ _sections_unfolded = [ "Visibility" ]
 [connection signal="item_selected" from="CanvasLayer/Options/optionsPopup/Container/WindowText/WindowButton" to="CanvasLayer/Options" method="_on_WindowButton_item_selected"]
 
 [connection signal="item_selected" from="CanvasLayer/Options/optionsPopup/Container/Aspect Ratio/AspectButton" to="CanvasLayer/Options" method="_on_AspectButton_item_selected"]
+
+[connection signal="value_changed" from="CanvasLayer/Options/optionsPopup/Container/SoundText/SoundSlider" to="CanvasLayer/Options" method="_on_SoundSlider_value_changed"]
 
 [connection signal="pressed" from="CanvasLayer/Options/optionsPopup/Container/RebindControls/Reset" to="CanvasLayer/Options" method="_on_Reset_pressed"]
 
