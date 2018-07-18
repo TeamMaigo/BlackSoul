@@ -7,6 +7,5 @@ func _ready():
 
 func applyEffect(player):
 	player.health = player.maxHealth
-	print("Health restored to " + str(player.maxHealth) + "!")
+	player.updateHealthBar()
 	queue_free()
-	pass

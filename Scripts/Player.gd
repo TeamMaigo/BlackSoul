@@ -139,11 +139,14 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 
 func takeDamage(damage):
 	health -= damage
-	print("Current HP: ", health)
+	updateHealthBar()
 	if health <= 0:
-		print("You died!")
 		respawn()
+
+func updateHealthBar():
+		$CanvasLayer/PlayerUI/ProgressBar.value = (float(health)/float(maxHealth)) * 100
 
 func respawn():
 	health = maxHealth
+	updateHealthBar()
 	get_node("../").reloadLastScene()
