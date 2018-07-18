@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeaponSwing.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/goldwingspritesheet.png" type="Texture" id=3]
-[ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/RecievedChat.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/goldwingspritesheet.png" type="Texture" id=4]
+[ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -104,7 +105,7 @@ tracks/0/keys = {
 "values": [ 72, 73, 74, 75, 76, 77, 78, 79 ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -127,9 +128,17 @@ shape = SubResource( 1 )
 
 collision_mask = 21
 
+[node name="BarrierAudio" type="AudioStreamPlayer" parent="RotationNode/WeaponSwing" index="3"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 vframes = 22
 hframes = 8
 _sections_unfolded = [ "Animation" ]
@@ -197,7 +206,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Percent" ]
 
 [node name="PlayerAudio" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0

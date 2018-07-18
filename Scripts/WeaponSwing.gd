@@ -41,6 +41,7 @@ func _physics_process(delta):
 		if is_owner(body):	#Can't hit yourself
 			return
 		if body.is_in_group("Projectile"):	# Hit a projectile
+			$BarrierAudio.playing = true
 			body.setDirection(activation_vector)
 			body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
 			body.setTarget(null)
