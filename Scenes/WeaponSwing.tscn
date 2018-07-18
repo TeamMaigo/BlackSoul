@@ -35,7 +35,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="PlayerWeapon" type="Area2D" index="0"]
+[node name="PlayerWeapon" type="Area2D"]
 
 visible = false
 position = Vector2( 30, 0 )

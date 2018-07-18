@@ -104,7 +104,7 @@ tracks/0/keys = {
 "values": [ 72, 73, 74, 75, 76, 77, 78, 79 ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -113,7 +113,7 @@ collision_layer = 2
 collision_mask = 13
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 NORMAL_SPEED = 500
 playerControlEnabled = true
 

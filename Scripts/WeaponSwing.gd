@@ -7,6 +7,7 @@ onready var animation_player = $AnimationPlayer
 enum STATES {IDLE, ATTACK}
 var current_state = IDLE
 var activation_vector = null
+var rotationVariance = 10
 
 func _ready():
 	set_physics_process(false)
@@ -42,7 +43,9 @@ func _physics_process(delta):
 			return
 		if body.is_in_group("Projectile"):	# Hit a projectile
 			$BarrierAudio.playing = true
-			body.setDirection(get_global_mouse_position()-body.position) # Bullet changes direction to mouse location
+			var newDirection = get_global_mouse_position()-body.position
+			newDirection = newDirection.rotated(deg2rad(randi()%rotationVariance-rotationVariance))
+			body.setDirection(newDirection) # Bullet changes direction to mouse location
 			body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
 			body.setTarget(null)
 	#set_physics_process(false)	#Limits to one enemy hit per swing. Probably need to redo
