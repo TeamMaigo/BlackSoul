@@ -138,7 +138,8 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	position = tempEnemyPos
 
 func takeDamage(damage):
-	$PlayerAudio.playing = true
+	$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
+	$PlayerAudio.play()
 	health -= damage
 	updateHealthBar()
 	if health <= 0:

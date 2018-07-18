@@ -16,7 +16,8 @@ func _ready():
 		button = get_node("optionsPopup/Container/RebindControls/" + action)
 		button.connect("pressed", self, "wait_for_input", [action])
 	set_process_input(false)
-
+	var volume = $optionsPopup/Container/SoundText/SoundSlider.value
+	get_tree().get_root().get_node("World/Player/PlayerAudio").volume_db = (volume*0.5)-50
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
@@ -120,4 +121,4 @@ func _on_Reset_pressed():
 func _on_SoundSlider_value_changed(value):
 	#TODO Sound needs to probably pass through a master script that all audio goes through?
 	# Alternatively a global audio stream player?
-	get_tree().get_root().get_node("World/Player/PlayerAudio").volume_db = (value*0.1)-5
+	get_tree().get_root().get_node("World/Player/PlayerAudio").volume_db = (value*0.5)-50

@@ -7,6 +7,7 @@ func _ready():
 
 func applyEffect(player):
 	player.health = player.maxHealth
+	player.get_node("PlayerAudio").stream = load("res://Audio/RecievedChat.ogg")
 	player.get_node("PlayerAudio").playing = true
 	player.updateHealthBar()
 	queue_free()
