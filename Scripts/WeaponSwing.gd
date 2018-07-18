@@ -42,7 +42,7 @@ func _physics_process(delta):
 			return
 		if body.is_in_group("Projectile"):	# Hit a projectile
 			$BarrierAudio.playing = true
-			body.setDirection(activation_vector)
+			body.setDirection(get_global_mouse_position()-body.position) # Bullet changes direction to mouse location
 			body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
 			body.setTarget(null)
 	#set_physics_process(false)	#Limits to one enemy hit per swing. Probably need to redo
