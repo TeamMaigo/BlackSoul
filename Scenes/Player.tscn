@@ -104,7 +104,7 @@ tracks/0/keys = {
 "values": [ 72, 73, 74, 75, 76, 77, 78, 79 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
 

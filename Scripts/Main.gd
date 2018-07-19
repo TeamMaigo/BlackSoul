@@ -7,6 +7,8 @@ onready var currentScene = get_node("LabRoom")
 onready var player = get_node("Player")
 onready var camera = get_node("Player/Camera2D")
 
+var masterSound
+var masterMusic
 var scene = load("res://Scenes/Rooms/LabA.tscn")
 var transferGoal
 var transferGoalPath
@@ -17,12 +19,13 @@ var pauseState = 0
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	masterSound = $CanvasLayer/Options.getSoundValue()
+	masterMusic = $CanvasLayer/Options.getMusicValue()
+	$CanvasLayer/Options/BGMPlayer.playing = true
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	
 	pass
 
 func goto_scene(path, transferGoalPath):
