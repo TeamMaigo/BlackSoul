@@ -43,7 +43,7 @@ func _physics_process(delta):
 			return
 		if body.is_in_group("Projectile"):	# Hit a projectile
 			$BarrierAudio.playing = true
-			$BarrierAudio.volume_db = get_tree().get_root().get_node("World").masterSound
+			$BarrierAudio.volume_db = Global.masterSound
 			var newDirection = get_global_mouse_position()-body.position
 			newDirection = newDirection.rotated(deg2rad(randi()%rotationVariance-rotationVariance))
 			body.setDirection(newDirection) # Bullet changes direction to mouse location

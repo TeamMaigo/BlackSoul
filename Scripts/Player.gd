@@ -139,7 +139,7 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 
 func takeDamage(damage):
 	$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
-	$PlayerAudio.volume_db = get_tree().get_root().get_node("World").masterSound
+	$PlayerAudio.volume_db = Global.masterSound
 	$PlayerAudio.play()
 	health -= damage
 	updateHealthBar()

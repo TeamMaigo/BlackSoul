@@ -19,9 +19,7 @@ var pauseState = 0
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	masterSound = $CanvasLayer/Options.getSoundValue()
-	masterMusic = $CanvasLayer/Options.getMusicValue()
-	$CanvasLayer/Options/BGMPlayer.playing = true
+	pass
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.

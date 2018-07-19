@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/IngameMenu.gd" type="Script" id=3]
-[ext_resource path="res://Audio/YaboiPlaceholderBGM.ogg" type="AudioStream" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Rooms/LabA.tscn" type="PackedScene" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Rooms/LabA.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -76,7 +75,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -981,14 +980,6 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Options" index="2"]
-
-stream = ExtResource( 4 )
-volume_db = 0.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
 [node name="ScenePlayer" type="AnimationPlayer" parent="CanvasLayer" index="1"]
 
 editor/display_folded = true
@@ -1017,12 +1008,12 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Visibility" ]
 
-[node name="LabRoom" parent="." index="2" instance=ExtResource( 6 )]
+[node name="LabRoom" parent="." index="2" instance=ExtResource( 5 )]
 
 [connection signal="pressed" from="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer/Unpause" to="CanvasLayer/Options" method="_on_Unpause_pressed"]
 
