@@ -119,15 +119,8 @@ func _on_Reset_pressed():
 		i += 1
 
 func _on_SoundSlider_value_changed(value):
-	#TODO Sound needs to probably pass through a master script that all audio goes through?
-	# Alternatively a global audio stream player?
-	var newValue = adjustForDecibel(value)
-	Global.masterSound = newValue
+	Global.masterSound = value
 
 func _on_MusicSlider_value_changed(value):
-	var newValue = adjustForDecibel(value)
-	Global.masterMusic = newValue
-	BGMPlayer.volume_db = newValue
-
-func adjustForDecibel(value):
-	return value*0.5-50
+	Global.masterMusic = value
+	BGMPlayer.volume_db = value

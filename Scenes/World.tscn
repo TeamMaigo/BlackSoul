@@ -75,7 +75,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -474,11 +474,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
+min_value = -50.0
+max_value = 0.0
 step = 2.0
 page = 0.0
-value = 80.0
+value = -10.0
 exp_edit = false
 rounded = false
 editable = true
@@ -526,11 +526,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
-step = 10.0
+min_value = -50.0
+max_value = 0.0
+step = 2.0
 page = 0.0
-value = 80.0
+value = -10.0
 exp_edit = false
 rounded = false
 editable = true
