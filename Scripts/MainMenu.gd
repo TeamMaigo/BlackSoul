@@ -21,3 +21,13 @@ func _on_New_Game_pressed():
 
 func _on_Exit_pressed():
 	get_tree().quit()
+
+
+func _on_Options_pressed():
+	$optionsPopup.show()
+	$MarginContainer.hide()
+
+
+func _on_Back_pressed():
+	$optionsPopup.hide()
+	$MarginContainer.show()
