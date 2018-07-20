@@ -16,6 +16,7 @@ export var bulletSpeed = 10
 onready var timer = get_node("ShootTimer")
 var can_shoot = false
 export (float) var fire_rate = 1  # delay time (s) between bullets
+var lastKnownPlayerPos
 
 func _ready():
 	var shape = CircleShape2D.new()
@@ -28,15 +29,18 @@ func _physics_process(delta):
 	if target:
 		canSeePlayer = checkForPlayer()
 		if canSeePlayer:
+			lastKnownPlayerPos = target.position
 			#rotateTowardsPlayer() # Not currently used
-			moveDir = getVelocity()
 			if can_shoot:
 				shootBulletAtTarget(target.position)
-			movement_loop()
+	movement_loop()
 
 func movement_loop():
-	var motion = moveDir.normalized() * MOTION_SPEED
-	move_and_slide(motion)
+	if lastKnownPlayerPos:
+		moveDir = (lastKnownPlayerPos - position).normalized()
+		var motion = moveDir.normalized() * MOTION_SPEED
+		if (lastKnownPlayerPos - position).length() > 5:
+			move_and_slide(motion)
 
 func checkForPlayer():
 	# Raycast to check if can see for player
@@ -54,8 +58,6 @@ func rotateTowardsPlayer():
 	#if rad2deg(angleToTarget) < maxRotationDiff and rad2deg(angleToTarget) > -maxRotationDiff:
 	rotation += min(abs(angleToTarget), rotationSpeed) * sign(angleToTarget)
 
-func getVelocity():
-	return (target.position - position).normalized()
 
 func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
