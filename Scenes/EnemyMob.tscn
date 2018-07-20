@@ -1,31 +1,71 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/EnemyMob.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/BulletLinear.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="EnemyMob" type="KinematicBody2D" groups=[
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 300.0
+
+[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
 input_pickable = false
 collision_layer = 4
-collision_mask = 1
+collision_mask = 11
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+MOTION_SPEED = 100
+detect_radius = 300
+BulletLinear = ExtResource( 2 )
+bulletSpeed = 10
+fire_rate = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 modulate = Color( 0.941406, 0, 0, 1 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
+
+[node name="Visibility" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 16
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="ShootTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
+
+[connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
 
 

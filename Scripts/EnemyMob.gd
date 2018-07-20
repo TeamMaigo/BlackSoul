@@ -1,44 +1,86 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-var frame
-var direction
-var movedir = Vector2(0,0)
-var MOTION_SPEED = 0
+var frame = 0
+var direction = randi() % 4
+var moveDir = Vector2(0,0)
+export var MOTION_SPEED = 100
+var canSeePlayer = false
+export (int) var detect_radius = 300
+var usesVision = true
+var target
+var degreesPerFrame = 4
+onready var rotationSpeed = deg2rad(degreesPerFrame)
+var velocity
+export (PackedScene) var BulletLinear
+export var bulletSpeed = 10
+onready var timer = get_node("ShootTimer")
+var can_shoot = false
+export (float) var fire_rate = 1  # delay time (s) between bullets
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	frame = 0
-	direction = randi() % 4
+	var shape = CircleShape2D.new()
+	shape.radius = detect_radius
+	$Visibility/CollisionShape2D.shape = shape
+	set_physics_process(true)
+	waitToShoot(fire_rate)
 
-func _process(delta):
-	frame += 1
-	if frame > 45:
-		frame = 0
-		direction = randi() % 4
-	if direction == 0:
-		movedir.x = -1
-		movedir.y = 0
-	elif direction == 1:
-		movedir.x = 1
-		movedir.y = 0
-	elif direction == 2:
-		movedir.x = 0
-		movedir.y = -1
-	elif direction == 3:
-		movedir.x = 0
-		movedir.y = 1
-	else:
-		pass
-	
-	movement_loop()
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	passrandi() % 4
+func _physics_process(delta):
+	if target:
+		canSeePlayer = checkForPlayer()
+		if canSeePlayer:
+			#rotateTowardsPlayer() # Not currently used
+			moveDir = getVelocity()
+			if can_shoot:
+				shootBulletAtTarget(target.position)
+			movement_loop()
 
 func movement_loop():
-	var motion = movedir.normalized() * MOTION_SPEED
-	move_and_slide(motion, Vector2(0,0))
+	var motion = moveDir.normalized() * MOTION_SPEED
+	move_and_slide(motion)
+
+func checkForPlayer():
+	# Raycast to check if can see for player
+	var space_state = get_world_2d().direct_space_state
+	var result = space_state.intersect_ray(position, target.position, [self], 7) # Hits environment, player, enemies
+	if result:
+		if result.collider.is_in_group("Player"): # Sees player and nothing inbetween
+			return true
+	return false # Failed to detect player
+
+func rotateTowardsPlayer():
+	var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
+	if abs(angleToTarget) > PI:
+		angleToTarget = angleToTarget - (sign(angleToTarget) * PI*2)
+	#if rad2deg(angleToTarget) < maxRotationDiff and rad2deg(angleToTarget) > -maxRotationDiff:
+	rotation += min(abs(angleToTarget), rotationSpeed) * sign(angleToTarget)
+
+func getVelocity():
+	return (target.position - position).normalized()
+
+func shootBulletAtTarget(pos):
+	#Shoots a bullet at the target position with some random variance
+	var b = BulletLinear.instance()
+	var a = (pos - global_position).angle()
+	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
+	get_parent().add_child(b)
+	can_shoot = false
+	waitToShoot(fire_rate)
+
+func _on_Visibility_body_entered(body):
+	if target:
+		return
+	if usesVision and body.is_in_group("Player"):
+		target = body
+		$Sprite.self_modulate.r = 1.0
+
+
+func _on_Visibility_body_exited(body):
+	if body == target:
+		target = null
+		$Sprite.self_modulate.r = 0.2
+
+func waitToShoot(sec):
+	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	timer.start() # Start the Timer counting down
+	yield(timer, "timeout") # Wait for the timer to wind down
+	can_shoot = true

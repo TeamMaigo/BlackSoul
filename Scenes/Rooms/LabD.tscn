@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TurretLinear.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( 0, -1.50732 )
 mode = 0
@@ -88,7 +88,11 @@ usesVision = false
 
 position = Vector2( 1468.15, 394.924 )
 
-[node name="Label" type="Label" parent="." index="9"]
+[node name="TransferGoalC" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 1601.47, 256.166 )
+
+[node name="Label" type="Label" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0

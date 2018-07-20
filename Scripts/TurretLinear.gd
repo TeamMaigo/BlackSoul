@@ -27,7 +27,7 @@ func _ready():
 	else:
 		$Visibility.visible == false
 	if firstShotDelay > 0:
-		waitToSpawn(firstShotDelay)
+		waitToShoot(firstShotDelay)
 	else:
 		can_shoot = true
 
@@ -39,7 +39,7 @@ func _physics_process(delta):
 			if rotatingTurret:
 				rotation = (target.position - position).angle()
 			if can_shoot:
-				shootBullet(target.position)
+				shootBulletAtTarget(target.position)
 		elif not usesVision:
 			if can_shoot:
 				shootBulletStraight()
@@ -61,14 +61,14 @@ func _on_Visibility_body_exited(body):
 		target = null
 		$Sprite.self_modulate.r = 0.2
 
-func shootBullet(pos):
-	#Shoots a bullet in the direction it's facing
+func shootBulletAtTarget(pos):
+	#Shoots a bullet at the target position with some random variance
 	var b = BulletLinear.instance()
 	var a = (pos - global_position).angle()
 	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	get_parent().add_child(b)
 	can_shoot = false
-	waitToSpawn(fire_rate)
+	waitToShoot(fire_rate)
 
 func shootBulletStraight():
 	#Shoots a bullet in the direction it's facing
@@ -76,7 +76,7 @@ func shootBulletStraight():
 	b.start(global_position, self.get_global_transform().get_rotation(), bulletSpeed)
 	get_parent().add_child(b)
 	can_shoot = false
-	waitToSpawn(fire_rate)
+	waitToShoot(fire_rate)
 
 func _draw():
 	# display the visibility area
@@ -84,7 +84,7 @@ func _draw():
 		draw_circle(Vector2(), detect_radius, vis_color)
 
 	
-func waitToSpawn(sec):
+func waitToShoot(sec):
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down

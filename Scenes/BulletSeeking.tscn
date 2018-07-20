@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Bullet" type="KinematicBody2D" index="0" groups=[
+[node name="Bullet" type="KinematicBody2D" groups=[
 "Projectile",
 ]]
 
@@ -21,6 +21,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "collision" ]
 damage = 1
 degreesPerFrame = 4
+maxRotationDiff = 20
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

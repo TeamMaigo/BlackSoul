@@ -5,11 +5,14 @@ var velocity = Vector2()
 var player
 export var degreesPerFrame = 4
 export var damage = 1
+var frames = 0
 
 onready var turnSpeed = deg2rad(degreesPerFrame)
 
 func _ready():
+	collision_mask = 3
 	_physics_process(true)
+
 
 func setTarget(target): #TODO: Arrange bullet objects better so we can delete this function
 	return
@@ -22,6 +25,12 @@ func start(pos, dir, bulletSpeed):
 
 func _physics_process(delta):
 	#position += velocity * delta
+	if frames == 15: #TODO
+#		$CollisionShape2D.disabled = false
+		collision_mask = 7 
+		frames += 1
+	else:
+		frames += 1
 	var movedir = velocity
 	var motion = movedir.normalized() * speed
 	var collision = move_and_collide(motion)#, Vector2(0,0))
@@ -30,6 +39,7 @@ func _physics_process(delta):
 			hitPlayer(collision.collider.get_node("../Player"))
 		elif collision.collider.is_in_group("Enemy"):
 			print("Enemy hit!")
+			collision.collider.queue_free()
 			queue_free()
 		elif collision.collider.is_in_group("Breakable"):
 			print("BREAK!")

@@ -123,8 +123,13 @@ shape = SubResource( 1 )
 
 [node name="RotationNode" type="Node2D" parent="." index="1"]
 
-[node name="WeaponSwing" parent="RotationNode" index="0" instance=ExtResource( 2 )]
+visible = false
 
+[node name="WeaponSwing" parent="RotationNode" index="0" groups=[
+"Player",
+] instance=ExtResource( 2 )]
+
+visible = true
 collision_mask = 21
 
 [node name="Sprite" type="Sprite" parent="." index="2"]

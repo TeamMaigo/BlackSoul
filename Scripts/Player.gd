@@ -33,6 +33,7 @@ func _ready():
 	dashAvailable = true
 	swapAvailable = true
 	lastTransferPoint = position
+	$RotationNode.hide()
 
 func _physics_process(delta):
 	if playerControlEnabled:
@@ -85,8 +86,10 @@ func controls_loop():
 	if BARRIER:
 		mousePos = get_global_mouse_position()
 		var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
+		$RotationNode.show()
 		RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
 		WeaponNode.attack(attackDirection)
+
 
 func movement_loop():
 	var motion = movedir.normalized() * MOTION_SPEED
