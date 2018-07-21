@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="ParryPossession"
+config/name="Project Blacksoul"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
@@ -51,6 +51,10 @@ ui_pause=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":
 2d_physics/layer_4="See Through"
 2d_physics/layer_5="Projectile"
 2d_physics/layer_6="Pickup"
+
+[node]
+
+name_casing=1
 
 [rendering]
 
