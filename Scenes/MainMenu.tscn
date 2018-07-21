@@ -185,9 +185,9 @@ editor/display_folded = true
 
 items = [ "Windowed", null, false, 0, null, "Borderless", null, false, 1, null, "Fullscreen", null, false, 2, null ]
 
-[node name="AspectButton" parent="optionsPopup/Container/Aspect Ratio" index="0"]
+[node name="ResolutionButton" parent="optionsPopup/Container/ResolutionText" index="0"]
 
-items = [ "Ignore", null, false, 0, null, "Keep", null, false, 1, null, "Expand", null, false, 2, null ]
+items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1280x720", null, false, 2, null ]
 
 [node name="RebindControls" parent="optionsPopup/Container" index="5"]
 

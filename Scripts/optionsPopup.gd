@@ -52,15 +52,6 @@ func _on_Reset_pressed():
 		button.text = DEFAULT_BUTTONS[i]
 		i += 1
 
-func _on_AspectButton_item_selected(ID): #TODO?
-	if ID == 0: # Ignore
-		pass
-	if ID == 1: # Keep
-		pass
-	if ID == 2: # expand
-		pass
-
-
 func _input(event):
 	# Handle the first pressed key
 	if event is InputEventKey:
@@ -94,3 +85,11 @@ func getScreenMode():
 	if OS.window_fullscreen == true:
 		id += 1
 	return id
+
+func _on_ResolutionButton_item_selected(ID):
+	if ID == 0: # Ignore
+		get_tree().get_root().size = Vector2(1024, 600)
+	if ID == 1: # Keep
+		get_tree().get_root().size = Vector2(1440, 900)
+	if ID == 2: # expand
+		get_tree().get_root().size = Vector2(1280, 720)

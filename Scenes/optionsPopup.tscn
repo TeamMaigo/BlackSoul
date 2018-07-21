@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/optionsPopup.gd" type="Script" id=1]
 
-[node name="optionsPopup" type="Panel"]
+[node name="optionsPopup" type="Panel" index="0"]
 
 visible = false
 anchor_left = 0.2
@@ -107,9 +107,8 @@ align = 0
 items = [ "Windowed", null, false, 0, null, "Borderless", null, false, 1, null, "Fullscreen", null, false, 2, null ]
 selected = 0
 
-[node name="Aspect Ratio" type="Label" parent="Container" index="2"]
+[node name="ResolutionText" type="Label" parent="Container" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -124,14 +123,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Aspect Ratio"
+text = "Resolution"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="AspectButton" type="OptionButton" parent="Container/Aspect Ratio" index="0"]
+[node name="ResolutionButton" type="OptionButton" parent="Container/ResolutionText" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -152,10 +151,10 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Ignore"
+text = "1024x600"
 flat = false
 align = 0
-items = [ "Ignore", null, false, 0, null, "Keep", null, false, 1, null, "Expand", null, false, 2, null ]
+items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1280x720", null, false, 2, null ]
 selected = 0
 
 [node name="SoundText" type="Label" parent="Container" index="3"]
@@ -707,7 +706,7 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [connection signal="item_selected" from="Container/WindowText/WindowButton" to="." method="_on_WindowButton_item_selected"]
 
-[connection signal="item_selected" from="Container/Aspect Ratio/AspectButton" to="." method="_on_AspectButton_item_selected"]
+[connection signal="item_selected" from="Container/ResolutionText/ResolutionButton" to="." method="_on_ResolutionButton_item_selected"]
 
 [connection signal="value_changed" from="Container/SoundText/SoundSlider" to="." method="_on_SoundSlider_value_changed"]
 
