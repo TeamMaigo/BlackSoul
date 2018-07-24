@@ -14,7 +14,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 radius = 300.0
 
-[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
+[node name="EnemyMob" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
@@ -29,6 +29,7 @@ detect_radius = 300
 BulletLinear = ExtResource( 2 )
 bulletSpeed = 10
 fire_rate = 1
+fireType = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

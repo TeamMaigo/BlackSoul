@@ -17,6 +17,7 @@ onready var timer = get_node("ShootTimer")
 var can_shoot = false
 export (float) var fire_rate = 1  # delay time (s) between bullets
 var lastKnownPlayerPos
+export(String, "singleFire", "shotgun") var fireType
 
 func _ready():
 	var shape = CircleShape2D.new()
@@ -32,7 +33,11 @@ func _physics_process(delta):
 			lastKnownPlayerPos = target.position
 			#rotateTowardsPlayer() # Not currently used
 			if can_shoot:
-				shootBulletAtTarget(target.position)
+				if fireType == "singleFire":
+					shootBulletAtTarget(target.position)
+				if fireType == "shotgun":
+					shootShotgunAtTarget(target.position)
+
 	movement_loop()
 
 func movement_loop():
@@ -65,6 +70,17 @@ func shootBulletAtTarget(pos):
 	var a = (pos - global_position).angle()
 	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	get_parent().add_child(b)
+	can_shoot = false
+	waitToShoot(fire_rate)
+
+func shootShotgunAtTarget(pos):
+	#Shoots a spray of bullets at the target position with some random variance
+	var spreadAngles = [-10, 0, 10]
+	for i in spreadAngles:
+		var b= BulletLinear.instance()
+		var a = (pos - global_position).angle()
+		b.start(global_position, a + deg2rad(i), bulletSpeed)
+		get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
 
