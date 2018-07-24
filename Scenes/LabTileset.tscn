@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/TILESETTEST.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/DARKLABTILE.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/GREYLABTILE.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Tileset" type="Node2D"]
+[node name="Tileset" type="Node2D" index="0"]
 
 position = Vector2( 33.5329, 34.0677 )
 
@@ -487,19 +489,14 @@ shape = SubResource( 1 )
 
 [node name="Floor1" type="Sprite" parent="." index="19"]
 
-position = Vector2( 333.531, 0 )
-texture = ExtResource( 1 )
-vframes = 5
-hframes = 7
-frame = 3
-_sections_unfolded = [ "Animation" ]
+position = Vector2( 334.472, 0.895435 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Floor2" type="Sprite" parent="." index="20"]
 
-position = Vector2( 400.83, 0 )
-texture = ExtResource( 1 )
-vframes = 5
-hframes = 7
+position = Vector2( 402.022, 0.397217 )
+texture = ExtResource( 3 )
 frame = 4
 _sections_unfolded = [ "Animation" ]
 
@@ -706,7 +703,7 @@ shape = SubResource( 1 )
 [node name="WallBot2" type="Sprite" parent="." index="29"]
 
 editor/display_folded = true
-position = Vector2( 199.908, 273.415 )
+position = Vector2( 199.955, 273.415 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
