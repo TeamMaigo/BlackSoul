@@ -11,7 +11,7 @@ var target
 var degreesPerFrame = 4
 onready var rotationSpeed = deg2rad(degreesPerFrame)
 var velocity
-export (PackedScene) var BulletLinear
+export (PackedScene) var BulletType
 export var bulletSpeed = 10
 onready var timer = get_node("ShootTimer")
 var can_shoot = false
@@ -66,7 +66,7 @@ func rotateTowardsPlayer():
 
 func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
-	var b = BulletLinear.instance()
+	var b = BulletType.instance()
 	var a = (pos - global_position).angle()
 	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	get_parent().add_child(b)
@@ -77,7 +77,7 @@ func shootShotgunAtTarget(pos):
 	#Shoots a spray of bullets at the target position with some random variance
 	var spreadAngles = [-10, 0, 10]
 	for i in spreadAngles:
-		var b= BulletLinear.instance()
+		var b = BulletType.instance()
 		var a = (pos - global_position).angle()
 		b.start(global_position, a + deg2rad(i), bulletSpeed)
 		get_parent().add_child(b)

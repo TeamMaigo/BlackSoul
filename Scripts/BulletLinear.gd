@@ -3,10 +3,9 @@ extends KinematicBody2D
 var speed = 1
 var velocity = Vector2()
 var player
-export var degreesPerFrame = 4
-export var damage = 1
+var degreesPerFrame = 4
+var damage = 1
 var frames = 0
-
 onready var turnSpeed = deg2rad(degreesPerFrame)
 
 func _ready():
@@ -31,9 +30,7 @@ func _physics_process(delta):
 		frames += 1
 	else:
 		frames += 1
-	var movedir = velocity
-	var motion = movedir.normalized() * speed
-	var collision = move_and_collide(motion)#, Vector2(0,0))
+	var collision = movementLoop()
 	if collision:
 		if collision.collider.is_in_group("Player"):
 			hitPlayer(collision.collider.get_node("../Player"))
@@ -52,7 +49,11 @@ func _physics_process(delta):
 			print("What was that? Hit: ", collision.collider)
 			queue_free()
 	
-	
+func movementLoop():
+	var movedir = velocity
+	var motion = movedir.normalized() * speed
+	return move_and_collide(motion)
+
 func setDirection(directionVector):
 	velocity = directionVector
 	rotation_degrees = rad2deg(directionVector.angle())

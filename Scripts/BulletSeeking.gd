@@ -4,13 +4,16 @@ var speed = 1
 var velocity = Vector2()
 var player
 var target #Should be a Node2D
-export var damage = 1
-export var degreesPerFrame = 4
+var damage = 1
+var degreesPerFrame = 1
 onready var rotationSpeed = deg2rad(degreesPerFrame)
-export var maxRotationDiff = 20
+export var maxRotationDiff = 40
+var frames = 0
 
 func _ready():
+	collision_mask = 3
 	_physics_process(true)
+
 
 func start(pos, dir, bulletSpeed):
 	position = pos
@@ -22,6 +25,13 @@ func setTarget(target):
 	self.target = target
 
 func _physics_process(delta):
+	if frames == 15: #TODO
+		if not target:
+			target = get_tree().get_root().get_node("World/Player")
+		collision_mask = 7 
+		frames += 1
+	else:
+		frames += 1
 	if target:
 		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
 		if abs(angleToTarget) > PI:
