@@ -14,13 +14,13 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 radius = 300.0
 
-[node name="EnemyMob" type="KinematicBody2D" groups=[
+[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
 input_pickable = false
 collision_layer = 4
-collision_mask = 11
+collision_mask = 15
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
@@ -29,7 +29,7 @@ detect_radius = 300
 BulletType = ExtResource( 2 )
 bulletSpeed = 10
 fire_rate = 1
-fireType = null
+fireType = "singleFire"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

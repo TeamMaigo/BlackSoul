@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=4]
 
-[node name="Room2" type="TileMap" index="0"]
+[node name="Room2" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )
