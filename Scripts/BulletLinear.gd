@@ -11,6 +11,7 @@ onready var turnSpeed = deg2rad(degreesPerFrame)
 func _ready():
 	collision_mask = 3
 	_physics_process(true)
+	$animationPlayer.play("default")
 
 
 func setTarget(target): #TODO: Arrange bullet objects better so we can delete this function
