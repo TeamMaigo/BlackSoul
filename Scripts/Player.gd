@@ -22,6 +22,7 @@ var health = maxHealth
 var lastTransferPoint
 var anim = "Idle"
 var animNew = ""
+var vulnerable = true
 export var playerControlEnabled = true
 
 func _ready():
@@ -103,9 +104,9 @@ func movement_loop():
 		var collisions = get_slide_collision(i)
 		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
 		# you get hit twice. This can be solved through invulnerability frames after being hit.
-#			if collisions.collider.is_in_group("Projectile"):
-#				var projectile = collisions.collider.get_node("./")
-#				projectile.hitPlayer(self)
+			if collisions.collider.is_in_group("Projectile"):
+				var projectile = collisions.collider.get_node("./")
+				projectile.hitPlayer(self)
 			if collisions.collider.is_in_group("Pickup"):
 				var collider = collisions.collider.get_node("./")
 				collider.applyEffect(self)
@@ -141,18 +142,25 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	position = tempEnemyPos
 
 func takeDamage(damage):
-	$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
-	$PlayerAudio.volume_db = Global.masterSound
-	$PlayerAudio.play()
-	health -= damage
-	updateHealthBar()
-	if health <= 0:
-		respawn()
+	if vulnerable:
+		vulnerable = false
+		$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
+		$PlayerAudio.volume_db = Global.masterSound
+		$PlayerAudio.play()
+		health -= damage
+		updateHealthBar()
+		$InvulPlayer.play("Invuln")
+		if health <= 0:
+			respawn()
 
 func updateHealthBar():
 		$CanvasLayer/PlayerUI/ProgressBar.value = (float(health)/float(maxHealth)) * 100
 
 func respawn():
+	get_node("../").reloadLastScene()
 	health = maxHealth
 	updateHealthBar()
-	get_node("../").reloadLastScene()
+
+func _on_InvulPlayer_animation_finished(anim_name):
+	if anim_name == "Invuln":
+		vulnerable = true
