@@ -7,10 +7,7 @@ path="res://.import/DARKLABTILE.png-da4389faff9779a5710ea2bb67d282c3.stex"
 [deps]
 
 source_file="res://Sprites/DARKLABTILE.png"
-source_md5="4ab56204af0c43e27490f82809b9ba4c"
-
 dest_files=[ "res://.import/DARKLABTILE.png-da4389faff9779a5710ea2bb67d282c3.stex" ]
-dest_md5="c7079764c541859098c782027faa99b4"
 
 [params]
 

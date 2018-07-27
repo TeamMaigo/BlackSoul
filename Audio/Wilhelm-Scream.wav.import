@@ -7,10 +7,7 @@ path="res://.import/Wilhelm-Scream.wav-fd1fd7eb8cb4736dc9ea39a0dbbce79a.sample"
 [deps]
 
 source_file="res://Audio/Wilhelm-Scream.wav"
-source_md5="99144c03d659be5bdebab2addb65b490"
-
 dest_files=[ "res://.import/Wilhelm-Scream.wav-fd1fd7eb8cb4736dc9ea39a0dbbce79a.sample" ]
-dest_md5="ca476bdc469818d12717133c174dddc0"
 
 [params]
 

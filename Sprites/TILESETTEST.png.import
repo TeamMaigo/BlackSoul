@@ -7,10 +7,7 @@ path="res://.import/TILESETTEST.png-6350f3aaa6f13efdf204c80c062f752f.stex"
 [deps]
 
 source_file="res://Sprites/TILESETTEST.png"
-source_md5="8b7961b7e0e4f793054a5e29cedcb16f"
-
 dest_files=[ "res://.import/TILESETTEST.png-6350f3aaa6f13efdf204c80c062f752f.stex" ]
-dest_md5="a428f893f393ef37cbe5566d5698364d"
 
 [params]
 

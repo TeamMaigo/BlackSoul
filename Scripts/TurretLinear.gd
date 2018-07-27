@@ -1,14 +1,18 @@
+#TODO:
+	#Don't use hardcoded FPS number
+
+
 extends KinematicBody2D
 
 # Required to pass editor info to collider child of object
 export (int) var detect_radius  # size of the visibility circle
-export (float) var fire_rate = 1  # delay time (s) between bullets
+export (int) var fire_rate = 60  # delay time (frames) between bullets
 export (float) var firstShotDelay = 0
 export (PackedScene) var BulletLinear
 export var bulletType = "Linear"
 export var bulletSpeed = 1
 export var rotatingTurret = true
-export var usesVision = true
+export var usesTargeting = true
 
 var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -20,7 +24,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_physics_process(true)
-	if usesVision:
+	if usesTargeting:
 		var shape = CircleShape2D.new()
 		shape.radius = detect_radius
 		$Visibility/CollisionShape2D.shape = shape
@@ -40,7 +44,7 @@ func _physics_process(delta):
 				rotation = (target.position - position).angle()
 			if can_shoot:
 				shootBulletAtTarget(target.position)
-		elif not usesVision:
+		elif not usesTargeting:
 			if can_shoot:
 				shootBulletStraight()
 		else:
@@ -51,7 +55,7 @@ func _on_Visibility_body_entered(body):
 	# connect this to the "body_entered" signal
 	if target:
 		return
-	if usesVision:
+	if usesTargeting && body.is_in_group("team_Player"):
 		target = body
 	$Sprite.self_modulate.r = 1.0
 
@@ -80,12 +84,12 @@ func shootBulletStraight():
 
 func _draw():
 	# display the visibility area
-	if usesVision:
+	if usesTargeting:
 		draw_circle(Vector2(), detect_radius, vis_color)
 
 	
 func waitToShoot(sec):
-	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	timer.set_wait_time(fire_rate/60) # Set Timer's delay to "sec" seconds
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
 	can_shoot = true

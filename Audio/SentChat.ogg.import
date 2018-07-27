@@ -7,10 +7,7 @@ path="res://.import/SentChat.ogg-cc315b8477217926936772d25394cdbe.oggstr"
 [deps]
 
 source_file="res://Audio/SentChat.ogg"
-source_md5="f410959e5779d6c6c2a85b73965d79d0"
-
 dest_files=[ "res://.import/SentChat.ogg-cc315b8477217926936772d25394cdbe.oggstr" ]
-dest_md5="d4a32a593a0251909a44fc4e8bc8cc3d"
 
 [params]
 

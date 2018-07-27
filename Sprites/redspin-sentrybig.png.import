@@ -7,10 +7,7 @@ path="res://.import/redspin-sentrybig.png-ff25d908ea9f5ae2ea7ed1e2e60916c1.stex"
 [deps]
 
 source_file="res://Sprites/redspin-sentrybig.png"
-source_md5="da1a7917e3e5c327d07cd2d310b9d950"
-
 dest_files=[ "res://.import/redspin-sentrybig.png-ff25d908ea9f5ae2ea7ed1e2e60916c1.stex" ]
-dest_md5="d7a79f02119c679501ae585abadffa49"
 
 [params]
 

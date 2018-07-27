@@ -7,10 +7,7 @@ path="res://.import/RecievedChat.ogg-660ad297da5709967187b050b099b423.oggstr"
 [deps]
 
 source_file="res://Audio/RecievedChat.ogg"
-source_md5="bb5d87a1e2a36906bba284730750a264"
-
 dest_files=[ "res://.import/RecievedChat.ogg-660ad297da5709967187b050b099b423.oggstr" ]
-dest_md5="4a1a5ba589552b4f3b38552f5da6bf01"
 
 [params]
 
