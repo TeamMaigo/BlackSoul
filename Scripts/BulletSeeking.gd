@@ -9,6 +9,7 @@ var degreesPerFrame = 1
 onready var rotationSpeed = deg2rad(degreesPerFrame)
 export var maxRotationDiff = 40
 var frames = 0
+var collided = false
 
 func _ready():
 	collision_mask = 3
@@ -46,22 +47,14 @@ func _physics_process(delta):
 	var motion = movedir.normalized() * speed
 	var collision = move_and_collide(motion)#, Vector2(0,0))
 	if collision:
-		if collision.collider.is_in_group("Player"):
-			hitPlayer(collision.collider.get_node("../Player"))
-		elif collision.collider.is_in_group("Enemy"):
-			print("Enemy hit!")
-			queue_free()
-		elif collision.collider.is_in_group("Breakable"):
-			print("BREAK!")
-			collision.collider.queue_free()
-			queue_free()
-		elif collision.collider.is_class("TileMap"):
-			#print("Wall hit")
-			queue_free()
-		else:
-			print("What was that? Hit: ", collision.collider)
-			queue_free()
+		collide(collision.collider)
 
+func collide(collider):
+	if !collided:
+		collided = true
+		if collider.is_in_group("Damageable"):
+			collider.takeDamage(damage)
+		queue_free()
 
 func setDirection(directionVector):
 	velocity = directionVector

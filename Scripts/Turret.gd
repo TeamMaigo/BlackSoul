@@ -9,12 +9,11 @@ export (int) var detect_radius  # size of the visibility circle
 export (int) var fire_rate = 60  # delay time (frames) between bullets
 export (float) var firstShotDelay = 0
 export (PackedScene) var Bullet
-export var bulletType = "Linear"
 export var bulletSpeed = 1
 export var rotatingTurret = true
 export var usesTargeting = true
 
-export (String, "Linear", "Seeking") var type
+export (String, "Linear", "Seeking", "Angle") var type
 
 var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -71,7 +70,7 @@ func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
 	var b = Bullet.instance()
 	var a = (pos - global_position).angle()
-	if type == "Seeking":
+	if type == "Seeking" || type == "Angle":
 		b.setTarget(target)
 	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	get_parent().add_child(b)

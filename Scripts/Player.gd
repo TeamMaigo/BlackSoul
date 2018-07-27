@@ -142,7 +142,6 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	position = tempEnemyPos
 
 func takeDamage(damage):
-	print("NICE MEMsoijdfsd")
 	if vulnerable:
 		vulnerable = false
 		$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")

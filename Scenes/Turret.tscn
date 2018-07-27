@@ -26,7 +26,6 @@ detect_radius = null
 fire_rate = 60
 firstShotDelay = 0
 Bullet = ExtResource( 2 )
-bulletType = "Linear"
 bulletSpeed = 1
 rotatingTurret = true
 usesTargeting = true
