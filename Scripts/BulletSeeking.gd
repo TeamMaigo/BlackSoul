@@ -14,7 +14,7 @@ var collided = false
 func _ready():
 	collision_mask = 3
 	_physics_process(true)
-
+	$animationPlayer.play("default")
 
 func start(pos, dir, bulletSpeed):
 	position = pos

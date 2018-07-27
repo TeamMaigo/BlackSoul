@@ -3,6 +3,8 @@ extends Node
 
 var masterMusic = 0
 var masterSound = 0
+var destroyedObjects = []
+var currentScene = "LabA"
 
 func _ready():
 	# Called every time the node is added to the scene.

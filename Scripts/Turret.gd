@@ -13,8 +13,6 @@ export var bulletSpeed = 1
 export var rotatingTurret = true
 export var usesTargeting = true
 
-export (String, "Linear", "Seeking", "Angle") var type
-
 var defeated = false
 onready var timer = get_node("ShootTimer")
 var target  # who are we shooting at?
@@ -32,6 +30,7 @@ func _ready():
 	else:
 		$Visibility.visible == false
 	if firstShotDelay > 0:
+		can_shoot = false
 		waitToShoot(firstShotDelay)
 	else:
 		can_shoot = true
@@ -70,8 +69,7 @@ func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
 	var b = Bullet.instance()
 	var a = (pos - global_position).angle()
-	if type == "Seeking" || type == "Angle":
-		b.setTarget(target)
+	b.setTarget(target)
 	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	get_parent().add_child(b)
 	can_shoot = false
@@ -92,7 +90,7 @@ func _draw():
 
 
 func waitToShoot(sec):
-	timer.set_wait_time(fire_rate/60) # Set Timer's delay to "sec" seconds
+	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
 	can_shoot = true

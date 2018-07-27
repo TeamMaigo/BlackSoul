@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Barrel.tscn" type="PackedScene" id=8]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( 0, -1.50732 )
 mode = 0
@@ -34,9 +34,9 @@ tile_data = PoolIntArray( -131075, 0, 0, -65539, 0, 0, -131071, 0, 0, -131070, 0
 
 position = Vector2( -553.673, -227.183 )
 detect_radius = 240
+fire_rate = 1
 Bullet = ExtResource( 3 )
 bulletSpeed = 4
-type = "Seeking"
 
 [node name="TransferPointA" parent="." index="1" instance=ExtResource( 4 )]
 
@@ -94,7 +94,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="EnemyMob" parent="." index="5" instance=ExtResource( 6 )]
+[node name="EnemyMob" parent="." index="5" groups=[
+"Damageable",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 394.508, -314.246 )
 BulletType = ExtResource( 7 )

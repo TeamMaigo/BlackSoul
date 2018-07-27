@@ -20,6 +20,8 @@ var lastKnownPlayerPos
 export(String, "singleFire", "shotgun") var fireType
 
 func _ready():
+	if Global.currentScene+name in Global.destroyedObjects:
+		queue_free()
 	var shape = CircleShape2D.new()
 	shape.radius = detect_radius
 	$Visibility/CollisionShape2D.shape = shape
@@ -102,3 +104,7 @@ func waitToShoot(sec):
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
 	can_shoot = true
+	
+func takeDamage(damage):
+	Global.destroyedObjects.append(Global.currentScene+name)
+	queue_free()

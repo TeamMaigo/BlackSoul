@@ -7,7 +7,10 @@ path="res://.import/temp_wood.wav-11fd318c04a6ebeb28caf583a80843d6.sample"
 [deps]
 
 source_file="res://Audio/temp_wood.wav"
+source_md5="ab6a8118211b90545c561e63c0192a71"
+
 dest_files=[ "res://.import/temp_wood.wav-11fd318c04a6ebeb28caf583a80843d6.sample" ]
+dest_md5="b32d852ef84a11e06bcf517998796234"
 
 [params]
 

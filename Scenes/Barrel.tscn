@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Barrel.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Barrel.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/barrel.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,36 +8,36 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10.1396 )
 
-[node name="Barrel" type="KinematicBody2D" index="0" groups=[
+[node name="Barrel" type="StaticBody2D" groups=[
 "Damageable",
 ]]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-collision/safe_margin = 0.08
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 script = ExtResource( 1 )
 health = 2
 
-[node name="audioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
 
 stream = null
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
 
-[node name="collisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -0.100177, 0.505163 )
 scale = Vector2( 2.36724, 2.27551 )
 shape = SubResource( 1 )
-
-[connection signal="finished" from="audioStreamPlayer" to="." method="_on_audioStreamPlayer_finished"]
 
 

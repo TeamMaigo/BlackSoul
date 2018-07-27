@@ -140,8 +140,8 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
-"Player",
 "team_Player",
+"Player",
 "Damageable",
 ]]
 
@@ -152,7 +152,6 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 NORMAL_SPEED = 500
-playerControlEnabled = true
 
 [node name="Collision" type="CollisionShape2D" parent="." index="0"]
 
@@ -242,7 +241,6 @@ _sections_unfolded = [ "Anchor", "Margin", "Percent" ]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -256,6 +254,8 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Invuln = SubResource( 8 )
 blend_times = [  ]
+
+[connection signal="attack_finished" from="RotationNode/WeaponSwing" to="." method="_on_WeaponSwing_attack_finished"]
 
 [connection signal="animation_finished" from="InvulPlayer" to="." method="_on_InvulPlayer_animation_finished"]
 

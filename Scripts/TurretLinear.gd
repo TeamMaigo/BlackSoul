@@ -89,7 +89,7 @@ func _draw():
 
 	
 func waitToShoot(sec):
-	timer.set_wait_time(fire_rate/60) # Set Timer's delay to "sec" seconds
+	timer.set_wait_time(fire_rate) # Set Timer's delay to "sec" seconds
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
 	can_shoot = true

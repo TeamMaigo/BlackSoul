@@ -82,6 +82,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Pickup" parent="." index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 254.938, -73.828 )
+position = Vector2( -59.3633, -48.0455 )
 
 

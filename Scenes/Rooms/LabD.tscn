@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/TurretLinear.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 
 [node name="LabRoom" type="TileMap"]
 
@@ -42,57 +42,15 @@ transferGoalTemp = "A"
 
 position = Vector2( -43.4335, -160.979 )
 
-[node name="TurretLinear" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 352.928, -159.655 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-rotatingTurret = false
-usesVision = false
-
-[node name="TurretLinear2" parent="." index="4" instance=ExtResource( 4 )]
-
-position = Vector2( 416.227, -160.196 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-rotatingTurret = false
-usesVision = false
-
-[node name="TurretLinear3" parent="." index="5" instance=ExtResource( 4 )]
-
-position = Vector2( 351.701, 160.785 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-fire_rate = 0.5
-rotatingTurret = false
-usesVision = false
-
-[node name="TurretLinear4" parent="." index="6" instance=ExtResource( 4 )]
-
-position = Vector2( 933.535, 417.033 )
-rotation = 3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-rotatingTurret = false
-usesVision = false
-
-[node name="TurretLinear5" parent="." index="7" instance=ExtResource( 4 )]
-
-position = Vector2( 933.535, 480.341 )
-rotation = 3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-firstShotDelay = 0.5
-rotatingTurret = false
-usesVision = false
-
-[node name="TransferGoalB" parent="." index="8" instance=ExtResource( 3 )]
+[node name="TransferGoalB" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 1468.15, 394.924 )
 
-[node name="TransferGoalC" parent="." index="9" instance=ExtResource( 3 )]
+[node name="TransferGoalC" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 1601.47, 256.166 )
 
-[node name="Label" type="Label" parent="." index="10"]
+[node name="Label" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -114,5 +72,51 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+
+[node name="Turret" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 354.226, -159.779 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret2" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 420.549, -159.779 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret3" parent="." index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 351.211, 161.286 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret4" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 928.524, 417.534 )
+rotation = 3.14159
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret5" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 928.524, 483.858 )
+rotation = 3.14159
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+firstShotDelay = 0.5
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
 
 

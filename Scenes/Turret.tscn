@@ -22,14 +22,13 @@ collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
-detect_radius = null
-fire_rate = 60
+detect_radius = 300
+fire_rate = 1
 firstShotDelay = 0
 Bullet = ExtResource( 2 )
 bulletSpeed = 1
 rotatingTurret = true
 usesTargeting = true
-type = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

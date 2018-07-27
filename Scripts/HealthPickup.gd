@@ -1,9 +1,8 @@
 extends StaticBody2D
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	if Global.currentScene+name in Global.destroyedObjects:
+		queue_free()
 
 func applyEffect(player):
 	player.health = player.maxHealth
@@ -11,4 +10,5 @@ func applyEffect(player):
 	player.get_node("PlayerAudio").playing = true
 	player.get_node("PlayerAudio").volume_db = Global.masterSound
 	player.updateHealthBar()
+	Global.destroyedObjects.append(Global.currentScene+name)
 	queue_free()

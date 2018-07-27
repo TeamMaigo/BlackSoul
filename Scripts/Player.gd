@@ -7,12 +7,13 @@ onready var AnimNode = get_node("AnimationPlayer")
 onready var WeaponNode = get_node("RotationNode/WeaponSwing")
 onready var RotationNode = get_node("RotationNode")
 var movedir = Vector2(0,0)
-var RayNode
+#var RayNode
 var CollisionNode
-var dashTimer
-var dashAvailable
-var swapTimer
-var swapAvailable
+var dashTimer = 0
+var dashAvailable = true
+var swapTimer = 0
+var swapAvailable = true
+var barrierAvailable = true
 var playerPos
 var mousePos
 var DASH_DELAY = 1	# in seconds
@@ -23,16 +24,12 @@ var lastTransferPoint
 var anim = "Idle"
 var animNew = ""
 var vulnerable = true
-export var playerControlEnabled = true
+var playerControlEnabled = true
 
 func _ready():
 	set_physics_process(true)
-	dashTimer = 0
-	swapTimer = 0
 	#RayNode = get_node("RayCast2D")	#For directions
 	CollisionNode = get_node("Collision")
-	dashAvailable = true
-	swapAvailable = true
 	lastTransferPoint = position
 	$RotationNode.hide()
 
@@ -84,11 +81,12 @@ func controls_loop():
 		swapAvailable = false
 		#SpriteNode.set("modulate",Color(50.0/120,150,0,1))
 		
-	if BARRIER:
-		mousePos = get_global_mouse_position()
-		var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
+	mousePos = get_global_mouse_position()
+	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
+	RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
+	if BARRIER and barrierAvailable:
+		barrierAvailable = false
 		$RotationNode.show()
-		RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
 		WeaponNode.attack(attackDirection)
 
 
@@ -164,3 +162,7 @@ func respawn():
 func _on_InvulPlayer_animation_finished(anim_name):
 	if anim_name == "Invuln":
 		vulnerable = true
+
+
+func _on_WeaponSwing_attack_finished():
+	barrierAvailable = true

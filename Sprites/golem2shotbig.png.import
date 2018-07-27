@@ -7,7 +7,10 @@ path="res://.import/golem2shotbig.png-a5c5ee57adb283ae9f28260bee1672d4.stex"
 [deps]
 
 source_file="res://Sprites/golem2shotbig.png"
+source_md5="1929858b49343dc51937518a3d28dd96"
+
 dest_files=[ "res://.import/golem2shotbig.png-a5c5ee57adb283ae9f28260bee1672d4.stex" ]
+dest_md5="59d30ac8c2dc1eec21458dc6f09a4dd5"
 
 [params]
 

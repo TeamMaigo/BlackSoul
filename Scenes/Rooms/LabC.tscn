@@ -3,9 +3,9 @@
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/TurretLinear.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( 0, -1.50732 )
 mode = 0
@@ -37,24 +37,7 @@ transferGoalTemp = "A"
 
 position = Vector2( -56.0211, -233.988 )
 
-[node name="TurretLinear" parent="." index="2" instance=ExtResource( 4 )]
-
-position = Vector2( -287.195, 33.6202 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-bulletSpeed = 10
-rotatingTurret = false
-usesVision = false
-
-[node name="TurretLinear2" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 165.811, 224.073 )
-rotation = 3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-bulletSpeed = 10
-rotatingTurret = false
-usesVision = false
-
-[node name="Label" type="Label" parent="." index="4"]
+[node name="Label" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -76,5 +59,21 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
+
+[node name="Turret" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -283.932, 31.7335 )
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret2" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 158.668, 225.475 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
 
 
