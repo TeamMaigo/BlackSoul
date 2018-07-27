@@ -105,8 +105,8 @@ func movement_loop():
 		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
 		# you get hit twice. This can be solved through invulnerability frames after being hit.
 			if collisions.collider.is_in_group("Projectile"):
-				var projectile = collisions.collider.get_node("./")
-				projectile.hitPlayer(self)
+				var projectile = collisions.collider #The extra .get_node("./") doesn't seem to do anything, not sure why?
+				projectile.collide(self)
 			if collisions.collider.is_in_group("Pickup"):
 				var collider = collisions.collider.get_node("./")
 				collider.applyEffect(self)
@@ -142,6 +142,7 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	position = tempEnemyPos
 
 func takeDamage(damage):
+	print("NICE MEMsoijdfsd")
 	if vulnerable:
 		vulnerable = false
 		$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")

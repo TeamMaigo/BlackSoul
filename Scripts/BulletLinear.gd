@@ -6,6 +6,7 @@ var player
 var degreesPerFrame = 4
 var damage = 1
 var frames = 0
+var collided = false
 onready var turnSpeed = deg2rad(degreesPerFrame)
 
 func _ready():
@@ -33,22 +34,14 @@ func _physics_process(delta):
 		frames += 1
 	var collision = movementLoop()
 	if collision:
-		if collision.collider.is_in_group("Player"):
-			hitPlayer(collision.collider.get_node("../Player"))
-		elif collision.collider.is_in_group("Enemy"):
-			print("Enemy hit!")
-			collision.collider.queue_free()
-			queue_free()
-		elif collision.collider.is_in_group("Breakable"):
-			print("BREAK!")
-			collision.collider.queue_free()
-			queue_free()
-		elif collision.collider.is_class("TileMap"):
-			#print("Wall hit")
-			queue_free()
-		else:
-			print("What was that? Hit: ", collision.collider)
-			queue_free()
+		collide(collision.collider)
+	
+func collide(collider):
+	if !collided:
+		if collider.is_in_group("Damageable"):
+			collider.takeDamage(damage)
+		queue_free()
+		collided = true
 	
 func movementLoop():
 	var movedir = velocity
