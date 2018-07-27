@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[node name="Bullet" type="KinematicBody2D" groups=[
+[node name="Bullet" type="KinematicBody2D" index="0" groups=[
 "Projectile",
 ]]
 

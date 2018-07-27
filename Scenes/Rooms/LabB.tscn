@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=7]
 
 [node name="LabRoom" type="TileMap"]
 
@@ -32,16 +33,17 @@ tile_data = PoolIntArray( -131075, 0, 0, -65539, 0, 0, -131071, 0, 0, -131070, 0
 
 position = Vector2( -553.673, -227.183 )
 detect_radius = 240
-fire_rate = 60
+Bullet = ExtResource( 3 )
 bulletSpeed = 4
+type = "Seeking"
 
-[node name="TransferPointA" parent="." index="1" instance=ExtResource( 3 )]
+[node name="TransferPointA" parent="." index="1" instance=ExtResource( 4 )]
 
 position = Vector2( -65.9895, 712.554 )
 newScene = "LabC"
 transferGoalTemp = "A"
 
-[node name="TransferGoalA" parent="." index="2" instance=ExtResource( 4 )]
+[node name="TransferGoalA" parent="." index="2" instance=ExtResource( 5 )]
 
 position = Vector2( -43.4335, -160.979 )
 
@@ -91,10 +93,10 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="EnemyMob" parent="." index="5" instance=ExtResource( 5 )]
+[node name="EnemyMob" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 394.508, -314.246 )
-BulletType = ExtResource( 6 )
+BulletType = ExtResource( 7 )
 bulletSpeed = 8
 fireType = "shotgun"
 
