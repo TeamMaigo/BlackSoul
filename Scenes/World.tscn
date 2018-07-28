@@ -82,7 +82,7 @@ script = ExtResource( 1 )
 
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( -75.5735, -52.0863 )
+position = Vector2( -403.381, -59.4528 )
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]
 
@@ -283,6 +283,14 @@ align = 1
 [node name="optionsPopup" parent="CanvasLayer/Options" index="1" instance=ExtResource( 4 )]
 
 editor/display_folded = true
+
+[node name="WindowButton" parent="CanvasLayer/Options/optionsPopup/Container/WindowText" index="0"]
+
+items = [ "Windowed", null, false, 0, null, "Borderless", null, false, 1, null, "Fullscreen", null, false, 2, null ]
+
+[node name="ResolutionButton" parent="CanvasLayer/Options/optionsPopup/Container/ResolutionText" index="0"]
+
+items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1280x720", null, false, 2, null ]
 
 [node name="ScenePlayer" type="AnimationPlayer" parent="CanvasLayer" index="1"]
 
