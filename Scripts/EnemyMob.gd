@@ -18,6 +18,8 @@ var can_shoot = false
 export (float) var fire_rate = 1  # delay time (s) between bullets
 var lastKnownPlayerPos
 export(String, "singleFire", "shotgun") var fireType
+export var respawns = true
+export var hp = 1
 
 func _ready():
 	if Global.currentScene+name in Global.destroyedObjects:
@@ -106,5 +108,8 @@ func waitToShoot(sec):
 	can_shoot = true
 	
 func takeDamage(damage):
-	Global.destroyedObjects.append(Global.currentScene+name)
-	queue_free()
+	hp -= damage
+	if hp <= 0:
+		if not respawns:
+			Global.destroyedObjects.append(Global.currentScene+name)
+		queue_free()

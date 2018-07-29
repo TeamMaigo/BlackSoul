@@ -49,10 +49,14 @@ usesTargeting = false
 
 position = Vector2( 97.3479, -153.602 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawns = true
+hp = 1
 
 [node name="EnemyMob2" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -633.881, -485.589 )
+respawns = true
+hp = 1
 
 [node name="TransferPointA" parent="." index="4" instance=ExtResource( 4 )]
 
@@ -77,9 +81,11 @@ position = Vector2( -1173.63, -344.351 )
 [node name="BreakableBlock" parent="." index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 96.1307, 227.499 )
+respawnable = false
 
 [node name="HealthPickup" parent="." index="9" instance=ExtResource( 7 )]
 
 position = Vector2( -614.889, 92.5054 )
+respawnable = true
 
 

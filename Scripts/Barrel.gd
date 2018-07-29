@@ -3,6 +3,7 @@ extends StaticBody2D
 export (int) var health = 2
 onready var audioPlayer = $AudioStreamPlayer
 var destroyed = false
+export var respawnable = true
 
 func _ready():
 	if Global.currentScene+name in Global.destroyedObjects:
@@ -10,7 +11,8 @@ func _ready():
 
 func _process(delta):
 	if health <= 0 && !destroyed:
-		Global.destroyedObjects.append(Global.currentScene+name)
+		if not respawnable:
+			Global.destroyedObjects.append(Global.currentScene+name)
 		destroyed = true
 		audioPlayer.stream = load("res://Audio/temp_wood.wav")
 		audioPlayer.volume_db = Global.masterSound

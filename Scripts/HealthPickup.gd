@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+export var respawnable = true
+
 func _ready():
 	if Global.currentScene+name in Global.destroyedObjects:
 		queue_free()
@@ -10,5 +12,6 @@ func applyEffect(player):
 	player.get_node("PlayerAudio").playing = true
 	player.get_node("PlayerAudio").volume_db = Global.masterSound
 	player.updateHealthBar()
-	Global.destroyedObjects.append(Global.currentScene+name)
+	if not respawnable:
+		Global.destroyedObjects.append(Global.currentScene+name)
 	queue_free()

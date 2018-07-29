@@ -9,9 +9,8 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="BreakableBlock" type="StaticBody2D" index="0" groups=[
+[node name="BreakableBlock" type="StaticBody2D" groups=[
 "Damageable",
-"Breakable",
 ]]
 
 input_pickable = false
