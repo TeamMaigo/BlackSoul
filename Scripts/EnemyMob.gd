@@ -73,7 +73,9 @@ func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
 	var b = BulletType.instance()
 	var a = (pos - global_position).angle()
-	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
+	var dir = a + rand_range(-0.05, 0.05)
+	var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*50
+	b.start(startPos, dir, bulletSpeed)
 	get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
