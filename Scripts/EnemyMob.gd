@@ -22,6 +22,7 @@ export var respawns = true
 export var hp = 1
 
 func _ready():
+	$Visibility.show()
 	if Global.currentScene+name in Global.destroyedObjects:
 		queue_free()
 	var shape = CircleShape2D.new()

@@ -1,18 +1,17 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=5]
 
-[node name="node2D" type="Node2D" index="0"]
+[node name="node2D" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 
-position = Vector2( 2.7207, -1.36041 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 64, 64 )
@@ -29,128 +28,210 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1179615, 0, 0, -1179614, 0, 0, -1179613, 0, 0, -1114079, 0, 0, -1114077, 0, 0, -1048552, 0, 0, -1048551, 0, 0, -1048550, 0, 0, -1048549, 0, 0, -1048548, 0, 0, -1048547, 0, 0, -1048546, 0, 0, -1048545, 0, 0, -1048544, 0, 0, -1048543, 0, 0, -1048541, 0, 0, -1048540, 0, 0, -1048539, 0, 0, -1048538, 0, 0, -1048537, 0, 0, -1048536, 0, 0, -1048535, 0, 0, -1048534, 0, 0, -1048533, 0, 0, -983016, 0, 0, -982997, 0, 0, -982996, 0, 0, -917480, 0, 0, -917460, 0, 0, -851944, 0, 0, -851924, 0, 0, -851923, 0, 0, -851922, 0, 0, -851921, 0, 0, -786424, 0, 0, -786423, 0, 0, -786422, 0, 0, -786421, 0, 0, -786420, 0, 0, -786419, 0, 0, -786408, 0, 0, -786407, 0, 0, -786403, 0, 0, -786402, 0, 0, -786401, 0, 0, -786400, 0, 0, -786399, 0, 0, -786398, 0, 0, -786397, 0, 0, -786396, 0, 0, -786395, 0, 0, -786385, 0, 0, -720889, 0, 0, -720888, 0, 0, -720883, 0, 0, -720882, 0, 0, -720872, 0, 0, -720871, 0, 0, -720867, 0, 0, -720866, 0, 0, -720860, 0, 0, -720859, 0, 0, -720849, 0, 0, -589826, 0, 0, -589825, 0, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -655354, 0, 0, -655353, 0, 0, -655346, 0, 0, -655345, 0, 0, -655344, 0, 0, -655338, 0, 0, -655337, 0, 0, -655336, 0, 0, -655335, 0, 0, -655331, 0, 0, -655330, 0, 0, -655324, 0, 0, -655323, 0, 0, -655322, 0, 0, -655321, 0, 0, -655320, 0, 0, -655319, 0, 0, -655318, 0, 0, -655313, 0, 0, -524290, 0, 0, -589808, 0, 0, -589807, 0, 0, -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589802, 0, 0, -589794, 0, 0, -589793, 0, 0, -589782, 0, 0, -589777, 0, 0, -458754, 0, 0, -524257, 0, 0, -524246, 0, 0, -524241, 0, 0, -393218, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458721, 0, 0, -458720, 0, 0, -458710, 0, 0, -458709, 0, 0, -458706, 0, 0, -458705, 0, 0, -327682, 0, 0, -393215, 0, 0, -393211, 0, 0, -393184, 0, 0, -393173, 0, 0, -393170, 0, 0, -262146, 0, 0, -327679, 0, 0, -327675, 0, 0, -327664, 0, 0, -327663, 0, 0, -327662, 0, 0, -327661, 0, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -327657, 0, 0, -327648, 0, 0, -327637, 0, 0, -327636, 0, 0, -327635, 0, 0, -327634, 0, 0, -196610, 0, 0, -262143, 0, 0, -262139, 0, 0, -262138, 0, 0, -262128, 0, 0, -262127, 0, 0, -262121, 0, 0, -262113, 0, 0, -262112, 0, 0, -131074, 0, 0, -196607, 0, 0, -196602, 0, 0, -196601, 0, 0, -196592, 0, 0, -196585, 0, 0, -196577, 0, 0, -65538, 0, 0, -131071, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131046, 0, 0, -131045, 0, 0, -131044, 0, 0, -131043, 0, 0, -131042, 0, 0, -131041, 0, 0, -2, 0, 0, -65535, 0, 0, 65534, 0, 0, 1, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0 )
+tile_data = PoolIntArray( -1179615, 0, 0, -1179614, 0, 0, -1179613, 0, 0, -1179608, 0, 0, -1179607, 0, 0, -1179606, 0, 0, -1179597, 0, 0, -1179596, 0, 0, -1179595, 0, 0, -1179594, 0, 0, -1114079, 0, 0, -1114077, 0, 0, -1114072, 0, 0, -1114070, 0, 0, -1114066, 0, 0, -1114065, 0, 0, -1114064, 0, 0, -1114061, 0, 0, -1114058, 0, 0, -1048552, 0, 0, -1048551, 0, 0, -1048550, 0, 0, -1048549, 0, 0, -1048548, 0, 0, -1048547, 0, 0, -1048546, 0, 0, -1048545, 0, 0, -1048544, 0, 0, -1048543, 0, 0, -1048541, 0, 0, -1048540, 0, 0, -1048539, 0, 0, -1048538, 0, 0, -1048537, 0, 0, -1048536, 0, 0, -1048534, 0, 0, -1048533, 0, 0, -1048532, 0, 0, -1048531, 0, 0, -1048530, 0, 0, -1048528, 0, 0, -1048527, 0, 0, -1048526, 0, 0, -1048525, 0, 0, -1048522, 0, 0, -1048521, 0, 0, -1048520, 0, 0, -983016, 0, 0, -982984, 0, 0, -917480, 0, 0, -917448, 0, 0, -851944, 0, 0, -851912, 0, 0, -786424, 0, 0, -786423, 0, 0, -786422, 0, 0, -786421, 0, 0, -786420, 0, 0, -786419, 0, 0, -786408, 0, 0, -786407, 0, 0, -786403, 0, 0, -786402, 0, 0, -786401, 0, 0, -786400, 0, 0, -786399, 0, 0, -786398, 0, 0, -786397, 0, 0, -786396, 0, 0, -786395, 0, 0, -786394, 0, 0, -786393, 0, 0, -786392, 0, 0, -786391, 0, 0, -786390, 0, 0, -786389, 0, 0, -786388, 0, 0, -786387, 0, 0, -786385, 0, 0, -786383, 0, 0, -786382, 0, 0, -786378, 0, 0, -786377, 0, 0, -786376, 0, 0, -720889, 0, 0, -720888, 0, 0, -720883, 0, 0, -720882, 0, 0, -720872, 0, 0, -720871, 0, 0, -720867, 0, 0, -720866, 0, 0, -720851, 0, 0, -720850, 0, 0, -720849, 0, 0, -720848, 0, 0, -720847, 0, 0, -720846, 0, 0, -720842, 0, 0, -720841, 0, 0, -720840, 0, 0, -589826, 0, 0, -589825, 0, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -655354, 0, 0, -655353, 0, 0, -655346, 0, 0, -655345, 0, 0, -655344, 0, 0, -655338, 0, 0, -655337, 0, 0, -655336, 0, 0, -655335, 0, 0, -655331, 0, 0, -655330, 0, 0, -655310, 0, 0, -655309, 0, 0, -655304, 0, 0, -524290, 0, 0, -589808, 0, 0, -589807, 0, 0, -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589802, 0, 0, -589794, 0, 0, -589793, 0, 0, -589774, 0, 0, -589769, 0, 0, -589768, 0, 0, -458754, 0, 0, -524257, 0, 0, -524238, 0, 0, -524237, 0, 0, -524234, 0, 0, -524233, 0, 0, -524232, 0, 0, -393218, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458721, 0, 0, -458720, 0, 0, -458702, 0, 0, -458701, 0, 0, -458698, 0, 0, -458697, 0, 0, -458696, 0, 0, -327682, 0, 0, -393215, 0, 0, -393211, 0, 0, -393184, 0, 0, -393166, 0, 0, -393165, 0, 0, -393162, 0, 0, -393161, 0, 0, -393160, 0, 0, -262146, 0, 0, -327679, 0, 0, -327675, 0, 0, -327664, 0, 0, -327663, 0, 0, -327662, 0, 0, -327661, 0, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -327657, 0, 0, -327648, 0, 0, -327629, 0, 0, -327626, 0, 0, -327625, 0, 0, -196610, 0, 0, -262143, 0, 0, -262139, 0, 0, -262138, 0, 0, -262128, 0, 0, -262127, 0, 0, -262121, 0, 0, -262113, 0, 0, -262112, 0, 0, -262093, 0, 0, -262090, 0, 0, -131074, 0, 0, -196607, 0, 0, -196602, 0, 0, -196601, 0, 0, -196592, 0, 0, -196585, 0, 0, -196577, 0, 0, -196557, 0, 0, -196554, 0, 0, -65538, 0, 0, -131071, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131046, 0, 0, -131045, 0, 0, -131044, 0, 0, -131043, 0, 0, -131042, 0, 0, -131041, 0, 0, -131021, 0, 0, -131018, 0, 0, -2, 0, 0, -65535, 0, 0, -65490, 0, 0, -65489, 0, 0, -65488, 0, 0, -65487, 0, 0, -65486, 0, 0, -65485, 0, 0, -65482, 0, 0, 65534, 0, 0, 1, 0, 0, 45, 0, 0, 46, 0, 0, 54, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65581, 0, 0, 65589, 0, 0, 65590, 0, 0, 131117, 0, 0, 131122, 0, 0, 131123, 0, 0, 131124, 0, 0, 131125, 0, 0, 196653, 0, 0, 196657, 0, 0, 196658, 0, 0, 262189, 0, 0, 262193, 0, 0, 327725, 0, 0, 327729, 0, 0, 393261, 0, 0, 393265, 0, 0, 458797, 0, 0, 458798, 0, 0, 458799, 0, 0, 458800, 0, 0, 458801, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Turret" parent="tileMap" index="0" instance=ExtResource( 2 )]
+[node name="TransferPoint" parent="tileMap" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 711.498, -404.184 )
+position = Vector2( 3046.84, 395.789 )
+newScene = "LabC1"
+transferGoalTemp = "D"
+
+[node name="Breakable1" type="Node" parent="tileMap" index="1"]
+
+editor/display_folded = true
+
+[node name="BreakableBlock" parent="tileMap/Breakable1" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 1059.73, -477.423 )
+respawnable = true
+
+[node name="BreakableBlock4" parent="tileMap/Breakable1" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1059.73, -416.274 )
+respawnable = true
+
+[node name="BreakableBlock6" parent="tileMap/Breakable1" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 1059.73, -350.976 )
+respawnable = true
+
+[node name="BreakableBlock2" parent="tileMap/Breakable1" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 1125.03, -477.423 )
+respawnable = true
+
+[node name="BreakableBlock3" parent="tileMap/Breakable1" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 1125.03, -413.485 )
+respawnable = true
+
+[node name="BreakableBlock5" parent="tileMap/Breakable1" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 1125.03, -350.976 )
+respawnable = true
+
+[node name="Breakable2" type="Node" parent="tileMap" index="2"]
+
+editor/display_folded = true
+
+[node name="BreakableBlock11" parent="tileMap/Breakable2" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 1698.27, -673.425 )
+respawnable = true
+
+[node name="BreakableBlock12" parent="tileMap/Breakable2" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1698.27, -609.487 )
+respawnable = true
+
+[node name="BreakableBlock8" parent="tileMap/Breakable2" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 1826.76, -608.032 )
+respawnable = true
+
+[node name="BreakableBlock9" parent="tileMap/Breakable2" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 1763.56, -673.425 )
+respawnable = true
+
+[node name="BreakableBlock7" parent="tileMap/Breakable2" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 1763.56, -609.487 )
+respawnable = true
+
+[node name="BreakableBlock10" parent="tileMap/Breakable2" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 1827.41, -671.874 )
+respawnable = true
+
+[node name="Turrets" type="Node" parent="tileMap" index="3"]
+
+editor/display_folded = true
+
+[node name="Turret" parent="tileMap/Turrets" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 714.219, -405.544 )
 bulletSpeed = 10
 
-[node name="Turret2" parent="tileMap" index="1" instance=ExtResource( 2 )]
+[node name="Turret2" parent="tileMap/Turrets" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 1652.7, -287.303 )
+position = Vector2( 1655.42, -288.663 )
 bulletSpeed = 10
 
-[node name="Turret3" parent="tileMap" index="2" instance=ExtResource( 2 )]
+[node name="Turret3" parent="tileMap/Turrets" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 1880.31, -455.448 )
+position = Vector2( 1883.03, -456.808 )
 bulletSpeed = 10
 
-[node name="BreakableBlock" parent="tileMap" index="3" instance=ExtResource( 3 )]
+[node name="Turret4" parent="tileMap/Turrets" index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 1057.01, -478.852 )
-respawnable = true
-
-[node name="BreakableBlock11" parent="tileMap" index="4" instance=ExtResource( 3 )]
-
-position = Vector2( 1695.55, -672.065 )
-respawnable = true
-
-[node name="BreakableBlock4" parent="tileMap" index="5" instance=ExtResource( 3 )]
-
-position = Vector2( 1057.01, -414.914 )
-respawnable = true
-
-[node name="BreakableBlock12" parent="tileMap" index="6" instance=ExtResource( 3 )]
-
-position = Vector2( 1695.55, -608.127 )
-respawnable = true
-
-[node name="BreakableBlock6" parent="tileMap" index="7" instance=ExtResource( 3 )]
-
-position = Vector2( 1057.01, -349.616 )
-respawnable = true
-
-[node name="BreakableBlock8" parent="tileMap" index="8" instance=ExtResource( 3 )]
-
-position = Vector2( 1824.04, -606.672 )
-respawnable = true
-
-[node name="BreakableBlock2" parent="tileMap" index="9" instance=ExtResource( 3 )]
-
-position = Vector2( 1122.31, -478.852 )
-respawnable = true
-
-[node name="BreakableBlock9" parent="tileMap" index="10" instance=ExtResource( 3 )]
-
-position = Vector2( 1760.84, -672.065 )
-respawnable = true
-
-[node name="BreakableBlock3" parent="tileMap" index="11" instance=ExtResource( 3 )]
-
-position = Vector2( 1122.31, -414.914 )
-respawnable = true
-
-[node name="BreakableBlock7" parent="tileMap" index="12" instance=ExtResource( 3 )]
-
-position = Vector2( 1760.84, -608.127 )
-respawnable = true
-
-[node name="BreakableBlock5" parent="tileMap" index="13" instance=ExtResource( 3 )]
-
-position = Vector2( 1122.31, -349.616 )
-respawnable = true
-
-[node name="BreakableBlock10" parent="tileMap" index="14" instance=ExtResource( 3 )]
-
-position = Vector2( 1824.69, -670.514 )
-respawnable = true
-
-[node name="Turret4" parent="tileMap" index="15" instance=ExtResource( 2 )]
-
-position = Vector2( 1628.57, -928.427 )
+position = Vector2( 1631.29, -929.787 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 8
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret7" parent="tileMap" index="16" instance=ExtResource( 2 )]
+[node name="Turret7" parent="tileMap/Turrets" index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 2208.08, -1057.66 )
+position = Vector2( 2210.8, -1059.02 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 8
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret5" parent="tileMap" index="17" instance=ExtResource( 2 )]
+[node name="Turret5" parent="tileMap/Turrets" index="5" instance=ExtResource( 4 )]
 
-position = Vector2( 1628.57, -863.053 )
+position = Vector2( 1631.29, -864.413 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 8
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret6" parent="tileMap" index="18" instance=ExtResource( 2 )]
+[node name="Turret6" parent="tileMap/Turrets" index="6" instance=ExtResource( 4 )]
 
-position = Vector2( 1628.57, -797.679 )
+position = Vector2( 1631.29, -799.039 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 8
 rotatingTurret = false
 usesTargeting = false
 
-[node name="TransferPoint" parent="tileMap" index="19" instance=ExtResource( 4 )]
+[node name="Turret8" parent="tileMap/Turrets" index="7" instance=ExtResource( 4 )]
 
-position = Vector2( 2882.94, -369.288 )
-newScene = "LabC1"
-transferGoalTemp = "D"
+position = Vector2( 3362.83, -1057.58 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 8
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret9" parent="tileMap/Turrets" index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 3428.12, -1058.94 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+firstShotDelay = 0.5
+bulletSpeed = 8
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret12" parent="tileMap/Turrets" index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 3039.06, -988.197 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+firstShotDelay = 0.5
+bulletSpeed = 8
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret13" parent="tileMap/Turrets" index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 2983.28, -735.166 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+firstShotDelay = 0.5
+bulletSpeed = 8
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret14" parent="tileMap/Turrets" index="11" instance=ExtResource( 4 )]
+
+position = Vector2( 3107.08, -733.806 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+firstShotDelay = 0.5
+bulletSpeed = 8
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret10" parent="tileMap/Turrets" index="12" instance=ExtResource( 4 )]
+
+position = Vector2( 3557.36, -607.291 )
+rotation = 3.14159
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 8
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret11" parent="tileMap/Turrets" index="13" instance=ExtResource( 4 )]
+
+position = Vector2( 3298.89, -543.353 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 8
+rotatingTurret = false
+usesTargeting = false
 
 [node name="TransferGoalA" parent="." index="1" instance=ExtResource( 5 )]
 
-position = Vector2( -7.54846, -117.695 )
+position = Vector2( -4.77295, -90.2574 )
 
-[node name="TransferPoint" parent="." index="2" instance=ExtResource( 4 )]
+[node name="TransferGoalB" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 3049.08, 279.165 )
+
+[node name="TransferPoint" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( -4.80774, 10.7029 )
 newScene = "LabC1"

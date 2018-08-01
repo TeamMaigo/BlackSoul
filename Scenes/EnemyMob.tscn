@@ -14,7 +14,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 radius = 300.0
 
-[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
+[node name="EnemyMob" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
@@ -30,6 +30,8 @@ BulletType = ExtResource( 2 )
 bulletSpeed = 10
 fire_rate = 1
 fireType = "singleFire"
+respawns = true
+hp = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -43,6 +45,7 @@ shape = SubResource( 1 )
 
 [node name="Visibility" type="Area2D" parent="." index="2"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

@@ -6,7 +6,7 @@ extends KinematicBody2D
 
 # Required to pass editor info to collider child of object
 export (int) var detect_radius  # size of the visibility circle
-export (int) var fire_rate = 60  # delay time (frames) between bullets
+export (float) var fire_rate = 1.0  # delay time (sec) between bullets
 export (float) var firstShotDelay = 0
 export (PackedScene) var Bullet
 export var bulletSpeed = 1
