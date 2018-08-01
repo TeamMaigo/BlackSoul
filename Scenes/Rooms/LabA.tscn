@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -84,13 +84,18 @@ _sections_unfolded = [ "Rect" ]
 [node name="Pickup" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 229.036, -57.5681 )
+respawnable = true
 
 [node name="EnemyMob" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 671.414, -167.019 )
+respawns = true
+hp = 1
 
 [node name="EnemyMob2" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( -415.876, 384.143 )
+respawns = true
+hp = 1
 
 
