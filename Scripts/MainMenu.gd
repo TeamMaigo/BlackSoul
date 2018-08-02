@@ -16,6 +16,7 @@ func _ready():
 
 
 func _on_New_Game_pressed():
+	Global.destroyedObjects.clear()
 	get_tree().change_scene("res://Scenes/World.tscn")
 
 

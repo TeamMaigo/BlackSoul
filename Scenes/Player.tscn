@@ -141,8 +141,8 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
-"team_Player",
 "Damageable",
+"team_Player",
 ]]
 
 input_pickable = false
@@ -173,6 +173,7 @@ collision_mask = 21
 texture = ExtResource( 3 )
 vframes = 22
 hframes = 8
+region_rect = Rect2( 160, 30, 110, 90 )
 _sections_unfolded = [ "Animation" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
