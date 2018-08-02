@@ -8,11 +8,11 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="TransferPoint" type="Node2D"]
+[node name="TransferPoint" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 newScene = "Room1"
-transferGoal = "TransferGoalA"
+transferGoalTemp = "A"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

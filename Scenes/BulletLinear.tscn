@@ -40,8 +40,8 @@ _sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "coll
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -2.30423, -0.30313 )
-scale = Vector2( 0.430184, 0.317517 )
+position = Vector2( 2.5429, -0.30313 )
+scale = Vector2( 0.291695, 0.317517 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]

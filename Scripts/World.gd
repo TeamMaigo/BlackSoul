@@ -68,7 +68,7 @@ func _deferred_goto_scene(path, transferGoalPath):
 func reloadLastScene():
 	currentScene.queue_free()
 	currentScene = scene.instance()
-	get_tree().get_root().add_child(currentScene)
+	get_tree().get_root().get_node("World").add_child(currentScene)
 	player.position = respawnPoint
 
 func _get_camera_center():

@@ -22,6 +22,7 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+respawnable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

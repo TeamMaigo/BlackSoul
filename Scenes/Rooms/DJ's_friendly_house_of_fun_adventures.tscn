@@ -1,0 +1,154 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=5]
+
+[node name="LabRoom" type="TileMap" index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -327683, 0, 0, -393205, 0, 0, -393201, 0, 0, -262147, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327665, 0, 0, -196611, 0, 0, -262129, 0, 0, -131075, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -65539, 0, 0, -131059, 0, 0, -3, 0, 0, -65523, 0, 0, 13, 0, 0, 131069, 0, 0, 196605, 0, 0, 131085, 0, 0, 262141, 0, 0, 196621, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 393211, 0, 0, 327695, 0, 0, 458747, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393220, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393231, 0, 0, 524283, 0, 0, 524287, 0, 0, 458763, 0, 0, 458767, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TransferPoint" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 156.02, -454.185 )
+newScene = "LabB"
+transferGoalTemp = "A"
+
+[node name="Turret" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 863.838, -291.12 )
+bulletSpeed = 8
+
+[node name="Turret2" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 863.838, -291.12 )
+detect_radius = 700
+bulletSpeed = 8
+
+[node name="Turret3" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -163.245, 408.112 )
+detect_radius = 700
+bulletSpeed = 8
+
+[node name="Turret4" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 867.919, 412.194 )
+rotation = 4.71239
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 700
+bulletSpeed = 8
+
+[node name="Turret5" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 353.916, 97.16 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 250
+fire_rate = 4.5
+
+[node name="tileMap" type="TileMap" parent="." index="6"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 8
+collision_mask = 8
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196609, 1, 0, -131073, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 1, 0, -196597, 1, 0, -65537, 1, 0, -131071, 1, 0, -131061, 1, 0, -1, 1, 0, -65535, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65525, 1, 0, 65535, 1, 0, 1, 1, 0, 3, 1, 0, 9, 1, 0, 11, 1, 0, 131071, 1, 0, 65537, 1, 0, 65545, 1, 0, 65547, 1, 0, 196607, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131083, 1, 0, 262143, 1, 0, 196619, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 393221, 0, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Turret" parent="tileMap" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -160.525, 32.6489 )
+fire_rate = 2.0
+bulletSpeed = 5
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret2" parent="tileMap" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 227.183, 418.996 )
+rotation = 4.71239
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+fire_rate = 2.0
+bulletSpeed = 5
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret3" parent="tileMap" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 863.838, 96.5871 )
+rotation = 3.14159
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+fire_rate = 2.0
+bulletSpeed = 5
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret4" parent="tileMap" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 552.312, -287.039 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+fire_rate = 2.0
+bulletSpeed = 5
+rotatingTurret = false
+usesTargeting = false
+
+[node name="HealthPickup4" parent="tileMap" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 661.142, -89.7848 )
+
+[node name="HealthPickup5" parent="tileMap" index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 34.0887, 228.264 )
+
+[node name="BreakableBlock" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 34.6688, -214.042 )
+respawnable = true
+
+[node name="BreakableBlock2" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 663.23, 227.608 )
+respawnable = true
+
+[node name="BreakableBlock3" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 161.285, -94.9624 )
+respawnable = true
+
+

@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( 0, -1.50732 )
 mode = 0
@@ -56,5 +56,6 @@ position = Vector2( -254.74, -393.416 )
 [node name="HealthPickup" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( -470.32, 922.463 )
+respawnable = true
 
 

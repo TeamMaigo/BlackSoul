@@ -107,8 +107,6 @@ respawnable = true
 
 [node name="Turrets" type="Node" parent="tileMap" index="3"]
 
-editor/display_folded = true
-
 [node name="Turret" parent="tileMap/Turrets" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 714.219, -405.544 )
@@ -121,7 +119,7 @@ bulletSpeed = 10
 
 [node name="Turret3" parent="tileMap/Turrets" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 1883.03, -456.808 )
+position = Vector2( 1874.44, -293.519 )
 bulletSpeed = 10
 
 [node name="Turret4" parent="tileMap/Turrets" index="3" instance=ExtResource( 4 )]

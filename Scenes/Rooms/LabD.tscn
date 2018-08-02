@@ -50,30 +50,7 @@ position = Vector2( 1468.15, 394.924 )
 
 position = Vector2( 1601.47, 256.166 )
 
-[node name="Label" type="Label" parent="." index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -174.0
-margin_top = 7.0
-margin_right = -95.0
-margin_bottom = 21.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Shift to dash"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
-[node name="Turret" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Turret" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 354.226, -159.779 )
 rotation = 1.5708
@@ -82,7 +59,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret2" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Turret2" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 420.549, -159.779 )
 rotation = 1.5708
@@ -91,7 +68,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret3" parent="." index="8" instance=ExtResource( 4 )]
+[node name="Turret3" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 351.211, 161.286 )
 rotation = 1.5708
@@ -100,7 +77,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret4" parent="." index="9" instance=ExtResource( 4 )]
+[node name="Turret4" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 928.524, 417.534 )
 rotation = 3.14159
@@ -109,7 +86,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret5" parent="." index="10" instance=ExtResource( 4 )]
+[node name="Turret5" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 928.524, 483.858 )
 rotation = 3.14159
