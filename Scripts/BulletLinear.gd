@@ -40,6 +40,8 @@ func collide(collider):
 	if !collided:
 		if collider.has_method("takeDamage"): #is_in_group("Damageable"):
 			collider.takeDamage(damage)
+		if collider.has_method("switch"):
+			collider.switch()
 		queue_free()
 		collided = true
 	
