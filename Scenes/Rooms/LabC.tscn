@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=5]
 
@@ -31,8 +31,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="TransferPointA" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 2044.43, 1041.66 )
-newScene = "LabC1"
-transferGoalTemp = "A"
+newScene = "LabC3"
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -130,15 +129,20 @@ usesTargeting = false
 
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 1915.71, 315.312 )
+position = Vector2( 1956.23, 279.708 )
 respawnable = true
 
-[node name="BreakableBlock2" parent="." index="6" instance=ExtResource( 5 )]
+[node name="BreakableBlock4" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 1956.23, 346.006 )
+respawnable = true
+
+[node name="BreakableBlock2" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 1380.61, 99.7632 )
 respawnable = true
 
-[node name="BreakableBlock3" parent="." index="7" instance=ExtResource( 5 )]
+[node name="BreakableBlock3" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 1474.06, 557.993 )
 respawnable = true

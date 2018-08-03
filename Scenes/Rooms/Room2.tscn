@@ -2,10 +2,12 @@
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
 
-[node name="Room2" type="TileMap"]
+
+
+[node name="Room2" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -28,31 +30,22 @@ tile_data = PoolIntArray( -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -458758, 
 [node name="EnemyMob" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 65.8605, -277.168 )
-respawns = true
-hp = 1
 
 [node name="EnemyMob2" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 123.602, -168.822 )
-respawns = true
-hp = 1
 
 [node name="EnemyMob3" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -110.036, 51.2495 )
-respawns = true
-hp = 1
 
 [node name="EnemyMob4" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 137.168, -235.145 )
-respawns = true
-hp = 1
 
 [node name="TransferPointA" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( -736.843, -99.7231 )
-transferGoalTemp = "A"
 
 [node name="TransferGoalA" parent="." index="5" instance=ExtResource( 4 )]
 
@@ -61,10 +54,9 @@ position = Vector2( -609.419, -96.399 )
 [node name="TransferPointB" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 286.981, 230.471 )
-transferGoalTemp = "A"
 
 [node name="TransferGoalB" parent="." index="7" instance=ExtResource( 4 )]
 
-position = Vector2( 354.571, 160.665 )
+position = Vector2( 421.379, 90.5172 )
 
 

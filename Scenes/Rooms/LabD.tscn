@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 position = Vector2( 0, -1.50732 )
 mode = 0
@@ -34,7 +34,7 @@ transferGoalTemp = "F"
 
 [node name="TransferPointB" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 1705.15, 253.479 )
+position = Vector2( 1674.13, 67.3288 )
 newScene = "LabF"
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 3 )]

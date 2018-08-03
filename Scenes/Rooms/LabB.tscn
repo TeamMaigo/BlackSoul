@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Rooms/TransferPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Rooms/TransferGoal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=5]
 
 [node name="LabRoom" type="TileMap"]
 
@@ -35,12 +35,10 @@ __meta__ = {
 
 position = Vector2( 940.651, 845.031 )
 newScene = "LabC"
-transferGoalTemp = "A"
 
 [node name="Pickup" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 1251.51, 96.0159 )
-respawnable = true
 
 [node name="EnemyMob" parent="." index="2" instance=ExtResource( 4 )]
 
@@ -56,6 +54,6 @@ position = Vector2( -446.189, 440.69 )
 
 [node name="TransferGoalB" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 1050.71, 840.546 )
+position = Vector2( 1069.16, 836.445 )
 
 

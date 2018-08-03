@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="BreakableBlock" type="StaticBody2D" groups=[
+[node name="BreakableBlock" type="StaticBody2D" index="0" groups=[
 "Damageable",
 ]]
 
@@ -22,6 +22,7 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 health = 1
+respawnable = true
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

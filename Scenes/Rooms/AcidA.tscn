@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=7]
+
+[node name="LabRoom" type="TileMap" index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -589870, 0, 0, -589869, 0, 0, -589868, 0, 0, -589867, 0, 0, -589866, 0, 0, -589865, 0, 0, -589864, 0, 0, -589863, 0, 0, -589862, 0, 0, -589861, 0, 0, -589856, 0, 0, -589855, 0, 0, -589854, 0, 0, -589853, 0, 0, -589852, 0, 0, -524334, 0, 0, -524325, 0, 0, -524320, 0, 0, -524316, 0, 0, -524315, 0, 0, -458799, 0, 0, -458798, 0, 0, -458789, 0, 0, -458785, 0, 0, -458784, 0, 0, -458779, 0, 0, -458778, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -393263, 0, 0, -393253, 0, 0, -393249, 0, 0, -393242, 0, 0, -393241, 0, 0, -393240, 0, 0, -393238, 0, 0, -393237, 0, 0, -393236, 0, 0, -393235, 0, 0, -393234, 0, 0, -393233, 0, 0, -393232, 0, 0, -393231, 0, 0, -393230, 0, 0, -393229, 0, 0, -393220, 0, 0, -458751, 0, 0, -327727, 0, 0, -327717, 0, 0, -327716, 0, 0, -327715, 0, 0, -327714, 0, 0, -327713, 0, 0, -327702, 0, 0, -327693, 0, 0, -327692, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -393215, 0, 0, -262191, 0, 0, -262167, 0, 0, -262166, 0, 0, -262156, 0, 0, -262155, 0, 0, -262154, 0, 0, -262153, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -262148, 0, 0, -262147, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -196655, 0, 0, -262141, 0, 0, -131119, 0, 0, -131118, 0, 0, -131109, 0, 0, -131108, 0, 0, -131107, 0, 0, -131106, 0, 0, -131105, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -65582, 0, 0, -65573, 0, 0, -65569, 0, 0, -65568, 0, 0, -131060, 0, 0, -46, 0, 0, -37, 0, 0, -32, 0, 0, -26, 0, 0, -25, 0, 0, -24, 0, 0, -65524, 0, 0, 65490, 0, 0, 65499, 0, 0, 65504, 0, 0, 65505, 0, 0, 65510, 0, 0, 65512, 0, 0, 65513, 0, 0, 65521, 0, 0, 65522, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 12, 0, 0, 131026, 0, 0, 131027, 0, 0, 131028, 0, 0, 131029, 0, 0, 131034, 0, 0, 131035, 0, 0, 131041, 0, 0, 131046, 0, 0, 131047, 0, 0, 131048, 0, 0, 131049, 0, 0, 131057, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 196565, 0, 0, 196566, 0, 0, 196577, 0, 0, 196593, 0, 0, 262113, 0, 0, 262128, 0, 0, 262129, 0, 0, 327648, 0, 0, 327649, 0, 0, 327661, 0, 0, 327662, 0, 0, 327663, 0, 0, 393184, 0, 0, 458720, 0, 0, 524256, 0, 0, 589792, 0, 0, 589793, 0, 0, 589794, 0, 0, 589795, 0, 0, 589796, 0, 0, 589797, 0, 0, 589798, 0, 0, 589799, 0, 0, 589800, 0, 0, 589801, 0, 0, 589802, 0, 0, 589803, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TransferGoalA" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 596.29, -30.1176 )
+
+[node name="BreakableBlock" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -64.7719, -284.996 )
+respawnable = true
+
+[node name="Turret" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -288.52, -286.064 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret2" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -2746.14, -298.452 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+
+[node name="HoleLayer" type="TileMap" parent="." index="4"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 8
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -524330, 1, 0, -458794, 1, 0, -393258, 1, 0, -327722, 1, 0, -262186, 1, 0, -196650, 1, 0, -131114, 1, 0, -65578, 1, 0, -42, 1, 0, 65494, 1, 0, 131030, 1, 0 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Switch" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -2793.64, -70.9806 )
+on = true
+
+[node name="SwitchDoor" parent="Switch" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 265.345, 178.652 )
+scale = Vector2( 3.56981, 2.60725 )
+
+[node name="label" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -110.0
+margin_top = -399.0
+margin_right = -70.0
+margin_bottom = -385.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Hp Up"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="EnemyMob" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -1261.01, -84.067 )
+fireType = "shotgun"
+
+[connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onDeactivate"]
+
+[connection signal="turn_on" from="Switch" to="Switch/SwitchDoor" method="_onActivate"]
+
+

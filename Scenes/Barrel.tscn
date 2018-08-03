@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10.1396 )
 
-[node name="Barrel" type="StaticBody2D" groups=[
+[node name="Barrel" type="StaticBody2D" index="0" groups=[
 "Damageable",
 ]]
 
@@ -21,6 +21,7 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 health = 2
+respawnable = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
 
