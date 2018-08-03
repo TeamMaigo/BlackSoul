@@ -3,10 +3,10 @@
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 z_index = -1
 mode = 0
@@ -40,20 +40,20 @@ newScene = "LabC"
 
 position = Vector2( 1251.51, 96.0159 )
 
-[node name="EnemyMob" parent="." index="2" instance=ExtResource( 4 )]
-
-position = Vector2( -4.40811, -72.8696 )
-
-[node name="EnemyMob2" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 840.58, 318.253 )
-
-[node name="TransferGoalA" parent="." index="4" instance=ExtResource( 5 )]
+[node name="TransferGoalA" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -446.189, 440.69 )
 
-[node name="TransferGoalB" parent="." index="5" instance=ExtResource( 5 )]
+[node name="TransferGoalB" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 1069.16, 836.445 )
+
+[node name="EnemyMob" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( -2.72076, -72.0998 )
+
+[node name="EnemyMob3" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 843.432, 314.246 )
 
 

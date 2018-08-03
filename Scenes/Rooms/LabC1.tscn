@@ -1,15 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=9]
 
 [node name="LabRoom" type="TileMap" index="0"]
 
@@ -61,45 +60,25 @@ newScene = "AcidA"
 
 position = Vector2( 1251.51, 96.0159 )
 
-[node name="EnemyMob" parent="." index="5" instance=ExtResource( 4 )]
-
-position = Vector2( 540.572, -245.621 )
-
-[node name="EnemyMob3" parent="." index="6" instance=ExtResource( 4 )]
-
-position = Vector2( 762.794, -264.038 )
-
-[node name="EnemyMob4" parent="." index="7" instance=ExtResource( 4 )]
-
-position = Vector2( 910.123, -260.354 )
-
-[node name="EnemyMob5" parent="." index="8" instance=ExtResource( 4 )]
-
-position = Vector2( 335.54, -251.76 )
-
-[node name="EnemyMob2" parent="." index="9" instance=ExtResource( 4 )]
-
-position = Vector2( 810.295, 1957.15 )
-
-[node name="TransferGoalA" parent="." index="10" instance=ExtResource( 5 )]
+[node name="TransferGoalA" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 2567.3, 576.637 )
 
-[node name="TransferGoalB" parent="." index="11" instance=ExtResource( 5 )]
+[node name="TransferGoalB" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 2367.32, 670.503 )
 
-[node name="BreakableBlock" parent="." index="12" instance=ExtResource( 6 )]
+[node name="BreakableBlock" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 322.327, 98.3869 )
 respawnable = false
 
-[node name="BreakableBlock3" parent="." index="13" instance=ExtResource( 6 )]
+[node name="BreakableBlock3" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 521.45, 1250.83 )
 respawnable = false
 
-[node name="SignAcidSector" type="Label" parent="." index="14"]
+[node name="SignAcidSector" type="Label" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -123,7 +102,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Dash" type="Label" parent="." index="15"]
+[node name="Dash" type="Label" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -146,36 +125,36 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="TransferPoint" parent="." index="16" instance=ExtResource( 2 )]
+[node name="TransferPoint" parent="." index="11" instance=ExtResource( 2 )]
 
 position = Vector2( 2364.34, 779.51 )
 newScene = "Save1"
 
-[node name="TransferPoint2" parent="." index="17" instance=ExtResource( 2 )]
+[node name="TransferPoint2" parent="." index="12" instance=ExtResource( 2 )]
 
 position = Vector2( 2358.16, -1112.11 )
 newScene = "LabC2"
 transferGoalTemp = "B"
 
-[node name="TransferGoalC" parent="." index="18" instance=ExtResource( 5 )]
+[node name="TransferGoalC" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( -450.694, -147.719 )
 
-[node name="TransferGoalD" parent="." index="19" instance=ExtResource( 5 )]
+[node name="TransferGoalD" parent="." index="14" instance=ExtResource( 4 )]
 
 position = Vector2( 2357.84, -1005.06 )
 
-[node name="TransferGoalE" parent="." index="20" instance=ExtResource( 5 )]
+[node name="TransferGoalE" parent="." index="15" instance=ExtResource( 4 )]
 
 position = Vector2( -630.014, 1532.19 )
 
-[node name="TransferGoalF" parent="." index="21" instance=ExtResource( 5 )]
+[node name="TransferGoalF" parent="." index="16" instance=ExtResource( 4 )]
 
 position = Vector2( 1304.98, 1710.28 )
 
-[node name="Turrets" type="Node2D" parent="." index="22"]
+[node name="Turrets" type="Node2D" parent="." index="17"]
 
-[node name="Turret" parent="Turrets" index="0" instance=ExtResource( 7 )]
+[node name="Turret" parent="Turrets" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 2018.84, 418.489 )
 rotation = 1.5708
@@ -184,7 +163,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret14" parent="Turrets" index="1" instance=ExtResource( 7 )]
+[node name="Turret14" parent="Turrets" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 2212.83, -285.222 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -193,7 +172,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret19" parent="Turrets" index="2" instance=ExtResource( 7 )]
+[node name="Turret19" parent="Turrets" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 2526.41, -285.222 )
 rotation = 3.14159
@@ -203,7 +182,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret15" parent="Turrets" index="3" instance=ExtResource( 7 )]
+[node name="Turret15" parent="Turrets" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 2212.83, -220.1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -212,7 +191,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret20" parent="Turrets" index="4" instance=ExtResource( 7 )]
+[node name="Turret20" parent="Turrets" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 2525.05, -218.74 )
 rotation = 3.14159
@@ -222,7 +201,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret16" parent="Turrets" index="5" instance=ExtResource( 7 )]
+[node name="Turret16" parent="Turrets" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 2212.83, -155.834 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -231,7 +210,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret21" parent="Turrets" index="6" instance=ExtResource( 7 )]
+[node name="Turret21" parent="Turrets" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 2525.3, -155.834 )
 rotation = 3.14159
@@ -241,7 +220,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret17" parent="Turrets" index="7" instance=ExtResource( 7 )]
+[node name="Turret17" parent="Turrets" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 2213.94, -92.6761 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -250,7 +229,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret22" parent="Turrets" index="8" instance=ExtResource( 7 )]
+[node name="Turret22" parent="Turrets" index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 2525.3, -92.9284 )
 rotation = 3.14159
@@ -260,7 +239,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret2" parent="Turrets" index="9" instance=ExtResource( 7 )]
+[node name="Turret2" parent="Turrets" index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 1440.02, 483.305 )
 rotation = 1.5708
@@ -269,7 +248,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret3" parent="Turrets" index="10" instance=ExtResource( 7 )]
+[node name="Turret3" parent="Turrets" index="10" instance=ExtResource( 6 )]
 
 position = Vector2( 1314.91, 676.244 )
 rotation = -1.5708
@@ -278,7 +257,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret4" parent="Turrets" index="11" instance=ExtResource( 7 )]
+[node name="Turret4" parent="Turrets" index="11" instance=ExtResource( 6 )]
 
 position = Vector2( 1185.28, 480.29 )
 rotation = 1.5708
@@ -287,21 +266,21 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret5" parent="Turrets" index="12" instance=ExtResource( 7 )]
+[node name="Turret5" parent="Turrets" index="12" instance=ExtResource( 6 )]
 
 position = Vector2( 676.744, 476.189 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret6" parent="Turrets" index="13" instance=ExtResource( 7 )]
+[node name="Turret6" parent="Turrets" index="13" instance=ExtResource( 6 )]
 
 position = Vector2( 292.151, 673.271 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret7" parent="Turrets" index="14" instance=ExtResource( 7 )]
+[node name="Turret7" parent="Turrets" index="14" instance=ExtResource( 6 )]
 
 position = Vector2( -738.267, 868.057 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -310,7 +289,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret28" parent="Turrets" index="15" instance=ExtResource( 7 )]
+[node name="Turret28" parent="Turrets" index="15" instance=ExtResource( 6 )]
 
 position = Vector2( -1092.49, 845.447 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -318,7 +297,7 @@ detect_radius = 200
 fire_rate = 2.0
 bulletSpeed = 3
 
-[node name="Turret23" parent="Turrets" index="16" instance=ExtResource( 7 )]
+[node name="Turret23" parent="Turrets" index="16" instance=ExtResource( 6 )]
 
 position = Vector2( -735.615, 292.883 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -326,7 +305,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret8" parent="Turrets" index="17" instance=ExtResource( 7 )]
+[node name="Turret8" parent="Turrets" index="17" instance=ExtResource( 6 )]
 
 position = Vector2( -738.267, 991.659 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -335,7 +314,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret9" parent="Turrets" index="18" instance=ExtResource( 7 )]
+[node name="Turret9" parent="Turrets" index="18" instance=ExtResource( 6 )]
 
 position = Vector2( -738.267, 1249.41 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -343,7 +322,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret26" parent="Turrets" index="19" instance=ExtResource( 7 )]
+[node name="Turret26" parent="Turrets" index="19" instance=ExtResource( 6 )]
 
 position = Vector2( -1440.66, 1642.14 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -351,7 +330,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret27" parent="Turrets" index="20" instance=ExtResource( 7 )]
+[node name="Turret27" parent="Turrets" index="20" instance=ExtResource( 6 )]
 
 position = Vector2( -1440.66, 1700.05 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -359,7 +338,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret24" parent="Turrets" index="21" instance=ExtResource( 7 )]
+[node name="Turret24" parent="Turrets" index="21" instance=ExtResource( 6 )]
 
 position = Vector2( 541.181, 1886.81 )
 rotation = 3.14159
@@ -369,7 +348,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret25" parent="Turrets" index="22" instance=ExtResource( 7 )]
+[node name="Turret25" parent="Turrets" index="22" instance=ExtResource( 6 )]
 
 position = Vector2( 541.181, 1826.69 )
 rotation = 3.14159
@@ -380,7 +359,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret10" parent="Turrets" index="23" instance=ExtResource( 7 )]
+[node name="Turret10" parent="Turrets" index="23" instance=ExtResource( 6 )]
 
 position = Vector2( -545.328, 1249.41 )
 rotation = 3.14159
@@ -389,7 +368,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret11" parent="Turrets" index="24" instance=ExtResource( 7 )]
+[node name="Turret11" parent="Turrets" index="24" instance=ExtResource( 6 )]
 
 position = Vector2( -545.328, 1059.49 )
 rotation = 3.14159
@@ -399,7 +378,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret12" parent="Turrets" index="25" instance=ExtResource( 7 )]
+[node name="Turret12" parent="Turrets" index="25" instance=ExtResource( 6 )]
 
 position = Vector2( -545.328, 928.351 )
 rotation = 3.14159
@@ -409,27 +388,25 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret13" parent="Turrets" index="26" instance=ExtResource( 7 )]
+[node name="Turret13" parent="Turrets" index="26" instance=ExtResource( 6 )]
 
 modulate = Color( 0.705719, 0.709953, 0.722656, 1 )
 position = Vector2( 1557.79, -1055.36 )
 rotation = 3.14159
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-detect_radius = 700
-Bullet = ExtResource( 8 )
-bulletSpeed = 20
+detect_radius = 600
+bulletSpeed = 14
 
-[node name="Turret18" parent="Turrets" index="27" instance=ExtResource( 7 )]
+[node name="Turret18" parent="Turrets" index="27" instance=ExtResource( 6 )]
 
 modulate = Color( 0.705719, 0.709953, 0.722656, 1 )
 position = Vector2( 796.69, -734.798 )
 rotation = 3.14159
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-detect_radius = 700
-Bullet = ExtResource( 8 )
-bulletSpeed = 20
+detect_radius = 600
+bulletSpeed = 14
 
-[node name="tileMap" type="TileMap" parent="." index="23"]
+[node name="tileMap" type="TileMap" parent="." index="18"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -453,15 +430,32 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Switch" parent="." index="24" instance=ExtResource( 9 )]
+[node name="Switch" parent="." index="19" instance=ExtResource( 7 )]
 
+editor/display_folded = true
 position = Vector2( -876.097, 767.843 )
 on = true
 
-[node name="SwitchDoor" parent="Switch" index="3" instance=ExtResource( 10 )]
+[node name="SwitchDoor" parent="Switch" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 86.421, -196 )
 scale = Vector2( 3.25213, 2.18934 )
+
+[node name="EnemyMob6" parent="." index="20" instance=ExtResource( 9 )]
+
+position = Vector2( 611.982, -256.249 )
+
+[node name="EnemyMob8" parent="." index="21" instance=ExtResource( 9 )]
+
+position = Vector2( 869.739, -254.741 )
+
+[node name="EnemyMob9" parent="." index="22" instance=ExtResource( 9 )]
+
+position = Vector2( 910.836, 1957.68 )
+
+[node name="EnemyMob7" parent="." index="23" instance=ExtResource( 9 )]
+
+position = Vector2( 336.138, -260.771 )
 
 [connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onDeactivate"]
 

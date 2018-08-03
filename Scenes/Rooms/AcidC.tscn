@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=5]
+
+[node name="LabRoom" type="TileMap"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -131081, 0, 0, -131080, 0, 0, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -196588, 0, 0, -196587, 0, 0, -196586, 0, 0, -196585, 0, 0, -65546, 0, 0, -65545, 0, 0, -65539, 0, 0, -65538, 0, 0, -131067, 0, 0, -131054, 0, 0, -131053, 0, 0, -131048, 0, 0, -10, 0, 0, -1, 0, 0, -65532, 0, 0, -65531, 0, 0, -65519, 0, 0, -65518, 0, 0, -65512, 0, 0, 65526, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 24, 0, 0, 65560, 0, 0, 131089, 0, 0, 131090, 0, 0, 131096, 0, 0, 262134, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196626, 0, 0, 196627, 0, 0, 196632, 0, 0, 327670, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262149, 0, 0, 262163, 0, 0, 262166, 0, 0, 262167, 0, 0, 393206, 0, 0, 393212, 0, 0, 393213, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0 )
+
+[node name="TransferGoalA" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 1412.32, 68.181 )
+
+[node name="label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 628.0
+margin_top = 60.0
+margin_right = 735.0
+margin_bottom = 74.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Barrier Unlocked"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="BreakableBlock" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 307.816, 123.761 )
+
+[node name="Turret" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 485.524, -93.6141 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="EnemyMob" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( -610.059, 121.308 )
+MOTION_SPEED = 20
+fireType = "shotgun"
+
+

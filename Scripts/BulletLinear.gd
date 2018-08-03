@@ -26,7 +26,7 @@ func start(pos, dir, bulletSpeed):
 
 func _physics_process(delta):
 	#position += velocity * delta
-	if frames == 1: #TODO
+	if frames == 15: #TODO
 #		$CollisionShape2D.disabled = false
 		collision_mask = 7 
 		frames += 1

@@ -2,11 +2,12 @@
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=7]
+
 
 [node name="Room1" type="TileMap"]
 
