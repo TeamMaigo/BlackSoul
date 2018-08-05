@@ -14,7 +14,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 radius = 300.0
 
-[node name="Turret" type="KinematicBody2D" index="0"]
+[node name="Turret" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 16
@@ -29,6 +29,7 @@ Bullet = ExtResource( 2 )
 bulletSpeed = 1
 rotatingTurret = true
 usesTargeting = true
+fireType = "singleFire"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

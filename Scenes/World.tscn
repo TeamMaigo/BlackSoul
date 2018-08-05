@@ -76,7 +76,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -89,7 +89,7 @@ position = Vector2( -197.837, 367.444 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1.5, 1.5 )
+zoom = Vector2( 2, 2 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -101,14 +101,14 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 offset_v = 0.0
 offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Smoothing" ]
+_sections_unfolded = [ "Drag Margin", "Smoothing" ]
 __meta__ = {
 "_edit_lock_": true
 }

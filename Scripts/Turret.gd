@@ -12,6 +12,7 @@ export (PackedScene) var Bullet
 export var bulletSpeed = 1
 export var rotatingTurret = true
 export var usesTargeting = true
+export(String, "singleFire", "shotgun") var fireType
 
 var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -43,7 +44,10 @@ func _physics_process(delta):
 			if rotatingTurret:
 				rotation = (target.position - position).angle()
 			if can_shoot:
-				shootBulletAtTarget(target.position)
+				if fireType == "singleFire" or null:
+					shootBulletAtTarget(target.position)
+				if fireType == "shotgun":
+					shootShotgunAtTarget(target.position)
 		elif not usesTargeting:
 			if can_shoot:
 				shootBulletStraight()
@@ -72,6 +76,19 @@ func shootBulletAtTarget(pos):
 	b.setTarget(target)
 	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	get_parent().add_child(b)
+	can_shoot = false
+	waitToShoot(fire_rate)
+
+func shootShotgunAtTarget(pos):
+	#Shoots a spray of bullets at the target position with some random variance
+	var spreadAngles = [-10, 0, 10]
+	for i in spreadAngles:
+		var b = Bullet.instance()
+		var a = (pos - global_position).angle()
+		var dir = a + rand_range(-0.05, 0.05)
+		var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()
+		b.start(startPos, a + deg2rad(i), bulletSpeed)
+		get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
 
