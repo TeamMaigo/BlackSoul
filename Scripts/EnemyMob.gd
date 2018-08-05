@@ -86,7 +86,7 @@ func shootShotgunAtTarget(pos):
 	var spreadAngles = [-10, 0, 10]
 	for i in spreadAngles:
 		var b = BulletType.instance()
-		var a = (pos - global_position).angle
+		var a = (pos - global_position).angle()
 		var dir = a + rand_range(-0.05, 0.05)
 		var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 		b.start(startPos, a + deg2rad(i), bulletSpeed)
