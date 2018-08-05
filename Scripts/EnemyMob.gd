@@ -20,6 +20,7 @@ var lastKnownPlayerPos
 export(String, "singleFire", "shotgun") var fireType
 export var respawns = true
 export var hp = 1
+var bulletOffset = 50
 
 func _ready():
 	$Visibility.show()
@@ -74,7 +75,7 @@ func shootBulletAtTarget(pos):
 	var b = BulletType.instance()
 	var a = (pos - global_position).angle()
 	var dir = a + rand_range(-0.05, 0.05)
-	var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*50
+	var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 	b.start(startPos, dir, bulletSpeed)
 	get_parent().add_child(b)
 	can_shoot = false
@@ -85,8 +86,10 @@ func shootShotgunAtTarget(pos):
 	var spreadAngles = [-10, 0, 10]
 	for i in spreadAngles:
 		var b = BulletType.instance()
-		var a = (pos - global_position).angle()
-		b.start(global_position, a + deg2rad(i), bulletSpeed)
+		var a = (pos - global_position).angle
+		var dir = a + rand_range(-0.05, 0.05)
+		var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
+		b.start(startPos, a + deg2rad(i), bulletSpeed)
 		get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)

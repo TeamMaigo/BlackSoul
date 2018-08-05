@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 30.0
+radius = 25.0
 
 [sub_resource type="Animation" id=2]
 
@@ -139,10 +139,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
+"team_Player",
 "Player",
 "Damageable",
-"team_Player",
 ]]
 
 input_pickable = false
@@ -155,6 +155,7 @@ NORMAL_SPEED = 500
 
 [node name="Collision" type="CollisionShape2D" parent="." index="0"]
 
+position = Vector2( 0.970596, 10.6766 )
 shape = SubResource( 1 )
 
 [node name="RotationNode" type="Node2D" parent="." index="1"]
