@@ -21,9 +21,10 @@ export(String, "singleFire", "shotgun") var fireType
 export var respawns = true
 export var hp = 1
 var bulletOffset = 50
-export var bulletRotationSpeed = 1 # degrees per frame
-export var bulletConeDegrees = 40 # this number is in front + and - bulletConeDegrees both ways
-export var bulletDecayTime = 10 # Seconds before bullet becomes linear
+export var bulletRotationSpeed = 1.0 # degrees per frame
+export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
+export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
+export var angleBulletUpdateDelay = 1.0 #seconds
 
 signal enemyDeath
 
@@ -83,6 +84,10 @@ func shootBulletAtTarget(pos):
 	var dir = a + rand_range(-0.05, 0.05)
 	var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 	b.start(startPos, dir, bulletSpeed)
+	b.rotationSpeed = bulletRotationSpeed
+	b.maxRotationDiff =  bulletConeDegrees
+	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
+	b.angleBulletUpdateDelay = angleBulletUpdateDelay
 	get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)

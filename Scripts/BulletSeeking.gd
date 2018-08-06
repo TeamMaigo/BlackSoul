@@ -5,16 +5,19 @@ var velocity = Vector2()
 var player
 var target #Should be a Node2D
 var damage = 1
-var degreesPerFrame = 1
-onready var rotationSpeed = deg2rad(degreesPerFrame)
-export var maxRotationDiff = 40
+var rotationSpeed = 90
+var bulletDecayTime = 10
+var maxRotationDiff = 40.0
+var angleBulletUpdateDelay
+#onready var 
 var frames = 0
 var collided = false
 onready var linearDecayTimer = $LinearDecayTimer
 var decayed = false # Decides whether bullet is now a linear bullet
-var bulletDecayTime = 10
+
 
 func _ready():
+	rotationSpeed = deg2rad(rotationSpeed)
 	collision_mask = 3
 	_physics_process(true)
 	$animationPlayer.play("default")

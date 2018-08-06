@@ -3,11 +3,14 @@ extends KinematicBody2D
 var speed = 1
 var velocity = Vector2()
 var player
-var degreesPerFrame = 4
 var damage = 1
 var frames = 0
 var collided = false
-onready var turnSpeed = deg2rad(degreesPerFrame)
+var angleBulletUpdateDelay = 1 # seconds
+var rotationSpeed = 1.0 # how fast it rotates
+var bulletDecayTime = 10
+var maxRotationDiff = 40.0
+onready var turnSpeed = deg2rad(rotationSpeed)
 
 func _ready():
 	collision_mask = 3

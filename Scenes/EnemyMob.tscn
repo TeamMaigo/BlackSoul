@@ -14,7 +14,7 @@ radius = 40.0
 custom_solver_bias = 0.0
 radius = 300.0
 
-[node name="EnemyMob" type="KinematicBody2D" groups=[
+[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
@@ -32,9 +32,10 @@ fire_rate = 1
 fireType = "singleFire"
 respawns = true
 hp = 1
-bulletRotationSpeed = 1
-bulletConeDegrees = 40
-bulletDecayTime = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 999.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

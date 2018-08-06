@@ -3,10 +3,8 @@ extends "res://Scripts/BulletLinear.gd"
 var canRotate = false
 onready var timer = get_node("timer")
 var target
-var rotationSpeed = deg2rad(90)
 onready var linearDecayTimer = $LinearDecayTimer
 var decayed = false # Decides whether bullet is now a linear bullet
-var bulletDecayTime = 10
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -32,7 +30,7 @@ func movementLoop():
 	return move_and_collide(motion)
 
 func waitToRotate():
-	timer.set_wait_time(1) # Set Timer's delay to "sec" seconds
+	timer.set_wait_time(angleBulletUpdateDelay) # Set Timer's delay to "sec" seconds
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
 	canRotate = true

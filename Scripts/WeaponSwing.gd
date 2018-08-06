@@ -7,7 +7,7 @@ onready var animation_player = $AnimationPlayer
 enum STATES {IDLE, ATTACK}
 var current_state = IDLE
 var activation_vector = null
-var rotationVariance = 10
+var rotationVariance = 10 # how much bullet angles when you hit it
 
 func _ready():
 	set_physics_process(false)

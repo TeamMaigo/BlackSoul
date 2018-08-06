@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=7]
 
 [node name="LabRoom" type="TileMap" index="0"]
 
@@ -51,17 +52,23 @@ position = Vector2( 1069.16, 836.445 )
 
 [node name="EnemyMob" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -2.72076, -72.0998 )
-BulletType = ExtResource( 6 )
-bulletRotationSpeed = 1
-bulletConeDegrees = 40
-bulletDecayTime = 10
+position = Vector2( -732.274, -314.782 )
+bulletSpeed = 7
 
-[node name="EnemyMob3" parent="." index="5" instance=ExtResource( 5 )]
+[node name="EnemyMob2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -625.253, -317.796 )
+BulletType = ExtResource( 6 )
+bulletSpeed = 7
+
+[node name="EnemyMob4" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( -521.246, -325.333 )
+BulletType = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="EnemyMob3" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 843.432, 314.246 )
-bulletRotationSpeed = 1
-bulletConeDegrees = 40
-bulletDecayTime = 10
 
 
