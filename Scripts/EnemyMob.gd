@@ -22,6 +22,8 @@ export var respawns = true
 export var hp = 1
 var bulletOffset = 50
 
+signal enemyDeath
+
 func _ready():
 	$Visibility.show()
 	if Global.currentScene+name in Global.destroyedObjects:
@@ -116,6 +118,7 @@ func waitToShoot(sec):
 func takeDamage(damage):
 	hp -= damage
 	if hp <= 0:
+		emit_signal("enemyDeath")
 		if not respawns:
 			Global.destroyedObjects.append(Global.currentScene+name)
 		queue_free()

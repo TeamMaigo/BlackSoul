@@ -25,6 +25,8 @@ var anim = "Idle"
 var animNew = ""
 var vulnerable = true
 var playerControlEnabled = true
+var swapInvulnTimer = 5 #Frames
+var swapInvuln = false
 
 func _ready():
 	set_physics_process(true)
@@ -80,6 +82,7 @@ func controls_loop():
 				swapPlaces(self, result.collider)
 		swapAvailable = false
 		SpriteNode.set("modulate",Color(1,0.3,0.3,1))
+		swapInvuln = true
 		
 	mousePos = get_global_mouse_position()
 	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
@@ -128,6 +131,8 @@ func dash_delay(sec, delta):
 
 func swap_delay(sec, delta):
 	swapTimer += delta
+	if swapTimer >= swapInvulnTimer:
+		swapInvuln = false
 	if swapTimer > sec:
 		swapAvailable = true
 		SpriteNode.set("modulate",Color(1,1,1))
@@ -140,7 +145,7 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	position = tempEnemyPos
 
 func takeDamage(damage):
-	if vulnerable:
+	if vulnerable and not swapInvuln:
 		vulnerable = false
 		$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
 		$PlayerAudio.volume_db = Global.masterSound
