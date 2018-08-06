@@ -52,7 +52,7 @@ func _physics_process(delta):
 func collide(collider):
 	if !collided:
 		collided = true
-		if collider.is_in_group("Damageable"):
+		if collider.has_method("takeDamage"):
 			collider.takeDamage(damage)
 		queue_free()
 
