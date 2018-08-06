@@ -4,6 +4,7 @@ extends StaticBody2D
 # var a = 2
 # var b = "textvar"
 var collisionL = self.collision_layer
+export var enemiesLeftToKill = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -21,3 +22,8 @@ func _onActivate():
 func _onDeactivate():
 	hide()
 	collision_layer = 0
+
+func enemyDeath():
+	enemiesLeftToKill -= 1
+	if enemiesLeftToKill == 0:
+		queue_free()
