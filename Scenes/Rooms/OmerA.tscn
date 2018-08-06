@@ -1,0 +1,1373 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=7]
+
+[node name="tileMap" type="TileMap" index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 9
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 524279, 0, 0, 524280, 0, 0, 458759, 1, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 589814, 0, 0, 524305, 0, 0, 524306, 0, 0, 655349, 0, 0, 589843, 0, 0, 720885, 0, 0, 655380, 0, 0, 786420, 0, 0, 720916, 0, 0, 851956, 0, 0, 786452, 0, 0, 917492, 0, 0, 851988, 0, 0, 983028, 0, 0, 917525, 0, 0, 1048563, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983061, 0, 0, 1114099, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048597, 0, 0, 1179635, 0, 0, 1114118, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1245171, 0, 0, 1179653, 0, 0, 1310707, 0, 0, 1245189, 0, 0, 1376243, 0, 0, 1310724, 0, 0, 1441778, 0, 0, 1441782, 0, 0, 1376260, 0, 0, 1507314, 0, 0, 1507318, 0, 0, 1441794, 1, 0, 1441795, 0, 0, 1572850, 0, 0, 1572854, 0, 0, 1507329, 1, 0, 1507331, 0, 0, 1638386, 0, 0, 1638390, 0, 0, 1572865, 1, 0, 1572867, 0, 0, 1703922, 0, 0, 1703926, 0, 0, 1638401, 1, 0, 1638403, 0, 0, 1769458, 0, 0, 1769462, 0, 0, 1703937, 1, 0, 1703939, 0, 0, 1834994, 0, 0, 1769474, 1, 0, 1769475, 0, 0, 1900530, 0, 0, 1900536, 0, 0, 1835012, 0, 0, 1966066, 0, 0, 1900548, 0, 0, 2031602, 0, 0, 2031610, 0, 0, 1966084, 1, 0, 1966085, 0, 0, 2097137, 0, 0, 2031620, 1, 0, 2031622, 0, 0, 2162673, 0, 0, 2162684, 0, 0, 2097156, 1, 0, 2097157, 1, 0, 2097158, 1, 0, 2097159, 0, 0, 2097160, 0, 0, 2228209, 0, 0, 2228213, 0, 0, 2228214, 0, 0, 2162697, 0, 0, 2293745, 0, 0, 2293750, 0, 0, 2293758, 0, 0, 2228234, 0, 0, 2359281, 0, 0, 2359287, 0, 0, 2359288, 0, 0, 2293760, 0, 0, 2293770, 0, 0, 2424817, 0, 0, 2424824, 0, 0, 2359296, 0, 0, 2359307, 0, 0, 2490353, 0, 0, 2490361, 0, 0, 2490362, 0, 0, 2490367, 0, 0, 2424843, 0, 0, 2555889, 0, 0, 2555898, 0, 0, 2555902, 0, 0, 2490370, 0, 0, 2490379, 0, 0, 2621425, 0, 0, 2621435, 0, 0, 2621436, 0, 0, 2621437, 0, 0, 2555915, 0, 0, 2686961, 0, 0, 2686972, 0, 0, 2621444, 0, 0, 2621452, 0, 0, 2752497, 0, 0, 2752509, 0, 0, 2752510, 0, 0, 2686988, 0, 0, 2818033, 0, 0, 2818037, 0, 0, 2818046, 0, 0, 2752518, 0, 0, 2752524, 0, 0, 2883569, 0, 0, 2883573, 0, 0, 2883583, 0, 0, 2818048, 0, 0, 2818060, 0, 0, 2949105, 0, 0, 2949109, 0, 0, 2883584, 0, 0, 2883592, 0, 0, 2883596, 0, 0, 3014641, 0, 0, 2949121, 0, 0, 2949122, 0, 0, 2949132, 0, 0, 3080178, 0, 0, 3014658, 0, 0, 3014666, 0, 0, 3014669, 0, 0, 3145714, 0, 0, 3080205, 0, 0, 3211250, 0, 0, 3211256, 0, 0, 3211257, 0, 0, 3145741, 0, 0, 3276786, 0, 0, 3276793, 0, 0, 3211277, 0, 0, 3342322, 0, 0, 3276813, 0, 0, 3407858, 0, 0, 3342349, 0, 0, 3473395, 0, 0, 3473405, 0, 0, 3407880, 0, 0, 3407885, 0, 0, 3538931, 0, 0, 3538942, 0, 0, 3473421, 0, 0, 3604467, 0, 0, 3538954, 0, 0, 3538955, 0, 0, 3538956, 0, 0, 3538957, 0, 0, 3670003, 0, 0, 3604493, 0, 0, 3735540, 0, 0, 3670022, 0, 0, 3670030, 0, 0, 3801076, 0, 0, 3735566, 0, 0, 3866613, 0, 0, 3801102, 0, 0, 3932150, 0, 0, 3932151, 0, 0, 3932152, 0, 0, 3932153, 0, 0, 3866638, 0, 0, 3997690, 0, 0, 3997691, 0, 0, 3997692, 0, 0, 3997693, 0, 0, 3997694, 0, 0, 3997695, 0, 0, 3932160, 0, 0, 3932161, 0, 0, 3932162, 0, 0, 3932163, 0, 0, 3932174, 0, 0, 3997700, 0, 0, 3997701, 0, 0, 3997702, 0, 0, 3997703, 0, 0, 3997710, 0, 0, 4063240, 0, 0, 4063241, 0, 0, 4063246, 0, 0, 4128778, 0, 0, 4128782, 0, 0, 4194315, 0, 0, 4194318, 0, 0, 4259851, 0, 0, 4259854, 0, 0, 4325388, 0, 0, 4325390, 0, 0, 4390924, 0, 0, 4390926, 0, 0, 4456460, 0, 0, 4456462, 0, 0, 4521997, 0, 0, 4521998, 0, 0, 4587534, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="TransferGoalA" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 1184, 928 )
+
+[node name="TransferPoint" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 866.79, 4386.81 )
+
+[node name="BreakableBlock10" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 516 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock141" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 516 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock57" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 516 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock105" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 516 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock12" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 524 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock142" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 524 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock58" parent="." index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 524 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock111" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 524 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock9" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 532 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock140" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 532 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock56" parent="." index="12" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 532 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock98" parent="." index="13" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 532 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock11" parent="." index="14" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 540 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock139" parent="." index="15" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 540 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock55" parent="." index="16" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 540 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock104" parent="." index="17" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 540 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock16" parent="." index="18" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 548 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock145" parent="." index="19" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 548 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock61" parent="." index="20" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 548 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock106" parent="." index="21" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 548 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock13" parent="." index="22" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 556 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock143" parent="." index="23" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 556 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock59" parent="." index="24" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 556 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock99" parent="." index="25" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 556 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock15" parent="." index="26" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 564 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock144" parent="." index="27" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 564 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock60" parent="." index="28" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 564 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock97" parent="." index="29" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 564 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock14" parent="." index="30" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 572 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock138" parent="." index="31" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 572 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock54" parent="." index="32" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 572 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock110" parent="." index="33" instance=ExtResource( 4 )]
+
+position = Vector2( 256, 572 )
+scale = Vector2( 26, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock20" parent="." index="34" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 580 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock146" parent="." index="35" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 580 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock62" parent="." index="36" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 580 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock101" parent="." index="37" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 580 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock21" parent="." index="38" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 588 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock149" parent="." index="39" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 588 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock65" parent="." index="40" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 588 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock115" parent="." index="41" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 588 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock19" parent="." index="42" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 596 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock137" parent="." index="43" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 596 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock53" parent="." index="44" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 596 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock103" parent="." index="45" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 596 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock18" parent="." index="46" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 604 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock148" parent="." index="47" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 604 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock64" parent="." index="48" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 604 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock112" parent="." index="49" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 608 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock24" parent="." index="50" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 612 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock164" parent="." index="51" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 612 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock79" parent="." index="52" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 612 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock123" parent="." index="53" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 612 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock22" parent="." index="54" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 620 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock147" parent="." index="55" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 620 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock63" parent="." index="56" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 620 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock107" parent="." index="57" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 620 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock23" parent="." index="58" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 628 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock150" parent="." index="59" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 628 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock66" parent="." index="60" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 628 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock102" parent="." index="61" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 628 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock17" parent="." index="62" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 636 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock136" parent="." index="63" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 636 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock52" parent="." index="64" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 636 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock152" parent="." index="65" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 636 )
+scale = Vector2( 29, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock27" parent="." index="66" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 644 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock163" parent="." index="67" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 644 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock78" parent="." index="68" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 644 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock132" parent="." index="69" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 644 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock30" parent="." index="70" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 652 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock170" parent="." index="71" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 652 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock85" parent="." index="72" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 652 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock122" parent="." index="73" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 652 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock26" parent="." index="74" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 660 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock166" parent="." index="75" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 660 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock81" parent="." index="76" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 660 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock128" parent="." index="77" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 660 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock29" parent="." index="78" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 668 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock158" parent="." index="79" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 668 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock73" parent="." index="80" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 668 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock121" parent="." index="81" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 668 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock32" parent="." index="82" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 676 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock175" parent="." index="83" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 676 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock90" parent="." index="84" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 676 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock127" parent="." index="85" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 676 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock28" parent="." index="86" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 684 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock161" parent="." index="87" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 684 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock76" parent="." index="88" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 684 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock117" parent="." index="89" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 684 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock31" parent="." index="90" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 692 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock165" parent="." index="91" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 692 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock80" parent="." index="92" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 692 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock131" parent="." index="93" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 692 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock25" parent="." index="94" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 700 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock171" parent="." index="95" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 700 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock86" parent="." index="96" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 700 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock129" parent="." index="97" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 700 )
+scale = Vector2( 30, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock35" parent="." index="98" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 708 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock172" parent="." index="99" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 708 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock87" parent="." index="100" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 708 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock124" parent="." index="101" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 708 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock38" parent="." index="102" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 716 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock167" parent="." index="103" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 716 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock82" parent="." index="104" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 716 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock125" parent="." index="105" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 716 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock37" parent="." index="106" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 724 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock159" parent="." index="107" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 724 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock74" parent="." index="108" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 724 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock119" parent="." index="109" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 724 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock33" parent="." index="110" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 732 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock176" parent="." index="111" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 732 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock91" parent="." index="112" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 732 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock116" parent="." index="113" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 732 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock40" parent="." index="114" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 740 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock160" parent="." index="115" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 740 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock75" parent="." index="116" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 740 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock130" parent="." index="117" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 740 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock34" parent="." index="118" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 748 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock168" parent="." index="119" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 748 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock83" parent="." index="120" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 748 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock133" parent="." index="121" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 748 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock36" parent="." index="122" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 756 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock162" parent="." index="123" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 756 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock77" parent="." index="124" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 756 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock120" parent="." index="125" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 756 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock39" parent="." index="126" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 764 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock173" parent="." index="127" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 764 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock88" parent="." index="128" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 764 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock134" parent="." index="129" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 764 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock46" parent="." index="130" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 772 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock155" parent="." index="131" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 772 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock70" parent="." index="132" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 772 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock109" parent="." index="133" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 772 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock44" parent="." index="134" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 780 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock153" parent="." index="135" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 780 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock68" parent="." index="136" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 780 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock108" parent="." index="137" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 780 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock41" parent="." index="138" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 788 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock169" parent="." index="139" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 788 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock84" parent="." index="140" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 788 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock126" parent="." index="141" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 788 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock48" parent="." index="142" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 796 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock157" parent="." index="143" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 796 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock72" parent="." index="144" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 796 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock118" parent="." index="145" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 796 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock42" parent="." index="146" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 804 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock174" parent="." index="147" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 804 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock89" parent="." index="148" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 804 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock135" parent="." index="149" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 804 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock45" parent="." index="150" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 812 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock151" parent="." index="151" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 812 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock67" parent="." index="152" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 812 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock113" parent="." index="153" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 812 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock43" parent="." index="154" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 820 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock156" parent="." index="155" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 820 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock71" parent="." index="156" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 820 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock114" parent="." index="157" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 820 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock47" parent="." index="158" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 828 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock154" parent="." index="159" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 828 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock69" parent="." index="160" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 828 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BreakableBlock100" parent="." index="161" instance=ExtResource( 4 )]
+
+position = Vector2( 288, 828 )
+scale = Vector2( 31, 0.125 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Turret" parent="." index="162" instance=ExtResource( 5 )]
+
+position = Vector2( -96, 480 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 1600
+fire_rate = 0.125
+Bullet = ExtResource( 6 )
+bulletSpeed = 20
+
+[node name="Turret2" parent="." index="163" instance=ExtResource( 5 )]
+
+position = Vector2( -224, 1312 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 1600
+fire_rate = 0.5
+Bullet = ExtResource( 6 )
+bulletSpeed = 5
+
+[node name="Turret7" parent="." index="164" instance=ExtResource( 5 )]
+
+position = Vector2( -352, 1888 )
+detect_radius = 600
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret8" parent="." index="165" instance=ExtResource( 5 )]
+
+position = Vector2( -224, 2016 )
+detect_radius = 600
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret9" parent="." index="166" instance=ExtResource( 5 )]
+
+position = Vector2( -96, 2144 )
+detect_radius = 600
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret10" parent="." index="167" instance=ExtResource( 5 )]
+
+position = Vector2( 32, 2272 )
+detect_radius = 600
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret11" parent="." index="168" instance=ExtResource( 5 )]
+
+position = Vector2( 160, 2400 )
+detect_radius = 600
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret12" parent="." index="169" instance=ExtResource( 5 )]
+
+position = Vector2( 288, 2528 )
+detect_radius = 600
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret13" parent="." index="170" instance=ExtResource( 5 )]
+
+position = Vector2( 416, 2656 )
+detect_radius = 600
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret14" parent="." index="171" instance=ExtResource( 5 )]
+
+position = Vector2( 544, 2784 )
+detect_radius = 600
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret15" parent="." index="172" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 2912 )
+detect_radius = 600
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 7
+
+[node name="Turret16" parent="." index="173" instance=ExtResource( 5 )]
+
+position = Vector2( -672, 2208 )
+detect_radius = 1200
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 15
+
+[node name="Turret17" parent="." index="174" instance=ExtResource( 5 )]
+
+position = Vector2( -544, 2336 )
+detect_radius = 1200
+Bullet = ExtResource( 6 )
+bulletSpeed = 5
+
+[node name="Turret18" parent="." index="175" instance=ExtResource( 5 )]
+
+position = Vector2( -416, 2464 )
+detect_radius = 1200
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 15
+
+[node name="Turret19" parent="." index="176" instance=ExtResource( 5 )]
+
+position = Vector2( -288, 2592 )
+detect_radius = 1200
+Bullet = ExtResource( 6 )
+bulletSpeed = 5
+
+[node name="Turret20" parent="." index="177" instance=ExtResource( 5 )]
+
+position = Vector2( -160, 2720 )
+detect_radius = 1200
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 15
+
+[node name="Turret21" parent="." index="178" instance=ExtResource( 5 )]
+
+position = Vector2( -32, 2848 )
+detect_radius = 1200
+Bullet = ExtResource( 6 )
+bulletSpeed = 5
+
+[node name="Turret22" parent="." index="179" instance=ExtResource( 5 )]
+
+position = Vector2( 96, 2976 )
+detect_radius = 1200
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 15
+
+[node name="Turret23" parent="." index="180" instance=ExtResource( 5 )]
+
+position = Vector2( 224, 3104 )
+detect_radius = 1200
+Bullet = ExtResource( 6 )
+bulletSpeed = 5
+
+[node name="Turret24" parent="." index="181" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 3232 )
+detect_radius = 1200
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 15
+
+[node name="Turret25" parent="." index="182" instance=ExtResource( 5 )]
+
+position = Vector2( 480, 3360 )
+detect_radius = 1200
+Bullet = ExtResource( 6 )
+bulletSpeed = 5
+
+[node name="Turret26" parent="." index="183" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 3488 )
+detect_radius = 1200
+firstShotDelay = 0.5
+Bullet = ExtResource( 7 )
+bulletSpeed = 15
+
+[node name="BreakableBlock50" parent="." index="184" instance=ExtResource( 4 )]
+
+position = Vector2( -96, 1376 )
+
+[node name="BreakableBlock177" parent="." index="185" instance=ExtResource( 4 )]
+
+position = Vector2( -160, 1440 )
+
+[node name="BreakableBlock178" parent="." index="186" instance=ExtResource( 4 )]
+
+position = Vector2( -224, 1440 )
+
+[node name="BreakableBlock179" parent="." index="187" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 1440 )
+
+[node name="BreakableBlock180" parent="." index="188" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 1376 )
+
+[node name="BreakableBlock181" parent="." index="189" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 1312 )
+
+[node name="BreakableBlock182" parent="." index="190" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 1248 )
+
+[node name="BreakableBlock183" parent="." index="191" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 1184 )
+
+[node name="BreakableBlock184" parent="." index="192" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 1120 )
+
+[node name="BreakableBlock185" parent="." index="193" instance=ExtResource( 4 )]
+
+position = Vector2( -224, 1120 )
+
+[node name="BreakableBlock186" parent="." index="194" instance=ExtResource( 4 )]
+
+position = Vector2( -160, 1120 )
+
+[node name="BreakableBlock187" parent="." index="195" instance=ExtResource( 4 )]
+
+position = Vector2( -96, 1184 )
+
+[node name="BreakableBlock188" parent="." index="196" instance=ExtResource( 4 )]
+
+position = Vector2( -32, 1248 )
+
+[node name="BreakableBlock189" parent="." index="197" instance=ExtResource( 4 )]
+
+position = Vector2( -32, 1312 )
+
+[node name="BreakableBlock190" parent="." index="198" instance=ExtResource( 4 )]
+
+position = Vector2( -32, 1376 )
+
+[node name="BreakableBlock191" parent="." index="199" instance=ExtResource( 4 )]
+
+position = Vector2( -96, 1440 )
+
+[node name="BreakableBlock192" parent="." index="200" instance=ExtResource( 4 )]
+
+position = Vector2( -160, 1504 )
+
+[node name="BreakableBlock193" parent="." index="201" instance=ExtResource( 4 )]
+
+position = Vector2( -224, 1504 )
+
+[node name="BreakableBlock194" parent="." index="202" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 1504 )
+
+[node name="BreakableBlock195" parent="." index="203" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 1440 )
+
+[node name="BreakableBlock196" parent="." index="204" instance=ExtResource( 4 )]
+
+position = Vector2( -416, 1376 )
+
+[node name="BreakableBlock197" parent="." index="205" instance=ExtResource( 4 )]
+
+position = Vector2( -416, 1312 )
+
+[node name="BreakableBlock198" parent="." index="206" instance=ExtResource( 4 )]
+
+position = Vector2( -416, 1248 )
+
+[node name="BreakableBlock199" parent="." index="207" instance=ExtResource( 4 )]
+
+position = Vector2( -416, 1440 )
+
+[node name="BreakableBlock200" parent="." index="208" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 1504 )
+
+[node name="BreakableBlock201" parent="." index="209" instance=ExtResource( 4 )]
+
+position = Vector2( -96, 1504 )
+
+[node name="BreakableBlock202" parent="." index="210" instance=ExtResource( 4 )]
+
+position = Vector2( -32, 1440 )
+
+[node name="BreakableBlock203" parent="." index="211" instance=ExtResource( 4 )]
+
+position = Vector2( -32, 1184 )
+
+[node name="BreakableBlock204" parent="." index="212" instance=ExtResource( 4 )]
+
+position = Vector2( -160, 1376 )
+
+[node name="BreakableBlock205" parent="." index="213" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 1376 )
+
+[node name="BreakableBlock206" parent="." index="214" instance=ExtResource( 4 )]
+
+position = Vector2( -160, 1248 )
+
+[node name="BreakableBlock207" parent="." index="215" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 1248 )
+
+[node name="BreakableBlock208" parent="." index="216" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 1248 )
+
+[node name="BreakableBlock92" parent="." index="217" instance=ExtResource( 4 )]
+
+position = Vector2( -96, 1312 )
+
+[node name="BreakableBlock93" parent="." index="218" instance=ExtResource( 4 )]
+
+position = Vector2( -96, 1248 )
+
+[node name="BreakableBlock94" parent="." index="219" instance=ExtResource( 4 )]
+
+position = Vector2( -160, 1184 )
+
+[node name="BreakableBlock95" parent="." index="220" instance=ExtResource( 4 )]
+
+position = Vector2( -224, 1184 )
+
+[node name="BreakableBlock96" parent="." index="221" instance=ExtResource( 4 )]
+
+position = Vector2( -416, 1184 )
+
+[node name="BreakableBlock209" parent="." index="222" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 1120 )
+
+[node name="BreakableBlock210" parent="." index="223" instance=ExtResource( 4 )]
+
+position = Vector2( -96, 1120 )
+
+[node name="BreakableBlock211" parent="." index="224" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 1184 )
+
+[node name="BreakableBlock" parent="." index="225" instance=ExtResource( 4 )]
+
+position = Vector2( -608, 2912 )
+
+[node name="BreakableBlock2" parent="." index="226" instance=ExtResource( 4 )]
+
+position = Vector2( -544, 2976 )
+
+[node name="BreakableBlock3" parent="." index="227" instance=ExtResource( 4 )]
+
+position = Vector2( -480, 3040 )
+
+[node name="BreakableBlock4" parent="." index="228" instance=ExtResource( 4 )]
+
+position = Vector2( -288, 3296 )
+
+[node name="BreakableBlock5" parent="." index="229" instance=ExtResource( 4 )]
+
+position = Vector2( 160, 3552 )
+
+[node name="BreakableBlock6" parent="." index="230" instance=ExtResource( 4 )]
+
+position = Vector2( 96, 3488 )
+
+[node name="BreakableBlock7" parent="." index="231" instance=ExtResource( 4 )]
+
+position = Vector2( 32, 3488 )
+
+[node name="BreakableBlock8" parent="." index="232" instance=ExtResource( 4 )]
+
+position = Vector2( -32, 3488 )
+
+[node name="BreakableBlock49" parent="." index="233" instance=ExtResource( 4 )]
+
+position = Vector2( -224, 3296 )
+
+[node name="BreakableBlock51" parent="." index="234" instance=ExtResource( 4 )]
+
+position = Vector2( -352, 3232 )
+
+
