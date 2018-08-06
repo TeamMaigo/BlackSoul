@@ -9,9 +9,9 @@ onready var RotationNode = get_node("RotationNode")
 var movedir = Vector2(0,0)
 #var RayNode
 var CollisionNode
-var dashTimer = 0
+onready var dashTimer = $dashTimer
+onready var swapTimer = $swapTimer
 var dashAvailable = true
-var swapTimer = 0
 var swapAvailable = true
 var barrierAvailable = true
 var playerPos
@@ -25,8 +25,12 @@ var anim = "Idle"
 var animNew = ""
 var vulnerable = true
 var playerControlEnabled = true
-var swapInvulnTimer = 5 #Frames
+var swapInvulnTime = 5.0/60.0 # invuln for 5 frames
+var swapNoticeTime = 0.5 # enemies don't notice you for this time (seconds)
+onready var swapInvulnTimer = $swapInvulnTimer
+onready var swapNoticeTimer = $swapNoticeTimer
 var swapInvuln = false
+var swappedRecently = false
 
 func _ready():
 	set_physics_process(true)
@@ -40,8 +44,6 @@ func _physics_process(delta):
 		controls_loop()
 		movement_loop()
 	speed_decay()
-	dash_delay(DASH_DELAY, delta)	# Check if dash can be renabled
-	swap_delay(SWAP_DELAY, delta)
 	CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 
 func controls_loop():
@@ -71,6 +73,7 @@ func controls_loop():
 	if DASH && dashAvailable:
 		MOTION_SPEED = 2000
 		dashAvailable = false
+		dashDelay(DASH_DELAY)	# Check if dash can be renabled
 
 	if SWAP && swapAvailable:
 		playerPos = SpriteNode.position
@@ -79,11 +82,15 @@ func controls_loop():
 		var result = space_state.intersect_ray(position, mousePos, [self], 5) # 5 refers to layer mask
 		if result:
 			if result.collider.is_in_group("Enemy"):
+				swappedRecently = true
 				swapPlaces(self, result.collider)
 		swapAvailable = false
 		SpriteNode.set("modulate",Color(1,0.3,0.3,1))
 		swapInvuln = true
-		
+		swapDelay(SWAP_DELAY)
+		swapInvuln(swapInvulnTime)
+		swapNotice(swapNoticeTime)
+	
 	mousePos = get_global_mouse_position()
 	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
 	RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
@@ -123,20 +130,30 @@ func speed_decay():
 		#SpriteNode.set("modulate",Color(233.0/255,255,255,1))
 		MOTION_SPEED = NORMAL_SPEED
 
-func dash_delay(sec, delta):
-	dashTimer += delta
-	if dashTimer > sec:
-		dashAvailable = true
-		dashTimer = 0
+func dashDelay(sec):
+	dashTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	dashTimer.start() # Start the Timer counting down
+	yield(dashTimer, "timeout") # Wait for the timer to wind down
+	dashAvailable = true
 
-func swap_delay(sec, delta):
-	swapTimer += delta
-	if swapTimer >= swapInvulnTimer:
-		swapInvuln = false
-	if swapTimer > sec:
-		swapAvailable = true
-		SpriteNode.set("modulate",Color(1,1,1))
-		swapTimer = 0
+func swapDelay(sec):
+	swapTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	swapTimer.start() # Start the Timer counting down
+	yield(swapTimer, "timeout") # Wait for the timer to wind down
+	swapAvailable = true
+	SpriteNode.set("modulate",Color(1,1,1))
+
+func swapInvuln(sec):
+	swapInvulnTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	swapInvulnTimer.start() # Start the Timer counting down
+	yield(swapInvulnTimer, "timeout") # Wait for the timer to wind down
+	swapInvuln = false
+
+func swapNotice(sec):
+	swapNoticeTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	swapNoticeTimer.start() # Start the Timer counting down
+	yield(swapNoticeTimer, "timeout") # Wait for the timer to wind down
+	swappedRecently = false
 
 func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	CollisionNode.disabled = true	# Disable collision to avoid displacement bug after teleport

@@ -61,7 +61,8 @@ func checkForPlayer():
 	var result = space_state.intersect_ray(position, target.position, [self], 7) # Hits environment, player, enemies
 	if result:
 		if result.collider.is_in_group("Player"): # Sees player and nothing inbetween
-			return true
+			if not result.collider.get_node("./").swappedRecently:
+				return true
 	return false # Failed to detect player
 
 func rotateTowardsPlayer():
