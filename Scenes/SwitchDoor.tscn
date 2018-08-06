@@ -8,10 +8,11 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10.1396 )
 
-[node name="SwitchDoor" type="StaticBody2D" index="0" groups=[
+[node name="SwitchDoor" type="StaticBody2D" groups=[
 "Damageable",
 ]]
 
+modulate = Color( 1, 0.890625, 0, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -20,7 +21,8 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Visibility" ]
+enemiesLeftToKill = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
 
