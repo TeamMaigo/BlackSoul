@@ -32,6 +32,9 @@ fire_rate = 1
 fireType = "singleFire"
 respawns = true
 hp = 1
+bulletRotationSpeed = 1
+bulletConeDegrees = 40
+bulletDecayTime = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

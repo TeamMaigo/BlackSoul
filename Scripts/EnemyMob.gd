@@ -21,6 +21,9 @@ export(String, "singleFire", "shotgun") var fireType
 export var respawns = true
 export var hp = 1
 var bulletOffset = 50
+export var bulletRotationSpeed = 1 # degrees per frame
+export var bulletConeDegrees = 40 # this number is in front + and - bulletConeDegrees both ways
+export var bulletDecayTime = 10 # Seconds before bullet becomes linear
 
 signal enemyDeath
 

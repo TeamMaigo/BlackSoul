@@ -4,10 +4,14 @@ var canRotate = false
 onready var timer = get_node("timer")
 var target
 var rotationSpeed = deg2rad(90)
+onready var linearDecayTimer = $LinearDecayTimer
+var decayed = false # Decides whether bullet is now a linear bullet
+var bulletDecayTime = 10
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	bulletDecay(bulletDecayTime)
 	if not target:
 		target = get_tree().get_root().get_node("World/Player")
 	waitToRotate()
@@ -34,7 +38,7 @@ func waitToRotate():
 	canRotate = true
 	
 func determineRotation():
-	if target:
+	if target and not decayed:
 		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
 		if abs(angleToTarget) > PI:
 			angleToTarget = angleToTarget - (sign(angleToTarget) * PI*2)
@@ -44,3 +48,9 @@ func determineRotation():
 
 		waitToRotate()
 		canRotate = false
+
+func bulletDecay(sec):
+	linearDecayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	linearDecayTimer.start() # Start the Timer counting down
+	yield(linearDecayTimer, "timeout") # Wait for the timer to wind down
+	decayed = true
