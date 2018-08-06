@@ -17,7 +17,7 @@ var barrierAvailable = true
 var playerPos
 var mousePos
 var DASH_DELAY = 1	# in seconds
-var SWAP_DELAY = 1
+var SWAP_DELAY = 2
 var maxHealth = 3
 var health = maxHealth
 var lastTransferPoint
@@ -79,7 +79,7 @@ func controls_loop():
 			if result.collider.is_in_group("Enemy"):
 				swapPlaces(self, result.collider)
 		swapAvailable = false
-		#SpriteNode.set("modulate",Color(50.0/120,150,0,1))
+		SpriteNode.set("modulate",Color(1,0.3,0.3,1))
 		
 	mousePos = get_global_mouse_position()
 	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
@@ -130,7 +130,7 @@ func swap_delay(sec, delta):
 	swapTimer += delta
 	if swapTimer > sec:
 		swapAvailable = true
-		#SpriteNode.set("modulate",Color(233.0/255,255,255,1))
+		SpriteNode.set("modulate",Color(1,1,1))
 		swapTimer = 0
 
 func swapPlaces(player, enemy): # Takes in player node and enemy collider
