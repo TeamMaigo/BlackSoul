@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 32, 16.4107 )
 
 [sub_resource type="Animation" id=2]
 
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[node name="Bullet" type="KinematicBody2D" groups=[
+[node name="Bullet" type="KinematicBody2D" index="0" groups=[
 "Projectile",
 ]]
 
@@ -69,6 +69,13 @@ anims/default = SubResource( 2 )
 blend_times = [  ]
 
 [node name="LinearDecayTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="ReflectionTimer" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 1.0

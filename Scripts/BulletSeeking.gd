@@ -11,10 +11,11 @@ var maxRotationDiff = 40.0
 var angleBulletUpdateDelay
 #onready var 
 var frames = 0
-var collided = false
 onready var linearDecayTimer = $LinearDecayTimer
 var decayed = false # Decides whether bullet is now a linear bullet
-
+var reflectedRecently = false
+onready var reflectionTimer = $ReflectionTimer
+var reflectionTime = 1 # in seconds
 
 func _ready():
 	rotationSpeed = deg2rad(rotationSpeed)
@@ -57,11 +58,9 @@ func _physics_process(delta):
 		collide(collision.collider)
 
 func collide(collider):
-	if !collided:
-		collided = true
-		if collider.has_method("takeDamage"):
-			collider.takeDamage(damage)
-		queue_free()
+	if collider.has_method("takeDamage"):
+		collider.takeDamage(damage)
+	queue_free()
 
 func setDirection(directionVector):
 	velocity = directionVector
@@ -76,3 +75,9 @@ func bulletDecay(sec):
 	linearDecayTimer.start() # Start the Timer counting down
 	yield(linearDecayTimer, "timeout") # Wait for the timer to wind down
 	decayed = true
+
+func waitToReflect():
+	reflectionTimer.set_wait_time(reflectionTime) # Set Timer's delay to "sec" seconds
+	reflectionTimer.start() # Start the Timer counting down
+	yield(reflectionTimer, "timeout") # Wait for the timer to wind down
+	reflectedRecently = false

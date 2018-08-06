@@ -34,7 +34,7 @@ func waitToRotate():
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
 	canRotate = true
-	
+
 func determineRotation():
 	if target and not decayed:
 		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation

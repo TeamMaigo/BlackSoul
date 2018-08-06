@@ -8,6 +8,8 @@ enum STATES {IDLE, ATTACK}
 var current_state = IDLE
 var activation_vector = null
 var rotationVariance = 10 # how much bullet angles when you hit it
+onready var player = get_tree().get_root().get_node("World/Player")
+var minMouseDist = 80
 
 func _ready():
 	set_physics_process(false)
@@ -44,16 +46,24 @@ func _physics_process(delta):
 		if body.is_in_group("Projectile"):	# Hit a projectile
 			$BarrierAudio.playing = true
 			$BarrierAudio.volume_db = Global.masterSound
-			var newDirection = get_global_mouse_position()-body.position
+			var newDirection
+			if isMouseTooClose(): # Mouse too close to player character, use player to mouse angle instead
+				newDirection = get_global_mouse_position()-player.position
+			else:
+				newDirection = get_global_mouse_position()-body.position
 			newDirection = newDirection.rotated(deg2rad(randi()%rotationVariance-rotationVariance))
-			body.setDirection(newDirection) # Bullet changes direction to mouse location
+			body.setDirection(newDirection) # Bullet changes direction
 			body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
 			body.setTarget(null)
+			body.reflectedRecently = true
+			body.waitToReflect()
 	#set_physics_process(false)	#Limits to one enemy hit per swing. Probably need to redo
+
+func isMouseTooClose():
+	return (get_global_mouse_position().distance_to(player.position)) < minMouseDist
 
 func is_owner(node):
 	return node.get_path() == get_path()
-	
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if name == "WeaponSwing":

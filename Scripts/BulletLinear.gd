@@ -5,12 +5,14 @@ var velocity = Vector2()
 var player
 var damage = 1
 var frames = 0
-var collided = false
 var angleBulletUpdateDelay = 1 # seconds
 var rotationSpeed = 1.0 # how fast it rotates
 var bulletDecayTime = 10
 var maxRotationDiff = 40.0
 onready var turnSpeed = deg2rad(rotationSpeed)
+var reflectedRecently = false
+onready var reflectionTimer = $ReflectionTimer
+var reflectionTime = 1 # in seconds
 
 func _ready():
 	collision_mask = 3
@@ -40,13 +42,14 @@ func _physics_process(delta):
 		collide(collision.collider)
 	
 func collide(collider):
-	if !collided:
-		if collider.has_method("takeDamage"): #is_in_group("Damageable"):
+	if collider.has_method("takeDamage"):
+		if collider.is_in_group("Player") and reflectedRecently:
+			pass # Don't hit the player
+		else:
 			collider.takeDamage(damage)
-		if collider.has_method("switch"):
-			collider.switch()
-		queue_free()
-		collided = true
+	if collider.has_method("switch"):
+		collider.switch()
+	queue_free()
 	
 func movementLoop():
 	var movedir = velocity
@@ -60,3 +63,9 @@ func setDirection(directionVector):
 func hitPlayer(player):
 		player.takeDamage(damage)
 		queue_free()	#Destroys the bullet
+
+func waitToReflect():
+	reflectionTimer.set_wait_time(reflectionTime) # Set Timer's delay to "sec" seconds
+	reflectionTimer.start() # Start the Timer counting down
+	yield(reflectionTimer, "timeout") # Wait for the timer to wind down
+	reflectedRecently = false

@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[node name="BulletLinear" type="KinematicBody2D" index="0" groups=[
+[node name="BulletLinear" type="KinematicBody2D" groups=[
 "Projectile",
 ]]
 
@@ -61,5 +61,12 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/default = SubResource( 2 )
 blend_times = [  ]
+
+[node name="ReflectionTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 
