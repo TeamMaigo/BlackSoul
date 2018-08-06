@@ -9,20 +9,20 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Tileset" type="Node2D" index="0"]
+[node name="Tileset" type="Node2D"]
 
 position = Vector2( 33.5329, 34.0677 )
 
-[node name="Ceiling1" type="Sprite" parent="." index="0"]
+[node name="Ceiling01" type="Sprite" parent="." index="0"]
 
 editor/display_folded = true
-position = Vector2( 134.072, 0 )
+position = Vector2( 193.072, 0 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
 _sections_unfolded = [ "Animation" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling1" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling01" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -33,21 +33,21 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling1/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling01/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Ceiling2" type="Sprite" parent="." index="1"]
+[node name="Ceiling02" type="Sprite" parent="." index="1"]
 
 editor/display_folded = true
-position = Vector2( 199.908, 0 )
+position = Vector2( 258.908, 0 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
 frame = 1
 _sections_unfolded = [ "Animation" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling2" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling02" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -58,21 +58,21 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling2/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling02/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Ceiling4" type="Sprite" parent="." index="2"]
+[node name="Ceiling03" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
-position = Vector2( 134.072, 67.6284 )
+position = Vector2( 193.072, 67.6284 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
 frame = 7
 _sections_unfolded = [ "Animation" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling4" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling03" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -83,21 +83,21 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling4/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling03/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Ceiling5" type="Sprite" parent="." index="3"]
+[node name="Ceiling04" type="Sprite" parent="." index="3"]
 
 editor/display_folded = true
-position = Vector2( 199.908, 67.6284 )
+position = Vector2( 258.908, 67.6284 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
 frame = 8
 _sections_unfolded = [ "Animation" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling5" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling04" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -108,21 +108,21 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling5/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling04/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Ceiling7" type="Sprite" parent="." index="4"]
+[node name="Ceiling05" type="Sprite" parent="." index="4"]
 
 editor/display_folded = true
-position = Vector2( 134.072, 133.787 )
+position = Vector2( 193.072, 133.787 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
 frame = 14
 _sections_unfolded = [ "Animation" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling7" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling05" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -133,21 +133,21 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling7/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling05/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Ceiling8" type="Sprite" parent="." index="5"]
+[node name="Ceiling06" type="Sprite" parent="." index="5"]
 
 editor/display_folded = true
-position = Vector2( 199.908, 133.787 )
+position = Vector2( 258.908, 133.787 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
 frame = 15
 _sections_unfolded = [ "Animation" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling8" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling06" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -158,11 +158,11 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling8/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling06/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
-[node name="Ceiling10" type="Sprite" parent="." index="6"]
+[node name="Ceiling07" type="Sprite" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 468.459, 0 )
@@ -170,6 +170,81 @@ texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
 frame = 5
+_sections_unfolded = [ "Animation" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling07" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling07/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Ceiling08" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 468.459, 67.6284 )
+texture = ExtResource( 1 )
+vframes = 5
+hframes = 7
+frame = 12
+_sections_unfolded = [ "Animation" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling08" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling08/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Ceiling09" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 468.459, 133.787 )
+texture = ExtResource( 1 )
+vframes = 5
+hframes = 7
+frame = 19
+_sections_unfolded = [ "Animation" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling09" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling09/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Ceiling10" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 333.531, 67.6284 )
+texture = ExtResource( 1 )
+vframes = 5
+hframes = 7
+frame = 10
 _sections_unfolded = [ "Animation" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ceiling10" index="0"]
@@ -187,82 +262,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="Ceiling12" type="Sprite" parent="." index="7"]
-
-editor/display_folded = true
-position = Vector2( 468.459, 67.6284 )
-texture = ExtResource( 1 )
-vframes = 5
-hframes = 7
-frame = 12
-_sections_unfolded = [ "Animation" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling12" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 0
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling12/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Ceiling14" type="Sprite" parent="." index="8"]
-
-editor/display_folded = true
-position = Vector2( 468.459, 133.787 )
-texture = ExtResource( 1 )
-vframes = 5
-hframes = 7
-frame = 19
-_sections_unfolded = [ "Animation" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling14" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 0
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling14/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Ceiling16" type="Sprite" parent="." index="9"]
-
-editor/display_folded = true
-position = Vector2( 333.531, 67.6284 )
-texture = ExtResource( 1 )
-vframes = 5
-hframes = 7
-frame = 10
-_sections_unfolded = [ "Animation" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling16" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 0
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling16/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Ceiling18" type="Sprite" parent="." index="10"]
+[node name="Ceiling11" type="Sprite" parent="." index="10"]
 
 editor/display_folded = true
 position = Vector2( 333.531, 133.787 )
@@ -272,7 +272,7 @@ hframes = 7
 frame = 17
 _sections_unfolded = [ "Animation" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling18" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling11" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -283,7 +283,7 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling18/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling11/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
 
@@ -302,7 +302,7 @@ _sections_unfolded = [ "Animation" ]
 [node name="WallTop1" type="Sprite" parent="." index="13"]
 
 editor/display_folded = true
-position = Vector2( 134.072, 204.182 )
+position = Vector2( 193.072, 204.182 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
@@ -327,7 +327,7 @@ shape = SubResource( 1 )
 [node name="WallTop2" type="Sprite" parent="." index="14"]
 
 editor/display_folded = true
-position = Vector2( 199.908, 204.182 )
+position = Vector2( 258.908, 204.182 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
@@ -452,7 +452,7 @@ shape = SubResource( 1 )
 [node name="WallBot1" type="Sprite" parent="." index="19"]
 
 editor/display_folded = true
-position = Vector2( 134.072, 273.415 )
+position = Vector2( 193.072, 273.415 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7
@@ -477,7 +477,7 @@ shape = SubResource( 1 )
 [node name="WallBot2" type="Sprite" parent="." index="20"]
 
 editor/display_folded = true
-position = Vector2( 199.955, 273.415 )
+position = Vector2( 258.955, 273.415 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 7

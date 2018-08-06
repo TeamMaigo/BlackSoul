@@ -21,6 +21,10 @@ export(String, "singleFire", "shotgun") var fireType
 export var respawns = true
 export var hp = 1
 var bulletOffset = 50
+export var bulletRotationSpeed = 1.0 # degrees per frame
+export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
+export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
+export var angleBulletUpdateDelay = 1.0 #seconds
 
 signal enemyDeath
 
@@ -61,7 +65,8 @@ func checkForPlayer():
 	var result = space_state.intersect_ray(position, target.position, [self], 7) # Hits environment, player, enemies
 	if result:
 		if result.collider.is_in_group("Player"): # Sees player and nothing inbetween
-			return true
+			if not result.collider.get_node("./").swappedRecently:
+				return true
 	return false # Failed to detect player
 
 func rotateTowardsPlayer():
@@ -79,6 +84,10 @@ func shootBulletAtTarget(pos):
 	var dir = a + rand_range(-0.05, 0.05)
 	var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 	b.start(startPos, dir, bulletSpeed)
+	b.rotationSpeed = bulletRotationSpeed
+	b.maxRotationDiff =  bulletConeDegrees
+	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
+	b.angleBulletUpdateDelay = angleBulletUpdateDelay
 	get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)

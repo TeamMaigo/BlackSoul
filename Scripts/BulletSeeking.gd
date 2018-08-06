@@ -5,16 +5,24 @@ var velocity = Vector2()
 var player
 var target #Should be a Node2D
 var damage = 1
-var degreesPerFrame = 1
-onready var rotationSpeed = deg2rad(degreesPerFrame)
-export var maxRotationDiff = 40
+var rotationSpeed = 90
+var bulletDecayTime = 10
+var maxRotationDiff = 40.0
+var angleBulletUpdateDelay
+#onready var 
 var frames = 0
-var collided = false
+onready var linearDecayTimer = $LinearDecayTimer
+var decayed = false # Decides whether bullet is now a linear bullet
+var reflectedRecently = false
+onready var reflectionTimer = $ReflectionTimer
+var reflectionTime = 1 # in seconds
 
 func _ready():
+	rotationSpeed = deg2rad(rotationSpeed)
 	collision_mask = 3
 	_physics_process(true)
 	$animationPlayer.play("default")
+	bulletDecay(bulletDecayTime)
 
 func start(pos, dir, bulletSpeed):
 	position = pos
@@ -33,7 +41,7 @@ func _physics_process(delta):
 		frames += 1
 	else:
 		frames += 1
-	if target:
+	if target and not decayed:
 		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
 		if abs(angleToTarget) > PI:
 			angleToTarget = angleToTarget - (sign(angleToTarget) * PI*2)
@@ -50,11 +58,9 @@ func _physics_process(delta):
 		collide(collision.collider)
 
 func collide(collider):
-	if !collided:
-		collided = true
-		if collider.has_method("takeDamage"):
-			collider.takeDamage(damage)
-		queue_free()
+	if collider.has_method("takeDamage"):
+		collider.takeDamage(damage)
+	queue_free()
 
 func setDirection(directionVector):
 	velocity = directionVector
@@ -63,3 +69,15 @@ func setDirection(directionVector):
 func hitPlayer(player):
 		player.takeDamage(damage)
 		queue_free()	#Destroys the bullet
+
+func bulletDecay(sec):
+	linearDecayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	linearDecayTimer.start() # Start the Timer counting down
+	yield(linearDecayTimer, "timeout") # Wait for the timer to wind down
+	decayed = true
+
+func waitToReflect():
+	reflectionTimer.set_wait_time(reflectionTime) # Set Timer's delay to "sec" seconds
+	reflectionTimer.start() # Start the Timer counting down
+	yield(reflectionTimer, "timeout") # Wait for the timer to wind down
+	reflectedRecently = false
