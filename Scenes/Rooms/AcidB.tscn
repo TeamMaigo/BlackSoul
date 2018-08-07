@@ -120,6 +120,10 @@ position = Vector2( 174.339, -209.944 )
 detect_radius = 700
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret2" parent="Turrets" index="1" instance=ExtResource( 6 )]
 
@@ -127,35 +131,59 @@ position = Vector2( -97.5552, 985.889 )
 detect_radius = 700
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret3" parent="Turrets" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 253.489, 1777.2 )
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret4" parent="Turrets" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 22.1611, 2299.08 )
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -353.516, 1797.56 )
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( -742.147, 2299.08 )
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret7" parent="Turrets" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( -995.683, 1792.01 )
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 

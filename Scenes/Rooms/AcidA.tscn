@@ -54,6 +54,10 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret2" parent="." index="5" instance=ExtResource( 4 )]
 
@@ -61,6 +65,10 @@ position = Vector2( -2746.14, -298.452 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret3" parent="." index="6" instance=ExtResource( 4 )]
 
@@ -68,6 +76,10 @@ position = Vector2( -2039.2, 136.445 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 3
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret4" parent="." index="7" instance=ExtResource( 4 )]
 
@@ -75,6 +87,10 @@ position = Vector2( -1375.75, 36.4732 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret6" parent="." index="8" instance=ExtResource( 4 )]
 
@@ -82,6 +98,10 @@ position = Vector2( -1557.11, -102.324 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Turret5" parent="." index="9" instance=ExtResource( 4 )]
 
@@ -90,6 +110,10 @@ rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 Bullet = ExtResource( 5 )
 bulletSpeed = 10
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="HoleLayer" type="TileMap" parent="." index="10"]
 
