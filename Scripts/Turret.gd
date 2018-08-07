@@ -13,6 +13,10 @@ export var bulletSpeed = 1
 export var rotatingTurret = true
 export var usesTargeting = true
 export(String, "singleFire", "shotgun") var fireType
+export var bulletRotationSpeed = 1.0 # degrees per frame
+export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
+export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
+export var angleBulletUpdateDelay = 1.0 #seconds
 
 var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -75,6 +79,7 @@ func shootBulletAtTarget(pos):
 	var a = (pos - global_position).angle()
 	b.setTarget(target)
 	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
+	setBulletProperties(b)
 	get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
@@ -88,6 +93,7 @@ func shootShotgunAtTarget(pos):
 		var dir = a + rand_range(-0.05, 0.05)
 		var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()
 		b.start(startPos, a + deg2rad(i), bulletSpeed)
+		setBulletProperties(b)
 		get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
@@ -111,3 +117,9 @@ func waitToShoot(sec):
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
 	can_shoot = true
+
+func setBulletProperties(b):
+	b.rotationSpeed = bulletRotationSpeed
+	b.maxRotationDiff =  bulletConeDegrees
+	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
+	b.angleBulletUpdateDelay = angleBulletUpdateDelay

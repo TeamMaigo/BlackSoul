@@ -84,10 +84,7 @@ func shootBulletAtTarget(pos):
 	var dir = a + rand_range(-0.05, 0.05)
 	var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 	b.start(startPos, dir, bulletSpeed)
-	b.rotationSpeed = bulletRotationSpeed
-	b.maxRotationDiff =  bulletConeDegrees
-	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
-	b.angleBulletUpdateDelay = angleBulletUpdateDelay
+	setBulletProperties(b)
 	get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
@@ -101,6 +98,7 @@ func shootShotgunAtTarget(pos):
 		var dir = a + rand_range(-0.05, 0.05)
 		var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 		b.start(startPos, a + deg2rad(i), bulletSpeed)
+		setBulletProperties(b)
 		get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
@@ -131,3 +129,9 @@ func takeDamage(damage):
 		if not respawns:
 			Global.destroyedObjects.append(Global.currentScene+name)
 		queue_free()
+
+func setBulletProperties(b):
+	b.rotationSpeed = bulletRotationSpeed
+	b.maxRotationDiff =  bulletConeDegrees
+	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
+	b.angleBulletUpdateDelay = angleBulletUpdateDelay

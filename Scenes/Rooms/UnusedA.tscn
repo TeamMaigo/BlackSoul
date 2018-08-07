@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=5]
+
+
+
+
+[node name="LabRoom" type="TileMap"]
+
+position = Vector2( 0, -1.50732 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -589830, 0, 0, -589829, 0, 0, -589828, 0, 0, -589827, 0, 0, -524294, 0, 0, -524291, 0, 0, -458758, 0, 0, -458755, 0, 0, -393228, 0, 0, -393227, 0, 0, -393226, 0, 0, -393225, 0, 0, -393224, 0, 0, -393223, 0, 0, -393222, 0, 0, -393219, 0, 0, -393218, 0, 0, -393217, 0, 0, -458752, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -327692, 0, 0, -327687, 0, 0, -327686, 0, 0, -327683, 0, 0, -327682, 0, 0, -393213, 0, 0, -262156, 0, 0, -262151, 0, 0, -262150, 0, 0, -262147, 0, 0, -262146, 0, 0, -327677, 0, 0, -196620, 0, 0, -196615, 0, 0, -196614, 0, 0, -196611, 0, 0, -196610, 0, 0, -262141, 0, 0, -131084, 0, 0, -131079, 0, 0, -131078, 0, 0, -131075, 0, 0, -131074, 0, 0, -196605, 0, 0, -65548, 0, 0, -65543, 0, 0, -65538, 0, 0, -131069, 0, 0, -12, 0, 0, -7, 0, 0, -2, 0, 0, -65533, 0, 0, 65524, 0, 0, 65529, 0, 0, 65530, 0, 0, 65533, 0, 0, 65534, 0, 0, 3, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 196596, 0, 0, 196601, 0, 0, 196602, 0, 0, 196605, 0, 0, 196606, 0, 0, 131075, 0, 0, 262132, 0, 0, 262137, 0, 0, 262142, 0, 0, 196611, 0, 0, 327668, 0, 0, 327673, 0, 0, 327678, 0, 0, 262147, 0, 0, 393204, 0, 0, 393209, 0, 0, 393210, 0, 0, 393213, 0, 0, 393214, 0, 0, 327683, 0, 0, 458740, 0, 0, 458745, 0, 0, 458750, 0, 0, 393219, 0, 0, 524276, 0, 0, 524281, 0, 0, 524286, 0, 0, 458755, 0, 0, 589812, 0, 0, 589817, 0, 0, 589822, 0, 0, 524291, 0, 0, 655348, 0, 0, 655349, 0, 0, 655350, 0, 0, 655351, 0, 0, 655352, 0, 0, 655353, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 720889, 0, 0, 720890, 0, 0, 720893, 0, 0, 720894, 0, 0, 786422, 0, 0, 786423, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786429, 0, 0, 786430, 0, 0, 851958, 0, 0, 851966, 0, 0, 917494, 0, 0, 917502, 0, 0, 983030, 0, 0, 983038, 0, 0, 1048566, 0, 0, 1048574, 0, 0, 1114102, 0, 0, 1114103, 0, 0, 1114104, 0, 0, 1114105, 0, 0, 1114106, 0, 0, 1114107, 0, 0, 1114108, 0, 0, 1114109, 0, 0, 1114110, 0, 0 )
+
+[node name="TransferPointA" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -244.316, -505.217 )
+newScene = "LabD"
+transferGoalTemp = "B"
+
+[node name="EnemyMob" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -28.7078, 20.5054 )
+
+[node name="EnemyMob2" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -30.7583, 174.296 )
+
+[node name="EnemyMob3" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -485.98, 250.167 )
+
+[node name="EnemyMob4" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -557.749, -264.521 )
+
+[node name="TransferGoalA" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -254.74, -393.416 )
+
+[node name="HealthPickup" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( -470.32, 922.463 )
+respawnable = true
+
+

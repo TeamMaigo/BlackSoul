@@ -30,6 +30,10 @@ bulletSpeed = 1
 rotatingTurret = true
 usesTargeting = true
 fireType = "singleFire"
+bulletRotationSpeed = 1.0
+bulletConeDegrees = 40.0
+bulletDecayTime = 10.0
+angleBulletUpdateDelay = 1.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
