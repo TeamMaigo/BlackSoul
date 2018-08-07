@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var NORMAL_SPEED = 500
 var MOTION_SPEED = NORMAL_SPEED
+var maxDashSpeed = 2000
 onready var SpriteNode = get_node("Sprite")
 onready var AnimNode = get_node("AnimationPlayer")
 onready var WeaponNode = get_node("RotationNode/WeaponSwing")
@@ -31,6 +32,9 @@ onready var swapInvulnTimer = $swapInvulnTimer
 onready var swapNoticeTimer = $swapNoticeTimer
 var swapInvuln = false
 var swappedRecently = false
+var dashInvuln = false
+var minDashInvulnSpeed = 1300
+var maxDashInvulnSpeed = 1800
 
 func _ready():
 	set_physics_process(true)
@@ -71,9 +75,9 @@ func controls_loop():
 	#	look_at(mousePos) #If we want player to rotate to face mouse
 
 	if DASH && dashAvailable:
-		MOTION_SPEED = 2000
+		MOTION_SPEED = maxDashSpeed
 		dashAvailable = false
-		dashDelay(DASH_DELAY)	# Check if dash can be renabled
+		dashDelay(DASH_DELAY)	# Start dash cooldown timer
 
 	if SWAP && swapAvailable:
 		playerPos = SpriteNode.position
@@ -124,6 +128,12 @@ func speed_decay():
 	if MOTION_SPEED > NORMAL_SPEED:
 		#SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
 		MOTION_SPEED *= 0.90
+		if MOTION_SPEED > minDashInvulnSpeed and MOTION_SPEED < maxDashInvulnSpeed:
+			dashInvuln = true
+			SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
+		else:
+			dashInvuln = false
+			SpriteNode.set("modulate",Color(1,1,1,1))
 	elif MOTION_SPEED == NORMAL_SPEED:
 		pass
 	else:
@@ -162,7 +172,7 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 	position = tempEnemyPos
 
 func takeDamage(damage):
-	if vulnerable and not swapInvuln:
+	if vulnerable and not swapInvuln and not dashInvuln:
 		vulnerable = false
 		$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
 		$PlayerAudio.volume_db = Global.masterSound
