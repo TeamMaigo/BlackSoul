@@ -31,4 +31,10 @@ func _on_Options_pressed():
 
 func _on_Back_pressed():
 	$optionsPopup.hide()
+	$Credits.hide()
 	$MarginContainer.show()
+
+
+func _on_Credits_pressed():
+	$Credits.show()
+	$MarginContainer.hide()

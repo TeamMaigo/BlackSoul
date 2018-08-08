@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/optionsPopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Credits.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -106,7 +107,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 474.0
-margin_bottom = 176.0
+margin_bottom = 104.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -123,15 +124,40 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+[node name="Load Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 180.0
+margin_top = 108.0
 margin_right = 474.0
-margin_bottom = 356.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = SubResource( 1 )
+text = "Load Game"
+flat = false
+align = 1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 216.0
+margin_right = 474.0
+margin_bottom = 320.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -148,13 +174,38 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+[node name="Credits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 360.0
+margin_top = 324.0
+margin_right = 474.0
+margin_bottom = 428.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = SubResource( 1 )
+text = "Credits"
+flat = false
+align = 1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 432.0
 margin_right = 474.0
 margin_bottom = 536.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -193,13 +244,22 @@ items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1
 
 editor/display_folded = true
 
+[node name="Credits" parent="." index="2" instance=ExtResource( 3 )]
+
+visible = false
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/New Game" to="." method="_on_New_Game_pressed"]
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 
 [connection signal="pressed" from="optionsPopup/Container/Back" to="." method="_on_Back_pressed"]
 
+[connection signal="pressed" from="Credits/Container/Back" to="." method="_on_Back_pressed"]
+
 
 [editable path="optionsPopup"]
+[editable path="Credits"]

@@ -13,8 +13,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="TransferPointA" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 2044.43, 1041.66 )
-newScene = "LabC"
+position = Vector2( 2047.52, 1041.66 )
+newScene = "LabD"
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
