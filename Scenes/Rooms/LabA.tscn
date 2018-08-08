@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -30,8 +30,8 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="TransferPoint" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( -93.3818, 97.5945 )
-scale = Vector2( 0.821615, 0.753859 )
+position = Vector2( -77.5773, 82.5251 )
+scale = Vector2( 1.31551, 1.22478 )
 newScene = "Level_Test"
 
 [node name="TransferPointA" parent="." index="1" instance=ExtResource( 2 )]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Rotator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/AutoDiscContainer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=7]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -16,61 +17,61 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="AutoDiscContainer" parent="Rotator" index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 81.64, -79.421 )
+position = Vector2( 30.0751, -2.07349 )
 
-[node name="Turret8" parent="Rotator/AutoDiscContainer" index="0" instance=ExtResource( 3 )]
+[node name="Turret7" parent="Rotator/AutoDiscContainer" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( -25.2629, -90.7715 )
+position = Vector2( 287.143, -27.0899 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 500
+Bullet = ExtResource( 4 )
+bulletSpeed = 4
+
+[node name="Turret8" parent="Rotator/AutoDiscContainer" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -127.165, -137.426 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret9" parent="Rotator/AutoDiscContainer" index="1" instance=ExtResource( 3 )]
+[node name="Turret9" parent="Rotator/AutoDiscContainer" index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 26.8656, -183.625 )
+position = Vector2( -100.819, -106.278 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret10" parent="Rotator/AutoDiscContainer" index="2" instance=ExtResource( 3 )]
+[node name="Turret10" parent="Rotator/AutoDiscContainer" index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 26.8656, -183.625 )
+position = Vector2( -78.7198, -78.0398 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret11" parent="Rotator/AutoDiscContainer" index="3" instance=ExtResource( 3 )]
+[node name="Turret11" parent="Rotator/AutoDiscContainer" index="4" instance=ExtResource( 3 )]
 
-position = Vector2( 26.8656, -183.625 )
+position = Vector2( -58.3074, -43.4454 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret12" parent="Rotator/AutoDiscContainer" index="4" instance=ExtResource( 3 )]
-
-position = Vector2( 26.8656, -183.625 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-bulletSpeed = 10
-rotatingTurret = false
-usesTargeting = false
-
-[node name="TransferPointA" parent="." index="1" instance=ExtResource( 4 )]
+[node name="TransferPointA" parent="." index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 2047.52, 1041.66 )
 newScene = "LabD"
 
-[node name="TransferPointA2" parent="." index="2" instance=ExtResource( 4 )]
+[node name="TransferPointA2" parent="." index="2" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( -63.0199, -325.239 )
 newScene = "LabB"
 transferGoalTemp = "B"
 
-[node name="TransferGoalA" parent="." index="3" instance=ExtResource( 5 )]
+[node name="TransferGoalA" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 1595.47, 466.553 )
 
@@ -139,15 +140,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret7" parent="Turrets" index="5" instance=ExtResource( 3 )]
-
-position = Vector2( 2208.77, 560.104 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
-detect_radius = 500
-bulletSpeed = 10
-
-[node name="Turret6" parent="Turrets" index="6" instance=ExtResource( 3 )]
+[node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 733.736, 418.981 )
 rotation = -1.5708
@@ -160,7 +153,7 @@ usesTargeting = false
 
 z_index = -1
 mode = 0
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )

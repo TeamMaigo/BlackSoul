@@ -46,7 +46,8 @@ func _physics_process(delta):
 		#Shoot bullets at a consistent rate of fire
 		if target:
 			if rotatingTurret:
-				rotation = (target.position - position).angle()
+				#rotation = (target.position - position).angle()
+				look_at(target.position)
 			if can_shoot:
 				if fireType == "singleFire" or null:
 					shootBulletAtTarget(target.position)
@@ -78,7 +79,7 @@ func shootBulletAtTarget(pos):
 	var b = Bullet.instance()
 	var a = (pos - global_position).angle()
 	b.setTarget(target)
-	b.start(global_position, a + rand_range(-0.05, 0.05), bulletSpeed)
+	b.start(position, a + rand_range(-0.05, 0.05), bulletSpeed)
 	setBulletProperties(b)
 	get_parent().add_child(b)
 	can_shoot = false
@@ -91,7 +92,7 @@ func shootShotgunAtTarget(pos):
 		var b = Bullet.instance()
 		var a = (pos - global_position).angle()
 		var dir = a + rand_range(-0.05, 0.05)
-		var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()
+		var startPos = position + Vector2(bulletSpeed, 0).rotated(dir).normalized()
 		b.start(startPos, a + deg2rad(i), bulletSpeed)
 		setBulletProperties(b)
 		get_parent().add_child(b)
