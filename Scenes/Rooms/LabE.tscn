@@ -18,7 +18,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="TransferPointA" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( -504.945, 1550.6 )
+position = Vector2( -489.872, 1565.67 )
 newScene = "LabE2"
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
@@ -54,12 +54,22 @@ position = Vector2( 2367.32, 670.503 )
 position = Vector2( 322.327, 98.3869 )
 respawnable = false
 
-[node name="BreakableBlock3" parent="." index="8" instance=ExtResource( 4 )]
+[node name="BreakableBlock2" parent="." index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 549.559, -484.268 )
+health = 100
+
+[node name="BreakableBlock4" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 615.705, -482.217 )
+health = 100
+
+[node name="BreakableBlock3" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 768.638, 1252.5 )
 respawnable = false
 
-[node name="SignAcidSector" type="Label" parent="." index="9"]
+[node name="SignAcidSector" type="Label" parent="." index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -83,7 +93,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Dash" type="Label" parent="." index="10"]
+[node name="Dash" type="Label" parent="." index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -106,35 +116,35 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="TransferPoint" parent="." index="11" instance=ExtResource( 1 )]
+[node name="TransferPoint" parent="." index="13" instance=ExtResource( 1 )]
 
 position = Vector2( 2364.34, 779.51 )
 newScene = "Save1"
 
-[node name="TransferPoint2" parent="." index="12" instance=ExtResource( 1 )]
+[node name="TransferPoint2" parent="." index="14" instance=ExtResource( 1 )]
 
 visible = false
 position = Vector2( 2364.84, -1474.54 )
 newScene = "LabE1"
 transferGoalTemp = "B"
 
-[node name="TransferGoalC" parent="." index="13" instance=ExtResource( 3 )]
+[node name="TransferGoalC" parent="." index="15" instance=ExtResource( 3 )]
 
 position = Vector2( -450.694, -147.719 )
 
-[node name="TransferGoalD" parent="." index="14" instance=ExtResource( 3 )]
+[node name="TransferGoalD" parent="." index="16" instance=ExtResource( 3 )]
 
 position = Vector2( 2366.19, -1230.54 )
 
-[node name="TransferGoalE" parent="." index="15" instance=ExtResource( 3 )]
+[node name="TransferGoalE" parent="." index="17" instance=ExtResource( 3 )]
 
 position = Vector2( -630.014, 1532.19 )
 
-[node name="TransferGoalF" parent="." index="16" instance=ExtResource( 3 )]
+[node name="TransferGoalF" parent="." index="18" instance=ExtResource( 3 )]
 
 position = Vector2( 1304.98, 1635.3 )
 
-[node name="Turrets" type="Node2D" parent="." index="17"]
+[node name="Turrets" type="Node2D" parent="." index="19"]
 
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 5 )]
 
@@ -250,7 +260,7 @@ usesTargeting = false
 
 [node name="Turret5" parent="Turrets" index="12" instance=ExtResource( 5 )]
 
-position = Vector2( 858.795, 409.381 )
+position = Vector2( 675.075, 544.666 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
@@ -388,7 +398,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 600
 bulletSpeed = 14
 
-[node name="holeLayer" type="TileMap" parent="." index="18"]
+[node name="holeLayer" type="TileMap" parent="." index="20"]
 
 mode = 0
 tile_set = ExtResource( 6 )
@@ -406,13 +416,13 @@ collision_layer = 8
 collision_mask = 6
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -524285, 536870913, 0, -524284, 536870913, 0, -524283, 536870913, 0, -524282, 536870913, 0, -524281, 536870913, 0, -524280, 536870913, 0, -524279, 536870913, 0, -524278, 536870913, 0, -524277, 536870913, 0, -524276, 536870913, 0, -524275, 536870913, 0, -524274, 536870913, 0, -524273, 536870913, 0, -524272, 536870913, 0, -458749, 536870913, 0, -458736, 536870913, 0, -393213, 536870913, 0, -393200, 536870913, 0, -327677, 536870913, 0, -327676, 536870913, 0, -327675, 536870913, 0, -327674, 536870913, 0, -327673, 536870913, 0, -327672, 536870913, 0, -327671, 536870913, 0, -327670, 536870913, 0, -327669, 536870913, 0, -327668, 536870913, 0, -327667, 536870913, 0, -327666, 536870913, 0, -327665, 536870913, 0, -327664, 536870913, 0 )
+tile_data = PoolIntArray( -458749, 536870913, 0, -458748, 536870913, 0, -458747, 536870913, 0, -458746, 536870913, 0, -458745, 536870913, 0, -458744, 536870913, 0, -458743, 536870913, 0, -458742, 536870913, 0, -458741, 536870913, 0, -458740, 536870913, 0, -458739, 536870913, 0, -458738, 536870913, 0, -458737, 536870913, 0, -458736, 536870913, 0, -393213, 536870913, 0, -393200, 536870913, 0, -327677, 536870913, 0, -327664, 536870913, 0, -262141, 536870913, 0, -262140, 536870913, 0, -262139, 536870913, 0, -262138, 536870913, 0, -262137, 536870913, 0, -262136, 536870913, 0, -262135, 536870913, 0, -262134, 536870913, 0, -262133, 536870913, 0, -262132, 536870913, 0, -262131, 536870913, 0, -262130, 536870913, 0, -262129, 536870913, 0, -262128, 536870913, 0 )
 _sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Switch" parent="." index="19" instance=ExtResource( 7 )]
+[node name="Switch" parent="." index="21" instance=ExtResource( 7 )]
 
 position = Vector2( -933.233, 871.232 )
 on = true
@@ -422,23 +432,23 @@ on = true
 position = Vector2( 198.37, -305.082 )
 scale = Vector2( 1.30228, 2.18934 )
 
-[node name="EnemyMob6" parent="." index="20" instance=ExtResource( 9 )]
+[node name="EnemyMob6" parent="." index="22" instance=ExtResource( 9 )]
 
-position = Vector2( 645.144, -379.851 )
+position = Vector2( 640.233, -329.514 )
 
-[node name="EnemyMob8" parent="." index="21" instance=ExtResource( 9 )]
+[node name="EnemyMob8" parent="." index="23" instance=ExtResource( 9 )]
 
-position = Vector2( 902.901, -378.343 )
+position = Vector2( 897.99, -328.006 )
 
-[node name="EnemyMob9" parent="." index="22" instance=ExtResource( 9 )]
+[node name="EnemyMob9" parent="." index="24" instance=ExtResource( 9 )]
 
-position = Vector2( 910.836, 1957.68 )
+position = Vector2( 778.836, 1974.68 )
 
-[node name="EnemyMob7" parent="." index="23" instance=ExtResource( 9 )]
+[node name="EnemyMob7" parent="." index="25" instance=ExtResource( 9 )]
 
-position = Vector2( 369.3, -384.373 )
+position = Vector2( 364.389, -334.036 )
 
-[node name="LabRoom" type="TileMap" parent="." index="24"]
+[node name="LabRoom" type="TileMap" parent="." index="26"]
 
 z_index = -1
 mode = 0

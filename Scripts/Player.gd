@@ -187,6 +187,7 @@ func updateHealthBar():
 		$CanvasLayer/PlayerUI/ProgressBar.value = (float(health)/float(maxHealth)) * 100
 
 func respawn():
+	playerControlEnabled = false
 	get_node("../").reloadLastScene()
 	health = maxHealth
 	updateHealthBar()

@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 export (int) var health = 2
-onready var audioPlayer = $AudioStreamPlayer
+onready var audioPlayer = $audioStreamPlayer
 var destroyed = false
 export var respawnable = true
 
@@ -25,6 +25,7 @@ func destroy():
 	audioPlayer.play()
 	$Sprite.hide()
 	$CollisionShape2D.disabled = true
+
 
 func _on_audioStreamPlayer_finished():
 	queue_free()

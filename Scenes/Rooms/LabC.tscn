@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=5]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -123,11 +123,19 @@ position = Vector2( 1956.23, 346.006 )
 
 position = Vector2( 1380.61, 99.7632 )
 
-[node name="BreakableBlock3" parent="." index="8" instance=ExtResource( 4 )]
+[node name="BreakableBlock7" parent="." index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 1081.33, 290.216 )
+
+[node name="BreakableBlock5" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 1078.61, 356.874 )
+
+[node name="BreakableBlock3" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 1474.06, 557.993 )
 
-[node name="tileMap" type="TileMap" parent="." index="9"]
+[node name="tileMap" type="TileMap" parent="." index="11"]
 
 z_index = -1
 mode = 0

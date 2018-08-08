@@ -66,10 +66,7 @@ func _deferred_goto_scene(path, transferGoalPath):
 	#get_tree().set_current_scene( currentScene ) # Currently gives debug message...?
 
 func reloadLastScene():
-	currentScene.queue_free()
-	currentScene = scene.instance()
-	get_tree().get_root().get_node("World").add_child(currentScene)
-	player.position = respawnPoint
+	$CanvasLayer/ScenePlayer.play("Scene Transition")
 
 func _get_camera_center():
     var vtrans = get_canvas_transform()

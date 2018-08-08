@@ -15,15 +15,21 @@ position = Vector2( 1217.5, -23.0784 )
 newScene = "LabE"
 transferGoalTemp = "F"
 
-[node name="TransferGoalA" parent="." index="1" instance=ExtResource( 2 )]
+[node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
-position = Vector2( -43.4335, -160.979 )
+position = Vector2( -80, -190.493 )
+newScene = "LabE"
+transferGoalTemp = "E"
 
-[node name="TransferGoalB" parent="." index="2" instance=ExtResource( 2 )]
+[node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 0, -62.4927 )
+
+[node name="TransferGoalB" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 1215.93, 124.252 )
 
-[node name="Turret" parent="." index="3" instance=ExtResource( 3 )]
+[node name="Turret" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 354.226, -159.779 )
 rotation = 1.5708
@@ -32,7 +38,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret2" parent="." index="4" instance=ExtResource( 3 )]
+[node name="Turret2" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 420.549, -159.779 )
 rotation = 1.5708
@@ -41,7 +47,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret3" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Turret3" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 350.708, 283.21 )
 rotation = 1.5708
@@ -50,7 +56,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret4" parent="." index="6" instance=ExtResource( 3 )]
+[node name="Turret4" parent="." index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 1056, 673.507 )
 rotation = 3.14159
@@ -59,7 +65,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret5" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Turret5" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 1056, 739.831 )
 rotation = 3.14159
@@ -69,7 +75,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="tileMap" type="TileMap" parent="." index="8"]
+[node name="tileMap" type="TileMap" parent="." index="9"]
 
 z_index = -1
 mode = 0

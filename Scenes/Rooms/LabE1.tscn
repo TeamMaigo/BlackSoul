@@ -100,12 +100,12 @@ bulletSpeed = 10
 
 [node name="Turret2" parent="Turrets" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 1655.42, -288.663 )
+position = Vector2( 1654.06, -264.176 )
 bulletSpeed = 10
 
 [node name="Turret3" parent="Turrets" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 1874.44, -293.519 )
+position = Vector2( 1871.72, -269.032 )
 bulletSpeed = 10
 
 [node name="Turret4" parent="Turrets" index="3" instance=ExtResource( 5 )]

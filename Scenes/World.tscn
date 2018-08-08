@@ -76,7 +76,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -283,18 +283,10 @@ align = 1
 [node name="optionsPopup" parent="CanvasLayer/Options" index="1" instance=ExtResource( 4 )]
 
 editor/display_folded = true
-
-[node name="WindowButton" parent="CanvasLayer/Options/optionsPopup/Container/WindowText" index="0"]
-
-items = [ "Windowed", null, false, 0, null, "Borderless", null, false, 1, null, "Fullscreen", null, false, 2, null ]
-
-[node name="ResolutionButton" parent="CanvasLayer/Options/optionsPopup/Container/ResolutionText" index="0"]
-
-items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1280x720", null, false, 2, null ]
+visible = false
 
 [node name="ScenePlayer" type="AnimationPlayer" parent="CanvasLayer" index="1"]
 
-editor/display_folded = true
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
@@ -312,8 +304,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1024.0
-margin_bottom = 605.0
+margin_left = -87.0
+margin_top = -68.0
+margin_right = 1086.0
+margin_bottom = 663.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1

@@ -35,7 +35,7 @@ _sections_unfolded = [ "Visibility" ]
 
 shape = SubResource( 1 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." index="2"]
+[node name="audioStreamPlayer" type="AudioStreamPlayer2D" parent="." index="2"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
@@ -44,5 +44,7 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[connection signal="finished" from="audioStreamPlayer" to="." method="_on_audioStreamPlayer_finished"]
 
 
