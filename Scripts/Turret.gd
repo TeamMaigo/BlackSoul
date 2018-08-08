@@ -101,7 +101,7 @@ func shootShotgunAtTarget(pos):
 func shootBulletStraight():
 	#Shoots a bullet in the direction it's facing
 	var b = Bullet.instance()
-	b.start(global_position, self.get_global_transform().get_rotation(), bulletSpeed)
+	b.start(position, self.get_global_transform().get_rotation(), bulletSpeed)
 	get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)

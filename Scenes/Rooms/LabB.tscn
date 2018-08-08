@@ -30,7 +30,7 @@ position = Vector2( -507.131, 385.288 )
 
 [node name="TransferGoalB" parent="." index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 1069.16, 836.445 )
+position = Vector2( 1070.52, 894.941 )
 
 [node name="EnemyMob" parent="." index="4" instance=ExtResource( 4 )]
 
