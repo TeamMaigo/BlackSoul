@@ -186,6 +186,10 @@ func takeDamage(damage):
 func updateHealthBar():
 		$CanvasLayer/PlayerUI/ProgressBar.value = (float(health)/float(maxHealth)) * 100
 
+func setHealth(value):
+	health = value
+	updateHealthBar()
+
 func respawn():
 	playerControlEnabled = false
 	get_node("../").reloadLastScene()
@@ -199,3 +203,12 @@ func _on_InvulPlayer_animation_finished(anim_name):
 
 func _on_WeaponSwing_attack_finished():
 	barrierAvailable = true
+
+func save():
+	var saveDict = {
+		"filename": filename,
+		"parent": get_parent().get_path(),
+		"health": health,
+		"maxHealth": maxHealth
+	}
+	return saveDict

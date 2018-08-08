@@ -76,7 +76,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -284,6 +284,14 @@ align = 1
 
 editor/display_folded = true
 visible = false
+
+[node name="WindowButton" parent="CanvasLayer/Options/optionsPopup/Container/WindowText" index="0"]
+
+items = [ "Windowed", null, false, 0, null, "Borderless", null, false, 1, null, "Fullscreen", null, false, 2, null ]
+
+[node name="ResolutionButton" parent="CanvasLayer/Options/optionsPopup/Container/ResolutionText" index="0"]
+
+items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1280x720", null, false, 2, null ]
 
 [node name="ScenePlayer" type="AnimationPlayer" parent="CanvasLayer" index="1"]
 

@@ -7,11 +7,10 @@ func _ready():
 		queue_free()
 
 func applyEffect(player):
-	player.health = player.maxHealth
+	player.setHealth(player.maxHealth)
 	player.get_node("PlayerAudio").stream = load("res://Audio/RecievedChat.ogg")
 	player.get_node("PlayerAudio").playing = true
 	player.get_node("PlayerAudio").volume_db = Global.masterSound
-	player.updateHealthBar()
 	if not respawnable:
 		Global.destroyedObjects.append(Global.currentScene+name)
 	queue_free()

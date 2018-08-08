@@ -38,3 +38,7 @@ func _on_Back_pressed():
 func _on_Credits_pressed():
 	$Credits.show()
 	$MarginContainer.hide()
+
+
+func _on_Load_Game_pressed():
+	Global.load_game()

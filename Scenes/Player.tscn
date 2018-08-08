@@ -140,6 +140,7 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
+"Persist",
 "team_Player",
 "Damageable",
 "Player",

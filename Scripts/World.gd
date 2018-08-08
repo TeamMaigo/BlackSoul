@@ -77,3 +77,12 @@ func _get_camera_center():
 func _on_ScenePlayer_animation_finished(anim_name):
 	if anim_name == "Scene Transition":
 		$Player.playerControlEnabled = true
+
+func save():
+	var saveDict = {
+		"filename": filename,
+		"parent": get_parent().get_path(),
+		"currentScene": currentScene,
+		"transferGoalPath": transferGoalPath
+	}
+	return saveDict
