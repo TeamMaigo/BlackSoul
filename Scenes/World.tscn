@@ -76,7 +76,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 

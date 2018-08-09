@@ -1,8 +1,5 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 onready var currentScene = get_node("LabRoom")
 onready var player = get_node("Player")
 onready var camera = get_node("Player/Camera2D")
@@ -36,7 +33,6 @@ func goto_scene(path, transferGoalPath):
 
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
-	#$AnimationPlayer.play("Scene Transition")
 	$CanvasLayer/ScenePlayer.play("Scene Transition")
 	self.transferGoalPath = transferGoalPath
 	self.path = path
