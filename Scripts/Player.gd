@@ -208,7 +208,8 @@ func save():
 	var saveDict = {
 		"filename": filename,
 		"parent": get_parent().get_path(),
-		"health": health,
-		"maxHealth": maxHealth
+		"health": maxHealth,
+		"maxHealth": maxHealth,
+		"position": position
 	}
 	return saveDict

@@ -7,7 +7,10 @@ path="res://.import/wheel.png-1ce629ef6d95238566ece64cd1556528.stex"
 [deps]
 
 source_file="res://Sprites/wheel.png"
+source_md5="e7e902075c1932fee140ea961ce4bddf"
+
 dest_files=[ "res://.import/wheel.png-1ce629ef6d95238566ece64cd1556528.stex" ]
+dest_md5="fe5287a18cf0287d0ab1100cec1c4d07"
 
 [params]
 

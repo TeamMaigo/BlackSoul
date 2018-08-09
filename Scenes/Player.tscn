@@ -139,11 +139,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Persist",
+"Player",
 "team_Player",
 "Damageable",
-"Player",
 ]]
 
 input_pickable = false
@@ -161,6 +161,7 @@ shape = SubResource( 1 )
 
 [node name="RotationNode" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 
 [node name="WeaponSwing" parent="RotationNode" index="0" groups=[
@@ -196,6 +197,7 @@ blend_times = [  ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -286,6 +288,35 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="Camera2D" type="Camera2D" parent="." index="11"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1.7, 1.7 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 3.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Smoothing" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="attack_finished" from="RotationNode/WeaponSwing" to="." method="_on_WeaponSwing_attack_finished"]
 

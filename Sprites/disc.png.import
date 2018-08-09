@@ -7,7 +7,10 @@ path="res://.import/disc.png-6ca07c54a0ab5723f4f763ebab2d6b47.stex"
 [deps]
 
 source_file="res://Sprites/disc.png"
+source_md5="7fe1599ca1b0156d7b6b38d9775239af"
+
 dest_files=[ "res://.import/disc.png-6ca07c54a0ab5723f4f763ebab2d6b47.stex" ]
+dest_md5="b36f4c1772cbd99da62251da33abf7e7"
 
 [params]
 

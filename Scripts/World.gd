@@ -17,9 +17,9 @@ onready var respawnPoint = player.position
 var pauseState = 0
 
 func _ready():
+	Global.worldNode = get_node("./")
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -77,12 +77,3 @@ func _get_camera_center():
 func _on_ScenePlayer_animation_finished(anim_name):
 	if anim_name == "Scene Transition":
 		$Player.playerControlEnabled = true
-
-func save():
-	var saveDict = {
-		"filename": filename,
-		"parent": get_parent().get_path(),
-		"currentScene": currentScene,
-		"transferGoalPath": transferGoalPath
-	}
-	return saveDict
