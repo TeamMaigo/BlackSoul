@@ -303,6 +303,12 @@ _sections_unfolded = [ "Mouse", "Pause", "Visibility" ]
 
 [node name="LabRoom" parent="." index="2" instance=ExtResource( 6 )]
 
+[node name="canvasModulate" type="CanvasModulate" parent="." index="3"]
+
+visible = false
+color = Color( 0.546875, 0.546875, 0.546875, 1 )
+_sections_unfolded = [ "Visibility" ]
+
 [connection signal="pressed" from="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer/Unpause" to="CanvasLayer/Options" method="_on_Unpause_pressed"]
 
 [connection signal="pressed" from="CanvasLayer/Options/pausePopup/CenterContainer/VBoxContainer/Options" to="CanvasLayer/Options" method="_on_Options_pressed"]

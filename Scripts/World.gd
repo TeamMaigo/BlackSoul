@@ -73,3 +73,6 @@ func _get_camera_center():
 func _on_ScenePlayer_animation_finished(anim_name):
 	if anim_name == "Scene Transition":
 		$Player.playerControlEnabled = true
+		
+func setCanvasModulate(boolean):
+	$canvasModulate.visible = boolean
