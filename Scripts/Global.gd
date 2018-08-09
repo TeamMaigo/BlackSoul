@@ -19,9 +19,9 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func save_game():
+func save_game(fileNumber):
 	var save_game = File.new()
-	save_game.open("user://savegame.save", File.WRITE)
+	save_game.open("user://savegame.save" + str(fileNumber), File.WRITE)
 	var node_data = {
 		"path": worldNode.path,
 		"transferGoalPath": worldNode.transferGoalPath
@@ -40,20 +40,20 @@ func save_game():
 	save_game.close()
 	print("Game saved")
 
-# Note: This can be called from anywhere inside the tree. This function is path independent.
-func load_game():
+func load_game(fileNumber):
+	var save_game = File.new()
+	if not save_game.file_exists("user://savegame.save"+str(fileNumber)):
+	    return # Error! We don't have a save to load.
 	get_tree().change_scene("res://Scenes/World.tscn")
-	call_deferred("_deferred_load_game")
+	call_deferred("_deferred_load_game", fileNumber)
 	
-func _deferred_load_game():
+func _deferred_load_game(fileNumber):
 	worldNode = get_tree().get_root().get_node("World")
 	worldNode.get_node("LabRoom").free()	# delete the default room of World
-
 	var save_game = File.new()
-	if not save_game.file_exists("user://savegame.save"):
+	if not save_game.file_exists("user://savegame.save"+str(fileNumber)):
 	    return # Error! We don't have a save to load.
-
-	save_game.open("user://savegame.save", File.READ)
+	save_game.open("user://savegame.save"+str(fileNumber), File.READ)
 	var current_line = parse_json(save_game.get_line()) # path and transfergoal data
 	worldNode.path = current_line["path"]
 	worldNode.transferGoalPath = current_line["transferGoalPath"]

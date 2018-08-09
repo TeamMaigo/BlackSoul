@@ -140,10 +140,10 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
+"Damageable",
 "Persist",
 "Player",
 "team_Player",
-"Damageable",
 ]]
 
 input_pickable = false

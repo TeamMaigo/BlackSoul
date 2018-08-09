@@ -29,6 +29,7 @@ func _on_Options_pressed():
 func _on_Back_pressed():
 	$optionsPopup.hide()
 	$Credits.hide()
+	$"Load Games".hide()
 	$MarginContainer.show()
 
 
@@ -37,5 +38,10 @@ func _on_Credits_pressed():
 	$MarginContainer.hide()
 
 
-func _on_Load_Game_pressed():
-	Global.load_game()
+func _on_Load_Game_pressed(number):
+	Global.load_game(number)
+
+
+func _on_Load_Games_pressed():
+	$"Load Games".show()
+	$MarginContainer.hide()

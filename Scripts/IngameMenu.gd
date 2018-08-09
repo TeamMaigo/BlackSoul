@@ -41,7 +41,6 @@ func _on_Options_pressed():
 
 
 func _on_Quit_pressed():
-	#TODO Save Data
 	get_tree().paused = false	# Unpause stuff, otherwises the menus won't work!
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 

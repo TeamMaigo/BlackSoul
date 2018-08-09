@@ -1,18 +1,21 @@
 extends Node2D
 
-#export(String) var newScene = "Room1"
-#export var transferGoalTemp = "A"
-#var transferGoal
-#var transfering = false
-
 func _ready():
 	pass
-	# Called every time the node is added to the scene.
-	# Initialization here
-#	transferGoal = "TransferGoal" + transferGoalTemp
 
-func _on_Area2D_body_entered(body):
-	if body.is_in_group("Player"):
-		var player = body.get_node("./")
-		player.setHealth(player.maxHealth)
-		Global.save_game()
+func takeDamage(damage):
+	var player = get_tree().get_root().get_node("World/Player")
+	player.setHealth(player.maxHealth)
+	$CanvasLayer/Options.show()
+	get_tree().paused = true
+	
+
+func _on_Save_pressed(fileNumber):
+	get_tree().paused = false
+	Global.save_game(fileNumber)
+	$CanvasLayer/Options.hide()
+
+
+func _on_Quit_pressed():
+	get_tree().paused = false
+	$CanvasLayer/Options.hide()

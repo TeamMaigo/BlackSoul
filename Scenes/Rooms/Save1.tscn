@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/savePoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
 
 [node name="LabRoom" type="Node2D"]
 
@@ -65,5 +66,11 @@ transferGoalTemp = "B"
 [node name="SavePoint" parent="tileMap" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 0, 320 )
+
+[node name="Turret" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( -312.019, 316.541 )
+fire_rate = 2.0
+bulletSpeed = 4
 
 
