@@ -1,6 +1,7 @@
 extends Sprite
 
 var expectedChildren
+export var radius = 100
 
 func _ready():
 	expectedChildren = len(get_children())
@@ -11,7 +12,7 @@ func _ready():
 	for i in range(expectedChildren):
 		var obj = get_children()[i]
 		obj.global_position = global_position
-		obj.position.x += 100
+		obj.position.x += radius
 		var rad = i * radianOffset
 		obj.position = obj.position.rotated(rad)
 		obj.rotation += rad

@@ -3,7 +3,6 @@
 [ext_resource path="res://Scripts/Rotator.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/wheel.png" type="Texture" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -11,12 +10,13 @@ radius = 16.0
 
 [node name="Rotator" type="KinematicBody2D"]
 
-position = Vector2( 1305.92, 336.633 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+degreesPerFrame = 4
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

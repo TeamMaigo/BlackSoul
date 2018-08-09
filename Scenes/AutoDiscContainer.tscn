@@ -3,11 +3,11 @@
 [ext_resource path="res://Sprites/disc.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/AutoDiscContainer.gd" type="Script" id=2]
 
-
 [node name="AutoDiscContainer" type="Sprite"]
 
-position = Vector2( 1387.56, 257.212 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+radius = 100
 
 
