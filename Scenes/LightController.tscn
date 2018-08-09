@@ -1,14 +1,14 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://LightController.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/LightController.gd" type="Script" id=1]
 
-[node name="LightController" type="Node"]
+[node name="LightController" type="Node" index="0"]
 
 script = ExtResource( 1 )
 energy = 1.0
 strobe = false
-strobe_low_energy = 0
-strobe_high_energy = 1
-strobe_period = 5
+low_energy = 0
+high_energy = 1
+transition_time = 2.5
 
 

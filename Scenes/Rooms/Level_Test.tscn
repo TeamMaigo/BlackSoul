@@ -11,7 +11,7 @@
 [ext_resource path="res://Sprites/Light/square.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Light/gradient.png" type="Texture" id=10]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -186,9 +186,9 @@ __meta__ = {
 
 energy = 0.8
 strobe = true
-strobe_low_energy = 0.8
-strobe_high_energy = 1.3
-strobe_period = 4.0
+low_energy = 0
+high_energy = 1
+transition_time = 2.5
 
 [node name="light2D" type="Light2D" parent="tileMap/LightController" index="0"]
 
