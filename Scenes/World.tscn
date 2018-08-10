@@ -85,10 +85,6 @@ script = ExtResource( 1 )
 editor/display_folded = true
 position = Vector2( -286.357, -36.427 )
 
-[node name="PlayerAudio" parent="Player" index="5"]
-
-pitch_scale = 1.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
 
 layer = 1

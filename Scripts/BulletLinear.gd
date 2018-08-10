@@ -42,6 +42,8 @@ func _physics_process(delta):
 		collide(collision.collider)
 	
 func collide(collider):
+	if collider.has_method("shatterParams"):
+		collider.shatterParams(global_position, rotation, speed)
 	if collider.has_method("takeDamage"):
 		if collider.is_in_group("Player") and reflectedRecently:
 			pass # Don't hit the player

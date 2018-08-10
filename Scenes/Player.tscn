@@ -140,10 +140,10 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
-"Damageable",
-"Persist",
 "Player",
+"Persist",
 "team_Player",
+"Damageable",
 ]]
 
 input_pickable = false
@@ -247,6 +247,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Percent" ]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
