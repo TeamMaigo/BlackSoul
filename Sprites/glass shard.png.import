@@ -7,7 +7,10 @@ path="res://.import/glass shard.png-1f48cfe493262755b8c74b89985bdda1.stex"
 [deps]
 
 source_file="res://Sprites/glass shard.png"
+source_md5="f507a88ca16c6c63123b171e3bbb902f"
+
 dest_files=[ "res://.import/glass shard.png-1f48cfe493262755b8c74b89985bdda1.stex" ]
+dest_md5="1eeeb0d5429d83485780206e0f99d7b0"
 
 [params]
 

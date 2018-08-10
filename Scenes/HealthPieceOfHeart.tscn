@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/HealthPickup.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/HealthPieceOfHeart.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="HealthPickup" type="StaticBody2D" index="0" groups=[
+[node name="PieceOfHeart" type="StaticBody2D" groups=[
 "Pickup",
 ]]
 
@@ -30,7 +30,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-self_modulate = Color( 0.0410156, 0.65625, 0.0794678, 1 )
+self_modulate = Color( 0.0410156, 0.151566, 0.65625, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 

@@ -7,7 +7,10 @@ path="res://.import/gradient.png-d26a76bf1f303764e68ce33e78cbab2d.stex"
 [deps]
 
 source_file="res://Sprites/Light/gradient.png"
+source_md5="faadc48c991de9f318d9ab699bc73777"
+
 dest_files=[ "res://.import/gradient.png-d26a76bf1f303764e68ce33e78cbab2d.stex" ]
+dest_md5="0a53413c615e8db5eabbf4314e48583b"
 
 [params]
 

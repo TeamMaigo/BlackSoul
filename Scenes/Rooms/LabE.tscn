@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=10]
+[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=11]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -93,58 +94,35 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Dash" type="Label" parent="." index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 2324.0
-margin_top = -896.0
-margin_right = 2372.0
-margin_bottom = -877.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "HP up"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
-[node name="TransferPoint" parent="." index="13" instance=ExtResource( 1 )]
+[node name="TransferPoint" parent="." index="12" instance=ExtResource( 1 )]
 
 position = Vector2( 2364.34, 779.51 )
 newScene = "Save1"
 
-[node name="TransferPoint2" parent="." index="14" instance=ExtResource( 1 )]
+[node name="TransferPoint2" parent="." index="13" instance=ExtResource( 1 )]
 
 visible = false
 position = Vector2( 2364.84, -1474.54 )
 newScene = "LabE1"
 transferGoalTemp = "B"
 
-[node name="TransferGoalC" parent="." index="15" instance=ExtResource( 3 )]
+[node name="TransferGoalC" parent="." index="14" instance=ExtResource( 3 )]
 
 position = Vector2( -450.694, -147.719 )
 
-[node name="TransferGoalD" parent="." index="16" instance=ExtResource( 3 )]
+[node name="TransferGoalD" parent="." index="15" instance=ExtResource( 3 )]
 
 position = Vector2( 2366.19, -1230.54 )
 
-[node name="TransferGoalE" parent="." index="17" instance=ExtResource( 3 )]
+[node name="TransferGoalE" parent="." index="16" instance=ExtResource( 3 )]
 
 position = Vector2( -630.014, 1532.19 )
 
-[node name="TransferGoalF" parent="." index="18" instance=ExtResource( 3 )]
+[node name="TransferGoalF" parent="." index="17" instance=ExtResource( 3 )]
 
 position = Vector2( 1304.98, 1635.3 )
 
-[node name="Turrets" type="Node2D" parent="." index="19"]
+[node name="Turrets" type="Node2D" parent="." index="18"]
 
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 5 )]
 
@@ -398,7 +376,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 600
 bulletSpeed = 14
 
-[node name="holeLayer" type="TileMap" parent="." index="20"]
+[node name="holeLayer" type="TileMap" parent="." index="19"]
 
 mode = 0
 tile_set = ExtResource( 6 )
@@ -422,7 +400,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Switch" parent="." index="21" instance=ExtResource( 7 )]
+[node name="Switch" parent="." index="20" instance=ExtResource( 7 )]
 
 position = Vector2( -933.233, 871.232 )
 on = true
@@ -432,23 +410,23 @@ on = true
 position = Vector2( 198.37, -305.082 )
 scale = Vector2( 1.30228, 2.18934 )
 
-[node name="EnemyMob6" parent="." index="22" instance=ExtResource( 9 )]
+[node name="EnemyMob6" parent="." index="21" instance=ExtResource( 9 )]
 
 position = Vector2( 640.233, -329.514 )
 
-[node name="EnemyMob8" parent="." index="23" instance=ExtResource( 9 )]
+[node name="EnemyMob8" parent="." index="22" instance=ExtResource( 9 )]
 
 position = Vector2( 897.99, -328.006 )
 
-[node name="EnemyMob9" parent="." index="24" instance=ExtResource( 9 )]
+[node name="EnemyMob9" parent="." index="23" instance=ExtResource( 9 )]
 
 position = Vector2( 778.836, 1974.68 )
 
-[node name="EnemyMob7" parent="." index="25" instance=ExtResource( 9 )]
+[node name="EnemyMob7" parent="." index="24" instance=ExtResource( 9 )]
 
 position = Vector2( 364.389, -334.036 )
 
-[node name="LabRoom" type="TileMap" parent="." index="26"]
+[node name="LabRoom" type="TileMap" parent="." index="25"]
 
 z_index = -1
 mode = 0
@@ -472,6 +450,10 @@ _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="PieceOfHeart" parent="." index="26" instance=ExtResource( 11 )]
+
+position = Vector2( 2366.37, -851.623 )
 
 [connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onDeactivate"]
 

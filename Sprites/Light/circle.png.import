@@ -7,7 +7,10 @@ path="res://.import/circle.png-877f9df1905101131bed048d7a05574a.stex"
 [deps]
 
 source_file="res://Sprites/Light/circle.png"
+source_md5="83df560f2086a797ab1714d6d66a6ab9"
+
 dest_files=[ "res://.import/circle.png-877f9df1905101131bed048d7a05574a.stex" ]
+dest_md5="24d6b29005948f5983ceeed11f0ea89d"
 
 [params]
 

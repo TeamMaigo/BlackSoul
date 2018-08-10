@@ -35,6 +35,7 @@ var swappedRecently = false
 var dashInvuln = false
 var minDashInvulnSpeed = 1300
 var maxDashInvulnSpeed = 1800
+var piecesOfHeart = 0
 
 func _ready():
 	set_physics_process(true)

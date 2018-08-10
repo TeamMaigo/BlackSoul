@@ -7,7 +7,10 @@ path="res://.import/glassBreak.ogg-fddade8e08d14f3782c4ab6e4d1beb92.oggstr"
 [deps]
 
 source_file="res://Audio/glassBreak.ogg"
+source_md5="b802ea37154488473462be04fa0bbb36"
+
 dest_files=[ "res://.import/glassBreak.ogg-fddade8e08d14f3782c4ab6e4d1beb92.oggstr" ]
+dest_md5="bde653fd8e481ddeacedbc1408a3b004"
 
 [params]
 

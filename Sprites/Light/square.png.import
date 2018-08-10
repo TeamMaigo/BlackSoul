@@ -7,7 +7,10 @@ path="res://.import/square.png-269bf1ef758971a6eadfd048814c8658.stex"
 [deps]
 
 source_file="res://Sprites/Light/square.png"
+source_md5="bc3cc411fa2064f6c1bb2719d8f64e32"
+
 dest_files=[ "res://.import/square.png-269bf1ef758971a6eadfd048814c8658.stex" ]
+dest_md5="787025467bd171b8fbcd9b48fb88a588"
 
 [params]
 

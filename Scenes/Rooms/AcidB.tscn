@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=7]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -33,32 +33,36 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 725.518, -111.46 )
 
-[node name="TransferPoint" parent="." index="1" instance=ExtResource( 3 )]
+[node name="TransferGoalB" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -1480.1, 2043.45 )
+
+[node name="TransferPoint" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 928.013, -138.898 )
 newScene = "AcidA"
 transferGoalTemp = "B"
 
-[node name="TransferPoint2" parent="." index="2" instance=ExtResource( 3 )]
+[node name="TransferPoint2" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -819.162, -211.907 )
 newScene = "AcidA"
 transferGoalTemp = "C"
 
-[node name="TransferPoint3" parent="." index="3" instance=ExtResource( 3 )]
+[node name="TransferPoint3" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( -1603.53, 2043.29 )
 newScene = "AcidC"
 
-[node name="BreakableBlock" parent="." index="4" instance=ExtResource( 4 )]
+[node name="BreakableBlock" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 1183.12, 1022.12 )
 
-[node name="BreakableBlock2" parent="." index="5" instance=ExtResource( 4 )]
+[node name="BreakableBlock2" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( -108.38, 252.006 )
 
-[node name="HoleLayer" type="TileMap" parent="." index="6"]
+[node name="HoleLayer" type="TileMap" parent="." index="7"]
 
 z_index = -1
 mode = 0
@@ -83,32 +87,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HealthPickup" parent="." index="7" instance=ExtResource( 5 )]
+[node name="HealthPickup" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 1001.44, 1656.98 )
-
-[node name="label" type="Label" parent="." index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -321.0
-margin_top = 232.0
-margin_right = -281.0
-margin_bottom = 246.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Hp Up"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Hint", "Rect" ]
 
 [node name="Turrets" type="Node2D" parent="." index="9"]
 
@@ -120,10 +101,6 @@ position = Vector2( 174.339, -209.944 )
 detect_radius = 700
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="Turret2" parent="Turrets" index="1" instance=ExtResource( 6 )]
 
@@ -131,59 +108,54 @@ position = Vector2( -97.5552, 985.889 )
 detect_radius = 700
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="Turret3" parent="Turrets" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 253.489, 1777.2 )
+rotation = 1.5708
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
+rotatingTurret = false
+usesTargeting = false
 
 [node name="Turret4" parent="Turrets" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 22.1611, 2299.08 )
+rotation = -1.5708
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
+rotatingTurret = false
+usesTargeting = false
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -353.516, 1797.56 )
+rotation = 1.5708
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
+rotatingTurret = false
+usesTargeting = false
 
 [node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( -742.147, 2299.08 )
+rotation = -1.5708
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
+rotatingTurret = false
+usesTargeting = false
 
 [node name="Turret7" parent="Turrets" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( -995.683, 1792.01 )
+rotation = 1.5708
 Bullet = ExtResource( 7 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
+rotatingTurret = false
+usesTargeting = false
+
+[node name="HealthPickup2" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( -262.552, 254.39 )
 
 

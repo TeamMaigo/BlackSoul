@@ -7,7 +7,10 @@ path="res://.import/glass.png-837a64818b2468c6307002d8693df851.stex"
 [deps]
 
 source_file="res://Sprites/glass.png"
+source_md5="db3c9044a112c77ab07f80f91eee8cc8"
+
 dest_files=[ "res://.import/glass.png-837a64818b2468c6307002d8693df851.stex" ]
+dest_md5="57573b8ce19c429f228f3f922fa3deaa"
 
 [params]
 

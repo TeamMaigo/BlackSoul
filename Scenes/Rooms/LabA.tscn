@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=5]
 
 [node name="LabRoom" type="TileMap" index="0"]
 
@@ -97,5 +98,20 @@ position = Vector2( 766.029, -86.0156 )
 [node name="Dummy1" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( -415.876, 384.143 )
+
+[node name="PieceOfHeart" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 220.993, 62.6146 )
+respawnable = false
+
+[node name="PieceOfHeart2" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 298.34, 62.6146 )
+respawnable = false
+
+[node name="PieceOfHeart3" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 365.866, -15.9606 )
+respawnable = false
 
 

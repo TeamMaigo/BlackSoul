@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=9]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -54,10 +55,6 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="Turret2" parent="." index="5" instance=ExtResource( 4 )]
 
@@ -65,10 +62,6 @@ position = Vector2( -2746.14, -298.452 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="Turret3" parent="." index="6" instance=ExtResource( 4 )]
 
@@ -76,10 +69,6 @@ position = Vector2( -2039.2, 136.445 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 3
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="Turret4" parent="." index="7" instance=ExtResource( 4 )]
 
@@ -87,10 +76,6 @@ position = Vector2( -1375.75, 36.4732 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="Turret6" parent="." index="8" instance=ExtResource( 4 )]
 
@@ -98,10 +83,6 @@ position = Vector2( -1557.11, -102.324 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="Turret5" parent="." index="9" instance=ExtResource( 4 )]
 
@@ -110,10 +91,6 @@ rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 Bullet = ExtResource( 5 )
 bulletSpeed = 10
-bulletRotationSpeed = 1.0
-bulletConeDegrees = 40.0
-bulletDecayTime = 10.0
-angleBulletUpdateDelay = 1.0
 
 [node name="HoleLayer" type="TileMap" parent="." index="10"]
 
@@ -150,37 +127,18 @@ on = true
 position = Vector2( 265.345, 178.652 )
 scale = Vector2( 3.56981, 2.60725 )
 
-[node name="label" type="Label" parent="." index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -110.0
-margin_top = -399.0
-margin_right = -70.0
-margin_bottom = -385.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Hp Up"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
-[node name="TransferPoint" parent="." index="13" instance=ExtResource( 8 )]
+[node name="TransferPoint" parent="." index="12" instance=ExtResource( 8 )]
 
 position = Vector2( -87.2803, 1794.94 )
 newScene = "AcidB"
 
-[node name="TransferGoalB" parent="." index="14" instance=ExtResource( 2 )]
+[node name="TransferGoalB" parent="." index="13" instance=ExtResource( 2 )]
 
 position = Vector2( 163.176, 1772.17 )
+
+[node name="PieceOfHeart" parent="." index="14" instance=ExtResource( 9 )]
+
+position = Vector2( -64.6125, -386.779 )
 
 [connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onDeactivate"]
 
