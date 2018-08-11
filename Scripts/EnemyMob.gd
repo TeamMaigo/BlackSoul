@@ -3,6 +3,7 @@ extends KinematicBody2D
 var frame = 0
 var direction = randi() % 4
 var moveDir = Vector2(0,0)
+export var hp = 1
 export var MOTION_SPEED = 100
 var canSeePlayer = false
 export (int) var detect_radius = 300
@@ -19,7 +20,7 @@ export (float) var fire_rate = 1  # delay time (s) between bullets
 var lastKnownPlayerPos
 export(String, "singleFire", "shotgun") var fireType
 export var respawns = true
-export var hp = 1
+export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
 var bulletOffset = 50
 export var bulletRotationSpeed = 1.0 # degrees per frame
 export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
@@ -135,3 +136,4 @@ func setBulletProperties(b):
 	b.maxRotationDiff =  bulletConeDegrees
 	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
 	b.angleBulletUpdateDelay = angleBulletUpdateDelay
+	b.trackingDelayTime = trackingDelayTime

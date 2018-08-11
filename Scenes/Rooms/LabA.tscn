@@ -42,9 +42,16 @@ newScene = "Level_Test"
 
 visible = false
 position = Vector2( 316.692, -201.167 )
-newScene = "Save1"
+newScene = "LabB"
 
-[node name="Label" type="Label" parent="." index="2"]
+[node name="TransferPointA2" parent="." index="2" instance=ExtResource( 2 )]
+
+modulate = Color( 0.121094, 0.485016, 1, 1 )
+position = Vector2( -87.2338, -161 )
+_sections_unfolded = [ "Visibility" ]
+newScene = "AcidA"
+
+[node name="Label" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -67,7 +74,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Label2" type="Label" parent="." index="3"]
+[node name="Label2" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -90,25 +97,25 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Pickup" parent="." index="4" instance=ExtResource( 3 )]
+[node name="Pickup" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 229.036, -57.5681 )
 
-[node name="Dummy" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Dummy" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 772.168, -59.0053 )
 
-[node name="PieceOfHeart" parent="." index="6" instance=ExtResource( 5 )]
+[node name="PieceOfHeart" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 220.993, 62.6146 )
 respawnable = false
 
-[node name="PieceOfHeart2" parent="." index="7" instance=ExtResource( 5 )]
+[node name="PieceOfHeart2" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 298.34, 62.6146 )
 respawnable = false
 
-[node name="PieceOfHeart3" parent="." index="8" instance=ExtResource( 5 )]
+[node name="PieceOfHeart3" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 365.866, -15.9606 )
 respawnable = false

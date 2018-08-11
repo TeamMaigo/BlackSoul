@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=10]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=11]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -122,7 +122,11 @@ position = Vector2( -630.014, 1532.19 )
 
 position = Vector2( 1304.98, 1635.3 )
 
-[node name="Turrets" type="Node2D" parent="." index="18"]
+[node name="TransferGoalG" parent="." index="18" instance=ExtResource( 3 )]
+
+position = Vector2( -956.717, 537.048 )
+
+[node name="Turrets" type="Node2D" parent="." index="19"]
 
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 5 )]
 
@@ -376,7 +380,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 600
 bulletSpeed = 14
 
-[node name="holeLayer" type="TileMap" parent="." index="19"]
+[node name="holeLayer" type="TileMap" parent="." index="20"]
 
 mode = 0
 tile_set = ExtResource( 6 )
@@ -400,7 +404,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Switch" parent="." index="20" instance=ExtResource( 7 )]
+[node name="Switch" parent="." index="21" instance=ExtResource( 7 )]
 
 position = Vector2( -933.233, 871.232 )
 on = true
@@ -410,23 +414,23 @@ on = true
 position = Vector2( 198.37, -305.082 )
 scale = Vector2( 1.30228, 2.18934 )
 
-[node name="EnemyMob6" parent="." index="21" instance=ExtResource( 9 )]
+[node name="EnemyMob6" parent="." index="22" instance=ExtResource( 9 )]
 
 position = Vector2( 640.233, -329.514 )
 
-[node name="EnemyMob8" parent="." index="22" instance=ExtResource( 9 )]
+[node name="EnemyMob8" parent="." index="23" instance=ExtResource( 9 )]
 
 position = Vector2( 897.99, -328.006 )
 
-[node name="EnemyMob9" parent="." index="23" instance=ExtResource( 9 )]
+[node name="EnemyMob9" parent="." index="24" instance=ExtResource( 9 )]
 
 position = Vector2( 778.836, 1974.68 )
 
-[node name="EnemyMob7" parent="." index="24" instance=ExtResource( 9 )]
+[node name="EnemyMob7" parent="." index="25" instance=ExtResource( 9 )]
 
 position = Vector2( 364.389, -334.036 )
 
-[node name="LabRoom" type="TileMap" parent="." index="25"]
+[node name="LabRoom" type="TileMap" parent="." index="26"]
 
 z_index = -1
 mode = 0
@@ -451,7 +455,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PieceOfHeart" parent="." index="26" instance=ExtResource( 11 )]
+[node name="PieceOfHeart" parent="." index="27" instance=ExtResource( 11 )]
 
 position = Vector2( 2366.37, -851.623 )
 

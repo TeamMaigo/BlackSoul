@@ -3,7 +3,7 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-export(String) var newScene = "Room1"
+export(String) var newScene = "LabA"
 export var transferGoalTemp = "A"
 var transferGoal
 var transfering = false

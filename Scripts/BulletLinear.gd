@@ -5,10 +5,12 @@ var velocity = Vector2()
 var player
 var damage = 1
 var frames = 0
+var target
 var angleBulletUpdateDelay = 1 # seconds
 var rotationSpeed = 1.0 # how fast it rotates
 var bulletDecayTime = 10
 var maxRotationDiff = 40.0
+var trackingDelayTime = 0.25 # Sec till bullet starts tracking
 onready var turnSpeed = deg2rad(rotationSpeed)
 var reflectedRecently = false
 onready var reflectionTimer = $ReflectionTimer
@@ -20,8 +22,8 @@ func _ready():
 	$animationPlayer.play("default")
 
 
-func setTarget(target): #TODO: Arrange bullet objects better so we can delete this function
-	return
+func setTarget(target): #TODO: This function is not used in the linear bullet, only in homing+
+	self.target = target
 
 func start(pos, dir, bulletSpeed):
 	position = pos

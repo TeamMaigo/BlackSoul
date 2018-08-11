@@ -17,6 +17,7 @@ export var bulletRotationSpeed = 1.0 # degrees per frame
 export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
 export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
 export var angleBulletUpdateDelay = 1.0 #seconds
+export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
 
 var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -103,6 +104,7 @@ func shootBulletStraight():
 	#Shoots a bullet in the direction it's facing
 	var b = Bullet.instance()
 	b.start(position, self.get_global_transform().get_rotation(), bulletSpeed)
+	setBulletProperties(b)
 	get_parent().add_child(b)
 	can_shoot = false
 	waitToShoot(fire_rate)
@@ -124,3 +126,4 @@ func setBulletProperties(b):
 	b.maxRotationDiff =  bulletConeDegrees
 	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
 	b.angleBulletUpdateDelay = angleBulletUpdateDelay
+	b.trackingDelayTime = trackingDelayTime

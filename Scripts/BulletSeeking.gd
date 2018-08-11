@@ -10,7 +10,9 @@ var bulletDecayTime = 10
 var maxRotationDiff = 40.0
 var angleBulletUpdateDelay
 #onready var 
-var frames = 0
+var frames = 0 # Frames before bullet can hurt enemies
+var trackingDelayTime = 0.25 # Sec till bullet starts tracking
+onready var trackingDelayTimer = $TrackingDelayTimer
 onready var linearDecayTimer = $LinearDecayTimer
 var decayed = false # Decides whether bullet is now a linear bullet
 var reflectedRecently = false
@@ -23,6 +25,7 @@ func _ready():
 	_physics_process(true)
 	$animationPlayer.play("default")
 	bulletDecay(bulletDecayTime)
+	waitToTrack()
 
 func start(pos, dir, bulletSpeed):
 	position = pos
@@ -35,12 +38,11 @@ func setTarget(target):
 
 func _physics_process(delta):
 	if frames == 15: #TODO
-		if not target:
-			target = get_tree().get_root().get_node("World/Player")
 		collision_mask = 7 
 		frames += 1
 	else:
-		frames += 1
+		if frames < 15:
+			frames += 1
 	if target and not decayed:
 		var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
 		if abs(angleToTarget) > PI:
@@ -81,3 +83,9 @@ func waitToReflect():
 	reflectionTimer.start() # Start the Timer counting down
 	yield(reflectionTimer, "timeout") # Wait for the timer to wind down
 	reflectedRecently = false
+
+func waitToTrack():
+	trackingDelayTimer.set_wait_time(trackingDelayTime) # Set Timer's delay to "sec" seconds
+	trackingDelayTimer.start() # Start the Timer counting down
+	yield(trackingDelayTimer, "timeout") # Wait for the timer to wind down
+	target = get_tree().get_root().get_node("World/Player")
