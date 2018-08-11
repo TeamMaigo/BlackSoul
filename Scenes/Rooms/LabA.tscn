@@ -42,7 +42,7 @@ newScene = "Level_Test"
 
 visible = false
 position = Vector2( 316.692, -201.167 )
-newScene = "LabB"
+newScene = "Save1"
 
 [node name="Label" type="Label" parent="." index="2"]
 

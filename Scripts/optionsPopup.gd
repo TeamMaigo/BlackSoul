@@ -37,10 +37,12 @@ func _on_WindowButton_item_selected(ID):
 
 func _on_SoundSlider_value_changed(value):
 	Global.masterSound = value
+	Global.saveOptions()
 
 func _on_MusicSlider_value_changed(value):
 	Global.masterMusic = value
 	BGMPlayer.volume_db = value
+	Global.saveOptions()
 
 func _on_Reset_pressed():
 	InputMap.load_from_globals()

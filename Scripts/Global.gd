@@ -12,6 +12,7 @@ var worldNode
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	loadOptions()
 	BGMPlayer.playing = true
 
 #func _process(delta):
@@ -85,3 +86,25 @@ func save():
 		"destroyedObjects": destroyedObjects,
 	}
 	return saveDict
+
+func saveOptions():
+	var save_options = File.new()
+	save_options.open("user://gameoptions.save", File.WRITE)
+	var node_data = {
+		"masterMusic": masterMusic,
+		"masterSound": masterSound
+	}
+	save_options.store_line(to_json(node_data))
+	save_options.close()
+
+func loadOptions():
+	var save_options = File.new()
+	if not save_options.file_exists("user://gameoptions.save"):
+		return # Error! We don't have a save to load.
+	
+	# Load the file line by line and process that dictionary to restore the object it represents
+	save_options.open("user://gameoptions.save", File.READ)
+	var current_line = parse_json(save_options.get_line())
+	for i in current_line.keys():
+		Global.set(i, current_line[i])
+	save_options.close()
