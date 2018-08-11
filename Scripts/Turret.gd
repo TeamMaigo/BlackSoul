@@ -43,7 +43,7 @@ func _ready():
 
 func _physics_process(delta):
 	#update()
-	if(defeated == false):
+	if not defeated:
 		#Shoot bullets at a consistent rate of fire
 		if target:
 			if rotatingTurret:
@@ -127,3 +127,6 @@ func setBulletProperties(b):
 	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
 	b.angleBulletUpdateDelay = angleBulletUpdateDelay
 	b.trackingDelayTime = trackingDelayTime
+
+func deactivate():
+	defeated = true

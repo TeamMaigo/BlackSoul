@@ -53,7 +53,7 @@ func _physics_process(delta):
 				newDirection = get_global_mouse_position()-body.position
 			newDirection = newDirection.rotated(deg2rad(randi()%rotationVariance-rotationVariance))
 			body.setDirection(newDirection) # Bullet changes direction
-			body.get_node("Sprite").set("modulate",Color(0.3,0.3,0.3)) # Temp to visualize hit
+			body.get_node("Sprite").set("modulate",Color(0.6,0.6,0.6)) # Temp to visualize hit
 			body.setTarget(null)
 			body.reflectedRecently = true
 			body.waitToReflect()

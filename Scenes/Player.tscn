@@ -139,11 +139,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
+"Damageable",
 "Player",
 "Persist",
 "team_Player",
-"Damageable",
 ]]
 
 input_pickable = false
@@ -161,14 +161,12 @@ shape = SubResource( 1 )
 
 [node name="RotationNode" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 
 [node name="WeaponSwing" parent="RotationNode" index="0" groups=[
 "Player",
 ] instance=ExtResource( 2 )]
 
-visible = true
 collision_mask = 21
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
@@ -247,7 +245,6 @@ _sections_unfolded = [ "Anchor", "Margin", "Percent" ]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

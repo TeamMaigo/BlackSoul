@@ -7,6 +7,7 @@ func _ready():
 
 func applyEffect(player):
 	player.piecesOfHeart += 1
+	emit_signal("collected")
 	print("Found a piece of heart!")
 	if player.piecesOfHeart == 3:
 		player.piecesOfHeart = 0

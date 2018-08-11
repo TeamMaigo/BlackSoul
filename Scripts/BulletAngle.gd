@@ -2,7 +2,7 @@ extends "res://Scripts/BulletLinear.gd"
 
 var canRotate = false
 onready var timer = get_node("timer")
-var target
+#var target
 onready var linearDecayTimer = $LinearDecayTimer
 onready var trackingDelayTimer = $TrackingDelayTimer
 var decayed = false # Decides whether bullet is now a linear bullet
@@ -58,5 +58,5 @@ func bulletDecay(sec):
 func waitToTrack():
 	trackingDelayTimer.set_wait_time(trackingDelayTime) # Set Timer's delay to "sec" seconds
 	trackingDelayTimer.start() # Start the Timer counting down
-	yield(trackingDelayTime, "timeout") # Wait for the timer to wind down
+	yield(trackingDelayTimer, "timeout") # Wait for the timer to wind down
 	target = get_tree().get_root().get_node("World/Player")

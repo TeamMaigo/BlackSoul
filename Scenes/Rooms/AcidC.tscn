@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=7]
 
 [node name="LabRoom" type="TileMap" index="0"]
 
@@ -74,8 +75,8 @@ trackingDelayTime = 0.25
 
 [node name="EnemyMob" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( -610.059, 121.308 )
-MOTION_SPEED = 0
+position = Vector2( -352.303, 112.716 )
+MOTION_SPEED = 30
 fireType = "shotgun"
 
 [node name="TransferPoint" parent="." index="6" instance=ExtResource( 6 )]
@@ -88,5 +89,13 @@ newScene = "AcidB"
 position = Vector2( 516.615, -826.675 )
 newScene = "AcidB"
 transferGoalTemp = "C"
+
+[node name="SwitchDoor" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( -599.918, 119.665 )
+scale = Vector2( 1.18149, 1.87557 )
+enemiesLeftToKill = 1
+
+[connection signal="enemyDeath" from="EnemyMob" to="SwitchDoor" method="enemyDeath"]
 
 

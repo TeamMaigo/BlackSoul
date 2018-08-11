@@ -37,7 +37,6 @@ tracks/1/keys = {
 
 [node name="PlayerWeapon" type="Area2D"]
 
-visible = false
 position = Vector2( 30, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
