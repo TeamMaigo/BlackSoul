@@ -23,6 +23,7 @@ bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Visibility" ]
 enemiesLeftToKill = 0
+active = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
 

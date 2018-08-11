@@ -5,11 +5,15 @@ extends StaticBody2D
 # var b = "textvar"
 var collisionL = self.collision_layer
 export var enemiesLeftToKill = 0
+export var active = true
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	if active:
+		_onActivate()
+	else:
+		_onDeactivate()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

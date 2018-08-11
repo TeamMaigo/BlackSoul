@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/PressurePlate.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/wheel.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 18.0
+
+[node name="PressurePlate" type="Node2D"]
+
+script = ExtResource( 1 )
+time = 10
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="area2D" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="area2D" index="0"]
+
+position = Vector2( 0.535946, 0.784931 )
+scale = Vector2( 1.02552, 0.962622 )
+shape = SubResource( 1 )
+
+[node name="timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="body_entered" from="area2D" to="." method="_on_area2D_body_entered"]
+
+
