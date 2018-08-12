@@ -185,7 +185,12 @@ func takeDamage(damage):
 			respawn()
 
 func updateHealthBar():
-		$CanvasLayer/PlayerUI/ProgressBar.value = (float(health)/float(maxHealth)) * 100
+		for child in $CanvasLayer/PlayerUI/PlayerHealth.get_children():
+			if int(child.name[-1]) <= health:
+				child.activate()
+			else:
+				child.deactivate()
+#		$CanvasLayer/PlayerUI/ProgressBar.value = (float(health)/float(maxHealth)) * 100
 
 func setHealth(value):
 	health = value

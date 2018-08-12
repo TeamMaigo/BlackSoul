@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/UI_Life.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="UI_Life" type="Node2D"]
+
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Healthy" type="Sprite" parent="." index="0"]
+
+modulate = Color( 1, 0.566406, 0.566406, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Missing" type="Sprite" parent="." index="1"]
+
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+
