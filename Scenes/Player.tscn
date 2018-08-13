@@ -258,15 +258,23 @@ size_flags_vertical = 1
 
 [node name="UI_Life01" parent="CanvasLayer/PlayerUI/PlayerHealth" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 18.7881, 19.5016 )
+position = Vector2( 20, 20 )
 
 [node name="UI_Life2" parent="CanvasLayer/PlayerUI/PlayerHealth" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 56.3644, 19.5016 )
+position = Vector2( 60, 20 )
 
 [node name="UI_Life3" parent="CanvasLayer/PlayerUI/PlayerHealth" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 93.9407, 19.5016 )
+position = Vector2( 100, 20 )
+
+[node name="UI_Life4" parent="CanvasLayer/PlayerUI/PlayerHealth" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 140, 20 )
+
+[node name="UI_Life5" parent="CanvasLayer/PlayerUI/PlayerHealth" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 180, 20 )
 
 [node name="PlayerAudio" type="AudioStreamPlayer" parent="." index="5"]
 

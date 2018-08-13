@@ -43,6 +43,7 @@ func _ready():
 	CollisionNode = get_node("Collision")
 	lastTransferPoint = position
 	$RotationNode.hide()
+	updateHealthBar()
 
 func _physics_process(delta):
 	if playerControlEnabled:
@@ -188,9 +189,12 @@ func updateHealthBar():
 		for child in $CanvasLayer/PlayerUI/PlayerHealth.get_children():
 			if int(child.name[-1]) <= health:
 				child.activate()
-			else:
+				child.show()
+			elif int(child.name[-1]) <= maxHealth:
 				child.deactivate()
-#		$CanvasLayer/PlayerUI/ProgressBar.value = (float(health)/float(maxHealth)) * 100
+				child.show()
+			else:
+				child.hide()
 
 func setHealth(value):
 	health = value
