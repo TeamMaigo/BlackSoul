@@ -361,7 +361,17 @@ rotatingTurret = false
 usesTargeting = false
 trackingDelayTime = 0.25
 
-[node name="Turret10" parent="Turrets" index="23" instance=ExtResource( 5 )]
+[node name="Turret29" parent="Turrets" index="23" instance=ExtResource( 5 )]
+
+position = Vector2( 770.297, 1989.49 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+fire_rate = 1.2
+firstShotDelay = 0.6
+bulletSpeed = 10
+trackingDelayTime = 0.25
+
+[node name="Turret10" parent="Turrets" index="24" instance=ExtResource( 5 )]
 
 position = Vector2( -540.328, 1437.41 )
 rotation = 3.14159
@@ -371,7 +381,7 @@ rotatingTurret = false
 usesTargeting = false
 trackingDelayTime = 0.25
 
-[node name="Turret11" parent="Turrets" index="24" instance=ExtResource( 5 )]
+[node name="Turret11" parent="Turrets" index="25" instance=ExtResource( 5 )]
 
 position = Vector2( -545.328, 1114.74 )
 rotation = 3.14159
@@ -382,7 +392,7 @@ rotatingTurret = false
 usesTargeting = false
 trackingDelayTime = 0.25
 
-[node name="Turret12" parent="Turrets" index="25" instance=ExtResource( 5 )]
+[node name="Turret12" parent="Turrets" index="26" instance=ExtResource( 5 )]
 
 position = Vector2( -545.328, 983.599 )
 rotation = 3.14159
@@ -393,7 +403,7 @@ rotatingTurret = false
 usesTargeting = false
 trackingDelayTime = 0.25
 
-[node name="Turret13" parent="Turrets" index="26" instance=ExtResource( 5 )]
+[node name="Turret13" parent="Turrets" index="27" instance=ExtResource( 5 )]
 
 modulate = Color( 0.705719, 0.709953, 0.722656, 1 )
 position = Vector2( 1557.79, -1055.36 )
@@ -403,7 +413,7 @@ detect_radius = 600
 bulletSpeed = 14
 trackingDelayTime = 0.25
 
-[node name="Turret18" parent="Turrets" index="27" instance=ExtResource( 5 )]
+[node name="Turret18" parent="Turrets" index="28" instance=ExtResource( 5 )]
 
 modulate = Color( 0.705719, 0.709953, 0.722656, 1 )
 position = Vector2( 794.418, -873.395 )
@@ -447,23 +457,15 @@ on = true
 position = Vector2( 198.37, -305.082 )
 scale = Vector2( 1.30228, 2.18934 )
 
-[node name="EnemyMob6" parent="." index="23" instance=ExtResource( 9 )]
+[node name="EnemyMob8" parent="." index="23" instance=ExtResource( 9 )]
 
-position = Vector2( 640.233, -329.514 )
+position = Vector2( 803.454, -318.184 )
 
-[node name="EnemyMob8" parent="." index="24" instance=ExtResource( 9 )]
+[node name="EnemyMob7" parent="." index="24" instance=ExtResource( 9 )]
 
-position = Vector2( 897.99, -328.006 )
+position = Vector2( 434.37, -316.848 )
 
-[node name="EnemyMob9" parent="." index="25" instance=ExtResource( 9 )]
-
-position = Vector2( 778.836, 1974.68 )
-
-[node name="EnemyMob7" parent="." index="26" instance=ExtResource( 9 )]
-
-position = Vector2( 364.389, -334.036 )
-
-[node name="LabRoom" type="TileMap" parent="." index="27"]
+[node name="LabRoom" type="TileMap" parent="." index="25"]
 
 z_index = -1
 mode = 0
@@ -488,7 +490,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PieceOfHeart" parent="." index="28" instance=ExtResource( 11 )]
+[node name="PieceOfHeart" parent="." index="26" instance=ExtResource( 11 )]
 
 position = Vector2( 2366.37, -851.623 )
 

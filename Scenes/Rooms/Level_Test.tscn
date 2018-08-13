@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=11]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -44,7 +44,6 @@ __meta__ = {
 
 [node name="LightController" parent="tileMap" index="0" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 energy = 0.8
 strobe = true
 
@@ -57,7 +56,7 @@ editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
+color = Color( 1, 0, 0, 1 )
 energy = 1.0
 mode = 0
 range_height = 0.0
@@ -87,7 +86,7 @@ editor_only = false
 texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
+color = Color( 1, 0, 0, 1 )
 energy = 1.0
 mode = 0
 range_height = 0.0
@@ -118,7 +117,7 @@ editor_only = false
 texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
+color = Color( 1, 0, 0, 1 )
 energy = 1.0
 mode = 0
 range_height = 0.0
@@ -328,6 +327,7 @@ detect_radius = 500
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret8" parent="Rotator/AutoDiscContainer" index="1" instance=ExtResource( 9 )]
 
@@ -336,6 +336,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret9" parent="Rotator/AutoDiscContainer" index="2" instance=ExtResource( 9 )]
 
@@ -344,6 +345,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret10" parent="Rotator/AutoDiscContainer" index="3" instance=ExtResource( 9 )]
 
@@ -352,6 +354,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret11" parent="Rotator/AutoDiscContainer" index="4" instance=ExtResource( 9 )]
 
@@ -360,6 +363,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="TransferPointA" parent="." index="3" instance=ExtResource( 10 )]
 
@@ -410,6 +414,7 @@ position = Vector2( -283.932, 30.2262 )
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret3" parent="Turrets" index="1" instance=ExtResource( 9 )]
 
@@ -417,6 +422,7 @@ position = Vector2( -162.705, 480.934 )
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret4" parent="Turrets" index="2" instance=ExtResource( 9 )]
 
@@ -425,6 +431,7 @@ firstShotDelay = 0.5
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret2" parent="Turrets" index="3" instance=ExtResource( 9 )]
 
@@ -434,6 +441,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 9 )]
 
@@ -443,6 +451,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 9 )]
 
@@ -452,6 +461,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="GlassTurrets" type="Node" parent="." index="8"]
 
@@ -465,6 +475,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret8" parent="GlassTurrets" index="1" instance=ExtResource( 9 )]
 
@@ -474,6 +485,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret9" parent="GlassTurrets" index="2" instance=ExtResource( 9 )]
 
@@ -483,6 +495,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret10" parent="GlassTurrets" index="3" instance=ExtResource( 9 )]
 
@@ -492,6 +505,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret11" parent="GlassTurrets" index="4" instance=ExtResource( 9 )]
 
@@ -501,6 +515,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret12" parent="GlassTurrets" index="5" instance=ExtResource( 9 )]
 
@@ -510,6 +525,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret13" parent="GlassTurrets" index="6" instance=ExtResource( 9 )]
 
@@ -519,6 +535,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 [node name="Turret14" parent="GlassTurrets" index="7" instance=ExtResource( 9 )]
 
@@ -528,5 +545,6 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+trackingDelayTime = 0.25
 
 
