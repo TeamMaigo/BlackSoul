@@ -25,15 +25,8 @@ func _ready():
 #	pass
 
 func _on_WindowButton_item_selected(ID):
-	if ID == 0: # Set windowed
-		OS.window_fullscreen = false
-		OS.window_borderless = false
-	if ID == 1: # Borderless
-		OS.window_fullscreen = false
-		OS.window_borderless = true
-	if ID == 2: # Fullscreen
-		OS.window_fullscreen = true
-		OS.window_borderless = true
+	Global._on_WindowButton_item_selected(ID)
+	Global.saveOptions()
 
 func _on_SoundSlider_value_changed(value):
 	Global.masterSound = value

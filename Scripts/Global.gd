@@ -4,6 +4,7 @@ extends Node
 
 var masterMusic = 0
 var masterSound = 0
+var masterWindowMode = 0
 var destroyedObjects = []
 var currentScene = "LabA"
 var worldNode
@@ -81,8 +82,6 @@ func _deferred_load_game(fileNumber):
 	
 func save():
 	var saveDict = {
-		"masterMusic": masterMusic,
-		"masterSound": masterSound,
 		"destroyedObjects": destroyedObjects,
 	}
 	return saveDict
@@ -91,6 +90,7 @@ func saveOptions():
 	var save_options = File.new()
 	save_options.open("user://gameoptions.save", File.WRITE)
 	var node_data = {
+		"masterWindowMode": masterWindowMode,
 		"masterMusic": masterMusic,
 		"masterSound": masterSound
 	}
@@ -108,3 +108,16 @@ func loadOptions():
 	for i in current_line.keys():
 		Global.set(i, current_line[i])
 	save_options.close()
+	_on_WindowButton_item_selected(masterWindowMode)
+	
+func _on_WindowButton_item_selected(ID):
+	masterWindowMode = ID
+	if ID == 0: # Set windowed
+		OS.window_fullscreen = false
+		OS.window_borderless = false
+	if ID == 1: # Borderless
+		OS.window_fullscreen = false
+		OS.window_borderless = true
+	if ID == 2: # Fullscreen
+		OS.window_fullscreen = true
+		OS.window_borderless = true

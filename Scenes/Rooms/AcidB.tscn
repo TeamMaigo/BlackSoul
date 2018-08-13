@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=8]
 
 [node name="LabRoom" type="TileMap" index="0"]
 
@@ -190,8 +189,8 @@ trackingDelayTime = 0.25
 
 position = Vector2( -262.552, 254.39 )
 
-[node name="PieceOfHeart" parent="." index="14" instance=ExtResource( 8 )]
+[node name="HealthPickup3" parent="." index="14" instance=ExtResource( 7 )]
 
-position = Vector2( 917.439, 2108.72 )
+position = Vector2( 922.596, 2086.95 )
 
 
