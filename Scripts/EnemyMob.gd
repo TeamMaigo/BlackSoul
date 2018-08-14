@@ -19,13 +19,16 @@ var can_shoot = false
 export (float) var fire_rate = 1  # delay time (s) between bullets
 var lastKnownPlayerPos
 export(String, "singleFire", "shotgun") var fireType
+export var shotgunBulletAmount = 3
+export var shotgunSpread = 20 # degree
 export var respawns = true
 export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
-var bulletOffset = 50
+export var bulletOffset = 50
 export var bulletRotationSpeed = 1.0 # degrees per frame
 export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
 export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
 export var angleBulletUpdateDelay = 1.0 #seconds
+var spreadAngles = []
 
 signal enemyDeath
 
@@ -38,6 +41,15 @@ func _ready():
 	$Visibility/CollisionShape2D.shape = shape
 	set_physics_process(true)
 	waitToShoot(fire_rate)
+	if shotgunBulletAmount%2 == 0:
+		for i in shotgunBulletAmount/2:
+			spreadAngles.append(i * shotgunSpread)
+			spreadAngles.append((-i-1) * shotgunSpread)
+	else: #Odd number of bullets
+		for i in (shotgunBulletAmount-1)/2:
+			spreadAngles.append((i+1)*shotgunSpread)
+			spreadAngles.append((-i-1)*shotgunSpread)
+		spreadAngles.append(0)
 
 func _physics_process(delta):
 	if target:
@@ -92,12 +104,11 @@ func shootBulletAtTarget(pos):
 
 func shootShotgunAtTarget(pos):
 	#Shoots a spray of bullets at the target position with some random variance
-	var spreadAngles = [-10, 0, 10]
 	for i in spreadAngles:
 		var b = BulletType.instance()
 		var a = (pos - global_position).angle()
 		var dir = a + rand_range(-0.05, 0.05)
-		var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
+		var startPos = position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 		b.start(startPos, a + deg2rad(i), bulletSpeed)
 		setBulletProperties(b)
 		get_parent().add_child(b)

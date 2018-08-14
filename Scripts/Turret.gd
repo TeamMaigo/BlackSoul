@@ -13,11 +13,14 @@ export var bulletSpeed = 1
 export var rotatingTurret = true
 export var usesTargeting = true
 export(String, "singleFire", "shotgun") var fireType
+export var shotgunBulletAmount = 3
+export var shotgunSpread = 20 # degree
 export var bulletRotationSpeed = 1.0 # degrees per frame
 export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
 export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
 export var angleBulletUpdateDelay = 1.0 #seconds
 export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
+var spreadAngles = []
 
 var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -40,9 +43,17 @@ func _ready():
 		waitToShoot(firstShotDelay)
 	else:
 		can_shoot = true
+	if shotgunBulletAmount%2 == 0:
+		for i in shotgunBulletAmount/2:
+			spreadAngles.append(i * shotgunSpread)
+			spreadAngles.append((-i-1) * shotgunSpread)
+	else: #Odd number of bullets
+		for i in (shotgunBulletAmount-1)/2:
+			spreadAngles.append((i+1)*shotgunSpread)
+			spreadAngles.append((-i-1)*shotgunSpread)
+		spreadAngles.append(0)
 
 func _physics_process(delta):
-	#update()
 	if not defeated:
 		#Shoot bullets at a consistent rate of fire
 		if target:
@@ -88,7 +99,6 @@ func shootBulletAtTarget(pos):
 
 func shootShotgunAtTarget(pos):
 	#Shoots a spray of bullets at the target position with some random variance
-	var spreadAngles = [-10, 0, 10]
 	for i in spreadAngles:
 		var b = Bullet.instance()
 		var a = (pos - global_position).angle()
