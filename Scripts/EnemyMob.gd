@@ -32,6 +32,9 @@ var spreadAngles = []
 onready var AnimNode = $animationPlayer
 var anim = "Idle"
 var animNew = ""
+var isFacingLeft
+var transformed = false
+var canMove = true
 
 signal enemyDeath
 
@@ -42,6 +45,9 @@ func _ready():
 	var shape = CircleShape2D.new()
 	shape.radius = detect_radius
 	$Visibility/CollisionShape2D.shape = shape
+	var shape1 = CircleShape2D.new() # Zone where enemy transforms
+	shape1.radius = detect_radius + 50
+	$threatRange/CollisionShape2D.shape = shape1
 	set_physics_process(true)
 	waitToShoot(fire_rate)
 	if shotgunBulletAmount%2 == 0:
@@ -53,24 +59,32 @@ func _ready():
 			spreadAngles.append((i+1)*shotgunSpread)
 			spreadAngles.append((-i-1)*shotgunSpread)
 		spreadAngles.append(0)
+	if randi()%2 == 0:
+		isFacingLeft = true
+	else:
+		isFacingLeft = false
 
 func _physics_process(delta):
 	if target:
 		canSeePlayer = checkForPlayer()
 		if canSeePlayer:
 			lastKnownPlayerPos = target.position
-			#rotateTowardsPlayer() # Not currently used
 			if can_shoot:
-				if fireType == "singleFire":
-					shootBulletAtTarget(target.position)
-				if fireType == "shotgun":
-					shootShotgunAtTarget(target.position)
+				if isFacingLeft:
+					anim = "leftShoot"
+				else:
+					anim = "rightShoot"
+
 	else:
-		anim = "idleLeft"
+		if not transformed:
+			if isFacingLeft:
+				anim = "idleLeft"
+			else:
+				anim = "idleRight"
+	movement_loop()
 	if anim != animNew:
 		animNew = anim
 		AnimNode.play(anim)
-	movement_loop()
 
 func movement_loop():
 	if lastKnownPlayerPos:
@@ -88,14 +102,6 @@ func checkForPlayer():
 			if not result.collider.get_node("./").swappedRecently:
 				return true
 	return false # Failed to detect player
-
-func rotateTowardsPlayer():
-	var angleToTarget = Vector2(target.position.x - position.x, target.position.y - position.y).angle() - rotation
-	if abs(angleToTarget) > PI:
-		angleToTarget = angleToTarget - (sign(angleToTarget) * PI*2)
-	#if rad2deg(angleToTarget) < maxRotationDiff and rad2deg(angleToTarget) > -maxRotationDiff:
-	rotation += min(abs(angleToTarget), rotationSpeed) * sign(angleToTarget)
-
 
 func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
@@ -127,13 +133,11 @@ func _on_Visibility_body_entered(body):
 		return
 	if usesVision and body.is_in_group("Player"):
 		target = body
-		$Sprite.self_modulate.r = 1.0
 
 
 func _on_Visibility_body_exited(body):
 	if body == target:
 		target = null
-		$Sprite.self_modulate.r = 0.2
 
 func waitToShoot(sec):
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
@@ -155,3 +159,29 @@ func setBulletProperties(b):
 	b.bulletDecayTime =  bulletDecayTime # Seconds before bullet becomes linear
 	b.angleBulletUpdateDelay = angleBulletUpdateDelay
 	b.trackingDelayTime = trackingDelayTime
+
+func _on_threatRange_body_entered(body):
+	if body.is_in_group("Player"):
+		if isFacingLeft:
+			anim = "leftTransform"
+		else:
+			anim = "rightTransform"
+		transformed = true
+
+func shoot():
+	if fireType == "singleFire":
+		shootBulletAtTarget(target.position)
+	if fireType == "shotgun":
+		shootShotgunAtTarget(target.position)
+
+func _on_animationPlayer_animation_finished(anim_name):
+	if anim_name == "leftTransform":
+		anim = "leftHostileIdle"
+	if anim_name == "rightTrasnform":
+		anim = "rightHostileIdle"
+	if anim_name == "leftShoot":
+		anim = "leftHostileIdle"
+		shoot()
+	if anim_name == "rightShoot":
+		anim = "rightHostileIdle"
+		shoot()

@@ -143,9 +143,9 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
+"Persist",
 "Damageable",
 "team_Player",
-"Persist",
 ]]
 
 input_pickable = false

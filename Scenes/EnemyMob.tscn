@@ -113,7 +113,7 @@ tracks/0/keys = {
 
 resource_name = "leftShoot"
 length = 0.3
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -132,7 +132,7 @@ tracks/0/keys = {
 
 resource_name = "leftTransform"
 length = 1.1
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -189,7 +189,7 @@ tracks/0/keys = {
 
 resource_name = "rightShoot"
 length = 0.3
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -208,7 +208,7 @@ tracks/0/keys = {
 
 resource_name = "rightTransform"
 length = 1.1
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -301,14 +301,32 @@ _sections_unfolded = [ "Collision", "Visibility" ]
 
 shape = SubResource( 2 )
 
-[node name="ShootTimer" type="Timer" parent="." index="3"]
+[node name="threatRange" type="Area2D" parent="." index="3"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 16
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="threatRange" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="ShootTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="animationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="animationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -332,5 +350,9 @@ blend_times = [  ]
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
+
+[connection signal="body_entered" from="threatRange" to="." method="_on_threatRange_body_entered"]
+
+[connection signal="animation_finished" from="animationPlayer" to="." method="_on_animationPlayer_animation_finished"]
 
 

@@ -46,7 +46,7 @@ bulletSpeed = 7
 
 [node name="EnemyMob4" parent="." index="6" instance=ExtResource( 4 )]
 
-position = Vector2( -1278.82, -151.274 )
+position = Vector2( -1958.63, -592.924 )
 MOTION_SPEED = 0
 BulletType = ExtResource( 5 )
 bulletSpeed = 8
@@ -127,9 +127,9 @@ trackingDelayTime = 0.25
 
 [connection signal="enemyDeath" from="EnemyMob6" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
-
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor3" method="_onActivate"]
 
