@@ -52,14 +52,14 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Turrets" type="Node" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -283.932, 30.2262 )
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="Turret3" parent="Turrets" index="1" instance=ExtResource( 3 )]
@@ -68,6 +68,8 @@ position = Vector2( -162.705, 480.934 )
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="Turret4" parent="Turrets" index="2" instance=ExtResource( 3 )]
@@ -77,6 +79,8 @@ firstShotDelay = 0.5
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="Turret2" parent="Turrets" index="3" instance=ExtResource( 3 )]
@@ -87,6 +91,8 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 3 )]
@@ -97,6 +103,8 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="Turret7" parent="Turrets" index="5" instance=ExtResource( 3 )]
@@ -106,6 +114,8 @@ rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 detect_radius = 500
 bulletSpeed = 10
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="Turret6" parent="Turrets" index="6" instance=ExtResource( 3 )]
@@ -116,6 +126,8 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 4 )]

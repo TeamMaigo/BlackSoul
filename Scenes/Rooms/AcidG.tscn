@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=6]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 
@@ -49,13 +49,11 @@ position = Vector2( -1191.69, -353.699 )
 
 position = Vector2( -886.694, -667.816 )
 scale = Vector2( 10.2074, 1 )
-active = false
 
 [node name="SwitchDoor4" parent="tileMap" index="4" instance=ExtResource( 3 )]
 
-position = Vector2( -888.545, -42.3038 )
+position = Vector2( -886.027, -42.3038 )
 scale = Vector2( 10.2074, 1 )
-active = false
 
 [node name="TransferPoint" parent="." index="1" instance=ExtResource( 4 )]
 
@@ -78,6 +76,8 @@ position = Vector2( 760.608, -64.772 )
 position = Vector2( -888.302, 42.5645 )
 detect_radius = 500
 bulletSpeed = 10
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="Turret2" parent="." index="5" instance=ExtResource( 6 )]
@@ -85,16 +85,18 @@ trackingDelayTime = 0.25
 position = Vector2( -895.704, -758.758 )
 detect_radius = 500
 bulletSpeed = 10
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
-
-[connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onDeactivate"]
 
 [connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor2" method="_onDeactivate"]
 
+[connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onDeactivate"]
+
 [connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor4" method="_onDeactivate"]
 
-[connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onActivate"]
-
 [connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor3" method="_onDeactivate"]
+
+[connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onActivate"]
 
 

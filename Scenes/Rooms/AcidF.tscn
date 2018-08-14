@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=6]
 
-[node name="tileMap" type="TileMap" index="0"]
+[node name="tileMap" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -49,7 +49,7 @@ collision_mask = 8
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -720909, 1, 0, -720908, 1, 0, -720907, 1, 0, -720906, 1, 0, -655380, 1, 0, -655379, 1, 0, -655378, 1, 0, -524303, 1, 0, -458767, 1, 0, -393231, 1, 0, -327685, 1, 0, -327684, 1, 0, -327683, 1, 0, -65541, 1, 0, -65540, 1, 0, -65539, 1, 0, -2, 1, 0, 65534, 1, 0, 131070, 1, 0 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -111,8 +111,11 @@ respawnable = false
 [node name="Turret" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( 97.0131, 24.1174 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 detect_radius = 600
 bulletSpeed = 2
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 [node name="HealthPickup" parent="." index="13" instance=ExtResource( 6 )]
@@ -123,6 +126,8 @@ position = Vector2( 392.609, -644.737 )
 
 position = Vector2( -715.644, -842.778 )
 bulletSpeed = 2
+shotgunBulletAmount = 3
+shotgunSpread = 20
 trackingDelayTime = 0.25
 
 

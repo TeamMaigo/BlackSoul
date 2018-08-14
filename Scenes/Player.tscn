@@ -141,11 +141,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
-"Persist",
-"Damageable",
+[node name="Player" type="KinematicBody2D" groups=[
 "Player",
+"Damageable",
 "team_Player",
+"Persist",
 ]]
 
 input_pickable = false
@@ -177,7 +177,7 @@ collision_mask = 21
 texture = ExtResource( 3 )
 vframes = 22
 hframes = 8
-frame = 15
+frame = 88
 region_rect = Rect2( 160, 30, 110, 90 )
 _sections_unfolded = [ "Animation" ]
 
@@ -348,7 +348,7 @@ drag_margin_bottom = 0.1
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin", "Smoothing" ]
+_sections_unfolded = [ "Drag Margin", "Offset", "Smoothing" ]
 __meta__ = {
 "_edit_lock_": true
 }

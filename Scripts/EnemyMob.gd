@@ -29,6 +29,9 @@ export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone
 export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
 export var angleBulletUpdateDelay = 1.0 #seconds
 var spreadAngles = []
+onready var AnimNode = $animationPlayer
+var anim = "Idle"
+var animNew = ""
 
 signal enemyDeath
 
@@ -62,7 +65,11 @@ func _physics_process(delta):
 					shootBulletAtTarget(target.position)
 				if fireType == "shotgun":
 					shootShotgunAtTarget(target.position)
-
+	else:
+		anim = "idleLeft"
+	if anim != animNew:
+		animNew = anim
+		AnimNode.play(anim)
 	movement_loop()
 
 func movement_loop():
