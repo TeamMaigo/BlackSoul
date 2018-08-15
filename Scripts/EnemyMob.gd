@@ -28,13 +28,17 @@ export var bulletRotationSpeed = 1.0 # degrees per frame
 export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone of vision degrees, and is 40 both ways)
 export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
 export var angleBulletUpdateDelay = 1.0 #seconds
+export var aggroTime = 3 # seconds
 var spreadAngles = []
 onready var AnimNode = $animationPlayer
 var anim = "Idle"
 var animNew = ""
 var isFacingLeft
 var transformed = false
+var transforming = false
+var idleAnimationPlaying = false
 var canMove = true
+var lastKnownTarget # Used to avoid enemies shooting blanks
 
 signal enemyDeath
 
@@ -46,7 +50,7 @@ func _ready():
 	shape.radius = detect_radius
 	$Visibility/CollisionShape2D.shape = shape
 	var shape1 = CircleShape2D.new() # Zone where enemy transforms
-	shape1.radius = detect_radius + 50
+	shape1.radius = detect_radius + 100
 	$threatRange/CollisionShape2D.shape = shape1
 	set_physics_process(true)
 	waitToShoot(fire_rate)
@@ -63,37 +67,60 @@ func _ready():
 		isFacingLeft = true
 	else:
 		isFacingLeft = false
+	if MOTION_SPEED == 0:
+		canMove = false
+	idleAnimationDelay()
 
 func _physics_process(delta):
-	if target:
-		canSeePlayer = checkForPlayer()
+	if target and transformed:
+		canSeePlayer = checkForPlayer(target)
 		if canSeePlayer:
+			updateFacing(target.position)
 			lastKnownPlayerPos = target.position
 			if can_shoot:
 				if isFacingLeft:
 					anim = "leftShoot"
 				else:
 					anim = "rightShoot"
-
+				canMove = false
 	else:
-		if not transformed:
-			if isFacingLeft:
-				anim = "idleLeft"
+		if not transforming and not transformed:
+			if idleAnimationPlaying:
+				if isFacingLeft:
+					anim = "idleLeft2"
+				else:
+					anim = "idleRight2"
 			else:
-				anim = "idleRight"
-	movement_loop()
+				if isFacingLeft:
+					anim = "idleLeft"
+				else:
+					anim = "idleRight"
+	if canMove and transformed:
+		movement_loop()
 	if anim != animNew:
 		animNew = anim
 		AnimNode.play(anim)
+
 
 func movement_loop():
 	if lastKnownPlayerPos:
 		moveDir = (lastKnownPlayerPos - position).normalized()
 		var motion = moveDir.normalized() * MOTION_SPEED
-		if (lastKnownPlayerPos - position).length() > 5:
+		if (lastKnownPlayerPos - position).length() > 10:
 			move_and_slide(motion)
+		else:
+			lastKnownPlayerPos = null	# Reached the destination
+		if isFacingLeft:
+			anim = "leftWalk"
+		else:
+			anim = "rightWalk"
+	else:
+		if isFacingLeft:
+			anim = "leftHostileIdle"
+		else:
+			anim = "rightHostileIdle"
 
-func checkForPlayer():
+func checkForPlayer(target):
 	# Raycast to check if can see for player
 	var space_state = get_world_2d().direct_space_state
 	var result = space_state.intersect_ray(position, target.position, [self], 7) # Hits environment, player, enemies
@@ -133,11 +160,25 @@ func _on_Visibility_body_entered(body):
 		return
 	if usesVision and body.is_in_group("Player"):
 		target = body
-
+		lastKnownTarget = body
 
 func _on_Visibility_body_exited(body):
 	if body == target:
 		target = null
+		deaggroDelay(aggroTime)
+
+func deaggroDelay(sec):
+	$AggroTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	$AggroTimer.start() # Start the Timer counting down
+	yield($AggroTimer, "timeout") # Wait for the timer to wind down
+	lastKnownTarget = null
+	lastKnownPlayerPos = null
+	transforming = true
+	transformed = false
+	if isFacingLeft:
+		anim = "leftUntransform"
+	else:
+		anim = "rightUntransform"
 
 func waitToShoot(sec):
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
@@ -161,18 +202,22 @@ func setBulletProperties(b):
 	b.trackingDelayTime = trackingDelayTime
 
 func _on_threatRange_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and not transformed:
 		if isFacingLeft:
 			anim = "leftTransform"
 		else:
 			anim = "rightTransform"
-		transformed = true
+		transforming = true
+		canMove = false
+
+func _on_threatRange_body_exited(body):
+	deaggroDelay(aggroTime)
 
 func shoot():
 	if fireType == "singleFire":
-		shootBulletAtTarget(target.position)
+		shootBulletAtTarget(lastKnownTarget.position)
 	if fireType == "shotgun":
-		shootShotgunAtTarget(target.position)
+		shootShotgunAtTarget(lastKnownTarget.position)
 
 func _on_animationPlayer_animation_finished(anim_name):
 	if anim_name == "leftTransform":
@@ -182,6 +227,33 @@ func _on_animationPlayer_animation_finished(anim_name):
 	if anim_name == "leftShoot":
 		anim = "leftHostileIdle"
 		shoot()
+		canMove = true
 	if anim_name == "rightShoot":
 		anim = "rightHostileIdle"
 		shoot()
+		canMove = true
+	if anim_name == "leftTransform" or anim_name == "rightTransform":
+		canMove = true
+		transformed = true
+		transforming = false
+	if anim_name == "leftUntransform" or anim_name == "rightUntransform":
+		target = null
+		transformed = false
+		transforming = false
+	if anim_name == "idleLeft2" or anim_name == "idleRight2":
+		idleAnimationPlaying = false
+
+func updateFacing(pos):
+	var a = (pos - global_position).angle()
+	if rad2deg(a) > 90 or rad2deg(a) < -90:
+		isFacingLeft = true
+	else:
+		isFacingLeft = false
+
+func idleAnimationDelay():
+	$IdleAnimationTimer.set_wait_time(randi()%1+3) # Set Timer's delay to "sec" seconds
+	$IdleAnimationTimer.start() # Start the Timer counting down
+	yield($IdleAnimationTimer, "timeout") # Wait for the timer to wind down
+	if not transformed:
+		idleAnimationPlaying = true
+	idleAnimationDelay()

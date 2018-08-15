@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=10]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -36,13 +36,17 @@ position = Vector2( 1070.52, 894.941 )
 [node name="EnemyMob" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( -1464.79, -591.672 )
+hp = 10
 bulletSpeed = 7
+aggroTime = 3
 
 [node name="EnemyMob2" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( -1357.77, -594.686 )
+hp = 10
 BulletType = ExtResource( 5 )
 bulletSpeed = 7
+aggroTime = 3
 
 [node name="EnemyMob4" parent="." index="6" instance=ExtResource( 4 )]
 
@@ -56,6 +60,7 @@ shotgunSpread = 36
 bulletOffset = 0
 bulletRotationSpeed = 4.0
 bulletConeDegrees = 120.0
+aggroTime = 3
 
 [node name="SwitchDoor" parent="." index="7" instance=ExtResource( 6 )]
 
@@ -66,12 +71,15 @@ enemiesLeftToKill = 2
 [node name="EnemyMob5" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( -1330.55, 401.822 )
+hp = 10
 bulletSpeed = 7
+aggroTime = 3
 
 [node name="EnemyMob6" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( -1118.53, 441.662 )
 bulletSpeed = 7
+aggroTime = 3
 
 [node name="tileMap" type="TileMap" parent="." index="10"]
 

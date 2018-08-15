@@ -1,13 +1,13 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/EnemyMob.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BulletLinear.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/soldier sprite sheet idle.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=15]
 
 custom_solver_bias = 0.0
-radius = 40.0
+extents = Vector2( 10, 10 )
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -37,7 +37,7 @@ tracks/0/keys = {
 
 resource_name = "idleLeft2"
 length = 1.6
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -75,7 +75,7 @@ tracks/0/keys = {
 
 resource_name = "idleRight2"
 length = 1.6
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -145,6 +145,25 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ]
+}
+
+[sub_resource type="Animation" id=16]
+
+resource_name = "leftUntransform"
+length = 1.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -223,6 +242,25 @@ tracks/0/keys = {
 "values": [ 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 ]
 }
 
+[sub_resource type="Animation" id=17]
+
+resource_name = "rightUntransform"
+length = 1.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64 ]
+}
+
 [sub_resource type="Animation" id=14]
 
 resource_name = "rightWalk"
@@ -242,7 +280,7 @@ tracks/0/keys = {
 "values": [ 104, 105, 106, 107, 108, 109, 110, 111 ]
 }
 
-[node name="EnemyMob" type="KinematicBody2D" groups=[
+[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
@@ -269,19 +307,21 @@ bulletRotationSpeed = 1.0
 bulletConeDegrees = 40.0
 bulletDecayTime = 999.0
 angleBulletUpdateDelay = 1.0
+aggroTime = 3
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 3 )
 vframes = 15
 hframes = 8
-frame = 117
+frame = 16
 _sections_unfolded = [ "Animation", "Offset", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
-shape = SubResource( 1 )
+position = Vector2( 0.771077, -0.0903368 )
+scale = Vector2( 1.42571, 2.84467 )
+shape = SubResource( 15 )
 
 [node name="Visibility" type="Area2D" parent="." index="2"]
 
@@ -340,18 +380,36 @@ anims/idleRight2 = SubResource( 6 )
 anims/leftHostileIdle = SubResource( 7 )
 anims/leftShoot = SubResource( 8 )
 anims/leftTransform = SubResource( 9 )
+anims/leftUntransform = SubResource( 16 )
 anims/leftWalk = SubResource( 10 )
 anims/rightHostileIdle = SubResource( 11 )
 anims/rightShoot = SubResource( 12 )
 anims/rightTransform = SubResource( 13 )
+anims/rightUntransform = SubResource( 17 )
 anims/rightWalk = SubResource( 14 )
 blend_times = [  ]
+
+[node name="AggroTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="IdleAnimationTimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
 
 [connection signal="body_entered" from="threatRange" to="." method="_on_threatRange_body_entered"]
+
+[connection signal="body_exited" from="threatRange" to="." method="_on_threatRange_body_exited"]
 
 [connection signal="animation_finished" from="animationPlayer" to="." method="_on_animationPlayer_animation_finished"]
 
