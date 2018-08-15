@@ -20,9 +20,10 @@ export var bulletConeDegrees = 40.0 # Bullet cone of vision (this number is cone
 export var bulletDecayTime = 10.0 # Seconds before bullet becomes linear
 export var angleBulletUpdateDelay = 1.0 #seconds
 export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
+export var rotationSpeed = 0.0
 var spreadAngles = []
 
-var defeated = false
+export var defeated = false
 onready var timer = get_node("ShootTimer")
 var target  # who are we shooting at?
 var can_shoot = false
@@ -67,9 +68,13 @@ func _physics_process(delta):
 					shootShotgunAtTarget(target.position)
 		elif not usesTargeting:
 			if can_shoot:
-				shootBulletStraight()
+				if fireType == "singleFire" or null:
+					shootBulletStraight()
+				if fireType == "shotgun":
+					shootShotgunStraight()
 		else:
 			pass
+		rotation += rotationSpeed/60
 
 
 func _on_Visibility_body_entered(body):
@@ -119,6 +124,15 @@ func shootBulletStraight():
 	can_shoot = false
 	waitToShoot(fire_rate)
 
+func shootShotgunStraight():
+	for i in spreadAngles:
+		var b = Bullet.instance()
+		b.start(position, self.get_global_transform().get_rotation() + deg2rad(i), bulletSpeed)
+		setBulletProperties(b)
+		get_parent().add_child(b)
+	can_shoot = false
+	waitToShoot(fire_rate)
+
 func _draw():
 	# display the visibility area
 	if usesTargeting:
@@ -138,5 +152,7 @@ func setBulletProperties(b):
 	b.angleBulletUpdateDelay = angleBulletUpdateDelay
 	b.trackingDelayTime = trackingDelayTime
 
+func activate():
+	defeated = false
 func deactivate():
 	defeated = true

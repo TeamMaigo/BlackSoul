@@ -165,7 +165,6 @@ func _on_Visibility_body_entered(body):
 func _on_Visibility_body_exited(body):
 	if body == target:
 		target = null
-		deaggroDelay(aggroTime)
 
 func deaggroDelay(sec):
 	$AggroTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
@@ -251,9 +250,9 @@ func updateFacing(pos):
 		isFacingLeft = false
 
 func idleAnimationDelay():
-	$IdleAnimationTimer.set_wait_time(randi()%1+3) # Set Timer's delay to "sec" seconds
+	$IdleAnimationTimer.set_wait_time(randi()%5+5) # Set Timer's delay to "sec" seconds
 	$IdleAnimationTimer.start() # Start the Timer counting down
 	yield($IdleAnimationTimer, "timeout") # Wait for the timer to wind down
-	if not transformed:
+	if not transformed and not transforming and not target:
 		idleAnimationPlaying = true
 	idleAnimationDelay()

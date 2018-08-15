@@ -34,8 +34,7 @@ __meta__ = {
 
 [node name="TransferPoint" parent="." index="0" instance=ExtResource( 2 )]
 
-visible = false
-position = Vector2( -230.668, 53.3165 )
+position = Vector2( -55.1015, 66.8216 )
 scale = Vector2( 1.79458, 1.72204 )
 newScene = "Level_Test"
 
@@ -47,11 +46,10 @@ newScene = "LabB"
 
 [node name="TransferPointA2" parent="." index="2" instance=ExtResource( 2 )]
 
-visible = false
 modulate = Color( 0.121094, 0.485016, 1, 1 )
-position = Vector2( -255.655, -174.296 )
+position = Vector2( -88.6827, -162.019 )
 _sections_unfolded = [ "Visibility" ]
-newScene = "AcidA"
+newScene = "AcidF"
 
 [node name="Label" type="Label" parent="." index="3"]
 
@@ -101,7 +99,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Pickup" parent="." index="5" instance=ExtResource( 3 )]
 
-position = Vector2( 755.352, 80.9361 )
+position = Vector2( 257.536, -35.6528 )
 
 [node name="Dummy" parent="." index="6" instance=ExtResource( 4 )]
 
@@ -109,17 +107,18 @@ position = Vector2( 772.168, -59.0053 )
 
 [node name="PieceOfHeart" parent="." index="7" instance=ExtResource( 5 )]
 
-position = Vector2( 747.309, 201.119 )
+position = Vector2( 249.493, 84.5301 )
 respawnable = false
 
 [node name="PieceOfHeart2" parent="." index="8" instance=ExtResource( 5 )]
 
-position = Vector2( 824.656, 201.119 )
+position = Vector2( 326.84, 84.5301 )
 respawnable = false
 
 [node name="PieceOfHeart3" parent="." index="9" instance=ExtResource( 5 )]
 
-position = Vector2( 906.586, 170.189 )
+position = Vector2( 408.77, 53.6001 )
+scale = Vector2( 0.5, 0.5 )
 respawnable = false
 
 
