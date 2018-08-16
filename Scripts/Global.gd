@@ -2,8 +2,8 @@ extends Node
 # This script holds all options and any property can be referenced anywhere by typing Global.property
 # This script also handles saving and loading from disk
 
-var masterMusic = 0
-var masterSound = 0
+var masterMusic = -20
+var masterSound = -20
 var masterWindowMode = 0
 var destroyedObjects = []
 var currentScene = "LabA"
