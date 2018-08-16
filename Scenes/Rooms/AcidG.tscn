@@ -88,9 +88,7 @@ usesTargeting = false
 fireType = "shotgun"
 shotgunBulletAmount = 10
 shotgunSpread = 36
-trackingDelayTime = 0.25
 rotationSpeed = -1.0
-defeated = false
 
 [node name="Turret2" parent="." index="6" instance=ExtResource( 6 )]
 
@@ -98,11 +96,6 @@ position = Vector2( -903.906, 63.5164 )
 detect_radius = 500
 bulletSpeed = 6
 fireType = "shotgun"
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
-rotationSpeed = 0.0
-defeated = false
 
 [node name="holeLayer" type="TileMap" parent="." index="7"]
 
@@ -146,13 +139,13 @@ position = Vector2( -397.871, -1274.51 )
 scale = Vector2( 1.39028, 2.00321 )
 enemiesLeftToKill = 3
 
-[connection signal="counterFinished" from="tileMap/PressurePlate" to="Turret" method="deactivate"]
-
-[connection signal="counterFinished" from="tileMap/PressurePlate" to="Turret2" method="deactivate"]
-
 [connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onDeactivate"]
 
 [connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor2" method="_onDeactivate"]
+
+[connection signal="counterFinished" from="tileMap/PressurePlate" to="Turret2" method="deactivate"]
+
+[connection signal="counterFinished" from="tileMap/PressurePlate" to="Turret" method="deactivate"]
 
 [connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onActivate"]
 

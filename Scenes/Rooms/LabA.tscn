@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -118,7 +118,6 @@ respawnable = false
 [node name="PieceOfHeart3" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 408.77, 53.6001 )
-scale = Vector2( 0.5, 0.5 )
 respawnable = false
 
 

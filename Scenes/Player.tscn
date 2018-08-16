@@ -6,11 +6,10 @@
 [ext_resource path="res://Scenes/UI_Life.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=9]
 
 custom_solver_bias = 0.0
-radius = 12.5623
-height = 32.8726
+radius = 27.0
 
 [sub_resource type="Animation" id=2]
 
@@ -29,6 +28,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 8, 9, 10, 11, 12, 13, 14, 15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -67,6 +78,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 40, 41, 42, 43, 44, 45, 46, 47 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 9 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -84,6 +107,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 88, 89, 90, 91, 92, 93, 94, 95 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -103,6 +138,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 56, 57, 58, 59, 60, 61, 62, 63 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 
@@ -120,6 +167,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 72, 73, 74, 75, 76, 77, 78, 79 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 9 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -142,9 +201,9 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
-"Persist",
 "Damageable",
 "Player",
+"Persist",
 "team_Player",
 ]]
 
@@ -160,7 +219,7 @@ NORMAL_SPEED = 500
 
 position = Vector2( 1.57889, 8.94703 )
 scale = Vector2( 0.960912, 0.945948 )
-shape = SubResource( 1 )
+shape = SubResource( 9 )
 
 [node name="RotationNode" type="Node2D" parent="." index="1"]
 
@@ -177,9 +236,9 @@ collision_mask = 21
 texture = ExtResource( 3 )
 vframes = 22
 hframes = 8
-frame = 15
+frame = 8
 region_rect = Rect2( 160, 30, 110, 90 )
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
@@ -218,32 +277,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PlayerUI" index="0"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.1
-anchor_bottom = 0.1
-margin_right = 81.6
-margin_bottom = -35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 100.0
-exp_edit = false
-rounded = false
-percent_visible = true
-_sections_unfolded = [ "Anchor", "Margin", "Percent" ]
-
-[node name="PlayerHealth" type="Control" parent="CanvasLayer/PlayerUI" index="1"]
+[node name="PlayerHealth" type="Control" parent="CanvasLayer/PlayerUI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

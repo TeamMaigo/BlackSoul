@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=10]
 
-[node name="tileMap" type="TileMap" index="0"]
+[node name="tileMap" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -150,7 +150,6 @@ editor/display_folded = true
 
 position = Vector2( 644.489, 581.551 )
 bulletSpeed = 3
-trackingDelayTime = 0.25
 
 [node name="Turret2" parent="Turrets" index="1" instance=ExtResource( 9 )]
 
@@ -158,7 +157,6 @@ position = Vector2( -306.735, 567.603 )
 detect_radius = 900
 Bullet = ExtResource( 10 )
 bulletSpeed = 10
-trackingDelayTime = 0.25
 
 [node name="Turret3" parent="Turrets" index="2" instance=ExtResource( 9 )]
 
@@ -166,7 +164,6 @@ position = Vector2( -2253.82, 612.235 )
 detect_radius = 900
 Bullet = ExtResource( 10 )
 bulletSpeed = 10
-trackingDelayTime = 0.25
 
 [node name="Turret4" parent="Turrets" index="3" instance=ExtResource( 9 )]
 
@@ -174,7 +171,6 @@ position = Vector2( -1976.8, 270.705 )
 detect_radius = 900
 Bullet = ExtResource( 10 )
 bulletSpeed = 10
-trackingDelayTime = 0.25
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 9 )]
 
@@ -182,7 +178,6 @@ position = Vector2( -1954.03, -696.965 )
 detect_radius = 900
 Bullet = ExtResource( 10 )
 bulletSpeed = 10
-trackingDelayTime = 0.25
 
 [node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 9 )]
 
@@ -190,7 +185,6 @@ position = Vector2( -2396.95, -22.334 )
 detect_radius = 900
 Bullet = ExtResource( 10 )
 bulletSpeed = 10
-trackingDelayTime = 0.25
 
 [node name="Turret7" parent="Turrets" index="6" instance=ExtResource( 9 )]
 
@@ -198,7 +192,6 @@ position = Vector2( -2394.9, -342.22 )
 detect_radius = 900
 Bullet = ExtResource( 10 )
 bulletSpeed = 10
-trackingDelayTime = 0.25
 
 [node name="TransferPoint2" parent="." index="12" instance=ExtResource( 3 )]
 

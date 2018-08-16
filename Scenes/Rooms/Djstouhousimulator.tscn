@@ -1,0 +1,5681 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
+
+[node name="LabRoom" type="Node2D" index="0"]
+
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="tileMap" type="TileMap" parent="." index="0"]
+
+position = Vector2( -130, 1 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262139, 0, 0, 196611, 0, 0, 196625, 0, 0, 196631, 0, 0, 196633, 0, 0, 196635, 0, 0, 196639, 0, 0, 196647, 0, 0, 196649, 0, 0, 196651, 0, 0, 196653, 0, 0, 327675, 0, 0, 262147, 0, 0, 262161, 0, 0, 262167, 0, 0, 262169, 0, 0, 262171, 0, 0, 262175, 0, 0, 262183, 0, 0, 262185, 0, 0, 262187, 0, 0, 262189, 0, 0, 393211, 0, 0, 327683, 0, 0, 327697, 0, 0, 327703, 0, 0, 327705, 0, 0, 327707, 0, 0, 327711, 0, 0, 327719, 0, 0, 327721, 0, 0, 327723, 0, 0, 327725, 0, 0, 458747, 0, 0, 393219, 0, 0, 393233, 0, 0, 393239, 0, 0, 393241, 0, 0, 393243, 0, 0, 393247, 0, 0, 393255, 0, 0, 393257, 0, 0, 393259, 0, 0, 393261, 0, 0, 524283, 0, 0, 458755, 0, 0, 458769, 0, 0, 458775, 0, 0, 458777, 0, 0, 458779, 0, 0, 458783, 0, 0, 458791, 0, 0, 458793, 0, 0, 458795, 0, 0, 458797, 0, 0, 589819, 0, 0, 524291, 0, 0, 524305, 0, 0, 524311, 0, 0, 524313, 0, 0, 524315, 0, 0, 524319, 0, 0, 524327, 0, 0, 524329, 0, 0, 524331, 0, 0, 524333, 0, 0, 655355, 0, 0, 589827, 0, 0, 589841, 0, 0, 589847, 0, 0, 589849, 0, 0, 589851, 0, 0, 589855, 0, 0, 589863, 0, 0, 589865, 0, 0, 589867, 0, 0, 589869, 0, 0, 720891, 0, 0, 655363, 0, 0, 655377, 0, 0, 655383, 0, 0, 655385, 0, 0, 655387, 0, 0, 655391, 0, 0, 655399, 0, 0, 655401, 0, 0, 655403, 0, 0, 655405, 0, 0, 786427, 0, 0, 720899, 0, 0, 720913, 0, 0, 720919, 0, 0, 720921, 0, 0, 720923, 0, 0, 720927, 0, 0, 720935, 0, 0, 720937, 0, 0, 720939, 0, 0, 720941, 0, 0, 851963, 0, 0, 786435, 0, 0, 786449, 0, 0, 786455, 0, 0, 786457, 0, 0, 786459, 0, 0, 786463, 0, 0, 786471, 0, 0, 786473, 0, 0, 786475, 0, 0, 786477, 0, 0, 917499, 0, 0, 851971, 0, 0, 851985, 0, 0, 851991, 0, 0, 851993, 0, 0, 851995, 0, 0, 851999, 0, 0, 852007, 0, 0, 852009, 0, 0, 852011, 0, 0, 852013, 0, 0, 983035, 0, 0, 917507, 0, 0, 917521, 0, 0, 917527, 0, 0, 917529, 0, 0, 917531, 0, 0, 917535, 0, 0, 917543, 0, 0, 917545, 0, 0, 917547, 0, 0, 917549, 0, 0, 1048571, 0, 0, 983043, 0, 0, 983057, 0, 0, 983063, 0, 0, 983065, 0, 0, 983067, 0, 0, 983071, 0, 0, 983079, 0, 0, 983081, 0, 0, 983083, 0, 0, 983085, 0, 0, 1114107, 0, 0, 1048579, 0, 0, 1048593, 0, 0, 1048599, 0, 0, 1048601, 0, 0, 1048603, 0, 0, 1048607, 0, 0, 1048615, 0, 0, 1048617, 0, 0, 1048619, 0, 0, 1048621, 0, 0, 1179643, 0, 0, 1179644, 0, 0, 1179645, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114129, 0, 0, 1114135, 0, 0, 1114137, 0, 0, 1114139, 0, 0, 1114143, 0, 0, 1179649, 0, 0, 1179671, 0, 0, 1245185, 0, 0, 1310721, 0, 0, 1441787, 0, 0, 1441788, 0, 0, 1441789, 0, 0, 1441790, 0, 0, 1441791, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376280, 0, 0, 1507323, 0, 0, 1441812, 0, 0, 1441816, 0, 0, 1572859, 0, 0, 1507348, 0, 0, 1507352, 0, 0, 1638395, 0, 0, 1572884, 0, 0, 1572888, 0, 0, 1703931, 0, 0, 1638420, 0, 0, 1638424, 0, 0, 1769467, 0, 0, 1703956, 0, 0, 1703960, 0, 0, 1835003, 0, 0, 1769492, 0, 0, 1769496, 0, 0, 1900539, 0, 0, 1835028, 0, 0, 1835032, 0, 0, 1966051, 0, 0, 1966052, 0, 0, 1966053, 0, 0, 1966054, 0, 0, 1966055, 0, 0, 1966056, 0, 0, 1966057, 0, 0, 1966058, 0, 0, 1966059, 0, 0, 1966060, 0, 0, 1966061, 0, 0, 1966062, 0, 0, 1966063, 0, 0, 1966064, 0, 0, 1966065, 0, 0, 1966066, 0, 0, 1966067, 0, 0, 1966068, 0, 0, 1966069, 0, 0, 1966070, 0, 0, 1966071, 0, 0, 1966072, 0, 0, 1966073, 0, 0, 1966074, 0, 0, 1966075, 0, 0, 1900564, 0, 0, 1900568, 0, 0, 1966100, 0, 0, 1966104, 0, 0, 2031635, 0, 0, 2031636, 0, 0, 2031640, 0, 0, 2097171, 0, 0, 2097172, 0, 0, 2097176, 0, 0, 2162708, 0, 0, 2162712, 0, 0, 2228244, 0, 0, 2228248, 0, 0, 2293780, 0, 0, 2293784, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TransferGoalA" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -156.483, -310.841 )
+rotation = -0.00228824
+
+[node name="TransferPoint" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -457.988, 2034.85 )
+newScene = "LabB"
+
+[node name="Turret" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -285.037, 225.878 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 18
+rotatingTurret = false
+
+[node name="Turret33" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 2466.96, 225.822 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 18
+rotatingTurret = false
+
+[node name="Turret48" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( -349.041, 224.056 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret223" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( -1996.08, -1114.87 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret518" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( -2026.84, -1084.11 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret519" parent="." index="8" instance=ExtResource( 4 )]
+
+position = Vector2( -2059.65, -1059.51 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret520" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( -2086.31, -1026.7 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret521" parent="." index="10" instance=ExtResource( 4 )]
+
+position = Vector2( -2108.86, -1002.09 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret522" parent="." index="11" instance=ExtResource( 4 )]
+
+position = Vector2( -2139.62, -967.232 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret523" parent="." index="12" instance=ExtResource( 4 )]
+
+position = Vector2( -2194.98, -932.372 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret524" parent="." index="13" instance=ExtResource( 4 )]
+
+position = Vector2( -2170.38, -942.625 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret411" parent="." index="14" instance=ExtResource( 4 )]
+
+position = Vector2( -2763.98, -2854.95 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret284" parent="." index="15" instance=ExtResource( 4 )]
+
+position = Vector2( -2331.31, -2340.32 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret216" parent="." index="16" instance=ExtResource( 4 )]
+
+position = Vector2( -1882.96, -1223.63 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret409" parent="." index="17" instance=ExtResource( 4 )]
+
+position = Vector2( -2730.84, -2818.12 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret283" parent="." index="18" instance=ExtResource( 4 )]
+
+position = Vector2( -2298.16, -2303.49 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret219" parent="." index="19" instance=ExtResource( 4 )]
+
+position = Vector2( -1963.4, -1144.95 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret404" parent="." index="20" instance=ExtResource( 4 )]
+
+position = Vector2( -2702.6, -2788.66 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret280" parent="." index="21" instance=ExtResource( 4 )]
+
+position = Vector2( -2269.93, -2274.02 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret161" parent="." index="22" instance=ExtResource( 4 )]
+
+position = Vector2( -2503.52, -938.558 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret372" parent="." index="23" instance=ExtResource( 4 )]
+
+position = Vector2( -2890.8, -2570.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret429" parent="." index="24" instance=ExtResource( 4 )]
+
+position = Vector2( -2920.34, -2545.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret430" parent="." index="25" instance=ExtResource( 4 )]
+
+position = Vector2( -2946.34, -2513.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret431" parent="." index="26" instance=ExtResource( 4 )]
+
+position = Vector2( -2974.34, -2475.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret432" parent="." index="27" instance=ExtResource( 4 )]
+
+position = Vector2( -2995.34, -2445.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret433" parent="." index="28" instance=ExtResource( 4 )]
+
+position = Vector2( -3025.34, -2408.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret434" parent="." index="29" instance=ExtResource( 4 )]
+
+position = Vector2( -3052.34, -2376.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret435" parent="." index="30" instance=ExtResource( 4 )]
+
+position = Vector2( -3076.34, -2346.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret436" parent="." index="31" instance=ExtResource( 4 )]
+
+position = Vector2( -3105.34, -2313.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret437" parent="." index="32" instance=ExtResource( 4 )]
+
+position = Vector2( -3135.34, -2282.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret438" parent="." index="33" instance=ExtResource( 4 )]
+
+position = Vector2( -3035.62, -2104.53 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret439" parent="." index="34" instance=ExtResource( 4 )]
+
+position = Vector2( -3060, -2074.61 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret440" parent="." index="35" instance=ExtResource( 4 )]
+
+position = Vector2( -3091.02, -2034.72 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret441" parent="." index="36" instance=ExtResource( 4 )]
+
+position = Vector2( -3114.29, -2001.48 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret442" parent="." index="37" instance=ExtResource( 4 )]
+
+position = Vector2( -3151.96, -2024.75 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret443" parent="." index="38" instance=ExtResource( 4 )]
+
+position = Vector2( -3190.74, -2056.88 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret444" parent="." index="39" instance=ExtResource( 4 )]
+
+position = Vector2( -3219.55, -2086.8 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret445" parent="." index="40" instance=ExtResource( 4 )]
+
+position = Vector2( -3250.58, -2113.39 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret446" parent="." index="41" instance=ExtResource( 4 )]
+
+position = Vector2( -3271.63, -2134.45 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret447" parent="." index="42" instance=ExtResource( 4 )]
+
+position = Vector2( -3290.47, -2162.15 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret448" parent="." index="43" instance=ExtResource( 4 )]
+
+position = Vector2( -3317.06, -2186.52 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret449" parent="." index="44" instance=ExtResource( 4 )]
+
+position = Vector2( -3338.11, -2214.23 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret450" parent="." index="45" instance=ExtResource( 4 )]
+
+position = Vector2( -3364.7, -2240.82 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret451" parent="." index="46" instance=ExtResource( 4 )]
+
+position = Vector2( -3381.33, -2264.09 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret452" parent="." index="47" instance=ExtResource( 4 )]
+
+position = Vector2( -3314.84, -2400.38 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret453" parent="." index="48" instance=ExtResource( 4 )]
+
+position = Vector2( -3349.19, -2376 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret454" parent="." index="49" instance=ExtResource( 4 )]
+
+position = Vector2( -3387.97, -2343.87 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret455" parent="." index="50" instance=ExtResource( 4 )]
+
+position = Vector2( -3413.46, -2316.16 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret456" parent="." index="51" instance=ExtResource( 4 )]
+
+position = Vector2( -3399.05, -2290.68 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret261" parent="." index="52" instance=ExtResource( 4 )]
+
+position = Vector2( -2712.44, -1856.4 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret217" parent="." index="53" instance=ExtResource( 4 )]
+
+position = Vector2( -2360.45, -1081.45 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret399" parent="." index="54" instance=ExtResource( 4 )]
+
+position = Vector2( -2673.13, -2757.96 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret279" parent="." index="55" instance=ExtResource( 4 )]
+
+position = Vector2( -2240.46, -2243.33 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret162" parent="." index="56" instance=ExtResource( 4 )]
+
+position = Vector2( -2472.83, -895.587 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret373" parent="." index="57" instance=ExtResource( 4 )]
+
+position = Vector2( -2866.93, -2600.65 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret262" parent="." index="58" instance=ExtResource( 4 )]
+
+position = Vector2( -2681.74, -1813.43 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret218" parent="." index="59" instance=ExtResource( 4 )]
+
+position = Vector2( -2221.08, -903.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret381" parent="." index="60" instance=ExtResource( 4 )]
+
+position = Vector2( -2642.44, -2714.99 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret270" parent="." index="61" instance=ExtResource( 4 )]
+
+position = Vector2( -2209.77, -2200.36 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret163" parent="." index="62" instance=ExtResource( 4 )]
+
+position = Vector2( -2445.82, -863.666 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret374" parent="." index="63" instance=ExtResource( 4 )]
+
+position = Vector2( -2837.65, -2639.17 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret263" parent="." index="64" instance=ExtResource( 4 )]
+
+position = Vector2( -2654.73, -1781.51 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret220" parent="." index="65" instance=ExtResource( 4 )]
+
+position = Vector2( -2194.07, -871.218 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret414" parent="." index="66" instance=ExtResource( 4 )]
+
+position = Vector2( -2615.43, -2683.07 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret286" parent="." index="67" instance=ExtResource( 4 )]
+
+position = Vector2( -2182.76, -2168.44 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret164" parent="." index="68" instance=ExtResource( 4 )]
+
+position = Vector2( -2417.58, -834.2 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret377" parent="." index="69" instance=ExtResource( 4 )]
+
+position = Vector2( -2811.68, -2666.5 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret266" parent="." index="70" instance=ExtResource( 4 )]
+
+position = Vector2( -2626.5, -1752.04 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret224" parent="." index="71" instance=ExtResource( 4 )]
+
+position = Vector2( -2165.83, -841.753 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret389" parent="." index="72" instance=ExtResource( 4 )]
+
+position = Vector2( -2587.19, -2653.6 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret274" parent="." index="73" instance=ExtResource( 4 )]
+
+position = Vector2( -2415.55, -1680.69 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret465" parent="." index="74" instance=ExtResource( 4 )]
+
+position = Vector2( -2382.9, -1706.54 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret466" parent="." index="75" instance=ExtResource( 4 )]
+
+position = Vector2( -2352.98, -1740.55 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret467" parent="." index="76" instance=ExtResource( 4 )]
+
+position = Vector2( -2317.61, -1774.56 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret468" parent="." index="77" instance=ExtResource( 4 )]
+
+position = Vector2( -2293.12, -1793.6 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret469" parent="." index="78" instance=ExtResource( 4 )]
+
+position = Vector2( -2233.26, -1839.86 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret471" parent="." index="79" instance=ExtResource( 4 )]
+
+position = Vector2( -2196.53, -1872.51 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret472" parent="." index="80" instance=ExtResource( 4 )]
+
+position = Vector2( -2250.95, -1928.28 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret474" parent="." index="81" instance=ExtResource( 4 )]
+
+position = Vector2( -2278.16, -1955.49 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret475" parent="." index="82" instance=ExtResource( 4 )]
+
+position = Vector2( -2310.8, -1990.86 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret476" parent="." index="83" instance=ExtResource( 4 )]
+
+position = Vector2( -2344.81, -2018.07 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret477" parent="." index="84" instance=ExtResource( 4 )]
+
+position = Vector2( -2374.74, -2049.36 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret478" parent="." index="85" instance=ExtResource( 4 )]
+
+position = Vector2( -2401.95, -2084.73 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret479" parent="." index="86" instance=ExtResource( 4 )]
+
+position = Vector2( -2437.32, -2116.01 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret480" parent="." index="87" instance=ExtResource( 4 )]
+
+position = Vector2( -2460.45, -2139.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret481" parent="." index="88" instance=ExtResource( 4 )]
+
+position = Vector2( -2489.01, -2174.51 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret482" parent="." index="89" instance=ExtResource( 4 )]
+
+position = Vector2( -2499.28, -2200.36 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret483" parent="." index="90" instance=ExtResource( 4 )]
+
+position = Vector2( -2110.83, -2101.05 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret485" parent="." index="91" instance=ExtResource( 4 )]
+
+position = Vector2( -2082.26, -2075.2 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret486" parent="." index="92" instance=ExtResource( 4 )]
+
+position = Vector2( -2050.97, -2049.36 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret487" parent="." index="93" instance=ExtResource( 4 )]
+
+position = Vector2( -2133.96, -2120.1 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret488" parent="." index="94" instance=ExtResource( 4 )]
+
+position = Vector2( -2033.29, -2030.31 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret489" parent="." index="95" instance=ExtResource( 4 )]
+
+position = Vector2( -2014.24, -2009.91 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret490" parent="." index="96" instance=ExtResource( 4 )]
+
+position = Vector2( -1985.67, -1984.06 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret491" parent="." index="97" instance=ExtResource( 4 )]
+
+position = Vector2( -1948.94, -1944.61 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret492" parent="." index="98" instance=ExtResource( 4 )]
+
+position = Vector2( -1925.82, -1920.12 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret484" parent="." index="99" instance=ExtResource( 4 )]
+
+position = Vector2( -2151.64, -2139.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret473" parent="." index="100" instance=ExtResource( 4 )]
+
+position = Vector2( -2227.82, -1901.07 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret470" parent="." index="101" instance=ExtResource( 4 )]
+
+position = Vector2( -2260.47, -1814.01 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret165" parent="." index="102" instance=ExtResource( 4 )]
+
+position = Vector2( -2391.8, -802.279 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret371" parent="." index="103" instance=ExtResource( 4 )]
+
+position = Vector2( -2783.62, -2693.65 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret260" parent="." index="104" instance=ExtResource( 4 )]
+
+position = Vector2( -2600.71, -1720.12 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret215" parent="." index="105" instance=ExtResource( 4 )]
+
+position = Vector2( -2140.05, -809.832 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret392" parent="." index="106" instance=ExtResource( 4 )]
+
+position = Vector2( -2561.41, -2621.68 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret276" parent="." index="107" instance=ExtResource( 4 )]
+
+position = Vector2( -2441.46, -1650.13 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret166" parent="." index="108" instance=ExtResource( 4 )]
+
+position = Vector2( -2358.65, -759.308 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret375" parent="." index="109" instance=ExtResource( 4 )]
+
+position = Vector2( -2752.75, -2723.39 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret264" parent="." index="110" instance=ExtResource( 4 )]
+
+position = Vector2( -2567.56, -1677.15 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret221" parent="." index="111" instance=ExtResource( 4 )]
+
+position = Vector2( -2106.9, -766.861 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret397" parent="." index="112" instance=ExtResource( 4 )]
+
+position = Vector2( -2528.26, -2578.71 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret278" parent="." index="113" instance=ExtResource( 4 )]
+
+position = Vector2( -2466.81, -1627.57 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret167" parent="." index="114" instance=ExtResource( 4 )]
+
+position = Vector2( -2323.05, -726.159 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret380" parent="." index="115" instance=ExtResource( 4 )]
+
+position = Vector2( -2728.5, -2749.31 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret269" parent="." index="116" instance=ExtResource( 4 )]
+
+position = Vector2( -2531.96, -1644 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret227" parent="." index="117" instance=ExtResource( 4 )]
+
+position = Vector2( -2071.26, -735.52 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret407" parent="." index="118" instance=ExtResource( 4 )]
+
+position = Vector2( -2492.62, -2547.37 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret282" parent="." index="119" instance=ExtResource( 4 )]
+
+position = Vector2( -2212.15, -1645.2 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret493" parent="." index="120" instance=ExtResource( 4 )]
+
+position = Vector2( -2175.42, -1676.49 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret494" parent="." index="121" instance=ExtResource( 4 )]
+
+position = Vector2( -2133.25, -1710.5 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret495" parent="." index="122" instance=ExtResource( 4 )]
+
+position = Vector2( -2104.68, -1739.07 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret496" parent="." index="123" instance=ExtResource( 4 )]
+
+position = Vector2( -2076.11, -1762.19 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret497" parent="." index="124" instance=ExtResource( 4 )]
+
+position = Vector2( -2055.71, -1777.16 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret498" parent="." index="125" instance=ExtResource( 4 )]
+
+position = Vector2( -2031.22, -1803 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret499" parent="." index="126" instance=ExtResource( 4 )]
+
+position = Vector2( -1997.21, -1822.05 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret500" parent="." index="127" instance=ExtResource( 4 )]
+
+position = Vector2( -1980.89, -1847.9 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret501" parent="." index="128" instance=ExtResource( 4 )]
+
+position = Vector2( -1967.28, -1868.3 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret502" parent="." index="129" instance=ExtResource( 4 )]
+
+position = Vector2( -1942.8, -1883.27 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret168" parent="." index="130" instance=ExtResource( 4 )]
+
+position = Vector2( -2289.9, -688.099 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret376" parent="." index="131" instance=ExtResource( 4 )]
+
+position = Vector2( -2711.26, -2499.95 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret265" parent="." index="132" instance=ExtResource( 4 )]
+
+position = Vector2( -2498.81, -1605.94 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret222" parent="." index="133" instance=ExtResource( 4 )]
+
+position = Vector2( -2038.11, -697.46 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret416" parent="." index="134" instance=ExtResource( 4 )]
+
+position = Vector2( -2459.47, -2509.31 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret288" parent="." index="135" instance=ExtResource( 4 )]
+
+position = Vector2( -2247.02, -1615.3 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret169" parent="." index="136" instance=ExtResource( 4 )]
+
+position = Vector2( -2314.45, -646.356 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret378" parent="." index="137" instance=ExtResource( 4 )]
+
+position = Vector2( -2735.81, -2458.21 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret267" parent="." index="138" instance=ExtResource( 4 )]
+
+position = Vector2( -2523.37, -1564.2 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret225" parent="." index="139" instance=ExtResource( 4 )]
+
+position = Vector2( -2062.66, -655.717 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret385" parent="." index="140" instance=ExtResource( 4 )]
+
+position = Vector2( -2484.02, -2467.57 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret271" parent="." index="141" instance=ExtResource( 4 )]
+
+position = Vector2( -2271.57, -1573.56 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret170" parent="." index="142" instance=ExtResource( 4 )]
+
+position = Vector2( -2343.92, -619.346 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret379" parent="." index="143" instance=ExtResource( 4 )]
+
+position = Vector2( -2765.28, -2431.2 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret268" parent="." index="144" instance=ExtResource( 4 )]
+
+position = Vector2( -2552.83, -1537.19 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret313" parent="." index="145" instance=ExtResource( 4 )]
+
+position = Vector2( -2974.19, -3349.04 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret315" parent="." index="146" instance=ExtResource( 4 )]
+
+position = Vector2( -2937.18, -3373.1 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret321" parent="." index="147" instance=ExtResource( 4 )]
+
+position = Vector2( -2909.42, -3400.86 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret322" parent="." index="148" instance=ExtResource( 4 )]
+
+position = Vector2( -2848.39, -3362.74 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret327" parent="." index="149" instance=ExtResource( 4 )]
+
+position = Vector2( -2813.88, -3332.87 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret328" parent="." index="150" instance=ExtResource( 4 )]
+
+position = Vector2( -2788.6, -3307.6 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret330" parent="." index="151" instance=ExtResource( 4 )]
+
+position = Vector2( -2762.43, -3287.74 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret331" parent="." index="152" instance=ExtResource( 4 )]
+
+position = Vector2( -2732.65, -3264.28 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret332" parent="." index="153" instance=ExtResource( 4 )]
+
+position = Vector2( -2703.77, -3244.42 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret333" parent="." index="154" instance=ExtResource( 4 )]
+
+position = Vector2( -2681.21, -3219.15 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret400" parent="." index="155" instance=ExtResource( 4 )]
+
+position = Vector2( -2654.13, -3194.78 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret503" parent="." index="156" instance=ExtResource( 4 )]
+
+position = Vector2( -2628.86, -3166.81 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret504" parent="." index="157" instance=ExtResource( 4 )]
+
+position = Vector2( -2599.08, -3135.22 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret505" parent="." index="158" instance=ExtResource( 4 )]
+
+position = Vector2( -2572, -3107.24 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret506" parent="." index="159" instance=ExtResource( 4 )]
+
+position = Vector2( -2545.83, -3073.85 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret507" parent="." index="160" instance=ExtResource( 4 )]
+
+position = Vector2( -2497.41, -3093.97 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret326" parent="." index="161" instance=ExtResource( 4 )]
+
+position = Vector2( -2873.16, -3381.24 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret226" parent="." index="162" instance=ExtResource( 4 )]
+
+position = Vector2( -2092.13, -628.707 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret393" parent="." index="163" instance=ExtResource( 4 )]
+
+position = Vector2( -2513.49, -2440.56 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret277" parent="." index="164" instance=ExtResource( 4 )]
+
+position = Vector2( -2301.04, -1546.55 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret171" parent="." index="165" instance=ExtResource( 4 )]
+
+position = Vector2( -2364.79, -596.019 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret339" parent="." index="166" instance=ExtResource( 4 )]
+
+position = Vector2( -2786.15, -2407.87 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret228" parent="." index="167" instance=ExtResource( 4 )]
+
+position = Vector2( -2573.7, -1513.86 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret410" parent="." index="168" instance=ExtResource( 4 )]
+
+position = Vector2( -2989.51, -3316.46 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret195" parent="." index="169" instance=ExtResource( 4 )]
+
+position = Vector2( -2113.04, -603.572 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret369" parent="." index="170" instance=ExtResource( 4 )]
+
+position = Vector2( -2534.4, -2415.42 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret258" parent="." index="171" instance=ExtResource( 4 )]
+
+position = Vector2( -2321.95, -1521.41 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret172" parent="." index="172" instance=ExtResource( 4 )]
+
+position = Vector2( -2379.52, -565.326 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret352" parent="." index="173" instance=ExtResource( 4 )]
+
+position = Vector2( -2800.88, -2377.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret241" parent="." index="174" instance=ExtResource( 4 )]
+
+position = Vector2( -2588.44, -1483.17 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret386" parent="." index="175" instance=ExtResource( 4 )]
+
+position = Vector2( -3009.8, -3295.02 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret201" parent="." index="176" instance=ExtResource( 4 )]
+
+position = Vector2( -2127.77, -572.878 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret346" parent="." index="177" instance=ExtResource( 4 )]
+
+position = Vector2( -2549.13, -2384.73 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret235" parent="." index="178" instance=ExtResource( 4 )]
+
+position = Vector2( -2336.68, -1490.72 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret173" parent="." index="179" instance=ExtResource( 4 )]
+
+position = Vector2( -2428.74, -509.961 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret351" parent="." index="180" instance=ExtResource( 4 )]
+
+position = Vector2( -2850.1, -2321.81 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret240" parent="." index="181" instance=ExtResource( 4 )]
+
+position = Vector2( -2637.65, -1427.8 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret384" parent="." index="182" instance=ExtResource( 4 )]
+
+position = Vector2( -3059.01, -3239.66 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret200" parent="." index="183" instance=ExtResource( 4 )]
+
+position = Vector2( -2176.98, -517.513 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret363" parent="." index="184" instance=ExtResource( 4 )]
+
+position = Vector2( -2598.34, -2329.37 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret252" parent="." index="185" instance=ExtResource( 4 )]
+
+position = Vector2( -2385.9, -1435.36 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret175" parent="." index="186" instance=ExtResource( 4 )]
+
+position = Vector2( -2489.95, -433.78 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret341" parent="." index="187" instance=ExtResource( 4 )]
+
+position = Vector2( -2911.31, -2245.63 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret230" parent="." index="188" instance=ExtResource( 4 )]
+
+position = Vector2( -2698.87, -1351.62 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret412" parent="." index="189" instance=ExtResource( 4 )]
+
+position = Vector2( -3120.23, -3163.48 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret196" parent="." index="190" instance=ExtResource( 4 )]
+
+position = Vector2( -2238.2, -441.332 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret357" parent="." index="191" instance=ExtResource( 4 )]
+
+position = Vector2( -2659.56, -2253.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret246" parent="." index="192" instance=ExtResource( 4 )]
+
+position = Vector2( -2447.11, -1359.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret334" parent="." index="193" instance=ExtResource( 4 )]
+
+position = Vector2( -2429.88, -2612.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret178" parent="." index="194" instance=ExtResource( 4 )]
+
+position = Vector2( -2489.95, -433.78 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret367" parent="." index="195" instance=ExtResource( 4 )]
+
+position = Vector2( -2911.31, -2245.63 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret256" parent="." index="196" instance=ExtResource( 4 )]
+
+position = Vector2( -2698.87, -1351.62 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret325" parent="." index="197" instance=ExtResource( 4 )]
+
+position = Vector2( -3120.23, -3163.48 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret212" parent="." index="198" instance=ExtResource( 4 )]
+
+position = Vector2( -2238.2, -441.332 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret388" parent="." index="199" instance=ExtResource( 4 )]
+
+position = Vector2( -2659.56, -2253.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret273" parent="." index="200" instance=ExtResource( 4 )]
+
+position = Vector2( -2447.11, -1359.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret320" parent="." index="201" instance=ExtResource( 4 )]
+
+position = Vector2( -2429.88, -2612.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret174" parent="." index="202" instance=ExtResource( 4 )]
+
+position = Vector2( -2402.75, -538.688 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret366" parent="." index="203" instance=ExtResource( 4 )]
+
+position = Vector2( -2824.11, -2350.54 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret255" parent="." index="204" instance=ExtResource( 4 )]
+
+position = Vector2( -2611.66, -1456.53 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret335" parent="." index="205" instance=ExtResource( 4 )]
+
+position = Vector2( -3033.02, -3268.38 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret211" parent="." index="206" instance=ExtResource( 4 )]
+
+position = Vector2( -2151, -546.241 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret405" parent="." index="207" instance=ExtResource( 4 )]
+
+position = Vector2( -2572.36, -2358.09 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret281" parent="." index="208" instance=ExtResource( 4 )]
+
+position = Vector2( -2359.91, -1464.08 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret176" parent="." index="209" instance=ExtResource( 4 )]
+
+position = Vector2( -2446.28, -488.355 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret362" parent="." index="210" instance=ExtResource( 4 )]
+
+position = Vector2( -2867.64, -2300.21 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret251" parent="." index="211" instance=ExtResource( 4 )]
+
+position = Vector2( -2655.19, -1406.2 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret317" parent="." index="212" instance=ExtResource( 4 )]
+
+position = Vector2( -3076.55, -3218.05 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret209" parent="." index="213" instance=ExtResource( 4 )]
+
+position = Vector2( -2194.53, -495.907 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret387" parent="." index="214" instance=ExtResource( 4 )]
+
+position = Vector2( -2615.89, -2307.76 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret272" parent="." index="215" instance=ExtResource( 4 )]
+
+position = Vector2( -2403.44, -1413.75 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret316" parent="." index="216" instance=ExtResource( 4 )]
+
+position = Vector2( -2371.4, -2668.57 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret528" parent="." index="217" instance=ExtResource( 4 )]
+
+position = Vector2( -2343.64, -2694.47 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret529" parent="." index="218" instance=ExtResource( 4 )]
+
+position = Vector2( -2312.18, -2722.23 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret530" parent="." index="219" instance=ExtResource( 4 )]
+
+position = Vector2( -2275.17, -2748.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret531" parent="." index="220" instance=ExtResource( 4 )]
+
+position = Vector2( -2251.11, -2774.05 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret532" parent="." index="221" instance=ExtResource( 4 )]
+
+position = Vector2( -2221.5, -2792.56 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret533" parent="." index="222" instance=ExtResource( 4 )]
+
+position = Vector2( -2195.59, -2818.47 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret534" parent="." index="223" instance=ExtResource( 4 )]
+
+position = Vector2( -2195.59, -2866.58 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret535" parent="." index="224" instance=ExtResource( 4 )]
+
+position = Vector2( -2199.29, -2896.19 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret536" parent="." index="225" instance=ExtResource( 4 )]
+
+position = Vector2( -2190.4, -3035.13 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret542" parent="." index="226" instance=ExtResource( 4 )]
+
+position = Vector2( -2178.71, -3075.21 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret537" parent="." index="227" instance=ExtResource( 4 )]
+
+position = Vector2( -2192.07, -2991.16 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret538" parent="." index="228" instance=ExtResource( 4 )]
+
+position = Vector2( -2170.18, -3120.75 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret539" parent="." index="229" instance=ExtResource( 4 )]
+
+position = Vector2( -2155.33, -3153.29 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret540" parent="." index="230" instance=ExtResource( 4 )]
+
+position = Vector2( -2148.65, -3193.42 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret541" parent="." index="231" instance=ExtResource( 4 )]
+
+position = Vector2( -2197.44, -2942.46 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret177" parent="." index="232" instance=ExtResource( 4 )]
+
+position = Vector2( -2466.69, -459.787 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret359" parent="." index="233" instance=ExtResource( 4 )]
+
+position = Vector2( -2888.05, -2271.64 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret248" parent="." index="234" instance=ExtResource( 4 )]
+
+position = Vector2( -2675.6, -1377.63 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret305" parent="." index="235" instance=ExtResource( 4 )]
+
+position = Vector2( -3096.96, -3189.48 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret207" parent="." index="236" instance=ExtResource( 4 )]
+
+position = Vector2( -2214.93, -467.339 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret350" parent="." index="237" instance=ExtResource( 4 )]
+
+position = Vector2( -2636.29, -2279.19 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret239" parent="." index="238" instance=ExtResource( 4 )]
+
+position = Vector2( -2423.85, -1385.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret383" parent="." index="239" instance=ExtResource( 4 )]
+
+position = Vector2( -2406.61, -2638.15 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret180" parent="." index="240" instance=ExtResource( 4 )]
+
+position = Vector2( -2511.58, -405.372 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret355" parent="." index="241" instance=ExtResource( 4 )]
+
+position = Vector2( -2932.94, -2217.22 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret244" parent="." index="242" instance=ExtResource( 4 )]
+
+position = Vector2( -2720.49, -1323.21 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret314" parent="." index="243" instance=ExtResource( 4 )]
+
+position = Vector2( -3141.85, -3135.07 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret204" parent="." index="244" instance=ExtResource( 4 )]
+
+position = Vector2( -2259.83, -412.924 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret348" parent="." index="245" instance=ExtResource( 4 )]
+
+position = Vector2( -2681.19, -2224.78 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret237" parent="." index="246" instance=ExtResource( 4 )]
+
+position = Vector2( -2468.74, -1330.77 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret382" parent="." index="247" instance=ExtResource( 4 )]
+
+position = Vector2( -2455.2, -2581.88 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret181" parent="." index="248" instance=ExtResource( 4 )]
+
+position = Vector2( -2557.98, -352.756 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret356" parent="." index="249" instance=ExtResource( 4 )]
+
+position = Vector2( -2979.34, -2164.61 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret245" parent="." index="250" instance=ExtResource( 4 )]
+
+position = Vector2( -2766.89, -1270.6 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret318" parent="." index="251" instance=ExtResource( 4 )]
+
+position = Vector2( -3188.25, -3082.45 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret205" parent="." index="252" instance=ExtResource( 4 )]
+
+position = Vector2( -2303.36, -372.113 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret349" parent="." index="253" instance=ExtResource( 4 )]
+
+position = Vector2( -2724.72, -2183.97 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret238" parent="." index="254" instance=ExtResource( 4 )]
+
+position = Vector2( -2512.27, -1289.96 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret403" parent="." index="255" instance=ExtResource( 4 )]
+
+position = Vector2( -2933.63, -3101.81 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret182" parent="." index="256" instance=ExtResource( 4 )]
+
+position = Vector2( -2530.56, -381.749 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret342" parent="." index="257" instance=ExtResource( 4 )]
+
+position = Vector2( -2951.92, -2193.6 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret231" parent="." index="258" instance=ExtResource( 4 )]
+
+position = Vector2( -2739.47, -1299.59 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret406" parent="." index="259" instance=ExtResource( 4 )]
+
+position = Vector2( -3160.83, -3111.44 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret197" parent="." index="260" instance=ExtResource( 4 )]
+
+position = Vector2( -2278.8, -389.301 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret345" parent="." index="261" instance=ExtResource( 4 )]
+
+position = Vector2( -2700.16, -2201.15 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret234" parent="." index="262" instance=ExtResource( 4 )]
+
+position = Vector2( -2487.72, -1307.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret398" parent="." index="263" instance=ExtResource( 4 )]
+
+position = Vector2( -2464.93, -3119 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret179" parent="." index="264" instance=ExtResource( 4 )]
+
+position = Vector2( -2579.65, -326.897 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret354" parent="." index="265" instance=ExtResource( 4 )]
+
+position = Vector2( -3001.01, -2138.75 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret243" parent="." index="266" instance=ExtResource( 4 )]
+
+position = Vector2( -2788.56, -1244.74 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret307" parent="." index="267" instance=ExtResource( 4 )]
+
+position = Vector2( -3209.92, -3056.59 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret203" parent="." index="268" instance=ExtResource( 4 )]
+
+position = Vector2( -2325.03, -346.253 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret365" parent="." index="269" instance=ExtResource( 4 )]
+
+position = Vector2( -2746.39, -2158.11 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret254" parent="." index="270" instance=ExtResource( 4 )]
+
+position = Vector2( -2533.94, -1264.1 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret324" parent="." index="271" instance=ExtResource( 4 )]
+
+position = Vector2( -2448.23, -3138.87 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret526" parent="." index="272" instance=ExtResource( 4 )]
+
+position = Vector2( -2416.77, -3166.63 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret527" parent="." index="273" instance=ExtResource( 4 )]
+
+position = Vector2( -2389.01, -3194.39 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret183" parent="." index="274" instance=ExtResource( 4 )]
+
+position = Vector2( -2557.44, -295.436 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret353" parent="." index="275" instance=ExtResource( 4 )]
+
+position = Vector2( -2978.8, -2107.29 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret242" parent="." index="276" instance=ExtResource( 4 )]
+
+position = Vector2( -2766.35, -1213.28 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret302" parent="." index="277" instance=ExtResource( 4 )]
+
+position = Vector2( -3187.71, -3025.13 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret202" parent="." index="278" instance=ExtResource( 4 )]
+
+position = Vector2( -2302.82, -314.793 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret340" parent="." index="279" instance=ExtResource( 4 )]
+
+position = Vector2( -2724.18, -2126.65 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret229" parent="." index="280" instance=ExtResource( 4 )]
+
+position = Vector2( -2431.76, -982.469 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret390" parent="." index="281" instance=ExtResource( 4 )]
+
+position = Vector2( -2933.09, -3044.49 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret184" parent="." index="282" instance=ExtResource( 4 )]
+
+position = Vector2( -2526.81, -277.63 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret370" parent="." index="283" instance=ExtResource( 4 )]
+
+position = Vector2( -2948.17, -2089.48 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret259" parent="." index="284" instance=ExtResource( 4 )]
+
+position = Vector2( -2735.73, -1195.47 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret301" parent="." index="285" instance=ExtResource( 4 )]
+
+position = Vector2( -3157.09, -3007.33 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret214" parent="." index="286" instance=ExtResource( 4 )]
+
+position = Vector2( -2275.06, -285.183 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret415" parent="." index="287" instance=ExtResource( 4 )]
+
+position = Vector2( -2437.33, -2463.46 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret525" parent="." index="288" instance=ExtResource( 4 )]
+
+position = Vector2( -2411.43, -2422.74 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret287" parent="." index="289" instance=ExtResource( 4 )]
+
+position = Vector2( -2461.42, -956.96 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret289" parent="." index="290" instance=ExtResource( 4 )]
+
+position = Vector2( -2905.33, -3014.88 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret185" parent="." index="291" instance=ExtResource( 4 )]
+
+position = Vector2( -2499.05, -248.021 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret344" parent="." index="292" instance=ExtResource( 4 )]
+
+position = Vector2( -2920.41, -2059.87 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret233" parent="." index="293" instance=ExtResource( 4 )]
+
+position = Vector2( -2707.97, -1165.86 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret401" parent="." index="294" instance=ExtResource( 4 )]
+
+position = Vector2( -3129.33, -2977.72 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret198" parent="." index="295" instance=ExtResource( 4 )]
+
+position = Vector2( -2247.3, -255.573 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret360" parent="." index="296" instance=ExtResource( 4 )]
+
+position = Vector2( -2381.82, -2387.58 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret249" parent="." index="297" instance=ExtResource( 4 )]
+
+position = Vector2( -2411.1, -1017.57 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret308" parent="." index="298" instance=ExtResource( 4 )]
+
+position = Vector2( -2877.57, -2985.27 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret186" parent="." index="299" instance=ExtResource( 4 )]
+
+position = Vector2( -2473.57, -225.86 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret361" parent="." index="300" instance=ExtResource( 4 )]
+
+position = Vector2( -2894.93, -2037.71 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret250" parent="." index="301" instance=ExtResource( 4 )]
+
+position = Vector2( -2682.48, -1143.7 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret319" parent="." index="302" instance=ExtResource( 4 )]
+
+position = Vector2( -3103.84, -2955.56 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret208" parent="." index="303" instance=ExtResource( 4 )]
+
+position = Vector2( -2221.82, -233.413 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret413" parent="." index="304" instance=ExtResource( 4 )]
+
+position = Vector2( -2380.39, -2385.78 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret285" parent="." index="305" instance=ExtResource( 4 )]
+
+position = Vector2( -2389.72, -1054.88 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret293" parent="." index="306" instance=ExtResource( 4 )]
+
+position = Vector2( -2852.09, -2963.11 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret187" parent="." index="307" instance=ExtResource( 4 )]
+
+position = Vector2( -2455.84, -204.808 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret347" parent="." index="308" instance=ExtResource( 4 )]
+
+position = Vector2( -2877.2, -2016.66 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret236" parent="." index="309" instance=ExtResource( 4 )]
+
+position = Vector2( -2664.75, -1122.65 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret402" parent="." index="310" instance=ExtResource( 4 )]
+
+position = Vector2( -3086.11, -2934.5 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret199" parent="." index="311" instance=ExtResource( 4 )]
+
+position = Vector2( -2204.09, -212.36 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret338" parent="." index="312" instance=ExtResource( 4 )]
+
+position = Vector2( -2362.66, -2364.73 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret213" parent="." index="313" instance=ExtResource( 4 )]
+
+position = Vector2( -2335.08, -1105.6 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret290" parent="." index="314" instance=ExtResource( 4 )]
+
+position = Vector2( -2294.07, -1142.51 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret291" parent="." index="315" instance=ExtResource( 4 )]
+
+position = Vector2( -2263.31, -1181.47 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret292" parent="." index="316" instance=ExtResource( 4 )]
+
+position = Vector2( -2230.5, -1208.12 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret294" parent="." index="317" instance=ExtResource( 4 )]
+
+position = Vector2( -2201.79, -1242.98 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret295" parent="." index="318" instance=ExtResource( 4 )]
+
+position = Vector2( -2168.98, -1277.84 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret296" parent="." index="319" instance=ExtResource( 4 )]
+
+position = Vector2( -2146.43, -1304.5 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret297" parent="." index="320" instance=ExtResource( 4 )]
+
+position = Vector2( -2115.67, -1325 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret298" parent="." index="321" instance=ExtResource( 4 )]
+
+position = Vector2( -2093.11, -1361.02 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret299" parent="." index="322" instance=ExtResource( 4 )]
+
+position = Vector2( -2056.84, -1388.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret300" parent="." index="323" instance=ExtResource( 4 )]
+
+position = Vector2( -2028.95, -1414.02 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret303" parent="." index="324" instance=ExtResource( 4 )]
+
+position = Vector2( -1983.91, -1716.12 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret311" parent="." index="325" instance=ExtResource( 4 )]
+
+position = Vector2( -1959.3, -1683.31 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret312" parent="." index="326" instance=ExtResource( 4 )]
+
+position = Vector2( -1930.59, -1646.4 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret508" parent="." index="327" instance=ExtResource( 4 )]
+
+position = Vector2( -1908.04, -1613.59 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret509" parent="." index="328" instance=ExtResource( 4 )]
+
+position = Vector2( -1877.28, -1578.73 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret510" parent="." index="329" instance=ExtResource( 4 )]
+
+position = Vector2( -1852.67, -1550.03 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret511" parent="." index="330" instance=ExtResource( 4 )]
+
+position = Vector2( -1812.15, -1509.41 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret512" parent="." index="331" instance=ExtResource( 4 )]
+
+position = Vector2( -1783.45, -1466.35 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret513" parent="." index="332" instance=ExtResource( 4 )]
+
+position = Vector2( -1742.44, -1425.34 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret514" parent="." index="333" instance=ExtResource( 4 )]
+
+position = Vector2( -1721.93, -1392.53 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret515" parent="." index="334" instance=ExtResource( 4 )]
+
+position = Vector2( -1752.69, -1359.72 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret516" parent="." index="335" instance=ExtResource( 4 )]
+
+position = Vector2( -1789.6, -1316.66 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret517" parent="." index="336" instance=ExtResource( 4 )]
+
+position = Vector2( -1820.36, -1281.8 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret304" parent="." index="337" instance=ExtResource( 4 )]
+
+position = Vector2( -2014.59, -1752.38 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret309" parent="." index="338" instance=ExtResource( 4 )]
+
+position = Vector2( -2034.12, -1769.12 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret408" parent="." index="339" instance=ExtResource( 4 )]
+
+position = Vector2( -2834.36, -2942.05 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret188" parent="." index="340" instance=ExtResource( 4 )]
+
+position = Vector2( -2431.46, -187.079 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret364" parent="." index="341" instance=ExtResource( 4 )]
+
+position = Vector2( -2852.82, -1998.93 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret253" parent="." index="342" instance=ExtResource( 4 )]
+
+position = Vector2( -2640.38, -1104.92 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret306" parent="." index="343" instance=ExtResource( 4 )]
+
+position = Vector2( -3061.74, -2916.77 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret210" parent="." index="344" instance=ExtResource( 4 )]
+
+position = Vector2( -2179.71, -194.631 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret391" parent="." index="345" instance=ExtResource( 4 )]
+
+position = Vector2( -2338.28, -2347 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret275" parent="." index="346" instance=ExtResource( 4 )]
+
+position = Vector2( -1919.05, -1180.14 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret323" parent="." index="347" instance=ExtResource( 4 )]
+
+position = Vector2( -2809.98, -2924.33 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret189" parent="." index="348" instance=ExtResource( 4 )]
+
+position = Vector2( -2409.3, -152.73 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret336" parent="." index="349" instance=ExtResource( 4 )]
+
+position = Vector2( -2830.66, -1964.58 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret194" parent="." index="350" instance=ExtResource( 4 )]
+
+position = Vector2( -2618.22, -1070.57 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret395" parent="." index="351" instance=ExtResource( 4 )]
+
+position = Vector2( -3039.58, -2882.42 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret193" parent="." index="352" instance=ExtResource( 4 )]
+
+position = Vector2( -2157.55, -160.282 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret343" parent="." index="353" instance=ExtResource( 4 )]
+
+position = Vector2( -2693.65, -2090.57 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret457" parent="." index="354" instance=ExtResource( 4 )]
+
+position = Vector2( -2662.96, -2054.97 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret458" parent="." index="355" instance=ExtResource( 4 )]
+
+position = Vector2( -2628.58, -2013.23 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret459" parent="." index="356" instance=ExtResource( 4 )]
+
+position = Vector2( -2607.71, -1991.13 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret460" parent="." index="357" instance=ExtResource( 4 )]
+
+position = Vector2( -2588.06, -1969.03 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret461" parent="." index="358" instance=ExtResource( 4 )]
+
+position = Vector2( -2557.37, -1934.65 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret462" parent="." index="359" instance=ExtResource( 4 )]
+
+position = Vector2( -2531.59, -1899.05 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret463" parent="." index="360" instance=ExtResource( 4 )]
+
+position = Vector2( -2499.67, -1868.35 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret464" parent="." index="361" instance=ExtResource( 4 )]
+
+position = Vector2( -2499.67, -1868.35 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret232" parent="." index="362" instance=ExtResource( 4 )]
+
+position = Vector2( -1853.83, -1258.57 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret394" parent="." index="363" instance=ExtResource( 4 )]
+
+position = Vector2( -2787.82, -2889.98 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret337" parent="." index="364" instance=ExtResource( 4 )]
+
+position = Vector2( -2804.07, -1937.99 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret206" parent="." index="365" instance=ExtResource( 4 )]
+
+position = Vector2( -2591.62, -1043.98 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret396" parent="." index="366" instance=ExtResource( 4 )]
+
+position = Vector2( -3012.98, -2855.83 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret368" parent="." index="367" instance=ExtResource( 4 )]
+
+position = Vector2( -2771.94, -1900.32 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret257" parent="." index="368" instance=ExtResource( 4 )]
+
+position = Vector2( -2559.49, -1006.31 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret329" parent="." index="369" instance=ExtResource( 4 )]
+
+position = Vector2( -2980.85, -2818.16 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret358" parent="." index="370" instance=ExtResource( 4 )]
+
+position = Vector2( -2753.76, -1875.32 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret247" parent="." index="371" instance=ExtResource( 4 )]
+
+position = Vector2( -2541.31, -981.314 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret310" parent="." index="372" instance=ExtResource( 4 )]
+
+position = Vector2( -2955.86, -2784.08 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret417" parent="." index="373" instance=ExtResource( 4 )]
+
+position = Vector2( -2989.94, -2765.9 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret418" parent="." index="374" instance=ExtResource( 4 )]
+
+position = Vector2( -3010.39, -2738.64 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret419" parent="." index="375" instance=ExtResource( 4 )]
+
+position = Vector2( -3039.92, -2700.01 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret420" parent="." index="376" instance=ExtResource( 4 )]
+
+position = Vector2( -3069.46, -2675.02 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret421" parent="." index="377" instance=ExtResource( 4 )]
+
+position = Vector2( -3092.18, -2645.48 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret422" parent="." index="378" instance=ExtResource( 4 )]
+
+position = Vector2( -3126.26, -2613.67 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret423" parent="." index="379" instance=ExtResource( 4 )]
+
+position = Vector2( -3158.07, -2572.77 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret424" parent="." index="380" instance=ExtResource( 4 )]
+
+position = Vector2( -3196.7, -2538.69 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret425" parent="." index="381" instance=ExtResource( 4 )]
+
+position = Vector2( -3221.69, -2502.34 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret426" parent="." index="382" instance=ExtResource( 4 )]
+
+position = Vector2( -3251.23, -2468.26 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret427" parent="." index="383" instance=ExtResource( 4 )]
+
+position = Vector2( -3287.58, -2434.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret428" parent="." index="384" instance=ExtResource( 4 )]
+
+position = Vector2( -3287.58, -2434.18 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+detect_radius = 200
+fire_rate = 30.0
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret92" parent="." index="385" instance=ExtResource( 4 )]
+
+position = Vector2( 1314.96, 224.056 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret135" parent="." index="386" instance=ExtResource( 4 )]
+
+position = Vector2( 1329.31, 1388.77 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret121" parent="." index="387" instance=ExtResource( 4 )]
+
+position = Vector2( 1255.06, 256.865 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret146" parent="." index="388" instance=ExtResource( 4 )]
+
+position = Vector2( 1269.41, 1421.57 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret102" parent="." index="389" instance=ExtResource( 4 )]
+
+position = Vector2( 1570.96, 224.056 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret57" parent="." index="390" instance=ExtResource( 4 )]
+
+position = Vector2( 34.9587, 224.056 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret9" parent="." index="391" instance=ExtResource( 4 )]
+
+position = Vector2( -286.601, 669.385 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret86" parent="." index="392" instance=ExtResource( 4 )]
+
+position = Vector2( 2465.4, 669.33 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret53" parent="." index="393" instance=ExtResource( 4 )]
+
+position = Vector2( -350.601, 669.385 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret104" parent="." index="394" instance=ExtResource( 4 )]
+
+position = Vector2( 1313.4, 669.385 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret139" parent="." index="395" instance=ExtResource( 4 )]
+
+position = Vector2( 1327.75, 1834.1 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret125" parent="." index="396" instance=ExtResource( 4 )]
+
+position = Vector2( 1253.5, 702.194 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret147" parent="." index="397" instance=ExtResource( 4 )]
+
+position = Vector2( 1267.85, 1866.9 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret108" parent="." index="398" instance=ExtResource( 4 )]
+
+position = Vector2( 1569.4, 669.385 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret63" parent="." index="399" instance=ExtResource( 4 )]
+
+position = Vector2( 33.3989, 669.385 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret26" parent="." index="400" instance=ExtResource( 4 )]
+
+position = Vector2( -30.1387, 664.58 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret73" parent="." index="401" instance=ExtResource( 4 )]
+
+position = Vector2( 2721.86, 664.524 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret2" parent="." index="402" instance=ExtResource( 4 )]
+
+position = Vector2( -284.932, 286.511 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret29" parent="." index="403" instance=ExtResource( 4 )]
+
+position = Vector2( 2467.07, 286.455 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret38" parent="." index="404" instance=ExtResource( 4 )]
+
+position = Vector2( -348.932, 286.511 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret68" parent="." index="405" instance=ExtResource( 4 )]
+
+position = Vector2( 1315.07, 286.511 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret130" parent="." index="406" instance=ExtResource( 4 )]
+
+position = Vector2( 1329.42, 1451.22 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret116" parent="." index="407" instance=ExtResource( 4 )]
+
+position = Vector2( 1255.17, 319.319 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret153" parent="." index="408" instance=ExtResource( 4 )]
+
+position = Vector2( 1269.52, 1484.03 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret96" parent="." index="409" instance=ExtResource( 4 )]
+
+position = Vector2( 1571.07, 286.511 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret44" parent="." index="410" instance=ExtResource( 4 )]
+
+position = Vector2( 35.0677, 286.511 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret15" parent="." index="411" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3664, 289 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret76" parent="." index="412" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 288.944 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret16" parent="." index="413" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3663, 224.056 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret114" parent="." index="414" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 224 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret8" parent="." index="415" instance=ExtResource( 4 )]
+
+position = Vector2( -286.491, 732.417 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret78" parent="." index="416" instance=ExtResource( 4 )]
+
+position = Vector2( 2465.51, 732.361 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret49" parent="." index="417" instance=ExtResource( 4 )]
+
+position = Vector2( -350.491, 732.417 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret93" parent="." index="418" instance=ExtResource( 4 )]
+
+position = Vector2( 1313.51, 732.417 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret134" parent="." index="419" instance=ExtResource( 4 )]
+
+position = Vector2( 1327.86, 1897.13 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret120" parent="." index="420" instance=ExtResource( 4 )]
+
+position = Vector2( 1253.61, 765.225 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret156" parent="." index="421" instance=ExtResource( 4 )]
+
+position = Vector2( 1267.96, 1929.94 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret101" parent="." index="422" instance=ExtResource( 4 )]
+
+position = Vector2( 1569.51, 732.417 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret58" parent="." index="423" instance=ExtResource( 4 )]
+
+position = Vector2( 33.5089, 732.417 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret22" parent="." index="424" instance=ExtResource( 4 )]
+
+position = Vector2( -30.1387, 729.58 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret90" parent="." index="425" instance=ExtResource( 4 )]
+
+position = Vector2( 2721.86, 729.524 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret3" parent="." index="426" instance=ExtResource( 4 )]
+
+position = Vector2( -284.823, 349.353 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret36" parent="." index="427" instance=ExtResource( 4 )]
+
+position = Vector2( 2467.18, 349.297 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret41" parent="." index="428" instance=ExtResource( 4 )]
+
+position = Vector2( -348.823, 349.353 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret70" parent="." index="429" instance=ExtResource( 4 )]
+
+position = Vector2( 1315.18, 349.353 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret131" parent="." index="430" instance=ExtResource( 4 )]
+
+position = Vector2( 1329.53, 1514.06 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret117" parent="." index="431" instance=ExtResource( 4 )]
+
+position = Vector2( 1255.28, 382.161 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret144" parent="." index="432" instance=ExtResource( 4 )]
+
+position = Vector2( 1269.63, 1546.87 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret98" parent="." index="433" instance=ExtResource( 4 )]
+
+position = Vector2( 1571.18, 349.353 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret46" parent="." index="434" instance=ExtResource( 4 )]
+
+position = Vector2( 35.1773, 349.353 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret19" parent="." index="435" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3664, 351 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret80" parent="." index="436" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 350.944 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret12" parent="." index="437" instance=ExtResource( 4 )]
+
+position = Vector2( -287.944, 797.088 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret85" parent="." index="438" instance=ExtResource( 4 )]
+
+position = Vector2( 2464.06, 797.032 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret52" parent="." index="439" instance=ExtResource( 4 )]
+
+position = Vector2( -351.944, 797.088 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret97" parent="." index="440" instance=ExtResource( 4 )]
+
+position = Vector2( 1312.06, 797.088 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret143" parent="." index="441" instance=ExtResource( 4 )]
+
+position = Vector2( 1326.41, 1961.8 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret129" parent="." index="442" instance=ExtResource( 4 )]
+
+position = Vector2( 1252.16, 829.897 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret150" parent="." index="443" instance=ExtResource( 4 )]
+
+position = Vector2( 1266.51, 1994.61 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret115" parent="." index="444" instance=ExtResource( 4 )]
+
+position = Vector2( 1568.06, 797.088 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret61" parent="." index="445" instance=ExtResource( 4 )]
+
+position = Vector2( 32.0558, 797.088 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret25" parent="." index="446" instance=ExtResource( 4 )]
+
+position = Vector2( -30.1387, 791.58 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret77" parent="." index="447" instance=ExtResource( 4 )]
+
+position = Vector2( 2721.86, 791.524 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret4" parent="." index="448" instance=ExtResource( 4 )]
+
+position = Vector2( -284.713, 411.581 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret37" parent="." index="449" instance=ExtResource( 4 )]
+
+position = Vector2( 2467.29, 411.525 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret42" parent="." index="450" instance=ExtResource( 4 )]
+
+position = Vector2( -348.713, 411.581 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret95" parent="." index="451" instance=ExtResource( 4 )]
+
+position = Vector2( 1315.29, 411.581 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret140" parent="." index="452" instance=ExtResource( 4 )]
+
+position = Vector2( 1329.64, 1576.29 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret126" parent="." index="453" instance=ExtResource( 4 )]
+
+position = Vector2( 1255.39, 444.39 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret149" parent="." index="454" instance=ExtResource( 4 )]
+
+position = Vector2( 1269.74, 1609.1 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret109" parent="." index="455" instance=ExtResource( 4 )]
+
+position = Vector2( 1571.29, 411.581 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret60" parent="." index="456" instance=ExtResource( 4 )]
+
+position = Vector2( 35.2872, 411.581 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret20" parent="." index="457" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3664, 416.07 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret81" parent="." index="458" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 416.014 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret13" parent="." index="459" instance=ExtResource( 4 )]
+
+position = Vector2( -287.832, 861.327 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret87" parent="." index="460" instance=ExtResource( 4 )]
+
+position = Vector2( 2464.17, 861.271 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret54" parent="." index="461" instance=ExtResource( 4 )]
+
+position = Vector2( -351.832, 861.327 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret106" parent="." index="462" instance=ExtResource( 4 )]
+
+position = Vector2( 1312.17, 861.327 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret137" parent="." index="463" instance=ExtResource( 4 )]
+
+position = Vector2( 1326.52, 2026.04 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret123" parent="." index="464" instance=ExtResource( 4 )]
+
+position = Vector2( 1252.27, 894.135 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret154" parent="." index="465" instance=ExtResource( 4 )]
+
+position = Vector2( 1266.62, 2058.85 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret107" parent="." index="466" instance=ExtResource( 4 )]
+
+position = Vector2( 1568.17, 861.327 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret64" parent="." index="467" instance=ExtResource( 4 )]
+
+position = Vector2( 32.1679, 861.326 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret27" parent="." index="468" instance=ExtResource( 4 )]
+
+position = Vector2( -30.1387, 856.65 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret72" parent="." index="469" instance=ExtResource( 4 )]
+
+position = Vector2( 2721.86, 856.594 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret5" parent="." index="470" instance=ExtResource( 4 )]
+
+position = Vector2( -284.6, 476.081 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret66" parent="." index="471" instance=ExtResource( 4 )]
+
+position = Vector2( 2467.4, 476.025 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret43" parent="." index="472" instance=ExtResource( 4 )]
+
+position = Vector2( -348.6, 476.081 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret91" parent="." index="473" instance=ExtResource( 4 )]
+
+position = Vector2( 1315.4, 476.081 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret136" parent="." index="474" instance=ExtResource( 4 )]
+
+position = Vector2( 1329.75, 1640.79 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret122" parent="." index="475" instance=ExtResource( 4 )]
+
+position = Vector2( 1255.5, 508.889 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret152" parent="." index="476" instance=ExtResource( 4 )]
+
+position = Vector2( 1269.85, 1673.6 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret105" parent="." index="477" instance=ExtResource( 4 )]
+
+position = Vector2( 1571.4, 476.081 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret56" parent="." index="478" instance=ExtResource( 4 )]
+
+position = Vector2( 35.3997, 476.081 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret21" parent="." index="479" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3664, 479.912 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret83" parent="." index="480" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 479.857 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret14" parent="." index="481" instance=ExtResource( 4 )]
+
+position = Vector2( -287.719, 925.97 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret84" parent="." index="482" instance=ExtResource( 4 )]
+
+position = Vector2( 2464.28, 925.914 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret51" parent="." index="483" instance=ExtResource( 4 )]
+
+position = Vector2( -351.719, 925.97 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret103" parent="." index="484" instance=ExtResource( 4 )]
+
+position = Vector2( 1312.28, 925.97 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret141" parent="." index="485" instance=ExtResource( 4 )]
+
+position = Vector2( 1326.63, 2090.68 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret127" parent="." index="486" instance=ExtResource( 4 )]
+
+position = Vector2( 1252.38, 958.779 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret145" parent="." index="487" instance=ExtResource( 4 )]
+
+position = Vector2( 1266.74, 2123.49 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret110" parent="." index="488" instance=ExtResource( 4 )]
+
+position = Vector2( 1568.28, 925.97 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret62" parent="." index="489" instance=ExtResource( 4 )]
+
+position = Vector2( 32.2808, 925.97 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret24" parent="." index="490" instance=ExtResource( 4 )]
+
+position = Vector2( -30.1387, 920.492 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret75" parent="." index="491" instance=ExtResource( 4 )]
+
+position = Vector2( 2721.86, 920.437 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret6" parent="." index="492" instance=ExtResource( 4 )]
+
+position = Vector2( -284.49, 539.264 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret35" parent="." index="493" instance=ExtResource( 4 )]
+
+position = Vector2( 2467.51, 539.208 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret40" parent="." index="494" instance=ExtResource( 4 )]
+
+position = Vector2( -348.49, 539.264 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret71" parent="." index="495" instance=ExtResource( 4 )]
+
+position = Vector2( 1315.51, 539.264 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret132" parent="." index="496" instance=ExtResource( 4 )]
+
+position = Vector2( 1329.86, 1703.97 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret118" parent="." index="497" instance=ExtResource( 4 )]
+
+position = Vector2( 1255.61, 572.072 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret148" parent="." index="498" instance=ExtResource( 4 )]
+
+position = Vector2( 1269.96, 1736.78 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret99" parent="." index="499" instance=ExtResource( 4 )]
+
+position = Vector2( 1571.51, 539.264 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret47" parent="." index="500" instance=ExtResource( 4 )]
+
+position = Vector2( 35.51, 539.264 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret18" parent="." index="501" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3664, 543.755 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret89" parent="." index="502" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 543.699 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret11" parent="." index="503" instance=ExtResource( 4 )]
+
+position = Vector2( -287.494, 989.84 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret88" parent="." index="504" instance=ExtResource( 4 )]
+
+position = Vector2( 2464.51, 989.784 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret55" parent="." index="505" instance=ExtResource( 4 )]
+
+position = Vector2( -351.494, 989.84 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret111" parent="." index="506" instance=ExtResource( 4 )]
+
+position = Vector2( 1312.51, 989.84 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret138" parent="." index="507" instance=ExtResource( 4 )]
+
+position = Vector2( 1326.86, 2154.55 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret124" parent="." index="508" instance=ExtResource( 4 )]
+
+position = Vector2( 1252.61, 1022.65 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret155" parent="." index="509" instance=ExtResource( 4 )]
+
+position = Vector2( 1266.96, 2187.36 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret112" parent="." index="510" instance=ExtResource( 4 )]
+
+position = Vector2( 1568.51, 989.84 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret65" parent="." index="511" instance=ExtResource( 4 )]
+
+position = Vector2( 32.5064, 989.84 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret28" parent="." index="512" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3665, 984.335 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret67" parent="." index="513" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 984.279 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret7" parent="." index="514" instance=ExtResource( 4 )]
+
+position = Vector2( -284.376, 604.336 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret34" parent="." index="515" instance=ExtResource( 4 )]
+
+position = Vector2( 2467.62, 604.28 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret39" parent="." index="516" instance=ExtResource( 4 )]
+
+position = Vector2( -348.376, 604.336 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret69" parent="." index="517" instance=ExtResource( 4 )]
+
+position = Vector2( 1315.62, 604.336 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret133" parent="." index="518" instance=ExtResource( 4 )]
+
+position = Vector2( 1329.98, 1769.05 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret119" parent="." index="519" instance=ExtResource( 4 )]
+
+position = Vector2( 1255.72, 637.144 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret151" parent="." index="520" instance=ExtResource( 4 )]
+
+position = Vector2( 1270.08, 1801.85 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret100" parent="." index="521" instance=ExtResource( 4 )]
+
+position = Vector2( 1571.62, 604.336 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 4
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret45" parent="." index="522" instance=ExtResource( 4 )]
+
+position = Vector2( 35.6236, 604.336 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret17" parent="." index="523" instance=ExtResource( 4 )]
+
+position = Vector2( -30.1387, 608.825 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret82" parent="." index="524" instance=ExtResource( 4 )]
+
+position = Vector2( 2721.86, 608.769 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret10" parent="." index="525" instance=ExtResource( 4 )]
+
+position = Vector2( -287.494, 1054.91 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret79" parent="." index="526" instance=ExtResource( 4 )]
+
+position = Vector2( 2464.51, 1054.85 )
+rotation = -0.00174533
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret50" parent="." index="527" instance=ExtResource( 4 )]
+
+position = Vector2( -351.494, 1054.91 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret94" parent="." index="528" instance=ExtResource( 4 )]
+
+position = Vector2( 1312.51, 1054.91 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret142" parent="." index="529" instance=ExtResource( 4 )]
+
+position = Vector2( 1326.86, 2219.62 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+firstShotDelay = 0.7
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret128" parent="." index="530" instance=ExtResource( 4 )]
+
+position = Vector2( 1252.61, 1087.72 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret157" parent="." index="531" instance=ExtResource( 4 )]
+
+position = Vector2( 1266.96, 2252.43 )
+rotation = -0.00174533
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 6
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret113" parent="." index="532" instance=ExtResource( 4 )]
+
+position = Vector2( 1568.51, 1054.91 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret59" parent="." index="533" instance=ExtResource( 4 )]
+
+position = Vector2( 32.5058, 1054.91 )
+rotation = 3.14159
+detect_radius = 200
+fire_rate = 3.4
+bulletSpeed = 3
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret23" parent="." index="534" instance=ExtResource( 4 )]
+
+position = Vector2( -31.3665, 1049.4 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+[node name="Turret74" parent="." index="535" instance=ExtResource( 4 )]
+
+position = Vector2( 2720.63, 1049.35 )
+rotation = 3.14159
+detect_radius = 200
+bulletSpeed = 16
+rotatingTurret = false
+
+

@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=7]
 
-[node name="Room1" type="TileMap"]
+[node name="Room1" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -37,11 +37,6 @@ __meta__ = {
 position = Vector2( -194.534, -444.842 )
 detect_radius = 500
 bulletSpeed = 20
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
-rotationSpeed = 0.0
-defeated = false
 
 [node name="Turret2" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -52,16 +47,11 @@ detect_radius = 100
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
-rotationSpeed = 0.0
-defeated = false
 
 [node name="TransferPointA" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 1530.46, 585.055 )
-newScene = "AcidG"
+newScene = "AcidF"
 transferGoalTemp = "C"
 
 [node name="TransferPointB" parent="." index="3" instance=ExtResource( 3 )]
