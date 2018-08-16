@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id=9]
 
 custom_solver_bias = 0.0
-radius = 27.0
+radius = 25.0
 
 [sub_resource type="Animation" id=2]
 
@@ -200,7 +200,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Damageable",
 "Player",
 "Persist",

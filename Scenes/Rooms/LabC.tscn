@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=5]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -55,80 +55,62 @@ _sections_unfolded = [ "Rect" ]
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -283.932, 30.2262 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
 
 [node name="Turret3" parent="Turrets" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -162.705, 480.934 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
 
 [node name="Turret4" parent="Turrets" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -161.011, 544.502 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 firstShotDelay = 0.5
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
 
 [node name="Turret2" parent="Turrets" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 158.668, 158.898 )
 rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 672.794, 223.968 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
 
 [node name="Turret7" parent="Turrets" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 1397.82, 343.047 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 500
 bulletSpeed = 10
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
 
 [node name="Turret6" parent="Turrets" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 733.736, 418.981 )
 rotation = -1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-shotgunBulletAmount = 3
-shotgunSpread = 20
-trackingDelayTime = 0.25
 
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 4 )]
 

@@ -22,6 +22,7 @@ export var angleBulletUpdateDelay = 1.0 #seconds
 export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
 export var rotationSpeed = 0.0
 var spreadAngles = []
+var fireAngle
 
 export var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -33,6 +34,16 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_physics_process(true)
+	if rotation > 3*PI/4 or rotation < -3*PI/4:
+		$animationPlayer.play("leftStartup")
+	elif rotation < 3*PI/4 and rotation > PI/4:
+		$animationPlayer.play("downStartup")
+	elif rotation < PI/4 and rotation > -PI/4:
+		$animationPlayer.play("rightStartup")
+	else:
+		$animationPlayer.play("upStartup")
+	fireAngle = rotation
+	rotation = 0
 	if usesTargeting:
 		var shape = CircleShape2D.new()
 		shape.radius = detect_radius
@@ -62,12 +73,14 @@ func _physics_process(delta):
 				#rotation = (target.position - position).angle()
 				look_at(target.position)
 			if can_shoot:
+				playFireAnimation()
 				if fireType == "singleFire" or null:
 					shootBulletAtTarget(target.position)
 				if fireType == "shotgun":
 					shootShotgunAtTarget(target.position)
 		elif not usesTargeting:
 			if can_shoot:
+				playFireAnimation()
 				if fireType == "singleFire" or null:
 					shootBulletStraight()
 				if fireType == "shotgun":
@@ -76,6 +89,15 @@ func _physics_process(delta):
 			pass
 		rotation += rotationSpeed/60
 
+func playFireAnimation():
+	if fireAngle > 3*PI/4 or fireAngle < -3*PI/4:
+		$animationPlayer.play("fireRight")
+	elif fireAngle < 3*PI/4 and fireAngle > PI/4:
+		$animationPlayer.play("fireDown")
+	elif fireAngle < PI/4 and fireAngle > -PI/4:
+		$animationPlayer.play("fireLeft")
+	else:
+		$animationPlayer.play("fireUp")
 
 func _on_Visibility_body_entered(body):
 	# connect this to the "body_entered" signal
@@ -118,7 +140,7 @@ func shootShotgunAtTarget(pos):
 func shootBulletStraight():
 	#Shoots a bullet in the direction it's facing
 	var b = Bullet.instance()
-	b.start(position, self.get_global_transform().get_rotation(), bulletSpeed)
+	b.start(position, fireAngle, bulletSpeed)
 	setBulletProperties(b)
 	get_parent().add_child(b)
 	can_shoot = false
@@ -127,7 +149,7 @@ func shootBulletStraight():
 func shootShotgunStraight():
 	for i in spreadAngles:
 		var b = Bullet.instance()
-		b.start(position, self.get_global_transform().get_rotation() + deg2rad(i), bulletSpeed)
+		b.start(position, fireAngle + deg2rad(i), bulletSpeed)
 		setBulletProperties(b)
 		get_parent().add_child(b)
 	can_shoot = false
