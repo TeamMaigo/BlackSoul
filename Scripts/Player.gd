@@ -132,7 +132,7 @@ func speed_decay():
 		MOTION_SPEED *= 0.90
 		if MOTION_SPEED > minDashInvulnSpeed and MOTION_SPEED < maxDashInvulnSpeed:
 			dashInvuln = true
-			SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
+			SpriteNode.set("modulate",Color(0,0,233.0/255,1)) # Used to test dash
 		else:
 			dashInvuln = false
 			SpriteNode.set("modulate",Color(1,1,1,1))
