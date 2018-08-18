@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -36,7 +36,7 @@ __meta__ = {
 
 position = Vector2( -55.1015, 66.8216 )
 scale = Vector2( 1.79458, 1.72204 )
-newScene = "Level_Test"
+newScene = "Djstouhousimulator"
 
 [node name="TransferPointA" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -49,7 +49,7 @@ newScene = "LabB"
 modulate = Color( 0.121094, 0.485016, 1, 1 )
 position = Vector2( -88.6827, -162.019 )
 _sections_unfolded = [ "Visibility" ]
-newScene = "AcidE"
+newScene = "CoreB"
 
 [node name="Label" type="Label" parent="." index="3"]
 

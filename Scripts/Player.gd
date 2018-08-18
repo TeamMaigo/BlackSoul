@@ -195,6 +195,7 @@ func swapPlaces(player, enemy): # Takes in player node and enemy collider
 func takeDamage(damage):
 	if vulnerable and not swapInvuln and not dashInvuln:
 		vulnerable = false
+		trauma = 60
 		$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
 		$PlayerAudio.volume_db = Global.masterSound
 		$PlayerAudio.play()

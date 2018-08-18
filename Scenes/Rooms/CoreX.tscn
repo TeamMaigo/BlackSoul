@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=10]
 
-[node name="tileMap" type="TileMap"]
+[node name="tileMap" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -52,16 +52,16 @@ respawns = false
 [node name="EnemyMob2" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 900.271, 1079.95 )
+hp = 8
 fireType = "shotgun"
 respawns = false
-hp = 8
 
 [node name="EnemyMob3" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 486.283, 987.993 )
+hp = 8
 fireType = "shotgun"
 respawns = false
-hp = 8
 
 [node name="EnemyMob6" parent="." index="5" instance=ExtResource( 4 )]
 
@@ -85,7 +85,7 @@ respawns = false
 
 position = Vector2( 1680.9, 862.532 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
@@ -95,14 +95,14 @@ fireType = null
 
 position = Vector2( 2525.59, 675.916 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
 [node name="Turret5" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 2144.36, 672.214 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
@@ -111,14 +111,14 @@ usesTargeting = false
 
 position = Vector2( 2099.95, 1179.28 )
 rotation = -1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
 [node name="Turret6" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( 2588.51, 1182.99 )
 rotation = -1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false

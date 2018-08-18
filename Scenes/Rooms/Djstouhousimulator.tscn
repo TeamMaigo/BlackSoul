@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
@@ -75,7 +75,7 @@ usesTargeting = false
 
 position = Vector2( -1996.08, -1114.87 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -86,7 +86,7 @@ usesTargeting = false
 
 position = Vector2( -2026.84, -1084.11 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -97,7 +97,7 @@ usesTargeting = false
 
 position = Vector2( -2059.65, -1059.51 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -108,7 +108,7 @@ usesTargeting = false
 
 position = Vector2( -2086.31, -1026.7 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -119,7 +119,7 @@ usesTargeting = false
 
 position = Vector2( -2108.86, -1002.09 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -130,7 +130,7 @@ usesTargeting = false
 
 position = Vector2( -2139.62, -967.232 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -141,7 +141,7 @@ usesTargeting = false
 
 position = Vector2( -2194.98, -932.372 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -152,7 +152,7 @@ usesTargeting = false
 
 position = Vector2( -2170.38, -942.625 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -163,7 +163,7 @@ usesTargeting = false
 
 position = Vector2( -2763.98, -2854.95 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -174,7 +174,7 @@ usesTargeting = false
 
 position = Vector2( -2331.31, -2340.32 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -185,7 +185,7 @@ usesTargeting = false
 
 position = Vector2( -1882.96, -1223.63 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -196,7 +196,7 @@ usesTargeting = false
 
 position = Vector2( -2730.84, -2818.12 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -207,7 +207,7 @@ usesTargeting = false
 
 position = Vector2( -2298.16, -2303.49 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -218,7 +218,7 @@ usesTargeting = false
 
 position = Vector2( -1963.4, -1144.95 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -229,7 +229,7 @@ usesTargeting = false
 
 position = Vector2( -2702.6, -2788.66 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -240,7 +240,7 @@ usesTargeting = false
 
 position = Vector2( -2269.93, -2274.02 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -251,7 +251,7 @@ usesTargeting = false
 
 position = Vector2( -2503.52, -938.558 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -262,7 +262,7 @@ usesTargeting = false
 
 position = Vector2( -2890.8, -2570.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -273,7 +273,7 @@ usesTargeting = false
 
 position = Vector2( -2920.34, -2545.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -284,7 +284,7 @@ usesTargeting = false
 
 position = Vector2( -2946.34, -2513.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -295,7 +295,7 @@ usesTargeting = false
 
 position = Vector2( -2974.34, -2475.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -306,7 +306,7 @@ usesTargeting = false
 
 position = Vector2( -2995.34, -2445.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -317,7 +317,7 @@ usesTargeting = false
 
 position = Vector2( -3025.34, -2408.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -328,7 +328,7 @@ usesTargeting = false
 
 position = Vector2( -3052.34, -2376.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -339,7 +339,7 @@ usesTargeting = false
 
 position = Vector2( -3076.34, -2346.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -350,7 +350,7 @@ usesTargeting = false
 
 position = Vector2( -3105.34, -2313.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -361,7 +361,7 @@ usesTargeting = false
 
 position = Vector2( -3135.34, -2282.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -372,7 +372,7 @@ usesTargeting = false
 
 position = Vector2( -3035.62, -2104.53 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -383,7 +383,7 @@ usesTargeting = false
 
 position = Vector2( -3060, -2074.61 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -394,7 +394,7 @@ usesTargeting = false
 
 position = Vector2( -3091.02, -2034.72 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -405,7 +405,7 @@ usesTargeting = false
 
 position = Vector2( -3114.29, -2001.48 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -416,7 +416,7 @@ usesTargeting = false
 
 position = Vector2( -3151.96, -2024.75 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -427,7 +427,7 @@ usesTargeting = false
 
 position = Vector2( -3190.74, -2056.88 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -438,7 +438,7 @@ usesTargeting = false
 
 position = Vector2( -3219.55, -2086.8 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -449,7 +449,7 @@ usesTargeting = false
 
 position = Vector2( -3250.58, -2113.39 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -460,7 +460,7 @@ usesTargeting = false
 
 position = Vector2( -3271.63, -2134.45 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -471,7 +471,7 @@ usesTargeting = false
 
 position = Vector2( -3290.47, -2162.15 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -482,7 +482,7 @@ usesTargeting = false
 
 position = Vector2( -3317.06, -2186.52 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -493,7 +493,7 @@ usesTargeting = false
 
 position = Vector2( -3338.11, -2214.23 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -504,7 +504,7 @@ usesTargeting = false
 
 position = Vector2( -3364.7, -2240.82 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -515,7 +515,7 @@ usesTargeting = false
 
 position = Vector2( -3381.33, -2264.09 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -526,7 +526,7 @@ usesTargeting = false
 
 position = Vector2( -3314.84, -2400.38 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -537,7 +537,7 @@ usesTargeting = false
 
 position = Vector2( -3349.19, -2376 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -548,7 +548,7 @@ usesTargeting = false
 
 position = Vector2( -3387.97, -2343.87 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -559,7 +559,7 @@ usesTargeting = false
 
 position = Vector2( -3413.46, -2316.16 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -570,7 +570,7 @@ usesTargeting = false
 
 position = Vector2( -3399.05, -2290.68 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -581,7 +581,7 @@ usesTargeting = false
 
 position = Vector2( -2712.44, -1856.4 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -592,7 +592,7 @@ usesTargeting = false
 
 position = Vector2( -2360.45, -1081.45 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -603,7 +603,7 @@ usesTargeting = false
 
 position = Vector2( -2673.13, -2757.96 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -614,7 +614,7 @@ usesTargeting = false
 
 position = Vector2( -2240.46, -2243.33 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -625,7 +625,7 @@ usesTargeting = false
 
 position = Vector2( -2472.83, -895.587 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -636,7 +636,7 @@ usesTargeting = false
 
 position = Vector2( -2866.93, -2600.65 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -647,7 +647,7 @@ usesTargeting = false
 
 position = Vector2( -2681.74, -1813.43 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -658,7 +658,7 @@ usesTargeting = false
 
 position = Vector2( -2221.08, -903.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -669,7 +669,7 @@ usesTargeting = false
 
 position = Vector2( -2642.44, -2714.99 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -680,7 +680,7 @@ usesTargeting = false
 
 position = Vector2( -2209.77, -2200.36 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -691,7 +691,7 @@ usesTargeting = false
 
 position = Vector2( -2445.82, -863.666 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -702,7 +702,7 @@ usesTargeting = false
 
 position = Vector2( -2837.65, -2639.17 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -713,7 +713,7 @@ usesTargeting = false
 
 position = Vector2( -2654.73, -1781.51 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -724,7 +724,7 @@ usesTargeting = false
 
 position = Vector2( -2194.07, -871.218 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -735,7 +735,7 @@ usesTargeting = false
 
 position = Vector2( -2615.43, -2683.07 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -746,7 +746,7 @@ usesTargeting = false
 
 position = Vector2( -2182.76, -2168.44 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -757,7 +757,7 @@ usesTargeting = false
 
 position = Vector2( -2417.58, -834.2 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -768,7 +768,7 @@ usesTargeting = false
 
 position = Vector2( -2811.68, -2666.5 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -779,7 +779,7 @@ usesTargeting = false
 
 position = Vector2( -2626.5, -1752.04 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -790,7 +790,7 @@ usesTargeting = false
 
 position = Vector2( -2165.83, -841.753 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -801,7 +801,7 @@ usesTargeting = false
 
 position = Vector2( -2587.19, -2653.6 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -812,7 +812,7 @@ usesTargeting = false
 
 position = Vector2( -2415.55, -1680.69 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -823,7 +823,7 @@ usesTargeting = false
 
 position = Vector2( -2382.9, -1706.54 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -834,7 +834,7 @@ usesTargeting = false
 
 position = Vector2( -2352.98, -1740.55 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -845,7 +845,7 @@ usesTargeting = false
 
 position = Vector2( -2317.61, -1774.56 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -856,7 +856,7 @@ usesTargeting = false
 
 position = Vector2( -2293.12, -1793.6 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -867,7 +867,7 @@ usesTargeting = false
 
 position = Vector2( -2233.26, -1839.86 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -878,7 +878,7 @@ usesTargeting = false
 
 position = Vector2( -2196.53, -1872.51 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -889,7 +889,7 @@ usesTargeting = false
 
 position = Vector2( -2250.95, -1928.28 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -900,7 +900,7 @@ usesTargeting = false
 
 position = Vector2( -2278.16, -1955.49 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -911,7 +911,7 @@ usesTargeting = false
 
 position = Vector2( -2310.8, -1990.86 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -922,7 +922,7 @@ usesTargeting = false
 
 position = Vector2( -2344.81, -2018.07 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -933,7 +933,7 @@ usesTargeting = false
 
 position = Vector2( -2374.74, -2049.36 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -944,7 +944,7 @@ usesTargeting = false
 
 position = Vector2( -2401.95, -2084.73 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -955,7 +955,7 @@ usesTargeting = false
 
 position = Vector2( -2437.32, -2116.01 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -966,7 +966,7 @@ usesTargeting = false
 
 position = Vector2( -2460.45, -2139.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -977,7 +977,7 @@ usesTargeting = false
 
 position = Vector2( -2489.01, -2174.51 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -988,7 +988,7 @@ usesTargeting = false
 
 position = Vector2( -2499.28, -2200.36 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -999,7 +999,7 @@ usesTargeting = false
 
 position = Vector2( -2110.83, -2101.05 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1010,7 +1010,7 @@ usesTargeting = false
 
 position = Vector2( -2082.26, -2075.2 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1021,7 +1021,7 @@ usesTargeting = false
 
 position = Vector2( -2050.97, -2049.36 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1032,7 +1032,7 @@ usesTargeting = false
 
 position = Vector2( -2133.96, -2120.1 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1043,7 +1043,7 @@ usesTargeting = false
 
 position = Vector2( -2033.29, -2030.31 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1054,7 +1054,7 @@ usesTargeting = false
 
 position = Vector2( -2014.24, -2009.91 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1065,7 +1065,7 @@ usesTargeting = false
 
 position = Vector2( -1985.67, -1984.06 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1076,7 +1076,7 @@ usesTargeting = false
 
 position = Vector2( -1948.94, -1944.61 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1087,7 +1087,7 @@ usesTargeting = false
 
 position = Vector2( -1925.82, -1920.12 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1098,7 +1098,7 @@ usesTargeting = false
 
 position = Vector2( -2151.64, -2139.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1109,7 +1109,7 @@ usesTargeting = false
 
 position = Vector2( -2227.82, -1901.07 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1120,7 +1120,7 @@ usesTargeting = false
 
 position = Vector2( -2260.47, -1814.01 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1131,7 +1131,7 @@ usesTargeting = false
 
 position = Vector2( -2391.8, -802.279 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1142,7 +1142,7 @@ usesTargeting = false
 
 position = Vector2( -2783.62, -2693.65 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1153,7 +1153,7 @@ usesTargeting = false
 
 position = Vector2( -2600.71, -1720.12 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1164,7 +1164,7 @@ usesTargeting = false
 
 position = Vector2( -2140.05, -809.832 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1175,7 +1175,7 @@ usesTargeting = false
 
 position = Vector2( -2561.41, -2621.68 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1186,7 +1186,7 @@ usesTargeting = false
 
 position = Vector2( -2441.46, -1650.13 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1197,7 +1197,7 @@ usesTargeting = false
 
 position = Vector2( -2358.65, -759.308 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1208,7 +1208,7 @@ usesTargeting = false
 
 position = Vector2( -2752.75, -2723.39 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1219,7 +1219,7 @@ usesTargeting = false
 
 position = Vector2( -2567.56, -1677.15 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1230,7 +1230,7 @@ usesTargeting = false
 
 position = Vector2( -2106.9, -766.861 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1241,7 +1241,7 @@ usesTargeting = false
 
 position = Vector2( -2528.26, -2578.71 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1252,7 +1252,7 @@ usesTargeting = false
 
 position = Vector2( -2466.81, -1627.57 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1263,7 +1263,7 @@ usesTargeting = false
 
 position = Vector2( -2323.05, -726.159 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1274,7 +1274,7 @@ usesTargeting = false
 
 position = Vector2( -2728.5, -2749.31 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1285,7 +1285,7 @@ usesTargeting = false
 
 position = Vector2( -2531.96, -1644 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1296,7 +1296,7 @@ usesTargeting = false
 
 position = Vector2( -2071.26, -735.52 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1307,7 +1307,7 @@ usesTargeting = false
 
 position = Vector2( -2492.62, -2547.37 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1318,7 +1318,7 @@ usesTargeting = false
 
 position = Vector2( -2212.15, -1645.2 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1329,7 +1329,7 @@ usesTargeting = false
 
 position = Vector2( -2175.42, -1676.49 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1340,7 +1340,7 @@ usesTargeting = false
 
 position = Vector2( -2133.25, -1710.5 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1351,7 +1351,7 @@ usesTargeting = false
 
 position = Vector2( -2104.68, -1739.07 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1362,7 +1362,7 @@ usesTargeting = false
 
 position = Vector2( -2076.11, -1762.19 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1373,7 +1373,7 @@ usesTargeting = false
 
 position = Vector2( -2055.71, -1777.16 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1384,7 +1384,7 @@ usesTargeting = false
 
 position = Vector2( -2031.22, -1803 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1395,7 +1395,7 @@ usesTargeting = false
 
 position = Vector2( -1997.21, -1822.05 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1406,7 +1406,7 @@ usesTargeting = false
 
 position = Vector2( -1980.89, -1847.9 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1417,7 +1417,7 @@ usesTargeting = false
 
 position = Vector2( -1967.28, -1868.3 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1428,7 +1428,7 @@ usesTargeting = false
 
 position = Vector2( -1942.8, -1883.27 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1439,7 +1439,7 @@ usesTargeting = false
 
 position = Vector2( -2289.9, -688.099 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1450,7 +1450,7 @@ usesTargeting = false
 
 position = Vector2( -2711.26, -2499.95 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1461,7 +1461,7 @@ usesTargeting = false
 
 position = Vector2( -2498.81, -1605.94 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1472,7 +1472,7 @@ usesTargeting = false
 
 position = Vector2( -2038.11, -697.46 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1483,7 +1483,7 @@ usesTargeting = false
 
 position = Vector2( -2459.47, -2509.31 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1494,7 +1494,7 @@ usesTargeting = false
 
 position = Vector2( -2247.02, -1615.3 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1505,7 +1505,7 @@ usesTargeting = false
 
 position = Vector2( -2314.45, -646.356 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1516,7 +1516,7 @@ usesTargeting = false
 
 position = Vector2( -2735.81, -2458.21 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1527,7 +1527,7 @@ usesTargeting = false
 
 position = Vector2( -2523.37, -1564.2 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1538,7 +1538,7 @@ usesTargeting = false
 
 position = Vector2( -2062.66, -655.717 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1549,7 +1549,7 @@ usesTargeting = false
 
 position = Vector2( -2484.02, -2467.57 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1560,7 +1560,7 @@ usesTargeting = false
 
 position = Vector2( -2271.57, -1573.56 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1571,7 +1571,7 @@ usesTargeting = false
 
 position = Vector2( -2343.92, -619.346 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1582,7 +1582,7 @@ usesTargeting = false
 
 position = Vector2( -2765.28, -2431.2 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1593,7 +1593,7 @@ usesTargeting = false
 
 position = Vector2( -2552.83, -1537.19 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1604,7 +1604,7 @@ usesTargeting = false
 
 position = Vector2( -2974.19, -3349.04 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1615,7 +1615,7 @@ usesTargeting = false
 
 position = Vector2( -2937.18, -3373.1 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1626,7 +1626,7 @@ usesTargeting = false
 
 position = Vector2( -2909.42, -3400.86 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1637,7 +1637,7 @@ usesTargeting = false
 
 position = Vector2( -2848.39, -3362.74 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1648,7 +1648,7 @@ usesTargeting = false
 
 position = Vector2( -2813.88, -3332.87 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1659,7 +1659,7 @@ usesTargeting = false
 
 position = Vector2( -2788.6, -3307.6 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1670,7 +1670,7 @@ usesTargeting = false
 
 position = Vector2( -2762.43, -3287.74 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1681,7 +1681,7 @@ usesTargeting = false
 
 position = Vector2( -2732.65, -3264.28 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1692,7 +1692,7 @@ usesTargeting = false
 
 position = Vector2( -2703.77, -3244.42 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1703,7 +1703,7 @@ usesTargeting = false
 
 position = Vector2( -2681.21, -3219.15 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1714,7 +1714,7 @@ usesTargeting = false
 
 position = Vector2( -2654.13, -3194.78 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1725,7 +1725,7 @@ usesTargeting = false
 
 position = Vector2( -2628.86, -3166.81 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1736,7 +1736,7 @@ usesTargeting = false
 
 position = Vector2( -2599.08, -3135.22 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1747,7 +1747,7 @@ usesTargeting = false
 
 position = Vector2( -2572, -3107.24 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1758,7 +1758,7 @@ usesTargeting = false
 
 position = Vector2( -2545.83, -3073.85 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1769,7 +1769,7 @@ usesTargeting = false
 
 position = Vector2( -2497.41, -3093.97 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1780,7 +1780,7 @@ usesTargeting = false
 
 position = Vector2( -2873.16, -3381.24 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1791,7 +1791,7 @@ usesTargeting = false
 
 position = Vector2( -2092.13, -628.707 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1802,7 +1802,7 @@ usesTargeting = false
 
 position = Vector2( -2513.49, -2440.56 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1813,7 +1813,7 @@ usesTargeting = false
 
 position = Vector2( -2301.04, -1546.55 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1824,7 +1824,7 @@ usesTargeting = false
 
 position = Vector2( -2364.79, -596.019 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1835,7 +1835,7 @@ usesTargeting = false
 
 position = Vector2( -2786.15, -2407.87 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1846,7 +1846,7 @@ usesTargeting = false
 
 position = Vector2( -2573.7, -1513.86 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1857,7 +1857,7 @@ usesTargeting = false
 
 position = Vector2( -2989.51, -3316.46 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1868,7 +1868,7 @@ usesTargeting = false
 
 position = Vector2( -2113.04, -603.572 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1879,7 +1879,7 @@ usesTargeting = false
 
 position = Vector2( -2534.4, -2415.42 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1890,7 +1890,7 @@ usesTargeting = false
 
 position = Vector2( -2321.95, -1521.41 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1901,7 +1901,7 @@ usesTargeting = false
 
 position = Vector2( -2379.52, -565.326 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1912,7 +1912,7 @@ usesTargeting = false
 
 position = Vector2( -2800.88, -2377.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1923,7 +1923,7 @@ usesTargeting = false
 
 position = Vector2( -2588.44, -1483.17 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1934,7 +1934,7 @@ usesTargeting = false
 
 position = Vector2( -3009.8, -3295.02 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1945,7 +1945,7 @@ usesTargeting = false
 
 position = Vector2( -2127.77, -572.878 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1956,7 +1956,7 @@ usesTargeting = false
 
 position = Vector2( -2549.13, -2384.73 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1967,7 +1967,7 @@ usesTargeting = false
 
 position = Vector2( -2336.68, -1490.72 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1978,7 +1978,7 @@ usesTargeting = false
 
 position = Vector2( -2428.74, -509.961 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -1989,7 +1989,7 @@ usesTargeting = false
 
 position = Vector2( -2850.1, -2321.81 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2000,7 +2000,7 @@ usesTargeting = false
 
 position = Vector2( -2637.65, -1427.8 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2011,7 +2011,7 @@ usesTargeting = false
 
 position = Vector2( -3059.01, -3239.66 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2022,7 +2022,7 @@ usesTargeting = false
 
 position = Vector2( -2176.98, -517.513 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2033,7 +2033,7 @@ usesTargeting = false
 
 position = Vector2( -2598.34, -2329.37 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2044,7 +2044,7 @@ usesTargeting = false
 
 position = Vector2( -2385.9, -1435.36 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2055,7 +2055,7 @@ usesTargeting = false
 
 position = Vector2( -2489.95, -433.78 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2066,7 +2066,7 @@ usesTargeting = false
 
 position = Vector2( -2911.31, -2245.63 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2077,7 +2077,7 @@ usesTargeting = false
 
 position = Vector2( -2698.87, -1351.62 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2088,7 +2088,7 @@ usesTargeting = false
 
 position = Vector2( -3120.23, -3163.48 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2099,7 +2099,7 @@ usesTargeting = false
 
 position = Vector2( -2238.2, -441.332 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2110,7 +2110,7 @@ usesTargeting = false
 
 position = Vector2( -2659.56, -2253.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2121,7 +2121,7 @@ usesTargeting = false
 
 position = Vector2( -2447.11, -1359.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2132,7 +2132,7 @@ usesTargeting = false
 
 position = Vector2( -2429.88, -2612.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2143,7 +2143,7 @@ usesTargeting = false
 
 position = Vector2( -2489.95, -433.78 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2154,7 +2154,7 @@ usesTargeting = false
 
 position = Vector2( -2911.31, -2245.63 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2165,7 +2165,7 @@ usesTargeting = false
 
 position = Vector2( -2698.87, -1351.62 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2176,7 +2176,7 @@ usesTargeting = false
 
 position = Vector2( -3120.23, -3163.48 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2187,7 +2187,7 @@ usesTargeting = false
 
 position = Vector2( -2238.2, -441.332 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2198,7 +2198,7 @@ usesTargeting = false
 
 position = Vector2( -2659.56, -2253.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2209,7 +2209,7 @@ usesTargeting = false
 
 position = Vector2( -2447.11, -1359.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2220,7 +2220,7 @@ usesTargeting = false
 
 position = Vector2( -2429.88, -2612.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2231,7 +2231,7 @@ usesTargeting = false
 
 position = Vector2( -2402.75, -538.688 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2242,7 +2242,7 @@ usesTargeting = false
 
 position = Vector2( -2824.11, -2350.54 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2253,7 +2253,7 @@ usesTargeting = false
 
 position = Vector2( -2611.66, -1456.53 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2264,7 +2264,7 @@ usesTargeting = false
 
 position = Vector2( -3033.02, -3268.38 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2275,7 +2275,7 @@ usesTargeting = false
 
 position = Vector2( -2151, -546.241 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2286,7 +2286,7 @@ usesTargeting = false
 
 position = Vector2( -2572.36, -2358.09 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2297,7 +2297,7 @@ usesTargeting = false
 
 position = Vector2( -2359.91, -1464.08 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2308,7 +2308,7 @@ usesTargeting = false
 
 position = Vector2( -2446.28, -488.355 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2319,7 +2319,7 @@ usesTargeting = false
 
 position = Vector2( -2867.64, -2300.21 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2330,7 +2330,7 @@ usesTargeting = false
 
 position = Vector2( -2655.19, -1406.2 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2341,7 +2341,7 @@ usesTargeting = false
 
 position = Vector2( -3076.55, -3218.05 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2352,7 +2352,7 @@ usesTargeting = false
 
 position = Vector2( -2194.53, -495.907 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2363,7 +2363,7 @@ usesTargeting = false
 
 position = Vector2( -2615.89, -2307.76 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2374,7 +2374,7 @@ usesTargeting = false
 
 position = Vector2( -2403.44, -1413.75 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2385,7 +2385,7 @@ usesTargeting = false
 
 position = Vector2( -2371.4, -2668.57 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2396,7 +2396,7 @@ usesTargeting = false
 
 position = Vector2( -2343.64, -2694.47 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2407,7 +2407,7 @@ usesTargeting = false
 
 position = Vector2( -2312.18, -2722.23 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2418,7 +2418,7 @@ usesTargeting = false
 
 position = Vector2( -2275.17, -2748.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2429,7 +2429,7 @@ usesTargeting = false
 
 position = Vector2( -2251.11, -2774.05 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2440,7 +2440,7 @@ usesTargeting = false
 
 position = Vector2( -2221.5, -2792.56 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2451,7 +2451,7 @@ usesTargeting = false
 
 position = Vector2( -2195.59, -2818.47 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2462,7 +2462,7 @@ usesTargeting = false
 
 position = Vector2( -2195.59, -2866.58 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2473,7 +2473,7 @@ usesTargeting = false
 
 position = Vector2( -2199.29, -2896.19 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2484,7 +2484,7 @@ usesTargeting = false
 
 position = Vector2( -2190.4, -3035.13 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2495,7 +2495,7 @@ usesTargeting = false
 
 position = Vector2( -2178.71, -3075.21 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2506,7 +2506,7 @@ usesTargeting = false
 
 position = Vector2( -2192.07, -2991.16 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2517,7 +2517,7 @@ usesTargeting = false
 
 position = Vector2( -2170.18, -3120.75 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2528,7 +2528,7 @@ usesTargeting = false
 
 position = Vector2( -2155.33, -3153.29 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2539,7 +2539,7 @@ usesTargeting = false
 
 position = Vector2( -2148.65, -3193.42 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2550,7 +2550,7 @@ usesTargeting = false
 
 position = Vector2( -2197.44, -2942.46 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2561,7 +2561,7 @@ usesTargeting = false
 
 position = Vector2( -2466.69, -459.787 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2572,7 +2572,7 @@ usesTargeting = false
 
 position = Vector2( -2888.05, -2271.64 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2583,7 +2583,7 @@ usesTargeting = false
 
 position = Vector2( -2675.6, -1377.63 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2594,7 +2594,7 @@ usesTargeting = false
 
 position = Vector2( -3096.96, -3189.48 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2605,7 +2605,7 @@ usesTargeting = false
 
 position = Vector2( -2214.93, -467.339 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2616,7 +2616,7 @@ usesTargeting = false
 
 position = Vector2( -2636.29, -2279.19 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2627,7 +2627,7 @@ usesTargeting = false
 
 position = Vector2( -2423.85, -1385.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2638,7 +2638,7 @@ usesTargeting = false
 
 position = Vector2( -2406.61, -2638.15 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2649,7 +2649,7 @@ usesTargeting = false
 
 position = Vector2( -2511.58, -405.372 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2660,7 +2660,7 @@ usesTargeting = false
 
 position = Vector2( -2932.94, -2217.22 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2671,7 +2671,7 @@ usesTargeting = false
 
 position = Vector2( -2720.49, -1323.21 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2682,7 +2682,7 @@ usesTargeting = false
 
 position = Vector2( -3141.85, -3135.07 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2693,7 +2693,7 @@ usesTargeting = false
 
 position = Vector2( -2259.83, -412.924 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2704,7 +2704,7 @@ usesTargeting = false
 
 position = Vector2( -2681.19, -2224.78 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2715,7 +2715,7 @@ usesTargeting = false
 
 position = Vector2( -2468.74, -1330.77 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2726,7 +2726,7 @@ usesTargeting = false
 
 position = Vector2( -2455.2, -2581.88 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2737,7 +2737,7 @@ usesTargeting = false
 
 position = Vector2( -2557.98, -352.756 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2748,7 +2748,7 @@ usesTargeting = false
 
 position = Vector2( -2979.34, -2164.61 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2759,7 +2759,7 @@ usesTargeting = false
 
 position = Vector2( -2766.89, -1270.6 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2770,7 +2770,7 @@ usesTargeting = false
 
 position = Vector2( -3188.25, -3082.45 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2781,7 +2781,7 @@ usesTargeting = false
 
 position = Vector2( -2303.36, -372.113 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2792,7 +2792,7 @@ usesTargeting = false
 
 position = Vector2( -2724.72, -2183.97 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2803,7 +2803,7 @@ usesTargeting = false
 
 position = Vector2( -2512.27, -1289.96 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2814,7 +2814,7 @@ usesTargeting = false
 
 position = Vector2( -2933.63, -3101.81 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2825,7 +2825,7 @@ usesTargeting = false
 
 position = Vector2( -2530.56, -381.749 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2836,7 +2836,7 @@ usesTargeting = false
 
 position = Vector2( -2951.92, -2193.6 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2847,7 +2847,7 @@ usesTargeting = false
 
 position = Vector2( -2739.47, -1299.59 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2858,7 +2858,7 @@ usesTargeting = false
 
 position = Vector2( -3160.83, -3111.44 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2869,7 +2869,7 @@ usesTargeting = false
 
 position = Vector2( -2278.8, -389.301 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2880,7 +2880,7 @@ usesTargeting = false
 
 position = Vector2( -2700.16, -2201.15 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2891,7 +2891,7 @@ usesTargeting = false
 
 position = Vector2( -2487.72, -1307.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2902,7 +2902,7 @@ usesTargeting = false
 
 position = Vector2( -2464.93, -3119 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2913,7 +2913,7 @@ usesTargeting = false
 
 position = Vector2( -2579.65, -326.897 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2924,7 +2924,7 @@ usesTargeting = false
 
 position = Vector2( -3001.01, -2138.75 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2935,7 +2935,7 @@ usesTargeting = false
 
 position = Vector2( -2788.56, -1244.74 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2946,7 +2946,7 @@ usesTargeting = false
 
 position = Vector2( -3209.92, -3056.59 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2957,7 +2957,7 @@ usesTargeting = false
 
 position = Vector2( -2325.03, -346.253 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2968,7 +2968,7 @@ usesTargeting = false
 
 position = Vector2( -2746.39, -2158.11 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2979,7 +2979,7 @@ usesTargeting = false
 
 position = Vector2( -2533.94, -1264.1 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -2990,7 +2990,7 @@ usesTargeting = false
 
 position = Vector2( -2448.23, -3138.87 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3001,7 +3001,7 @@ usesTargeting = false
 
 position = Vector2( -2416.77, -3166.63 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3012,7 +3012,7 @@ usesTargeting = false
 
 position = Vector2( -2389.01, -3194.39 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3023,7 +3023,7 @@ usesTargeting = false
 
 position = Vector2( -2557.44, -295.436 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3034,7 +3034,7 @@ usesTargeting = false
 
 position = Vector2( -2978.8, -2107.29 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3045,7 +3045,7 @@ usesTargeting = false
 
 position = Vector2( -2766.35, -1213.28 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3056,7 +3056,7 @@ usesTargeting = false
 
 position = Vector2( -3187.71, -3025.13 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3067,7 +3067,7 @@ usesTargeting = false
 
 position = Vector2( -2302.82, -314.793 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3078,7 +3078,7 @@ usesTargeting = false
 
 position = Vector2( -2724.18, -2126.65 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3089,7 +3089,7 @@ usesTargeting = false
 
 position = Vector2( -2431.76, -982.469 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3100,7 +3100,7 @@ usesTargeting = false
 
 position = Vector2( -2933.09, -3044.49 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3111,7 +3111,7 @@ usesTargeting = false
 
 position = Vector2( -2526.81, -277.63 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3122,7 +3122,7 @@ usesTargeting = false
 
 position = Vector2( -2948.17, -2089.48 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3133,7 +3133,7 @@ usesTargeting = false
 
 position = Vector2( -2735.73, -1195.47 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3144,7 +3144,7 @@ usesTargeting = false
 
 position = Vector2( -3157.09, -3007.33 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3155,7 +3155,7 @@ usesTargeting = false
 
 position = Vector2( -2275.06, -285.183 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3166,7 +3166,7 @@ usesTargeting = false
 
 position = Vector2( -2437.33, -2463.46 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3177,7 +3177,7 @@ usesTargeting = false
 
 position = Vector2( -2411.43, -2422.74 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3188,7 +3188,7 @@ usesTargeting = false
 
 position = Vector2( -2461.42, -956.96 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3199,7 +3199,7 @@ usesTargeting = false
 
 position = Vector2( -2905.33, -3014.88 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3210,7 +3210,7 @@ usesTargeting = false
 
 position = Vector2( -2499.05, -248.021 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3221,7 +3221,7 @@ usesTargeting = false
 
 position = Vector2( -2920.41, -2059.87 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3232,7 +3232,7 @@ usesTargeting = false
 
 position = Vector2( -2707.97, -1165.86 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3243,7 +3243,7 @@ usesTargeting = false
 
 position = Vector2( -3129.33, -2977.72 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3254,7 +3254,7 @@ usesTargeting = false
 
 position = Vector2( -2247.3, -255.573 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3265,7 +3265,7 @@ usesTargeting = false
 
 position = Vector2( -2381.82, -2387.58 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3276,7 +3276,7 @@ usesTargeting = false
 
 position = Vector2( -2411.1, -1017.57 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3287,7 +3287,7 @@ usesTargeting = false
 
 position = Vector2( -2877.57, -2985.27 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3298,7 +3298,7 @@ usesTargeting = false
 
 position = Vector2( -2473.57, -225.86 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3309,7 +3309,7 @@ usesTargeting = false
 
 position = Vector2( -2894.93, -2037.71 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3320,7 +3320,7 @@ usesTargeting = false
 
 position = Vector2( -2682.48, -1143.7 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3331,7 +3331,7 @@ usesTargeting = false
 
 position = Vector2( -3103.84, -2955.56 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3342,7 +3342,7 @@ usesTargeting = false
 
 position = Vector2( -2221.82, -233.413 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3353,7 +3353,7 @@ usesTargeting = false
 
 position = Vector2( -2380.39, -2385.78 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3364,7 +3364,7 @@ usesTargeting = false
 
 position = Vector2( -2389.72, -1054.88 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3375,7 +3375,7 @@ usesTargeting = false
 
 position = Vector2( -2852.09, -2963.11 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3386,7 +3386,7 @@ usesTargeting = false
 
 position = Vector2( -2455.84, -204.808 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3397,7 +3397,7 @@ usesTargeting = false
 
 position = Vector2( -2877.2, -2016.66 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3408,7 +3408,7 @@ usesTargeting = false
 
 position = Vector2( -2664.75, -1122.65 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3419,7 +3419,7 @@ usesTargeting = false
 
 position = Vector2( -3086.11, -2934.5 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3430,7 +3430,7 @@ usesTargeting = false
 
 position = Vector2( -2204.09, -212.36 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3441,7 +3441,7 @@ usesTargeting = false
 
 position = Vector2( -2362.66, -2364.73 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3452,7 +3452,7 @@ usesTargeting = false
 
 position = Vector2( -2335.08, -1105.6 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3463,7 +3463,7 @@ usesTargeting = false
 
 position = Vector2( -2294.07, -1142.51 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3474,7 +3474,7 @@ usesTargeting = false
 
 position = Vector2( -2263.31, -1181.47 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3485,7 +3485,7 @@ usesTargeting = false
 
 position = Vector2( -2230.5, -1208.12 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3496,7 +3496,7 @@ usesTargeting = false
 
 position = Vector2( -2201.79, -1242.98 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3507,7 +3507,7 @@ usesTargeting = false
 
 position = Vector2( -2168.98, -1277.84 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3518,7 +3518,7 @@ usesTargeting = false
 
 position = Vector2( -2146.43, -1304.5 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3529,7 +3529,7 @@ usesTargeting = false
 
 position = Vector2( -2115.67, -1325 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3540,7 +3540,7 @@ usesTargeting = false
 
 position = Vector2( -2093.11, -1361.02 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3551,7 +3551,7 @@ usesTargeting = false
 
 position = Vector2( -2056.84, -1388.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3562,7 +3562,7 @@ usesTargeting = false
 
 position = Vector2( -2028.95, -1414.02 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3573,7 +3573,7 @@ usesTargeting = false
 
 position = Vector2( -1983.91, -1716.12 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3584,7 +3584,7 @@ usesTargeting = false
 
 position = Vector2( -1959.3, -1683.31 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3595,7 +3595,7 @@ usesTargeting = false
 
 position = Vector2( -1930.59, -1646.4 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3606,7 +3606,7 @@ usesTargeting = false
 
 position = Vector2( -1908.04, -1613.59 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3617,7 +3617,7 @@ usesTargeting = false
 
 position = Vector2( -1877.28, -1578.73 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3628,7 +3628,7 @@ usesTargeting = false
 
 position = Vector2( -1852.67, -1550.03 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3639,7 +3639,7 @@ usesTargeting = false
 
 position = Vector2( -1812.15, -1509.41 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3650,7 +3650,7 @@ usesTargeting = false
 
 position = Vector2( -1783.45, -1466.35 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3661,7 +3661,7 @@ usesTargeting = false
 
 position = Vector2( -1742.44, -1425.34 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3672,7 +3672,7 @@ usesTargeting = false
 
 position = Vector2( -1721.93, -1392.53 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3683,7 +3683,7 @@ usesTargeting = false
 
 position = Vector2( -1752.69, -1359.72 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3694,7 +3694,7 @@ usesTargeting = false
 
 position = Vector2( -1789.6, -1316.66 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3705,7 +3705,7 @@ usesTargeting = false
 
 position = Vector2( -1820.36, -1281.8 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3716,7 +3716,7 @@ usesTargeting = false
 
 position = Vector2( -2014.59, -1752.38 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3727,7 +3727,7 @@ usesTargeting = false
 
 position = Vector2( -2034.12, -1769.12 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3738,7 +3738,7 @@ usesTargeting = false
 
 position = Vector2( -2834.36, -2942.05 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3749,7 +3749,7 @@ usesTargeting = false
 
 position = Vector2( -2431.46, -187.079 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3760,7 +3760,7 @@ usesTargeting = false
 
 position = Vector2( -2852.82, -1998.93 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3771,7 +3771,7 @@ usesTargeting = false
 
 position = Vector2( -2640.38, -1104.92 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3782,7 +3782,7 @@ usesTargeting = false
 
 position = Vector2( -3061.74, -2916.77 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3793,7 +3793,7 @@ usesTargeting = false
 
 position = Vector2( -2179.71, -194.631 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3804,7 +3804,7 @@ usesTargeting = false
 
 position = Vector2( -2338.28, -2347 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3815,7 +3815,7 @@ usesTargeting = false
 
 position = Vector2( -1919.05, -1180.14 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3826,7 +3826,7 @@ usesTargeting = false
 
 position = Vector2( -2809.98, -2924.33 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3837,7 +3837,7 @@ usesTargeting = false
 
 position = Vector2( -2409.3, -152.73 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3848,7 +3848,7 @@ usesTargeting = false
 
 position = Vector2( -2830.66, -1964.58 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3859,7 +3859,7 @@ usesTargeting = false
 
 position = Vector2( -2618.22, -1070.57 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3870,7 +3870,7 @@ usesTargeting = false
 
 position = Vector2( -3039.58, -2882.42 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3881,7 +3881,7 @@ usesTargeting = false
 
 position = Vector2( -2157.55, -160.282 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3892,7 +3892,7 @@ usesTargeting = false
 
 position = Vector2( -2693.65, -2090.57 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3903,7 +3903,7 @@ usesTargeting = false
 
 position = Vector2( -2662.96, -2054.97 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3914,7 +3914,7 @@ usesTargeting = false
 
 position = Vector2( -2628.58, -2013.23 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3925,7 +3925,7 @@ usesTargeting = false
 
 position = Vector2( -2607.71, -1991.13 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3936,7 +3936,7 @@ usesTargeting = false
 
 position = Vector2( -2588.06, -1969.03 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3947,7 +3947,7 @@ usesTargeting = false
 
 position = Vector2( -2557.37, -1934.65 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3958,7 +3958,7 @@ usesTargeting = false
 
 position = Vector2( -2531.59, -1899.05 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3969,7 +3969,7 @@ usesTargeting = false
 
 position = Vector2( -2499.67, -1868.35 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3980,7 +3980,7 @@ usesTargeting = false
 
 position = Vector2( -2499.67, -1868.35 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -3991,7 +3991,7 @@ usesTargeting = false
 
 position = Vector2( -1853.83, -1258.57 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4002,7 +4002,7 @@ usesTargeting = false
 
 position = Vector2( -2787.82, -2889.98 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4013,7 +4013,7 @@ usesTargeting = false
 
 position = Vector2( -2804.07, -1937.99 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4024,7 +4024,7 @@ usesTargeting = false
 
 position = Vector2( -2591.62, -1043.98 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4035,7 +4035,7 @@ usesTargeting = false
 
 position = Vector2( -3012.98, -2855.83 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4046,7 +4046,7 @@ usesTargeting = false
 
 position = Vector2( -2771.94, -1900.32 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4057,7 +4057,7 @@ usesTargeting = false
 
 position = Vector2( -2559.49, -1006.31 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4068,7 +4068,7 @@ usesTargeting = false
 
 position = Vector2( -2980.85, -2818.16 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4079,7 +4079,7 @@ usesTargeting = false
 
 position = Vector2( -2753.76, -1875.32 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4090,7 +4090,7 @@ usesTargeting = false
 
 position = Vector2( -2541.31, -981.314 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4101,7 +4101,7 @@ usesTargeting = false
 
 position = Vector2( -2955.86, -2784.08 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4112,7 +4112,7 @@ usesTargeting = false
 
 position = Vector2( -2989.94, -2765.9 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4123,7 +4123,7 @@ usesTargeting = false
 
 position = Vector2( -3010.39, -2738.64 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4134,7 +4134,7 @@ usesTargeting = false
 
 position = Vector2( -3039.92, -2700.01 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4145,7 +4145,7 @@ usesTargeting = false
 
 position = Vector2( -3069.46, -2675.02 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4156,7 +4156,7 @@ usesTargeting = false
 
 position = Vector2( -3092.18, -2645.48 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4167,7 +4167,7 @@ usesTargeting = false
 
 position = Vector2( -3126.26, -2613.67 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4178,7 +4178,7 @@ usesTargeting = false
 
 position = Vector2( -3158.07, -2572.77 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4189,7 +4189,7 @@ usesTargeting = false
 
 position = Vector2( -3196.7, -2538.69 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4200,7 +4200,7 @@ usesTargeting = false
 
 position = Vector2( -3221.69, -2502.34 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4211,7 +4211,7 @@ usesTargeting = false
 
 position = Vector2( -3251.23, -2468.26 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4222,7 +4222,7 @@ usesTargeting = false
 
 position = Vector2( -3287.58, -2434.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4233,7 +4233,7 @@ usesTargeting = false
 
 position = Vector2( -3287.58, -2434.18 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 200
 fire_rate = 30.0
 bulletSpeed = 3
@@ -4394,7 +4394,6 @@ usesTargeting = false
 
 position = Vector2( -30.1387, 664.58 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
@@ -4403,7 +4402,6 @@ rotatingTurret = false
 
 position = Vector2( 2721.86, 664.524 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
@@ -4620,7 +4618,6 @@ usesTargeting = false
 
 position = Vector2( -30.1387, 729.58 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
@@ -4629,7 +4626,6 @@ rotatingTurret = false
 
 position = Vector2( 2721.86, 729.524 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
@@ -5246,7 +5242,6 @@ usesTargeting = false
 
 position = Vector2( -30.1387, 920.492 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
@@ -5255,7 +5250,6 @@ rotatingTurret = false
 
 position = Vector2( 2721.86, 920.437 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
@@ -5352,7 +5346,6 @@ usesTargeting = false
 
 position = Vector2( -31.3664, 543.755 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
@@ -5361,7 +5354,6 @@ rotatingTurret = false
 
 position = Vector2( 2720.63, 543.699 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 detect_radius = 200
 bulletSpeed = 16
 rotatingTurret = false
