@@ -6,10 +6,10 @@
 [ext_resource path="res://Scenes/UI_Life.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 25.0
+extents = Vector2( 15.3528, 10 )
 
 [sub_resource type="Animation" id=2]
 
@@ -200,11 +200,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Damageable",
-"Player",
 "Persist",
 "team_Player",
+"Player",
 ]]
 
 input_pickable = false
@@ -217,9 +217,9 @@ NORMAL_SPEED = 500
 
 [node name="Collision" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 1.57889, 8.94703 )
-scale = Vector2( 0.960912, 0.945948 )
-shape = SubResource( 9 )
+position = Vector2( 1.57889, 8.73373 )
+scale = Vector2( 0.960912, 2.4959 )
+shape = SubResource( 1 )
 
 [node name="RotationNode" type="Node2D" parent="." index="1"]
 

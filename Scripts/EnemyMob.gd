@@ -253,6 +253,8 @@ func idleAnimationDelay():
 	$IdleAnimationTimer.set_wait_time(randi()%5+5) # Set Timer's delay to "sec" seconds
 	$IdleAnimationTimer.start() # Start the Timer counting down
 	yield($IdleAnimationTimer, "timeout") # Wait for the timer to wind down
-	if not transformed and not transforming and not target:
+	if not transformed and not transforming:
 		idleAnimationPlaying = true
+	else:
+		idleAnimationPlaying = false
 	idleAnimationDelay()

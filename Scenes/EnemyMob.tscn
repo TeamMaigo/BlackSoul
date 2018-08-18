@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/BulletLinear.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/soldier sprite sheet idle.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -147,7 +147,7 @@ tracks/0/keys = {
 "values": [ 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=10]
 
 resource_name = "leftUntransform"
 length = 1.1
@@ -166,9 +166,8 @@ tracks/0/keys = {
 "values": [ 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
-resource_name = "leftWalk"
 length = 0.8
 loop = true
 step = 0.1
@@ -185,9 +184,8 @@ tracks/0/keys = {
 "values": [ 96, 97, 98, 99, 100, 101, 102, 103 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
-resource_name = "rightHostileIdle"
 length = 0.6
 loop = true
 step = 0.1
@@ -204,9 +202,8 @@ tracks/0/keys = {
 "values": [ 88, 89, 90, 91, 92, 93 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 
-resource_name = "rightShoot"
 length = 0.3
 loop = false
 step = 0.1
@@ -223,9 +220,8 @@ tracks/0/keys = {
 "values": [ 115, 116, 117 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 
-resource_name = "rightTransform"
 length = 1.1
 loop = false
 step = 0.1
@@ -242,7 +238,7 @@ tracks/0/keys = {
 "values": [ 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 
 resource_name = "rightUntransform"
 length = 1.1
@@ -261,9 +257,8 @@ tracks/0/keys = {
 "values": [ 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=16]
 
-resource_name = "rightWalk"
 length = 0.8
 loop = true
 step = 0.1
@@ -280,7 +275,7 @@ tracks/0/keys = {
 "values": [ 104, 105, 106, 107, 108, 109, 110, 111 ]
 }
 
-[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
+[node name="EnemyMob" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
@@ -322,7 +317,7 @@ _sections_unfolded = [ "Animation", "Offset", "Visibility" ]
 visible = false
 position = Vector2( 0.771077, -0.0903368 )
 scale = Vector2( 1.42571, 2.84467 )
-shape = SubResource( 15 )
+shape = SubResource( 1 )
 
 [node name="Visibility" type="Area2D" parent="." index="2"]
 
@@ -381,13 +376,13 @@ anims/idleRight2 = SubResource( 6 )
 anims/leftHostileIdle = SubResource( 7 )
 anims/leftShoot = SubResource( 8 )
 anims/leftTransform = SubResource( 9 )
-anims/leftUntransform = SubResource( 16 )
-anims/leftWalk = SubResource( 10 )
-anims/rightHostileIdle = SubResource( 11 )
-anims/rightShoot = SubResource( 12 )
-anims/rightTransform = SubResource( 13 )
-anims/rightUntransform = SubResource( 17 )
-anims/rightWalk = SubResource( 14 )
+anims/leftUntransform = SubResource( 10 )
+anims/leftWalk = SubResource( 11 )
+anims/rightHostileIdle = SubResource( 12 )
+anims/rightShoot = SubResource( 13 )
+anims/rightTransform = SubResource( 14 )
+anims/rightUntransform = SubResource( 15 )
+anims/rightWalk = SubResource( 16 )
 blend_times = [  ]
 
 [node name="AggroTimer" type="Timer" parent="." index="6"]
