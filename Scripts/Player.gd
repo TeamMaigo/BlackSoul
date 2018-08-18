@@ -36,7 +36,7 @@ var dashInvuln = false
 var minDashInvulnSpeed = 1300
 var maxDashInvulnSpeed = 1800
 var piecesOfHeart = 0
-var trauma
+var trauma = 0
 
 func _ready():
 	set_physics_process(true)
@@ -58,6 +58,17 @@ func _physics_process(delta):
 func updateCamera():
 	var targetPosition  = (mousePos*0.3+global_position*0.7)
 	$Camera2D.global_position = (targetPosition*0.8+$Camera2D.global_position*0.2)
+	var multiplier = randi()%2
+	if multiplier == 0:
+		multiplier = -1
+	var offsetValue = (trauma*trauma) * 0.001 * multiplier
+	#$Camera2D.offset = Vector2(offsetValue, offsetValue)
+	$Camera2D.rotation = trauma * 0.0001 * multiplier
+	if trauma != 0:
+		trauma -= 2.5
+		if trauma < 0:
+			trauma = 0
+	
 
 func controls_loop():
 	var LEFT	= Input.is_action_pressed("ui_left")
@@ -87,6 +98,7 @@ func controls_loop():
 		MOTION_SPEED = maxDashSpeed
 		dashAvailable = false
 		dashDelay(DASH_DELAY)	# Start dash cooldown timer
+		trauma = 70
 
 	if SWAP && swapAvailable:
 		playerPos = SpriteNode.position
@@ -96,6 +108,7 @@ func controls_loop():
 			if result.collider.is_in_group("Enemy"):
 				swappedRecently = true
 				swapPlaces(self, result.collider)
+				trauma = 110
 		swapAvailable = false
 		SpriteNode.set("modulate",Color(1,0.3,0.3,1))
 		swapInvuln = true

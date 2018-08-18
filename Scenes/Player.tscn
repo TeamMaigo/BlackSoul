@@ -361,7 +361,7 @@ autostart = false
 [node name="Camera2D" type="Camera2D" parent="." index="11"]
 
 anchor_mode = 1
-rotating = false
+rotating = true
 current = true
 zoom = Vector2( 1.7, 1.7 )
 limit_left = -10000000
