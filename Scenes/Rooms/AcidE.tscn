@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=8]
 
-[node name="LabRoom" type="Node"]
+[node name="LabRoom" type="Node" index="0"]
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 
@@ -27,7 +29,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -2686971, 0, 0, -2686970, 0, 0, -2686969, 0, 0, -2686968, 0, 0, -2686967, 0, 0, -2621435, 0, 0, -2621431, 0, 0, -2555899, 0, 0, -2555895, 0, 0, -2490363, 0, 0, -2490359, 0, 0, -2359299, 0, 0, -2359298, 0, 0, -2359297, 0, 0, -2424832, 0, 0, -2424831, 0, 0, -2424830, 0, 0, -2424829, 0, 0, -2424828, 0, 0, -2424827, 0, 0, -2424826, 0, 0, -2424824, 0, 0, -2424823, 0, 0, -2424822, 0, 0, -2424821, 0, 0, -2424820, 0, 0, -2424819, 0, 0, -2424818, 0, 0, -2424817, 0, 0, -2293763, 0, 0, -2359281, 0, 0, -2228227, 0, 0, -2293745, 0, 0, -2162691, 0, 0, -2162690, 0, 0, -2228223, 0, 0, -2228222, 0, 0, -2228221, 0, 0, -2228220, 0, 0, -2228219, 0, 0, -2228218, 0, 0, -2228217, 0, 0, -2228216, 0, 0, -2228215, 0, 0, -2228214, 0, 0, -2228213, 0, 0, -2228209, 0, 0, -2097155, 0, 0, -2162677, 0, 0, -2162673, 0, 0, -2031619, 0, 0, -2097141, 0, 0, -2097137, 0, 0, -1966083, 0, 0, -2031605, 0, 0, -2031601, 0, 0, -1900547, 0, 0, -1966069, 0, 0, -1966065, 0, 0, -1835011, 0, 0, -1900533, 0, 0, -1900529, 0, 0, -1769475, 0, 0, -1834997, 0, 0, -1834993, 0, 0, -1703939, 0, 0, -1703938, 0, 0, -1703937, 0, 0, -1769472, 0, 0, -1769471, 0, 0, -1769470, 0, 0, -1769469, 0, 0, -1769468, 0, 0, -1769467, 0, 0, -1769466, 0, 0, -1769465, 0, 0, -1769462, 0, 0, -1769461, 0, 0, -1769457, 0, 0, -1638403, 0, 0, -1703925, 0, 0, -1703921, 0, 0, -1572867, 0, 0, -1638389, 0, 0, -1638385, 0, 0, -1507331, 0, 0, -1572853, 0, 0, -1572849, 0, 0, -1441795, 0, 0, -1507317, 0, 0, -1507313, 0, 0, -1376259, 0, 0, -1441781, 0, 0, -1441777, 0, 0, -1310723, 0, 0, -1376245, 0, 0, -1376241, 0, 0, -1245187, 0, 0, -1310709, 0, 0, -1310705, 0, 0, -1179651, 0, 0, -1179650, 0, 0, -1245183, 0, 0, -1245182, 0, 0, -1245181, 0, 0, -1245180, 0, 0, -1245179, 0, 0, -1245178, 0, 0, -1245177, 0, 0, -1245176, 0, 0, -1245175, 0, 0, -1245174, 0, 0, -1245173, 0, 0, -1245169, 0, 0, -1114115, 0, 0, -1179637, 0, 0, -1179633, 0, 0, -1048579, 0, 0, -1114101, 0, 0, -1114097, 0, 0, -983043, 0, 0, -1048565, 0, 0, -1048561, 0, 0, -917507, 0, 0, -983029, 0, 0, -983025, 0, 0, -851971, 0, 0, -917493, 0, 0, -917489, 0, 0, -786435, 0, 0, -786434, 0, 0, -786433, 0, 0, -851968, 0, 0, -851967, 0, 0, -851966, 0, 0, -851965, 0, 0, -851964, 0, 0, -851960, 0, 0, -851959, 0, 0, -851958, 0, 0, -851957, 0, 0, -851953, 0, 0, -786428, 0, 0, -786424, 0, 0, -786421, 0, 0, -786420, 0, 0, -786417, 0, 0, -720892, 0, 0, -720888, 0, 0, -720884, 0, 0, -720881, 0, 0, -655356, 0, 0, -655352, 0, 0, -655348, 0, 0, -655345, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589816, 0, 0, -589812, 0, 0, -589809, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524280, 0, 0, -524276, 0, 0, -524273, 0, 0, -393217, 0, 0, -458744, 0, 0, -458740, 0, 0, -458737, 0, 0, -327681, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393204, 0, 0, -393201, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -196614, 0, 0, -262127, 0, 0, -131078, 0, 0, -196591, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -1, 0, 0, -65533, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, 65535, 0, 0, 3, 0, 0, 131071, 0, 0, 65539, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0 )
+tile_data = PoolIntArray( -2686971, 0, 0, -2686970, 0, 0, -2686969, 0, 0, -2686968, 0, 0, -2686967, 0, 0, -2621435, 0, 0, -2621431, 0, 0, -2555899, 0, 0, -2555895, 0, 0, -2490363, 0, 0, -2490359, 0, 0, -2359299, 0, 0, -2359298, 0, 0, -2359297, 0, 0, -2424832, 0, 0, -2424831, 0, 0, -2424830, 0, 0, -2424829, 0, 0, -2424828, 0, 0, -2424827, 0, 0, -2424826, 0, 0, -2424824, 0, 0, -2424823, 0, 0, -2424822, 0, 0, -2424821, 0, 0, -2424820, 0, 0, -2424819, 0, 0, -2424818, 0, 0, -2424817, 0, 0, -2293763, 0, 0, -2359281, 0, 0, -2228227, 0, 0, -2293745, 0, 0, -2162691, 0, 0, -2162690, 0, 0, -2228223, 0, 0, -2228222, 0, 0, -2228221, 0, 0, -2228220, 0, 0, -2228219, 0, 0, -2228218, 0, 0, -2228217, 0, 0, -2228216, 0, 0, -2228215, 0, 0, -2228214, 0, 0, -2228213, 0, 0, -2228209, 0, 0, -2097155, 0, 0, -2162687, 0, 0, -2162677, 0, 0, -2162673, 0, 0, -2031619, 0, 0, -2097141, 0, 0, -2097137, 0, 0, -1966083, 0, 0, -2031608, 0, 0, -2031605, 0, 0, -2031601, 0, 0, -1900547, 0, 0, -1966069, 0, 0, -1966065, 0, 0, -1835011, 0, 0, -1900533, 0, 0, -1900529, 0, 0, -1769475, 0, 0, -1834997, 0, 0, -1834993, 0, 0, -1703939, 0, 0, -1703938, 0, 0, -1703937, 0, 0, -1769472, 0, 0, -1769471, 0, 0, -1769470, 0, 0, -1769469, 0, 0, -1769468, 0, 0, -1769467, 0, 0, -1769466, 0, 0, -1769462, 0, 0, -1769461, 0, 0, -1769457, 0, 0, -1638403, 0, 0, -1703925, 0, 0, -1703921, 0, 0, -1572867, 0, 0, -1638389, 0, 0, -1638385, 0, 0, -1507331, 0, 0, -1572853, 0, 0, -1572849, 0, 0, -1441795, 0, 0, -1507317, 0, 0, -1507313, 0, 0, -1376259, 0, 0, -1441781, 0, 0, -1441777, 0, 0, -1310723, 0, 0, -1376245, 0, 0, -1376241, 0, 0, -1245187, 0, 0, -1310709, 0, 0, -1310705, 0, 0, -1179651, 0, 0, -1179650, 0, 0, -1245183, 0, 0, -1245182, 0, 0, -1245181, 0, 0, -1245180, 0, 0, -1245179, 0, 0, -1245178, 0, 0, -1245177, 0, 0, -1245176, 0, 0, -1245175, 0, 0, -1245174, 0, 0, -1245173, 0, 0, -1245169, 0, 0, -1114115, 0, 0, -1179637, 0, 0, -1179633, 0, 0, -1048579, 0, 0, -1114101, 0, 0, -1114097, 0, 0, -983043, 0, 0, -1048565, 0, 0, -1048561, 0, 0, -917507, 0, 0, -983029, 0, 0, -983025, 0, 0, -851971, 0, 0, -917493, 0, 0, -917489, 0, 0, -786435, 0, 0, -786434, 0, 0, -786433, 0, 0, -851968, 0, 0, -851967, 0, 0, -851966, 0, 0, -851965, 0, 0, -851964, 0, 0, -851960, 0, 0, -851959, 0, 0, -851958, 0, 0, -851957, 0, 0, -851953, 0, 0, -786428, 0, 0, -786424, 0, 0, -786421, 0, 0, -786420, 0, 0, -786417, 0, 0, -720892, 0, 0, -720888, 0, 0, -720884, 0, 0, -720881, 0, 0, -655356, 0, 0, -655352, 0, 0, -655348, 0, 0, -655345, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589816, 0, 0, -589812, 0, 0, -589809, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524280, 0, 0, -524276, 0, 0, -524273, 0, 0, -393217, 0, 0, -458744, 0, 0, -458740, 0, 0, -458737, 0, 0, -327681, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393204, 0, 0, -393201, 0, 0, -262150, 0, 0, -262149, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -196614, 0, 0, -262127, 0, 0, -131078, 0, 0, -196591, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -1, 0, 0, -65533, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, 65535, 0, 0, 3, 0, 0, 131071, 0, 0, 65539, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -60,67 +62,602 @@ position = Vector2( 241.966, -194.803 )
 [node name="Turret" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 1030.51, -193.742 )
-trackingDelayTime = 0.25
 
 [node name="Room1Turrets" type="Node" parent="." index="7"]
 
+editor/display_folded = true
+
 [node name="Turret2" parent="Room1Turrets" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 671.45, -1116.77 )
+position = Vector2( 672, -1120 )
 rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 3
 rotatingTurret = false
 usesTargeting = false
-trackingDelayTime = 0.25
 
 [node name="Turret3" parent="Room1Turrets" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 671.45, -1052.42 )
+position = Vector2( 672, -1056 )
 rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
-trackingDelayTime = 0.25
 
 [node name="Turret4" parent="Room1Turrets" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 671.45, -988.728 )
+position = Vector2( 672, -992 )
 rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 3
 rotatingTurret = false
 usesTargeting = false
-trackingDelayTime = 0.25
 
 [node name="Turret5" parent="Room1Turrets" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 671.45, -924.376 )
+position = Vector2( 672, -928 )
 rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
-trackingDelayTime = 0.25
 
 [node name="Turret6" parent="Room1Turrets" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 672.113, -858.697 )
+position = Vector2( 672, -864 )
 rotation = -3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 3
 rotatingTurret = false
 usesTargeting = false
-trackingDelayTime = 0.25
 
-[node name="PieceOfHeart" parent="." index="8" instance=ExtResource( 6 )]
+[node name="Room2Turrets" type="Node" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="Turret1" parent="Room2Turrets" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1632 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret8" parent="Room2Turrets" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1632 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 2.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret15" parent="Room2Turrets" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1632 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 3.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret16" parent="Room2Turrets" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1632 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 4.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret17" parent="Room2Turrets" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1632 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 5.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret2" parent="Room2Turrets" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1568 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret9" parent="Room2Turrets" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1568 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 1.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret18" parent="Room2Turrets" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1568 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 3.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret19" parent="Room2Turrets" index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1568 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 4.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret20" parent="Room2Turrets" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1568 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 5.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret3" parent="Room2Turrets" index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1504 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret10" parent="Room2Turrets" index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1504 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 1.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret21" parent="Room2Turrets" index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1504 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 2.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret22" parent="Room2Turrets" index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1504 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 4.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret23" parent="Room2Turrets" index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1504 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 5.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret4" parent="Room2Turrets" index="15" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1440 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret11" parent="Room2Turrets" index="16" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1440 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 1.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret24" parent="Room2Turrets" index="17" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1440 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 2.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret25" parent="Room2Turrets" index="18" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1440 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 3.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret26" parent="Room2Turrets" index="19" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1440 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 5.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret5" parent="Room2Turrets" index="20" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1376 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret12" parent="Room2Turrets" index="21" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1376 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 1.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret27" parent="Room2Turrets" index="22" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1376 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 2.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret28" parent="Room2Turrets" index="23" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1376 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 3.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret29" parent="Room2Turrets" index="24" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1376 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 4.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret6" parent="Room2Turrets" index="25" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1312 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 1.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret13" parent="Room2Turrets" index="26" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1312 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 2.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret30" parent="Room2Turrets" index="27" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1312 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 3.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret31" parent="Room2Turrets" index="28" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1312 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 4.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret32" parent="Room2Turrets" index="29" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1312 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 5.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret7" parent="Room2Turrets" index="30" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1248 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret14" parent="Room2Turrets" index="31" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1248 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 1.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret33" parent="Room2Turrets" index="32" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1248 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 2.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret34" parent="Room2Turrets" index="33" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1248 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 3.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret35" parent="Room2Turrets" index="34" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1248 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 4.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret36" parent="Room2Turrets" index="35" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1248 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 7.0
+firstShotDelay = 5.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Room3Turrets" type="Node" parent="." index="9"]
+
+[node name="Turret2" parent="Room3Turrets" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -2080 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret3" parent="Room3Turrets" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -2016 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret4" parent="Room3Turrets" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1888 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret5" parent="Room3Turrets" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1824 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret6" parent="Room3Turrets" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 672, -1760 )
+rotation = -3.14159
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret7" parent="Room3Turrets" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -96, -1760 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret9" parent="Room3Turrets" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 224, -1760 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret8" parent="Room3Turrets" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 160, -2080 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret10" parent="Room3Turrets" index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 224, -2080 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 1.5
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret11" parent="Room3Turrets" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( -32, -1952 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 2.0
+bulletSpeed = 2
+rotatingTurret = false
+usesTargeting = false
+
+[node name="SwitchDoor" parent="." index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 0, -2160 )
+rotation = -3.13985
+scale = Vector2( 2.5, 0.5 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="SwitchDoor2" parent="." index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 0, -2144 )
+rotation = -3.14159
+scale = Vector2( 2.5, 0.5 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="SwitchDoor3" parent="." index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 0, -2128 )
+rotation = -3.14159
+scale = Vector2( 2.5, 0.5 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="Switch" parent="." index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 480, -1696 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+on = true
+
+[node name="Switch2" parent="." index="14" instance=ExtResource( 7 )]
+
+position = Vector2( 32, -2080 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+on = true
+
+[node name="Switch3" parent="." index="15" instance=ExtResource( 7 )]
+
+position = Vector2( 672, -1952 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+on = true
+
+[node name="PieceOfHeart" parent="." index="16" instance=ExtResource( 8 )]
 
 position = Vector2( 478.982, -2465.27 )
+
+[connection signal="turn_off" from="Switch" to="SwitchDoor" method="_onDeactivate"]
+
+[connection signal="turn_off" from="Switch2" to="SwitchDoor2" method="_onDeactivate"]
+
+[connection signal="turn_off" from="Switch3" to="SwitchDoor3" method="_onDeactivate"]
 
 
