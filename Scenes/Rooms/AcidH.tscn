@@ -42,7 +42,7 @@ bulletSpeed = 20
 
 position = Vector2( 291.893, -28.2219 )
 rotation = 3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 100
 bulletSpeed = 10
 rotatingTurret = false
@@ -60,44 +60,53 @@ position = Vector2( -1155.18, 132.912 )
 newScene = "AcidG"
 transferGoalTemp = "B"
 
-[node name="TransferGoalA" parent="." index="4" instance=ExtResource( 4 )]
+[node name="TransferPointB2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -191.423, -1072.81 )
+newScene = "CoreA"
+
+[node name="TransferGoalA" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( -1153.18, -5.81189 )
 
-[node name="TransferGoalB" parent="." index="5" instance=ExtResource( 4 )]
+[node name="TransferGoalB" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 1591.74, 416.004 )
 
-[node name="BreakableBlock" parent="." index="6" instance=ExtResource( 5 )]
+[node name="TransferGoalC" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( -189.423, -949.063 )
+
+[node name="BreakableBlock" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 96.1307, 227.499 )
 respawnable = false
 
-[node name="HealthPickup" parent="." index="7" instance=ExtResource( 6 )]
+[node name="HealthPickup" parent="." index="9" instance=ExtResource( 6 )]
 
 position = Vector2( -614.889, 92.5054 )
 
-[node name="EnemyMob" parent="." index="8" instance=ExtResource( 7 )]
+[node name="EnemyMob" parent="." index="10" instance=ExtResource( 7 )]
 
 position = Vector2( -644.818, -469.329 )
 
-[node name="EnemyMob2" parent="." index="9" instance=ExtResource( 7 )]
+[node name="EnemyMob2" parent="." index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 221.741, -510.14 )
 
-[node name="EnemyMob3" parent="." index="10" instance=ExtResource( 7 )]
+[node name="EnemyMob3" parent="." index="12" instance=ExtResource( 7 )]
 
 position = Vector2( 1487.29, -60.2697 )
 
-[node name="EnemyMob4" parent="." index="11" instance=ExtResource( 7 )]
+[node name="EnemyMob4" parent="." index="13" instance=ExtResource( 7 )]
 
 position = Vector2( 1437.3, 82.8709 )
 
-[node name="EnemyMob5" parent="." index="12" instance=ExtResource( 7 )]
+[node name="EnemyMob5" parent="." index="14" instance=ExtResource( 7 )]
 
 position = Vector2( 1157.84, 266.909 )
 
-[node name="EnemyMob6" parent="." index="13" instance=ExtResource( 7 )]
+[node name="EnemyMob6" parent="." index="15" instance=ExtResource( 7 )]
 
 position = Vector2( 1207.82, -121.616 )
 
