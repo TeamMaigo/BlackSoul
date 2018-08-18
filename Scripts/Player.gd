@@ -36,6 +36,7 @@ var dashInvuln = false
 var minDashInvulnSpeed = 1300
 var maxDashInvulnSpeed = 1800
 var piecesOfHeart = 0
+var trauma
 
 func _ready():
 	set_physics_process(true)
@@ -46,11 +47,17 @@ func _ready():
 	updateHealthBar()
 
 func _physics_process(delta):
+	mousePos = get_global_mouse_position()
 	if playerControlEnabled:
 		controls_loop()
 		movement_loop()
 	speed_decay()
 	CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
+	updateCamera()
+
+func updateCamera():
+	var targetPosition  = (mousePos*0.3+global_position*0.7)
+	$Camera2D.global_position = (targetPosition*0.8+$Camera2D.global_position*0.2)
 
 func controls_loop():
 	var LEFT	= Input.is_action_pressed("ui_left")
@@ -83,7 +90,6 @@ func controls_loop():
 
 	if SWAP && swapAvailable:
 		playerPos = SpriteNode.position
-		mousePos = get_global_mouse_position()
 		var space_state = get_world_2d().direct_space_state
 		var result = space_state.intersect_ray(position, mousePos, [self], 5) # 5 refers to layer mask
 		if result:
