@@ -5,7 +5,7 @@
 [node name="BGMPlayer" type="AudioStreamPlayer" index="0"]
 
 stream = ExtResource( 1 )
-volume_db = 0.0
+volume_db = -40.0
 autoplay = false
 mix_target = 0
 bus = "Master"

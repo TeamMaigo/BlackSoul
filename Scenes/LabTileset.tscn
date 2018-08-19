@@ -15,7 +15,6 @@ position = Vector2( 33.5329, 34.0677 )
 
 [node name="Ceiling01" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 193.072, 0 )
 texture = ExtResource( 1 )
 vframes = 5
@@ -64,7 +63,6 @@ shape = SubResource( 1 )
 
 [node name="Ceiling03" type="Sprite" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 193.072, 67.6284 )
 texture = ExtResource( 1 )
 vframes = 5
