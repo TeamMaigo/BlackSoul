@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/LightController.tscn" type="PackedScene" id=2]
@@ -12,8 +12,9 @@
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/OffsetDiscContainer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=13]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -409,7 +410,6 @@ usesTargeting = false
 
 position = Vector2( 1232, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
@@ -419,7 +419,6 @@ usesTargeting = false
 
 position = Vector2( 1302, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 11
 rotatingTurret = false
@@ -429,7 +428,6 @@ usesTargeting = false
 
 position = Vector2( 1362, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 13
 rotatingTurret = false
@@ -439,7 +437,6 @@ usesTargeting = false
 
 position = Vector2( 1421, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 14
 rotatingTurret = false
@@ -449,7 +446,6 @@ usesTargeting = false
 
 position = Vector2( 1482, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 15
 rotatingTurret = false
@@ -459,7 +455,6 @@ usesTargeting = false
 
 position = Vector2( 1542, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 16
 rotatingTurret = false
@@ -469,7 +464,6 @@ usesTargeting = false
 
 position = Vector2( 1598, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 18
 rotatingTurret = false
@@ -479,7 +473,6 @@ usesTargeting = false
 
 position = Vector2( 1662, -68.9999 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 20
 rotatingTurret = false
@@ -520,5 +513,9 @@ fire_rate = 0.1
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+
+[node name="EnemyMob" parent="." index="10" instance=ExtResource( 13 )]
+
+position = Vector2( 1969, 319.507 )
 
 

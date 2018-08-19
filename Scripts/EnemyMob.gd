@@ -132,10 +132,14 @@ func checkForPlayer(target):
 
 func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
+	var origin = $RightProjectileOrigin.global_position
+	if isFacingLeft:
+		origin = $LeftProjectileOrigin.global_position
+		
 	var b = BulletType.instance()
-	var a = (pos - global_position).angle()
+	var a = (pos - origin).angle()
 	var dir = a + rand_range(-0.05, 0.05)
-	var startPos = global_position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
+	var startPos = origin + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 	b.start(startPos, dir, bulletSpeed)
 	setBulletProperties(b)
 	get_parent().add_child(b)
@@ -144,11 +148,15 @@ func shootBulletAtTarget(pos):
 
 func shootShotgunAtTarget(pos):
 	#Shoots a spray of bullets at the target position with some random variance
+	var origin = $RightProjectileOrigin.global_position
+	if isFacingLeft:
+		origin = $LeftProjectileOrigin.global_position
+	
 	for i in spreadAngles:
 		var b = BulletType.instance()
-		var a = (pos - global_position).angle()
+		var a = (pos - origin).angle()
 		var dir = a + rand_range(-0.05, 0.05)
-		var startPos = position + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
+		var startPos = origin + Vector2(bulletSpeed, 0).rotated(dir).normalized()*bulletOffset
 		b.start(startPos, a + deg2rad(i), bulletSpeed)
 		setBulletProperties(b)
 		get_parent().add_child(b)

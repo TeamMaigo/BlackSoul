@@ -297,7 +297,7 @@ shotgunBulletAmount = 3
 shotgunSpread = 20
 respawns = true
 trackingDelayTime = 0.25
-bulletOffset = 50
+bulletOffset = 10
 bulletRotationSpeed = 1.0
 bulletConeDegrees = 40.0
 bulletDecayTime = 999.0
@@ -403,9 +403,22 @@ autostart = false
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="LeftProjectileOrigin" type="Position2D" parent="." index="9"]
+
+visible = false
+position = Vector2( -18, -8 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="RightProjectileOrigin" type="Position2D" parent="." index="10"]
+
+visible = false
+position = Vector2( 18, -8 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 
