@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/OffsetDiscContainer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=13]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -145,47 +145,45 @@ __meta__ = {
 
 [node name="GlassBlocks" type="Node" parent="tileMap" index="1"]
 
-editor/display_folded = true
-
 [node name="Glass3" parent="tileMap/GlassBlocks" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 1241.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass2" parent="tileMap/GlassBlocks" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 1301.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass" parent="tileMap/GlassBlocks" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 1361.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass4" parent="tileMap/GlassBlocks" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1421.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass5" parent="tileMap/GlassBlocks" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 1481.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass6" parent="tileMap/GlassBlocks" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 1541.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass7" parent="tileMap/GlassBlocks" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 1601.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass8" parent="tileMap/GlassBlocks" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 1661.13, 258 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="GlassBlocks2" type="Node" parent="tileMap" index="2"]
 
@@ -194,84 +192,84 @@ editor/display_folded = true
 [node name="Glass3" parent="tileMap/GlassBlocks2" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 1241.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass2" parent="tileMap/GlassBlocks2" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 1301.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass" parent="tileMap/GlassBlocks2" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 1361.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass4" parent="tileMap/GlassBlocks2" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1421.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass5" parent="tileMap/GlassBlocks2" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 1481.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass6" parent="tileMap/GlassBlocks2" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 1541.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass7" parent="tileMap/GlassBlocks2" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 1601.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass8" parent="tileMap/GlassBlocks2" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 1661.13, 358 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="GlassBlocks3" type="Node" parent="tileMap" index="3"]
 
 [node name="Glass3" parent="tileMap/GlassBlocks3" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 1241.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass2" parent="tileMap/GlassBlocks3" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 1301.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass" parent="tileMap/GlassBlocks3" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 1361.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass4" parent="tileMap/GlassBlocks3" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1421.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass5" parent="tileMap/GlassBlocks3" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 1481.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass6" parent="tileMap/GlassBlocks3" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 1541.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass7" parent="tileMap/GlassBlocks3" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 1601.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Glass8" parent="tileMap/GlassBlocks3" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 1661.13, 458 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="LightInitializer" parent="." index="1" instance=ExtResource( 6 )]
 
@@ -516,6 +514,21 @@ usesTargeting = false
 
 [node name="EnemyMob" parent="." index="10" instance=ExtResource( 13 )]
 
-position = Vector2( 1969, 319.507 )
+position = Vector2( 2020, 316.507 )
+
+[node name="Glass9" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 1940, 259.507 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Glass10" parent="." index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 1938, 319.507 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Glass11" parent="." index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 1935, 376.507 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 
