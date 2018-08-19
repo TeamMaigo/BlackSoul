@@ -399,6 +399,14 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="audioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]

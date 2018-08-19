@@ -245,6 +245,18 @@ anims/rightStartup = SubResource( 9 )
 anims/upStartup = SubResource( 10 )
 blend_times = [  ]
 
+[node name="audioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="visibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="6"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]

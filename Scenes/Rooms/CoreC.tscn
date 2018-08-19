@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 
@@ -61,11 +61,11 @@ position = Vector2( -1146.49, -123.618 )
 
 [node name="TransferGoalB" parent="." index="7" instance=ExtResource( 4 )]
 
-position = Vector2( 2446.95, 253.312 )
+position = Vector2( 2450.37, 253.312 )
 
 [node name="TransferGoalC" parent="." index="8" instance=ExtResource( 4 )]
 
-position = Vector2( 2166.86, -779.56 )
+position = Vector2( 2160.01, -735.038 )
 
 [node name="TransferPoint" parent="." index="9" instance=ExtResource( 5 )]
 

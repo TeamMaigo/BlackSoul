@@ -51,11 +51,11 @@ func _deferred_goto_scene(path, transferGoalPath):
     # Instance the new scene
 	currentScene = scene.instance()
 	Global.currentScene = path
+	transferGoal = currentScene.get_node(transferGoalPath)
+	player.position = transferGoal.position
 
     # Add it to the active scene, as child of root
 	get_tree().get_root().get_node("World").add_child(currentScene)
-	transferGoal = currentScene.get_node(transferGoalPath)
-	player.position = transferGoal.position
 	player.lastTransferPoint = transferGoal.position
 	respawnPoint = transferGoal.position
     # optional, to make it compatible with the SceneTree.change_scene() API

@@ -213,6 +213,9 @@ func _on_threatRange_body_exited(body):
 	deaggroDelay(aggroTime)
 
 func shoot():
+	$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
+	$audioStreamPlayer.volume_db = Global.masterSound
+	$audioStreamPlayer.play()
 	if fireType == "singleFire":
 		shootBulletAtTarget(lastKnownTarget.position)
 	if fireType == "shotgun":

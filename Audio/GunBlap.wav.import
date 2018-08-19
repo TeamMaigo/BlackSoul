@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GunBlap.wav-4ae4374cf4f7b57ddd249611841ce26a.sample"
+
+[deps]
+
+source_file="res://Audio/GunBlap.wav"
+source_md5="4dc71f2fe6ea22cd25ca207eb01c141e"
+
+dest_files=[ "res://.import/GunBlap.wav-4ae4374cf4f7b57ddd249611841ce26a.sample" ]
+dest_md5="3990b50e79cc3374ead3ae52b886b0e0"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

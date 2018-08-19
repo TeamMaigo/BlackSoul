@@ -56,19 +56,21 @@ func _physics_process(delta):
 	updateCamera()
 
 func updateCamera():
-	var targetPosition  = (mousePos*0.3+global_position*0.7)
+	var targetPosition = (mousePos*0.3+global_position*0.7)
 	$Camera2D.global_position = (targetPosition*0.8+$Camera2D.global_position*0.2)
 	var multiplier = randi()%2
 	if multiplier == 0:
 		multiplier = -1
 	var offsetValue = (trauma*trauma) * 0.001 * multiplier
-	#$Camera2D.offset = Vector2(offsetValue, offsetValue)
+	$Camera2D.offset = Vector2(offsetValue, offsetValue)
 	$Camera2D.rotation = trauma * 0.0001 * multiplier
 	if trauma != 0:
 		trauma -= 2.5
 		if trauma < 0:
 			trauma = 0
-	
+
+func instantCameraUpdate():
+	$Camera2D.position = (get_global_mouse_position()*0.3+global_position*0.7)
 
 func controls_loop():
 	var LEFT	= Input.is_action_pressed("ui_left")
@@ -99,6 +101,9 @@ func controls_loop():
 		dashAvailable = false
 		dashDelay(DASH_DELAY)	# Start dash cooldown timer
 		trauma = 70
+		$PlayerAudio.stream = load("res://Audio/Warp.wav")
+		$PlayerAudio.volume_db = Global.masterSound
+		$PlayerAudio.play()
 
 	if SWAP && swapAvailable:
 		playerPos = SpriteNode.position
@@ -109,6 +114,9 @@ func controls_loop():
 				swappedRecently = true
 				swapPlaces(self, result.collider)
 				trauma = 110
+				$PlayerAudio.stream = load("res://Audio/Warp.wav")
+				$PlayerAudio.volume_db = Global.masterSound
+				$PlayerAudio.play()
 		swapAvailable = false
 		SpriteNode.set("modulate",Color(1,0.3,0.3,1))
 		swapInvuln = true
@@ -196,7 +204,7 @@ func takeDamage(damage):
 	if vulnerable and not swapInvuln and not dashInvuln:
 		vulnerable = false
 		trauma = 60
-		$PlayerAudio.stream = load("res://Audio/Wilhelm-Scream.wav")
+		$PlayerAudio.stream = load("res://Audio/HitSound.wav")
 		$PlayerAudio.volume_db = Global.masterSound
 		$PlayerAudio.play()
 		health -= damage

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Warp.wav-939d026b10cd00979ea9aa845a7247d5.sample"
+
+[deps]
+
+source_file="res://Audio/Warp.wav"
+source_md5="23cae02d816af687072a831f79841d4d"
+
+dest_files=[ "res://.import/Warp.wav-939d026b10cd00979ea9aa845a7247d5.sample" ]
+dest_md5="c3b211a186141d003c179e47a1532b30"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

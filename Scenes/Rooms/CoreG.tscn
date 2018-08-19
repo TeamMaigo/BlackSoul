@@ -37,7 +37,8 @@ __meta__ = {
 
 [node name="TransferPoint" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 3136.77, 827.916 )
+position = Vector2( 3139.86, 827.916 )
+newScene = "CoreG"
 
 [node name="TransferGoalA" parent="." index="1" instance=ExtResource( 3 )]
 
@@ -83,7 +84,7 @@ respawns = false
 
 [node name="Turret" parent="." index="8" instance=ExtResource( 5 )]
 
-position = Vector2( 1680.9, 862.532 )
+position = Vector2( 1691.95, 867.443 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
