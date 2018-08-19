@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -54,8 +54,8 @@ newScene = "CoreB"
 [node name="TransferPointA3" parent="." index="3" instance=ExtResource( 2 )]
 
 modulate = Color( 0.121094, 0.485016, 1, 1 )
-position = Vector2( 44.2276, -176.98 )
-scale = Vector2( 0.512604, 0.592607 )
+position = Vector2( 121.461, -91.3608 )
+scale = Vector2( 2.92614, 3.26821 )
 _sections_unfolded = [ "Visibility" ]
 newScene = "Level_Test"
 

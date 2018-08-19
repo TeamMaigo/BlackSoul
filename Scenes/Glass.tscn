@@ -71,6 +71,7 @@ tracks/0/keys = {
 
 [node name="Glass" type="StaticBody2D" groups=[
 "Damageable",
+"Breakable",
 "Shatterable",
 ]]
 

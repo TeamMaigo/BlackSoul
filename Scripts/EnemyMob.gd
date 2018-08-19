@@ -40,6 +40,8 @@ var idleAnimationPlaying = false
 var canMove = true
 var lastKnownTarget # Used to avoid enemies shooting blanks
 
+var breakableTargetPos = null
+
 signal enemyDeath
 
 func _ready():
@@ -108,6 +110,11 @@ func movement_loop():
 		var motion = moveDir.normalized() * MOTION_SPEED
 		if (lastKnownPlayerPos - position).length() > 10:
 			move_and_slide(motion)
+			var collisions = get_slide_count()
+			for i in range(collisions - 1, 0 -1, -1): # First collision takes priority
+				var collider = get_slide_collision(i).collider
+				if collider.is_in_group("Breakable"):
+					breakableTargetPos = collider.position
 		else:
 			lastKnownPlayerPos = null	# Reached the destination
 		if isFacingLeft:
@@ -224,10 +231,16 @@ func shoot():
 	$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
 	$audioStreamPlayer.volume_db = Global.masterSound
 	$audioStreamPlayer.play()
+	
+	var shootAtPos = lastKnownTarget.position
+	if breakableTargetPos != null:
+		shootAtPos = breakableTargetPos
+		breakableTargetPos = null
+	
 	if fireType == "singleFire":
-		shootBulletAtTarget(lastKnownTarget.position)
+		shootBulletAtTarget(shootAtPos)
 	if fireType == "shotgun":
-		shootShotgunAtTarget(lastKnownTarget.position)
+		shootShotgunAtTarget(shootAtPos)
 
 func _on_animationPlayer_animation_finished(anim_name):
 	if anim_name == "leftTransform":
