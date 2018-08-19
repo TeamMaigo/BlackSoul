@@ -49,7 +49,7 @@ newScene = "LabB"
 modulate = Color( 0.121094, 0.485016, 1, 1 )
 position = Vector2( -88.6827, -162.019 )
 _sections_unfolded = [ "Visibility" ]
-newScene = "CoreB"
+newScene = "AcidA"
 
 [node name="TransferPointA3" parent="." index="3" instance=ExtResource( 2 )]
 

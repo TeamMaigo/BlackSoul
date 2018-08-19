@@ -34,14 +34,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_physics_process(true)
-	if rotation > 3*PI/4 or rotation < -3*PI/4:
-		$animationPlayer.play("leftStartup")
-	elif rotation < 3*PI/4 and rotation > PI/4:
-		$animationPlayer.play("downStartup")
-	elif rotation < PI/4 and rotation > -PI/4:
-		$animationPlayer.play("rightStartup")
-	else:
-		$animationPlayer.play("upStartup")
+	activate()
 	fireAngle = rotation
 	rotation = 0
 	if usesTargeting:
@@ -113,13 +106,11 @@ func _on_Visibility_body_entered(body):
 		return
 	if usesTargeting && body.is_in_group("team_Player"):
 		target = body
-	$Sprite.self_modulate.r = 1.0
 
 func _on_Visibility_body_exited(body):
 	# connect this to the "body_exited" signal
 	if body == target:
 		target = null
-		$Sprite.self_modulate.r = 0.2
 
 func shootBulletAtTarget(pos):
 	#Shoots a bullet at the target position with some random variance
@@ -184,5 +175,27 @@ func setBulletProperties(b):
 
 func activate():
 	defeated = false
+	$Sprite.self_modulate = Color(1,1,1)
+	if rotation > 3*PI/4 or rotation < -3*PI/4:
+		$animationPlayer.play("leftStartup")
+	elif rotation < 3*PI/4 and rotation > PI/4:
+		$animationPlayer.play("downStartup")
+	elif rotation < PI/4 and rotation > -PI/4:
+		$animationPlayer.play("rightStartup")
+	else:
+		$animationPlayer.play("upStartup")
+	
 func deactivate():
 	defeated = true
+	if rotation > 3*PI/4 or rotation < -3*PI/4:
+		$animationPlayer.play("leftDeactivate")
+	elif rotation < 3*PI/4 and rotation > PI/4:
+		$animationPlayer.play("downDeactivate")
+	elif rotation < PI/4 and rotation > -PI/4:
+		$animationPlayer.play("rightDeactivate")
+	else:
+		$animationPlayer.play("upDeactivate")
+
+func _on_animationPlayer_animation_finished(anim_name):
+	if anim_name in ["leftDeactivate", "rightDeactivate", "downDeactivate", "upDeactivate"]:
+		$Sprite.self_modulate = Color(1,0,0)
