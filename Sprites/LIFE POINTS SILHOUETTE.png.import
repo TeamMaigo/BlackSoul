@@ -7,7 +7,10 @@ path="res://.import/LIFE POINTS SILHOUETTE.png-292f39513778e8ee3d0c7b3f8b9f41f7.
 [deps]
 
 source_file="res://Sprites/LIFE POINTS SILHOUETTE.png"
+source_md5="37212928592284769655d4e089193331"
+
 dest_files=[ "res://.import/LIFE POINTS SILHOUETTE.png-292f39513778e8ee3d0c7b3f8b9f41f7.stex" ]
+dest_md5="6ad3a26585d5d948e2e524f1edcb2dfd"
 
 [params]
 

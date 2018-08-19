@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=10]
 
-[node name="tileMap" type="TileMap" index="0"]
+[node name="tileMap" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -82,26 +82,25 @@ position = Vector2( 1239.27, 2071.14 )
 fireType = "shotgun"
 respawns = false
 
-[node name="Turret" parent="." index="8" instance=ExtResource( 5 )]
-
-position = Vector2( 1691.95, 867.443 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-bulletSpeed = 10
-rotatingTurret = false
-usesTargeting = false
-fireType = null
-
-[node name="Turret3" parent="." index="9" instance=ExtResource( 5 )]
+[node name="Turret3" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 2525.59, 675.916 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret5" parent="." index="10" instance=ExtResource( 5 )]
+[node name="Turret5" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 2144.36, 672.214 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret7" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 1695.44, 865.385 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10

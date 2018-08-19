@@ -7,7 +7,10 @@ path="res://.import/TURRET SPRITESHEET.png-96addc91d09fe7a6a8b1e819217e22dd.stex
 [deps]
 
 source_file="res://Sprites/TURRET SPRITESHEET.png"
+source_md5="e9c5bf93a10f3cbf8dd16e6525b21a2a"
+
 dest_files=[ "res://.import/TURRET SPRITESHEET.png-96addc91d09fe7a6a8b1e819217e22dd.stex" ]
+dest_md5="7b432313cacbfb071c539a2f25e4fe31"
 
 [params]
 

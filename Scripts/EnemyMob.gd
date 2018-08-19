@@ -74,17 +74,18 @@ func _ready():
 	idleAnimationDelay()
 
 func _physics_process(delta):
-	if target and transformed:
-		canSeePlayer = checkForPlayer(target)
-		if canSeePlayer:
-			updateFacing(target.position)
-			lastKnownPlayerPos = target.position
-			if can_shoot:
-				if isFacingLeft:
-					anim = "leftShoot"
-				else:
-					anim = "rightShoot"
-				canMove = false
+	if transformed:
+		if target:
+			canSeePlayer = checkForPlayer(target)
+			if canSeePlayer:
+				updateFacing(target.position)
+				lastKnownPlayerPos = target.position
+				if can_shoot:
+					if isFacingLeft:
+						anim = "leftShoot"
+					else:
+						anim = "rightShoot"
+					canMove = false
 	else:
 		if not transforming and not transformed:
 			if idleAnimationPlaying:
@@ -176,6 +177,8 @@ func _on_Visibility_body_entered(body):
 	if usesVision and body.is_in_group("Player"):
 		target = body
 		lastKnownTarget = body
+		if not transformed:
+			_on_threatRange_body_entered(body)
 
 func _on_Visibility_body_exited(body):
 	if body == target:
@@ -185,14 +188,15 @@ func deaggroDelay(sec):
 	$AggroTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
 	$AggroTimer.start() # Start the Timer counting down
 	yield($AggroTimer, "timeout") # Wait for the timer to wind down
-	lastKnownTarget = null
-	lastKnownPlayerPos = null
-	transforming = true
-	transformed = false
-	if isFacingLeft:
-		anim = "leftUntransform"
-	else:
-		anim = "rightUntransform"
+	if not target:
+		lastKnownTarget = null
+		lastKnownPlayerPos = null
+		transforming = true
+		transformed = false
+		if isFacingLeft:
+			anim = "leftUntransform"
+		else:
+			anim = "rightUntransform"
 
 func waitToShoot(sec):
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
