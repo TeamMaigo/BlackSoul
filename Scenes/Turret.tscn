@@ -272,6 +272,7 @@ defeated = false
 texture = ExtResource( 3 )
 vframes = 8
 hframes = 5
+frame = 24
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

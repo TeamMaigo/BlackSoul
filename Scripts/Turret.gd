@@ -64,7 +64,7 @@ func _physics_process(delta):
 		if target:
 			if rotatingTurret:
 				#rotation = (target.position - position).angle()
-				look_at(target.position)
+				updateFacing(target)
 			if can_shoot:
 				playFireAnimation()
 				if $visibilityNotifier2D.is_on_screen():
@@ -99,6 +99,22 @@ func playFireAnimation():
 		$animationPlayer.play("fireLeft")
 	else:
 		$animationPlayer.play("fireUp")
+
+func updateFacing(target):
+	var angleTo = get_angle_to(target.position)
+	if can_shoot:
+		if angleTo > 3*PI/4 or angleTo < -3*PI/4:
+			$Sprite.frame = 14
+			fireAngle = 3*PI/4 + 0.001
+		elif angleTo < 3*PI/4 and angleTo > PI/4:
+			$Sprite.frame = 34
+			fireAngle = 3*PI/4 - 0.001
+		elif angleTo < PI/4 and angleTo > -PI/4:
+			$Sprite.frame = 4
+			fireAngle = PI/4 - 0.001
+		else:
+			$Sprite.frame = 24
+			fireAngle = -PI/2 
 
 func _on_Visibility_body_entered(body):
 	# connect this to the "body_entered" signal
