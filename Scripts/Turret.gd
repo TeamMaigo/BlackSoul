@@ -148,7 +148,7 @@ func shootShotgunAtTarget(pos):
 func shootBulletStraight():
 	#Shoots a bullet in the direction it's facing
 	var b = Bullet.instance()
-	b.start(position, fireAngle, bulletSpeed)
+	b.start(position, fireAngle + global_rotation, bulletSpeed)
 	setBulletProperties(b)
 	get_parent().add_child(b)
 	can_shoot = false
@@ -157,7 +157,7 @@ func shootBulletStraight():
 func shootShotgunStraight():
 	for i in spreadAngles:
 		var b = Bullet.instance()
-		b.start(position, fireAngle + deg2rad(i), bulletSpeed)
+		b.start(position, fireAngle + global_rotation + deg2rad(i), bulletSpeed)
 		setBulletProperties(b)
 		get_parent().add_child(b)
 	can_shoot = false

@@ -21,7 +21,7 @@ func takeDamage(dmg):
 	if health <= 0:
 		$sprite.hide()
 		$collisionShape2D.disabled = true
-		$particles2D.process_material.initial_velocity = clamp(100 + 4*(shatterSpeed-5), 100, 180)
+		$particles2D.process_material.initial_velocity = clamp(100 + 8.5*(shatterSpeed - 8), 100, 200)
 		#print($particles2D.process_material.initial_velocity)
 		$particles2D.emitting = true
 		$particles2D.rotation = shatterRot
