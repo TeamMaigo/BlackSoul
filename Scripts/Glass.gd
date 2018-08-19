@@ -21,15 +21,19 @@ func takeDamage(dmg):
 	if health <= 0:
 		$sprite.hide()
 		$collisionShape2D.disabled = true
+		$particles2D.process_material.initial_velocity = clamp(100 + 4*(shatterSpeed-5), 100, 180)
+		#print($particles2D.process_material.initial_velocity)
 		$particles2D.emitting = true
 		$particles2D.rotation = shatterRot
 		
 		$audioStreamPlayer.stream = load("res://Audio/glassBreak.ogg")
 		$audioStreamPlayer.volume_db = Global.masterSound
 		$audioStreamPlayer.play()
+		$animationPlayer.play("particle fade")
 		destroyed = true
 
-func _process(delta):
-	if destroyed:
-		if $particles2D.emitting == false:
-			queue_free()
+#func _process(delta):
+
+
+func finishedParticleFadeout(anim_name):
+	queue_free()

@@ -7,10 +7,7 @@ path="res://.import/HitSound.wav-ed9a8c9a7391895ce8b435133001279d.sample"
 [deps]
 
 source_file="res://Audio/HitSound.wav"
-source_md5="45b419cfb77c8b107fe8bfe954ef1aee"
-
 dest_files=[ "res://.import/HitSound.wav-ed9a8c9a7391895ce8b435133001279d.sample" ]
-dest_md5="8ef194bedfe099a3453fda9519f93792"
 
 [params]
 

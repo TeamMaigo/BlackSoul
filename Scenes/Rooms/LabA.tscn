@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -51,7 +51,15 @@ position = Vector2( -88.6827, -162.019 )
 _sections_unfolded = [ "Visibility" ]
 newScene = "CoreB"
 
-[node name="Label" type="Label" parent="." index="3"]
+[node name="TransferPointA3" parent="." index="3" instance=ExtResource( 2 )]
+
+modulate = Color( 0.121094, 0.485016, 1, 1 )
+position = Vector2( 38.3759, -156.553 )
+scale = Vector2( 0.829743, 0.605956 )
+_sections_unfolded = [ "Visibility" ]
+newScene = "Level_Test"
+
+[node name="Label" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -74,7 +82,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Label2" type="Label" parent="." index="4"]
+[node name="Label2" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -97,25 +105,25 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Pickup" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Pickup" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 257.536, -35.6528 )
 
-[node name="Dummy" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Dummy" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 772.168, -59.0053 )
 
-[node name="PieceOfHeart" parent="." index="7" instance=ExtResource( 5 )]
+[node name="PieceOfHeart" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 249.493, 84.5301 )
 respawnable = false
 
-[node name="PieceOfHeart2" parent="." index="8" instance=ExtResource( 5 )]
+[node name="PieceOfHeart2" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 326.84, 84.5301 )
 respawnable = false
 
-[node name="PieceOfHeart3" parent="." index="9" instance=ExtResource( 5 )]
+[node name="PieceOfHeart3" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 408.77, 53.6001 )
 respawnable = false

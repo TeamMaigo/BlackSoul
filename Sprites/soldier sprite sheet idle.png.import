@@ -7,10 +7,7 @@ path="res://.import/soldier sprite sheet idle.png-a0b46441abcc912286b687e214b3dd
 [deps]
 
 source_file="res://Sprites/soldier sprite sheet idle.png"
-source_md5="908e350756d1ecc73b05dabedbc7debc"
-
 dest_files=[ "res://.import/soldier sprite sheet idle.png-a0b46441abcc912286b687e214b3dd8b.stex" ]
-dest_md5="127c0955533513b30ad234aa7a7b40ee"
 
 [params]
 
