@@ -69,7 +69,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Glass" type="StaticBody2D" index="0" groups=[
+[node name="Glass" type="StaticBody2D" groups=[
 "Damageable",
 "Shatterable",
 ]]

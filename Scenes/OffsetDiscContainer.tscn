@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/disc.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/OffsetDiscContainer.gd" type="Script" id=2]
+
+[node name="OffsetDiscContainer" type="Sprite"]
+
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+degree_offsets = null
+radius = 100
+
+

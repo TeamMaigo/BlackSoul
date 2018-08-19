@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/LightController.tscn" type="PackedScene" id=2]
@@ -11,11 +11,15 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/OffsetDiscContainer.tscn" type="PackedScene" id=12]
 
 [node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 
@@ -273,7 +277,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Rotator" parent="." index="2" instance=ExtResource( 7 )]
 
 editor/display_folded = true
-position = Vector2( 16, 492.507 )
+position = Vector2( 15, 492.507 )
 
 [node name="AutoDiscContainer" parent="Rotator" index="2" instance=ExtResource( 8 )]
 
@@ -483,6 +487,39 @@ position = Vector2( 1600.87, 41 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 20
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Rotator2" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( -31, 175.507 )
+
+[node name="OffsetDiscContainer" parent="Rotator2" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 1, 12.5073 )
+degree_offsets = [ 0.0, 20.0, 90.0 ]
+
+[node name="Turret15" parent="Rotator2/OffsetDiscContainer" index="0" instance=ExtResource( 9 )]
+
+position = Vector2( 13.4364, -112.441 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret16" parent="Rotator2/OffsetDiscContainer" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 45, -80 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret17" parent="Rotator2/OffsetDiscContainer" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 55, -48 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
