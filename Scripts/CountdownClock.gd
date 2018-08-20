@@ -2,6 +2,7 @@ extends Control
 export var seconds = 0
 var minutes = 0
 var milliSec = 0
+var paused = false
 
 signal countdownFinished
 
@@ -15,16 +16,16 @@ func _ready():
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-
-	if seconds > 0:
-		seconds -= delta
-		if seconds <= 0 and minutes > 0:
-			seconds = 60
-			minutes -= 1
-	else:
-		seconds = 0
-		emit_signal("countdownFinished")
-	updateLabel()
+	if not paused:
+		if seconds > 0:
+			seconds -= delta
+			if seconds <= 0 and minutes > 0:
+				seconds = 60
+				minutes -= 1
+		else:
+			seconds = 0
+			emit_signal("countdownFinished")
+		updateLabel()
 
 func updateLabel():
 	milliSec = seconds * 1000
