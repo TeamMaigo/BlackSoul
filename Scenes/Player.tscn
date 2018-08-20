@@ -202,9 +202,9 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
 "Damageable",
-"Persist",
-"team_Player",
 "Player",
+"team_Player",
+"Persist",
 ]]
 
 input_pickable = false
@@ -363,7 +363,7 @@ autostart = false
 anchor_mode = 1
 rotating = true
 current = true
-zoom = Vector2( 1.7, 1.7 )
+zoom = Vector2( 1.5, 1.5 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
