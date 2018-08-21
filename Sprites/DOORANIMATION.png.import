@@ -7,10 +7,7 @@ path="res://.import/DOORANIMATION.png-89e008d030d12be3709e91430e945004.stex"
 [deps]
 
 source_file="res://Sprites/DOORANIMATION.png"
-source_md5="7447840364e8eacbe0d04aabb87d1b12"
-
 dest_files=[ "res://.import/DOORANIMATION.png-89e008d030d12be3709e91430e945004.stex" ]
-dest_md5="a128e1c204f44f20b72ba6765f8f9db1"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/SWITCH.png-09ddd377cb2a847c69cda79a4138daea.stex"
 [deps]
 
 source_file="res://Sprites/SWITCH.png"
-source_md5="57765edaef72e60ff36d0ea75c149542"
-
 dest_files=[ "res://.import/SWITCH.png-09ddd377cb2a847c69cda79a4138daea.stex" ]
-dest_md5="04aac6f5a4d11451930bd92e5415deb7"
 
 [params]
 
