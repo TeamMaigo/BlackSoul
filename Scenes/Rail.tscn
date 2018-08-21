@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Rail.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/wheel.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 16.0
+
+[node name="Rail" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 16
+collision_mask = 3
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+railStart = Vector2( 0, 0 )
+railEnd = Vector2( 50, 0 )
+railSpeed = 2
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+
