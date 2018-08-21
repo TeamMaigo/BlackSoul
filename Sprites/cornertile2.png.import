@@ -7,10 +7,7 @@ path="res://.import/cornertile2.png-96666836f8af801341b26123cbde0d66.stex"
 [deps]
 
 source_file="res://Sprites/cornertile2.png"
-source_md5="677e9698c68c91567a637644e5bf2244"
-
 dest_files=[ "res://.import/cornertile2.png-96666836f8af801341b26123cbde0d66.stex" ]
-dest_md5="b55250ac920032eab4ef54a577a43a17"
 
 [params]
 

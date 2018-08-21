@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/OffsetDiscContainer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=13]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -341,7 +341,7 @@ transferGoalTemp = "B"
 
 [node name="TransferGoalA" parent="." index="5" instance=ExtResource( 11 )]
 
-position = Vector2( 998, 423.507 )
+position = Vector2( -37, 41.5073 )
 
 [node name="Label" type="Label" parent="." index="6"]
 
@@ -393,7 +393,14 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret6" parent="Turrets" index="3" instance=ExtResource( 9 )]
+[node name="Turret7" parent="Turrets" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( -264.924, 111.388 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+fire_rate = 5.0
+bulletSpeed = 10
+
+[node name="Turret6" parent="Turrets" index="4" instance=ExtResource( 9 )]
 
 position = Vector2( -558.814, 139.342 )
 rotation = -1.5708

@@ -1,7 +1,6 @@
 #TODO:
 	#Don't use hardcoded FPS number
 
-
 extends KinematicBody2D
 
 # Required to pass editor info to collider child of object
@@ -22,7 +21,6 @@ export var angleBulletUpdateDelay = 1.0 #seconds
 export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
 export var rotationSpeed = 0.0
 var spreadAngles = []
-var fireAngle
 
 export var defeated = false
 onready var timer = get_node("ShootTimer")
@@ -30,13 +28,14 @@ var target  # who are we shooting at?
 var can_shoot = false
 var vis_color = Color(.867, .91, .247, 0.1)
 
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_physics_process(true)
 	activate()
-	fireAngle = rotation
-	rotation = 0
+	$Sprite.global_rotation = 0
+	$CollisionShape2D.global_rotation = 0
 	if usesTargeting:
 		var shape = CircleShape2D.new()
 		shape.radius = detect_radius
@@ -58,13 +57,12 @@ func _ready():
 			spreadAngles.append((-i-1)*shotgunSpread)
 		spreadAngles.append(0)
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	if not defeated:
 		#Shoot bullets at a consistent rate of fire
 		if target:
 			if rotatingTurret:
-				#rotation = (target.position - position).angle()
-				updateFacing(target)
+				faceTarget(target)
 			if can_shoot:
 				playFireAnimation()
 				if $visibilityNotifier2D.is_on_screen():
@@ -89,32 +87,32 @@ func _physics_process(delta):
 		else:
 			pass
 		rotation += rotationSpeed/60
+	$Sprite.global_rotation = 0
+	$CollisionShape2D.global_rotation = 0
+	updateFacing()
 
 func playFireAnimation():
-	if fireAngle > 3*PI/4 or fireAngle < -3*PI/4:
+	if global_rotation > 3*PI/4 or global_rotation < -3*PI/4:
 		$animationPlayer.play("fireRight")
-	elif fireAngle < 3*PI/4 and fireAngle > PI/4:
+	elif global_rotation < 3*PI/4 and global_rotation > PI/4:
 		$animationPlayer.play("fireDown")
-	elif fireAngle < PI/4 and fireAngle > -PI/4:
+	elif global_rotation < PI/4 and global_rotation > -PI/4:
 		$animationPlayer.play("fireLeft")
 	else:
 		$animationPlayer.play("fireUp")
 
-func updateFacing(target):
-	var angleTo = get_angle_to(target.position)
-	if can_shoot:
-		if angleTo > 3*PI/4 or angleTo < -3*PI/4:
-			$Sprite.frame = 14
-			fireAngle = 3*PI/4 + 0.001
-		elif angleTo < 3*PI/4 and angleTo > PI/4:
-			$Sprite.frame = 34
-			fireAngle = 3*PI/4 - 0.001
-		elif angleTo < PI/4 and angleTo > -PI/4:
-			$Sprite.frame = 4
-			fireAngle = PI/4 - 0.001
-		else:
-			$Sprite.frame = 24
-			fireAngle = -PI/2 
+func updateFacing():
+	if global_rotation > 3*PI/4 or global_rotation < -3*PI/4:
+		$Sprite.frame = 14
+	elif global_rotation < 3*PI/4 and global_rotation > PI/4:
+		$Sprite.frame = 34
+	elif global_rotation < PI/4 and global_rotation > -PI/4:
+		$Sprite.frame = 4
+	else:
+		$Sprite.frame = 24
+
+func faceTarget(target):
+	rotation = (target.position - position).angle()
 
 func _on_Visibility_body_entered(body):
 	# connect this to the "body_entered" signal
@@ -155,7 +153,7 @@ func shootShotgunAtTarget(pos):
 func shootBulletStraight():
 	#Shoots a bullet in the direction it's facing
 	var b = Bullet.instance()
-	b.start(position, fireAngle + global_rotation, bulletSpeed)
+	b.start(position, global_rotation, bulletSpeed)
 	setBulletProperties(b)
 	get_parent().add_child(b)
 	can_shoot = false
@@ -164,7 +162,7 @@ func shootBulletStraight():
 func shootShotgunStraight():
 	for i in spreadAngles:
 		var b = Bullet.instance()
-		b.start(position, fireAngle + global_rotation + deg2rad(i), bulletSpeed)
+		b.start(position, global_rotation + deg2rad(i), bulletSpeed)
 		setBulletProperties(b)
 		get_parent().add_child(b)
 	can_shoot = false
@@ -192,22 +190,22 @@ func setBulletProperties(b):
 func activate():
 	defeated = false
 	$Sprite.self_modulate = Color(1,1,1)
-	if rotation > 3*PI/4 or rotation < -3*PI/4:
+	if global_rotation > 3*PI/4 or global_rotation < -3*PI/4:
 		$animationPlayer.play("leftStartup")
-	elif rotation < 3*PI/4 and rotation > PI/4:
+	elif global_rotation < 3*PI/4 and global_rotation > PI/4:
 		$animationPlayer.play("downStartup")
-	elif rotation < PI/4 and rotation > -PI/4:
+	elif global_rotation < PI/4 and global_rotation > -PI/4:
 		$animationPlayer.play("rightStartup")
 	else:
 		$animationPlayer.play("upStartup")
 	
 func deactivate():
 	defeated = true
-	if rotation > 3*PI/4 or rotation < -3*PI/4:
+	if global_rotation > 3*PI/4 or global_rotation < -3*PI/4:
 		$animationPlayer.play("leftDeactivate")
-	elif rotation < 3*PI/4 and rotation > PI/4:
+	elif global_rotation < 3*PI/4 and global_rotation > PI/4:
 		$animationPlayer.play("downDeactivate")
-	elif rotation < PI/4 and rotation > -PI/4:
+	elif global_rotation < PI/4 and global_rotation > -PI/4:
 		$animationPlayer.play("rightDeactivate")
 	else:
 		$animationPlayer.play("upDeactivate")

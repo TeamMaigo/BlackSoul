@@ -14,7 +14,7 @@ extents = Vector2( 20.0657, 32 )
 custom_solver_bias = 0.0
 radius = 300.0
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=3]
 
 resource_name = "downDeactivate"
 length = 0.5
@@ -33,9 +33,8 @@ tracks/0/keys = {
 "values": [ 34, 33, 32, 31, 30 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "downStartup"
 length = 0.5
 loop = false
 step = 0.1
@@ -52,9 +51,8 @@ tracks/0/keys = {
 "values": [ 30, 31, 32, 33, 34 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "fireDown"
 length = 0.5
 loop = false
 step = 0.1
@@ -71,9 +69,8 @@ tracks/0/keys = {
 "values": [ 35, 36, 37, 38, 39 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource_name = "fireLeft"
 length = 0.5
 loop = false
 step = 0.1
@@ -90,9 +87,8 @@ tracks/0/keys = {
 "values": [ 5, 6, 7, 8, 9 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource_name = "fireRight"
 length = 0.5
 loop = false
 step = 0.1
@@ -109,9 +105,8 @@ tracks/0/keys = {
 "values": [ 15, 16, 17, 18, 19 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource_name = "fireUp"
 length = 0.5
 loop = false
 step = 0.1
@@ -128,7 +123,7 @@ tracks/0/keys = {
 "values": [ 25, 26, 27, 28, 29 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=9]
 
 resource_name = "leftDeactivate"
 length = 0.5
@@ -147,9 +142,8 @@ tracks/0/keys = {
 "values": [ 14, 13, 12, 11, 10 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 
-resource_name = "leftStartup"
 length = 0.5
 loop = false
 step = 0.1
@@ -166,7 +160,7 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13, 14 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=11]
 
 resource_name = "rightDeactivate"
 length = 0.5
@@ -185,7 +179,7 @@ tracks/0/keys = {
 "values": [ 4, 3, 2, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=12]
 
 length = 0.5
 loop = false
@@ -203,7 +197,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 
 resource_name = "upDeactivate"
 length = 0.5
@@ -222,9 +216,8 @@ tracks/0/keys = {
 "values": [ 24, 23, 22, 21, 20 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=14]
 
-resource_name = "upStartup"
 length = 0.5
 loop = false
 step = 0.1
@@ -314,24 +307,25 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/downDeactivate = SubResource( 11 )
-anims/downStartup = SubResource( 3 )
-anims/fireDown = SubResource( 4 )
-anims/fireLeft = SubResource( 5 )
-anims/fireRight = SubResource( 6 )
-anims/fireUp = SubResource( 7 )
-anims/leftDeactivate = SubResource( 12 )
-anims/leftStartup = SubResource( 8 )
-anims/rightDeactivate = SubResource( 13 )
-anims/rightStartup = SubResource( 9 )
-anims/upDeactivate = SubResource( 14 )
-anims/upStartup = SubResource( 10 )
+anims/downDeactivate = SubResource( 3 )
+anims/downStartup = SubResource( 4 )
+anims/fireDown = SubResource( 5 )
+anims/fireLeft = SubResource( 6 )
+anims/fireRight = SubResource( 7 )
+anims/fireUp = SubResource( 8 )
+anims/leftDeactivate = SubResource( 9 )
+anims/leftStartup = SubResource( 10 )
+anims/rightDeactivate = SubResource( 11 )
+anims/rightStartup = SubResource( 12 )
+anims/upDeactivate = SubResource( 13 )
+anims/upStartup = SubResource( 14 )
 blend_times = [  ]
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

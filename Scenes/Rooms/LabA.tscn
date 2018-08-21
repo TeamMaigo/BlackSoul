@@ -55,8 +55,8 @@ newScene = "AcidA"
 
 visible = false
 modulate = Color( 0.121094, 0.485016, 1, 1 )
-position = Vector2( -305.991, -187.674 )
-scale = Vector2( 0.493759, 0.470968 )
+position = Vector2( -278.128, -79.0599 )
+scale = Vector2( 3.09343, 2.98141 )
 _sections_unfolded = [ "Visibility" ]
 newScene = "Level_Test"
 
