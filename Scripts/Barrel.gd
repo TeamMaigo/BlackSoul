@@ -5,16 +5,19 @@ onready var audioPlayer = $audioStreamPlayer
 var destroyed = false
 export var respawnable = true
 
+signal destroyed
+
 func _ready():
 	if Global.currentScene+name in Global.destroyedObjects:
 		queue_free()
 
 func _process(delta):
-	if health <= 0 && !destroyed:
-		destroy()
+	pass
 
 func takeDamage(dmg):
 	health -= dmg
+	if health <= 0 && !destroyed:
+		destroy()
 
 func destroy():
 	if not respawnable:
@@ -25,6 +28,7 @@ func destroy():
 	audioPlayer.play()
 	$Sprite.hide()
 	$CollisionShape2D.disabled = true
+	emit_signal("destroyed")
 
 
 func _on_audioStreamPlayer_finished():

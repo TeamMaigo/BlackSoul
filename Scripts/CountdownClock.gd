@@ -2,7 +2,7 @@ extends Control
 export var seconds = 0
 var minutes = 0
 var milliSec = 0
-var paused = false
+var paused = true
 
 signal countdownFinished
 

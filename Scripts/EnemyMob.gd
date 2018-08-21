@@ -41,6 +41,7 @@ var canMove = true
 var lastKnownTarget # Used to avoid enemies shooting blanks
 
 var breakableTargetPos = null
+var isDying = false
 
 signal enemyDeath
 
@@ -207,10 +208,15 @@ func waitToShoot(sec):
 func takeDamage(damage):
 	hp -= damage
 	if hp <= 0:
-		emit_signal("enemyDeath")
 		if not respawns:
 			Global.destroyedObjects.append(Global.currentScene+name)
-		queue_free()
+		$audioStreamPlayer.stream = load("res://Audio/HitSound.wav")
+		$audioStreamPlayer.volume_db = Global.masterSound
+		$audioStreamPlayer.play()
+		collision_layer = 0
+		collision_mask = 0
+		hide()
+		isDying = true
 
 func setBulletProperties(b):
 	b.rotationSpeed = bulletRotationSpeed
@@ -286,3 +292,8 @@ func idleAnimationDelay():
 	else:
 		idleAnimationPlaying = false
 	idleAnimationDelay()
+
+func _on_audioStreamPlayer_finished():
+	if isDying:
+		emit_signal("enemyDeath")
+		queue_free()

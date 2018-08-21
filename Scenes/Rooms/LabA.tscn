@@ -41,7 +41,7 @@ newScene = "Djstouhousimulator"
 
 visible = false
 position = Vector2( 316.692, -201.167 )
-newScene = "LabB"
+newScene = "CoreF"
 
 [node name="TransferPointA2" parent="." index="2" instance=ExtResource( 2 )]
 

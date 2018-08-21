@@ -429,4 +429,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="animation_finished" from="animationPlayer" to="." method="_on_animationPlayer_animation_finished"]
 
+[connection signal="finished" from="audioStreamPlayer" to="." method="_on_audioStreamPlayer_finished"]
+
 

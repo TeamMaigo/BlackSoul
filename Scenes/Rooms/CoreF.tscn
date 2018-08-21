@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Nuclear Core.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=6]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -29,16 +32,41 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="label" type="Label" parent="." index="1"]
+[node name="TransferGoalA" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -1.48181, 408.18 )
+
+[node name="TransferPoint" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -111.579, -1272 )
+newScene = "CoreG"
+
+[node name="Turret" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -481.873, -391.65 )
+bulletSpeed = 7
+fireType = "shotgun"
+
+[node name="Turret2" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 364.993, -313.73 )
+bulletSpeed = 7
+fireType = "shotgun"
+
+[node name="Nuclear Core" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -38.8625, -442.293 )
+
+[node name="label" type="Label" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -218.0
-margin_top = -524.0
-margin_right = -65.0
-margin_bottom = -510.0
+margin_left = -193.0
+margin_top = -181.0
+margin_right = -40.0
+margin_bottom = -167.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -52,8 +80,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="label2" type="Label" parent="." index="2"]
+[node name="MeltingText" type="Label" parent="." index="7"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -75,17 +104,11 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="TransferGoalA" parent="." index="3" instance=ExtResource( 2 )]
+[node name="BreakableBlock" parent="." index="8" instance=ExtResource( 6 )]
 
-position = Vector2( -1.48181, 408.18 )
+position = Vector2( -128.666, -1028.33 )
+scale = Vector2( 3.77155, 1.54501 )
 
-[node name="TransferGoalB" parent="." index="4" instance=ExtResource( 2 )]
-
-position = Vector2( -101.903, -1047.93 )
-
-[node name="TransferPoint" parent="." index="5" instance=ExtResource( 3 )]
-
-position = Vector2( -111.579, -1272 )
-newScene = "CoreG"
+[connection signal="destroyed" from="Nuclear Core" to="BreakableBlock" method="destroy"]
 
 

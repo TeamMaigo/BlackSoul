@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=10]
 
-[node name="tileMap" type="TileMap"]
+[node name="tileMap" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -38,7 +38,7 @@ __meta__ = {
 [node name="TransferPoint" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 3139.86, 827.916 )
-newScene = "CoreG"
+newScene = "CoreH"
 
 [node name="TransferGoalA" parent="." index="1" instance=ExtResource( 3 )]
 
@@ -89,7 +89,14 @@ rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret5" parent="." index="9" instance=ExtResource( 5 )]
+[node name="Turret8" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 214.526, 348.641 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+
+[node name="Turret5" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 2144.36, 672.214 )
 rotation = 1.5708
@@ -98,7 +105,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret7" parent="." index="10" instance=ExtResource( 5 )]
+[node name="Turret7" parent="." index="11" instance=ExtResource( 5 )]
 
 position = Vector2( 1695.44, 865.385 )
 rotation = 1.5708
@@ -107,14 +114,14 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret4" parent="." index="11" instance=ExtResource( 5 )]
+[node name="Turret4" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( 2099.95, 1179.28 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret6" parent="." index="12" instance=ExtResource( 5 )]
+[node name="Turret6" parent="." index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 2588.51, 1182.99 )
 rotation = -1.5708
@@ -123,7 +130,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Switch" parent="." index="13" instance=ExtResource( 6 )]
+[node name="Switch" parent="." index="14" instance=ExtResource( 6 )]
 
 position = Vector2( 754.095, 2129.43 )
 on = true
@@ -133,7 +140,7 @@ on = true
 position = Vector2( 615.781, -1123.57 )
 scale = Vector2( 4.10635, 3.12708 )
 
-[node name="Switch2" parent="." index="14" instance=ExtResource( 6 )]
+[node name="Switch2" parent="." index="15" instance=ExtResource( 6 )]
 
 position = Vector2( 2296.84, 935.014 )
 on = true
@@ -143,7 +150,7 @@ on = true
 position = Vector2( 540.124, -4.35571 )
 scale = Vector2( 4.10635, 3.12708 )
 
-[node name="HoleLayer" type="TileMap" parent="." index="15"]
+[node name="HoleLayer" type="TileMap" parent="." index="16"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -167,65 +174,65 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BreakableBlock" parent="." index="16" instance=ExtResource( 8 )]
+[node name="BreakableBlock" parent="." index="17" instance=ExtResource( 8 )]
 
 position = Vector2( 599.023, 139.3 )
 
-[node name="Turret2" parent="." index="17" instance=ExtResource( 5 )]
+[node name="Turret2" parent="." index="18" instance=ExtResource( 5 )]
 
 position = Vector2( 535.083, 2087.01 )
 detect_radius = 200
 bulletSpeed = 3
 
-[node name="Dummy" parent="." index="18" instance=ExtResource( 9 )]
+[node name="Dummy" parent="." index="19" instance=ExtResource( 9 )]
 
 position = Vector2( 259.542, 2390.28 )
 
-[node name="Dummy6" parent="." index="19" instance=ExtResource( 9 )]
+[node name="Dummy6" parent="." index="20" instance=ExtResource( 9 )]
 
 position = Vector2( 89.5441, 1954.46 )
 
-[node name="Dummy2" parent="." index="20" instance=ExtResource( 9 )]
+[node name="Dummy2" parent="." index="21" instance=ExtResource( 9 )]
 
 position = Vector2( 673.06, 2574.31 )
 
-[node name="Dummy3" parent="." index="21" instance=ExtResource( 9 )]
+[node name="Dummy3" parent="." index="22" instance=ExtResource( 9 )]
 
 position = Vector2( 988.879, 2490.25 )
 
-[node name="Dummy4" parent="." index="22" instance=ExtResource( 9 )]
+[node name="Dummy4" parent="." index="23" instance=ExtResource( 9 )]
 
 position = Vector2( 1104.79, 1758.04 )
 
-[node name="Dummy5" parent="." index="23" instance=ExtResource( 9 )]
+[node name="Dummy5" parent="." index="24" instance=ExtResource( 9 )]
 
 position = Vector2( 611.078, 1434.44 )
 
-[node name="BreakableBlock2" parent="." index="24" instance=ExtResource( 8 )]
+[node name="BreakableBlock2" parent="." index="25" instance=ExtResource( 8 )]
 
 position = Vector2( 1902.04, 956.603 )
 
-[node name="BreakableBlock3" parent="." index="25" instance=ExtResource( 8 )]
+[node name="BreakableBlock3" parent="." index="26" instance=ExtResource( 8 )]
 
 position = Vector2( 2218.49, 939.948 )
 
-[node name="BreakableBlock4" parent="." index="26" instance=ExtResource( 8 )]
+[node name="BreakableBlock4" parent="." index="27" instance=ExtResource( 8 )]
 
 position = Vector2( 2292.49, 866.948 )
 
-[node name="BreakableBlock5" parent="." index="27" instance=ExtResource( 8 )]
+[node name="BreakableBlock5" parent="." index="28" instance=ExtResource( 8 )]
 
 position = Vector2( 2377.49, 889.948 )
 
-[node name="BreakableBlock6" parent="." index="28" instance=ExtResource( 8 )]
+[node name="BreakableBlock6" parent="." index="29" instance=ExtResource( 8 )]
 
 position = Vector2( 2382.49, 978.948 )
 
-[node name="BreakableBlock7" parent="." index="29" instance=ExtResource( 8 )]
+[node name="BreakableBlock7" parent="." index="30" instance=ExtResource( 8 )]
 
 position = Vector2( 2291.49, 1014.95 )
 
-[node name="HealthPickup" parent="." index="30" instance=ExtResource( 10 )]
+[node name="HealthPickup" parent="." index="31" instance=ExtResource( 10 )]
 
 position = Vector2( 914.493, 2118.27 )
 
