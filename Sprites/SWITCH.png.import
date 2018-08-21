@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cornertile1.png-275988934b0061c8a94684a3451e9867.stex"
+path="res://.import/SWITCH.png-09ddd377cb2a847c69cda79a4138daea.stex"
 
 [deps]
 
-source_file="res://Sprites/cornertile1.png"
-source_md5="da5be0801fc94a14d5a9ecb6fce053fb"
+source_file="res://Sprites/SWITCH.png"
+source_md5="57765edaef72e60ff36d0ea75c149542"
 
-dest_files=[ "res://.import/cornertile1.png-275988934b0061c8a94684a3451e9867.stex" ]
-dest_md5="371209fd083b64bc5d803bedf156318e"
+dest_files=[ "res://.import/SWITCH.png-09ddd377cb2a847c69cda79a4138daea.stex" ]
+dest_md5="04aac6f5a4d11451930bd92e5415deb7"
 
 [params]
 

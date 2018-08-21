@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Wires.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/CABLES_OFF.png" type="Texture" id=2]
+
+[node name="Wires" type="Node2D"]
+
+script = ExtResource( 1 )
+on = false
+frame = 0
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 2
+_sections_unfolded = [ "Animation" ]
+
+

@@ -1,25 +1,26 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/TransferPoint.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/DOORANIMATION.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="TransferPoint" type="Node2D" index="0"]
+[node name="TransferPoint" type="Node2D"]
 
 script = ExtResource( 1 )
 newScene = "Room1"
 transferGoalTemp = "A"
+unlocked = true
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 1, 0, 0.890625, 1 )
-rotation = 1.5708
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+vframes = 2
+hframes = 4
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
@@ -33,6 +34,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
+position = Vector2( 0.670563, 20.7241 )
+scale = Vector2( 1.08217, 1.59212 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

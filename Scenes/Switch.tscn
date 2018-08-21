@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Switch.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/barrel.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SWITCH.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10.1396 )
+extents = Vector2( 7.03404, 15.4153 )
 
 [node name="Switch" type="StaticBody2D" groups=[
 "Damageable",
 ]]
 
-modulate = Color( 0.5, 0.636719, 1, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -23,6 +22,7 @@ bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 on = false
+connectedGroup = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
 
@@ -35,9 +35,13 @@ bus = "Master"
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
+vframes = 3
+hframes = 2
+_sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
+visible = false
 position = Vector2( -0.100177, 0.505163 )
 scale = Vector2( 2.36724, 2.27551 )
 shape = SubResource( 1 )

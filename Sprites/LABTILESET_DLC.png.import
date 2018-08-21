@@ -7,7 +7,10 @@ path="res://.import/LABTILESET_DLC.png-8424627176fff9171ef1e7b2d8f13551.stex"
 [deps]
 
 source_file="res://Sprites/LABTILESET_DLC.png"
+source_md5="0039b9bec57da98335603ad39db03244"
+
 dest_files=[ "res://.import/LABTILESET_DLC.png-8424627176fff9171ef1e7b2d8f13551.stex" ]
+dest_md5="cf88f824643cf69714c4bb64b4f7de8b"
 
 [params]
 

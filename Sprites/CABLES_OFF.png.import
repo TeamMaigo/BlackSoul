@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cornertile1.png-275988934b0061c8a94684a3451e9867.stex"
+path="res://.import/CABLES_OFF.png-e57251ef7fce2ef4f2387f23ba50a6c1.stex"
 
 [deps]
 
-source_file="res://Sprites/cornertile1.png"
-source_md5="da5be0801fc94a14d5a9ecb6fce053fb"
+source_file="res://Sprites/CABLES_OFF.png"
+source_md5="da5ce292c60560aa45d0d8d55df7a32a"
 
-dest_files=[ "res://.import/cornertile1.png-275988934b0061c8a94684a3451e9867.stex" ]
-dest_md5="371209fd083b64bc5d803bedf156318e"
+dest_files=[ "res://.import/CABLES_OFF.png-e57251ef7fce2ef4f2387f23ba50a6c1.stex" ]
+dest_md5="40b5628f1cc87b2b70b16fe39d7bed9d"
 
 [params]
 

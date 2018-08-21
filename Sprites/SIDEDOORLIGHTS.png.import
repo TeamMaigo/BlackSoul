@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cornertile1.png-275988934b0061c8a94684a3451e9867.stex"
+path="res://.import/SIDEDOORLIGHTS.png-91668b1e1606ae5869d455b1bc158b39.stex"
 
 [deps]
 
-source_file="res://Sprites/cornertile1.png"
-source_md5="da5be0801fc94a14d5a9ecb6fce053fb"
+source_file="res://Sprites/SIDEDOORLIGHTS.png"
+source_md5="7e975dbb12a2642e89d7832b765da65f"
 
-dest_files=[ "res://.import/cornertile1.png-275988934b0061c8a94684a3451e9867.stex" ]
-dest_md5="371209fd083b64bc5d803bedf156318e"
+dest_files=[ "res://.import/SIDEDOORLIGHTS.png-91668b1e1606ae5869d455b1bc158b39.stex" ]
+dest_md5="b470173828d2550ee55157e3462f93f7"
 
 [params]
 
