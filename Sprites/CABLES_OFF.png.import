@@ -7,7 +7,10 @@ path="res://.import/CABLES_OFF.png-e57251ef7fce2ef4f2387f23ba50a6c1.stex"
 [deps]
 
 source_file="res://Sprites/CABLES_OFF.png"
+source_md5="da5ce292c60560aa45d0d8d55df7a32a"
+
 dest_files=[ "res://.import/CABLES_OFF.png-e57251ef7fce2ef4f2387f23ba50a6c1.stex" ]
+dest_md5="40b5628f1cc87b2b70b16fe39d7bed9d"
 
 [params]
 
