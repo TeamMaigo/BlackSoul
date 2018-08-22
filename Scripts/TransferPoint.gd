@@ -22,6 +22,7 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if not transfering and unlocked:
 		if body.is_in_group("Player"):	#Check for player
+			$animationPlayer.play("open")
 			body.get_node("./").playerControlEnabled = false
 			transfering = true
 			newScene = "res://Scenes/Rooms/" + newScene + ".tscn"
