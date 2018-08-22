@@ -22,6 +22,11 @@ export var trackingDelayTime = 0.25 # Sec till bullet starts tracking
 export var rotationSpeed = 0.0
 var spreadAngles = []
 
+export var burst_fire = false
+export (Array, float) var burst_pattern
+var burstSize
+var burstPhase = 0
+
 export var defeated = false
 onready var timer = get_node("ShootTimer")
 var target  # who are we shooting at?
@@ -32,6 +37,13 @@ var vis_color = Color(.867, .91, .247, 0.1)
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	
+	if burst_fire && burst_pattern != null:
+		burstSize = len(burst_pattern)
+	else:
+		burst_fire = false
+		burstSize = 0
+		
 	set_physics_process(true)
 	activate()
 	$Sprite.global_rotation = 0
@@ -43,6 +55,7 @@ func _ready():
 	else:
 		$Visibility.visible == false
 	if firstShotDelay > 0:
+		burstPhase = burstSize + 1 #Don't use the burst pattern yet
 		can_shoot = false
 		waitToShoot(firstShotDelay)
 	else:
@@ -56,6 +69,8 @@ func _ready():
 			spreadAngles.append((i+1)*shotgunSpread)
 			spreadAngles.append((-i-1)*shotgunSpread)
 		spreadAngles.append(0)
+		
+
 
 func _physics_process(delta):	
 	if not defeated:
@@ -175,6 +190,13 @@ func _draw():
 
 
 func waitToShoot(sec):
+	if burst_fire:
+		if burstPhase < burstSize:
+			sec = burst_pattern[burstPhase]
+			burstPhase += 1
+		else:
+			burstPhase = 0
+			
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
