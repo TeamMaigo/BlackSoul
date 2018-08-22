@@ -19,14 +19,13 @@ newScene = "LabD"
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
-visible = false
-position = Vector2( -63.0199, -325.239 )
+position = Vector2( -69.7006, -767.836 )
 newScene = "LabB"
 transferGoalTemp = "B"
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -68.089, -501.134 )
+position = Vector2( -73.124, -551.484 )
 
 [node name="Label" type="Label" parent="." index="3"]
 
@@ -53,6 +52,8 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Turrets" type="Node" parent="." index="4"]
 
+editor/display_folded = true
+
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -283.932, 30.2262 )
@@ -60,6 +61,8 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+burst_fire = false
+burst_pattern = null
 
 [node name="Turret3" parent="Turrets" index="1" instance=ExtResource( 3 )]
 
@@ -68,6 +71,8 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+burst_fire = false
+burst_pattern = null
 
 [node name="Turret4" parent="Turrets" index="2" instance=ExtResource( 3 )]
 
@@ -77,6 +82,8 @@ firstShotDelay = 0.5
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+burst_fire = false
+burst_pattern = null
 
 [node name="Turret2" parent="Turrets" index="3" instance=ExtResource( 3 )]
 
@@ -86,6 +93,8 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+burst_fire = false
+burst_pattern = null
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 3 )]
 
@@ -95,6 +104,8 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+burst_fire = false
+burst_pattern = null
 
 [node name="Turret7" parent="Turrets" index="5" instance=ExtResource( 3 )]
 
@@ -103,6 +114,8 @@ rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 500
 bulletSpeed = 10
+burst_fire = false
+burst_pattern = null
 
 [node name="Turret6" parent="Turrets" index="6" instance=ExtResource( 3 )]
 
@@ -112,6 +125,8 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
+burst_fire = false
+burst_pattern = null
 
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 4 )]
 

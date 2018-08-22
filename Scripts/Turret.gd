@@ -80,6 +80,7 @@ func _physics_process(delta):
 				faceTarget(target)
 			if can_shoot:
 				playFireAnimation()
+				updateFacing()
 				if $visibilityNotifier2D.is_on_screen():
 					$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
 					$audioStreamPlayer.volume_db = Global.masterSound
@@ -104,7 +105,6 @@ func _physics_process(delta):
 		rotation += rotationSpeed/60
 	$Sprite.global_rotation = 0
 	$CollisionShape2D.global_rotation = 0
-	updateFacing()
 
 func playFireAnimation():
 	if global_rotation > 3*PI/4 or global_rotation < -3*PI/4:

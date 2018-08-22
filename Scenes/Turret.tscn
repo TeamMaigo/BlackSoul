@@ -258,6 +258,8 @@ bulletDecayTime = 10.0
 angleBulletUpdateDelay = 1.0
 trackingDelayTime = 0.25
 rotationSpeed = 0.0
+burst_fire = false
+burst_pattern = null
 defeated = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -265,7 +267,7 @@ defeated = false
 texture = ExtResource( 3 )
 vframes = 8
 hframes = 5
-frame = 24
+frame = 19
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -325,7 +327,6 @@ blend_times = [  ]
 
 stream = null
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
