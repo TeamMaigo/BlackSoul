@@ -187,8 +187,6 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="GlassBlocks2" type="Node" parent="tileMap" index="2"]
 
-editor/display_folded = true
-
 [node name="Glass3" parent="tileMap/GlassBlocks2" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 1241.13, 358 )
@@ -351,7 +349,7 @@ transferGoalTemp = "B"
 
 [node name="TransferGoalA" parent="." index="5" instance=ExtResource( 11 )]
 
-position = Vector2( 5, 484.507 )
+position = Vector2( 1811, 290.507 )
 
 [node name="Label" type="Label" parent="." index="6"]
 
@@ -696,10 +694,12 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="EnemyMob" parent="." index="13" instance=ExtResource( 13 )]
 
-position = Vector2( 2204, 326.507 )
+position = Vector2( 2204, 224.507 )
+burst_fire = true
+burst_pattern = [ 0.3 ]
 
 [node name="EnemyMob2" parent="." index="14" instance=ExtResource( 13 )]
 
-position = Vector2( 2202, 180.507 )
+position = Vector2( 2212, 360.507 )
 
 

@@ -275,7 +275,7 @@ tracks/0/keys = {
 "values": [ 104, 105, 106, 107, 108, 109, 110, 111 ]
 }
 
-[node name="EnemyMob" type="KinematicBody2D" index="0" groups=[
+[node name="EnemyMob" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
@@ -303,6 +303,8 @@ bulletConeDegrees = 40.0
 bulletDecayTime = 999.0
 angleBulletUpdateDelay = 1.0
 aggroTime = 3
+burst_fire = false
+burst_pattern = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -403,6 +405,7 @@ autostart = false
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

@@ -43,9 +43,21 @@ var lastKnownTarget # Used to avoid enemies shooting blanks
 var breakableTargetPos = null
 var isDying = false
 
+export var burst_fire = false
+export (Array, float) var burst_pattern
+var burstSize
+var burstPhase = 0
+
 signal enemyDeath
 
 func _ready():
+	if burst_fire && burst_pattern != null:
+		burstSize = len(burst_pattern)
+		burstPhase = burstSize + 1 #Don't use burst pattern during initial wait
+	else:
+		burstSize = 0
+		burst_fire = false
+	
 	$Visibility.show()
 	if Global.currentScene+name in Global.destroyedObjects:
 		queue_free()
@@ -200,6 +212,13 @@ func deaggroDelay(sec):
 			anim = "rightUntransform"
 
 func waitToShoot(sec):
+	if burst_fire:
+		if burstPhase < burstSize:
+			sec = burst_pattern[burstPhase]
+			burstPhase += 1
+		else:
+			burstPhase = 0
+			
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
 	timer.start() # Start the Timer counting down
 	yield(timer, "timeout") # Wait for the timer to wind down
