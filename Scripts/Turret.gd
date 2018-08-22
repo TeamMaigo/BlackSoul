@@ -81,20 +81,18 @@ func _physics_process(delta):
 			if can_shoot:
 				playFireAnimation()
 				updateFacing()
-				if $visibilityNotifier2D.is_on_screen():
-					$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
-					$audioStreamPlayer.volume_db = Global.masterSound
-					$audioStreamPlayer.play()
+				$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
+				$audioStreamPlayer.volume_db = Global.masterSound
+				$audioStreamPlayer.play()
 				if fireType == "singleFire" or null:
 					shootBulletAtTarget(target.position)
 				if fireType == "shotgun":
 					shootShotgunAtTarget(target.position)
 		elif not usesTargeting:
 			if can_shoot:
-				if $visibilityNotifier2D.is_on_screen():
-					$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
-					$audioStreamPlayer.volume_db = Global.masterSound
-					$audioStreamPlayer.play()
+				$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
+				$audioStreamPlayer.volume_db = Global.masterSound
+				$audioStreamPlayer.play()
 				playFireAnimation()
 				if fireType == "singleFire" or null:
 					shootBulletStraight()
