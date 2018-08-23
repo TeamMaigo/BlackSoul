@@ -67,11 +67,11 @@ position = Vector2( 307.816, 123.761 )
 
 position = Vector2( 485.524, -93.6141 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-trackingDelayTime = 0.25
+paletteType = 1
 
 [node name="EnemyMob" parent="." index="5" instance=ExtResource( 5 )]
 

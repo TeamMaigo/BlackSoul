@@ -24,6 +24,8 @@ var spreadAngles = []
 
 export var burst_fire = false
 export (Array, float) var burst_pattern
+enum PALETTETYPE { lab,acid,core }
+export(PALETTETYPE) var paletteType = PALETTETYPE.lab
 var burstSize
 var burstPhase = 0
 
@@ -37,7 +39,14 @@ var vis_color = Color(.867, .91, .247, 0.1)
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	
+	if paletteType == PALETTETYPE.lab:
+		$Sprite.texture = load("res://Sprites/TURRET SPRITESHEET.png")
+	elif paletteType == PALETTETYPE.acid:
+		$Sprite.texture = load("res://Sprites/ACIDTURRET_SPRITESHEET.png")
+	elif paletteType == PALETTETYPE.core:
+		$Sprite.texture = load("res://Sprites/TURRET SPRITESHEET.png")
+	else:
+		pass
 	if burst_fire && burst_pattern != null:
 		burstSize = len(burst_pattern)
 	else:

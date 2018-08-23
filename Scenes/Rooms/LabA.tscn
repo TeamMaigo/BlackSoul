@@ -40,7 +40,7 @@ newScene = "Djstouhousimulator"
 [node name="TransferPointA" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 322.532, -255.939 )
-newScene = "LabC"
+newScene = "AcidA"
 
 [node name="TransferPointA2" parent="." index="2" instance=ExtResource( 2 )]
 

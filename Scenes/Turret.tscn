@@ -235,7 +235,7 @@ tracks/0/keys = {
 "values": [ 20, 21, 22, 23, 24 ]
 }
 
-[node name="Turret" type="KinematicBody2D" index="0"]
+[node name="Turret" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 16
@@ -261,6 +261,7 @@ trackingDelayTime = 0.25
 rotationSpeed = 0.0
 burst_fire = false
 burst_pattern = null
+paletteType = null
 defeated = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]

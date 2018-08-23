@@ -39,20 +39,23 @@ transferGoalTemp = "G"
 
 position = Vector2( 863.838, -291.12 )
 bulletSpeed = 8
+paletteType = 1
 
 [node name="Turret3" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -163.245, 408.112 )
 detect_radius = 700
 bulletSpeed = 8
+paletteType = 1
 
 [node name="Turret4" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 867.919, 412.194 )
 rotation = 4.71239
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 700
 bulletSpeed = 8
+paletteType = 1
 
 [node name="tileMap" type="TileMap" parent="." index="4"]
 
@@ -85,36 +88,40 @@ fire_rate = 2.0
 bulletSpeed = 5
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret2" parent="tileMap" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 227.183, 418.996 )
 rotation = 4.71239
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 5
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret3" parent="tileMap" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 863.838, 96.5871 )
 rotation = 3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 5
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret4" parent="tileMap" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 552.312, -287.039 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 fire_rate = 2.0
 bulletSpeed = 5
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="HealthPickup4" parent="tileMap" index="4" instance=ExtResource( 4 )]
 
@@ -145,18 +152,18 @@ position = Vector2( -501.164, -579.612 )
 position = Vector2( 512.624, 64.772 )
 respawnable = false
 
-[connection signal="collected" from="PieceOfHeart" to="Turret" method="deactivate"]
-
 [connection signal="collected" from="PieceOfHeart" to="Turret3" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="tileMap/Turret2" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="tileMap/Turret" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="tileMap/Turret4" method="deactivate"]
 
 [connection signal="collected" from="PieceOfHeart" to="tileMap/Turret3" method="deactivate"]
 
+[connection signal="collected" from="PieceOfHeart" to="tileMap/Turret2" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="tileMap/Turret4" method="deactivate"]
+
 [connection signal="collected" from="PieceOfHeart" to="Turret4" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="tileMap/Turret" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="Turret" method="deactivate"]
 
 

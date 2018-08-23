@@ -63,6 +63,7 @@ position = Vector2( 241.966, -194.803 )
 
 position = Vector2( 1030.51, -193.742 )
 bulletSpeed = 3
+paletteType = 1
 
 [node name="Room1Turrets" type="Node" parent="." index="7"]
 
@@ -77,6 +78,7 @@ fire_rate = 2.0
 bulletSpeed = 3
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret3" parent="Room1Turrets" index="1" instance=ExtResource( 5 )]
 
@@ -87,6 +89,7 @@ fire_rate = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret4" parent="Room1Turrets" index="2" instance=ExtResource( 5 )]
 
@@ -97,6 +100,7 @@ fire_rate = 2.0
 bulletSpeed = 3
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret5" parent="Room1Turrets" index="3" instance=ExtResource( 5 )]
 
@@ -107,6 +111,7 @@ fire_rate = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret6" parent="Room1Turrets" index="4" instance=ExtResource( 5 )]
 
@@ -117,6 +122,7 @@ fire_rate = 2.0
 bulletSpeed = 3
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Room2Turrets" type="Node" parent="." index="8"]
 
@@ -131,6 +137,7 @@ fire_rate = 7.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret8" parent="Room2Turrets" index="1" instance=ExtResource( 5 )]
 
@@ -142,6 +149,7 @@ firstShotDelay = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret15" parent="Room2Turrets" index="2" instance=ExtResource( 5 )]
 
@@ -153,6 +161,7 @@ firstShotDelay = 3.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret16" parent="Room2Turrets" index="3" instance=ExtResource( 5 )]
 
@@ -164,6 +173,7 @@ firstShotDelay = 4.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret17" parent="Room2Turrets" index="4" instance=ExtResource( 5 )]
 
@@ -175,6 +185,7 @@ firstShotDelay = 5.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret2" parent="Room2Turrets" index="5" instance=ExtResource( 5 )]
 
@@ -185,6 +196,7 @@ fire_rate = 7.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret9" parent="Room2Turrets" index="6" instance=ExtResource( 5 )]
 
@@ -196,6 +208,7 @@ firstShotDelay = 1.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret18" parent="Room2Turrets" index="7" instance=ExtResource( 5 )]
 
@@ -207,6 +220,7 @@ firstShotDelay = 3.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret19" parent="Room2Turrets" index="8" instance=ExtResource( 5 )]
 
@@ -218,6 +232,7 @@ firstShotDelay = 4.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret20" parent="Room2Turrets" index="9" instance=ExtResource( 5 )]
 
@@ -229,6 +244,7 @@ firstShotDelay = 5.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret3" parent="Room2Turrets" index="10" instance=ExtResource( 5 )]
 
@@ -239,6 +255,7 @@ fire_rate = 7.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret10" parent="Room2Turrets" index="11" instance=ExtResource( 5 )]
 
@@ -250,6 +267,7 @@ firstShotDelay = 1.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret21" parent="Room2Turrets" index="12" instance=ExtResource( 5 )]
 
@@ -261,6 +279,7 @@ firstShotDelay = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret22" parent="Room2Turrets" index="13" instance=ExtResource( 5 )]
 
@@ -272,6 +291,7 @@ firstShotDelay = 4.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret23" parent="Room2Turrets" index="14" instance=ExtResource( 5 )]
 
@@ -283,6 +303,7 @@ firstShotDelay = 5.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret4" parent="Room2Turrets" index="15" instance=ExtResource( 5 )]
 
@@ -293,6 +314,7 @@ fire_rate = 7.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret11" parent="Room2Turrets" index="16" instance=ExtResource( 5 )]
 
@@ -304,6 +326,7 @@ firstShotDelay = 1.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret24" parent="Room2Turrets" index="17" instance=ExtResource( 5 )]
 
@@ -315,6 +338,7 @@ firstShotDelay = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret25" parent="Room2Turrets" index="18" instance=ExtResource( 5 )]
 
@@ -326,6 +350,7 @@ firstShotDelay = 3.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret26" parent="Room2Turrets" index="19" instance=ExtResource( 5 )]
 
@@ -337,6 +362,7 @@ firstShotDelay = 5.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret5" parent="Room2Turrets" index="20" instance=ExtResource( 5 )]
 
@@ -347,6 +373,7 @@ fire_rate = 7.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret12" parent="Room2Turrets" index="21" instance=ExtResource( 5 )]
 
@@ -358,6 +385,7 @@ firstShotDelay = 1.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret27" parent="Room2Turrets" index="22" instance=ExtResource( 5 )]
 
@@ -369,6 +397,7 @@ firstShotDelay = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret28" parent="Room2Turrets" index="23" instance=ExtResource( 5 )]
 
@@ -380,6 +409,7 @@ firstShotDelay = 3.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret29" parent="Room2Turrets" index="24" instance=ExtResource( 5 )]
 
@@ -391,6 +421,7 @@ firstShotDelay = 4.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret6" parent="Room2Turrets" index="25" instance=ExtResource( 5 )]
 
@@ -402,6 +433,7 @@ firstShotDelay = 1.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret13" parent="Room2Turrets" index="26" instance=ExtResource( 5 )]
 
@@ -413,6 +445,7 @@ firstShotDelay = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret30" parent="Room2Turrets" index="27" instance=ExtResource( 5 )]
 
@@ -424,6 +457,7 @@ firstShotDelay = 3.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret31" parent="Room2Turrets" index="28" instance=ExtResource( 5 )]
 
@@ -435,6 +469,7 @@ firstShotDelay = 4.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret32" parent="Room2Turrets" index="29" instance=ExtResource( 5 )]
 
@@ -446,6 +481,7 @@ firstShotDelay = 5.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret7" parent="Room2Turrets" index="30" instance=ExtResource( 5 )]
 
@@ -456,6 +492,7 @@ fire_rate = 7.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret14" parent="Room2Turrets" index="31" instance=ExtResource( 5 )]
 
@@ -467,6 +504,7 @@ firstShotDelay = 1.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret33" parent="Room2Turrets" index="32" instance=ExtResource( 5 )]
 
@@ -478,6 +516,7 @@ firstShotDelay = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret34" parent="Room2Turrets" index="33" instance=ExtResource( 5 )]
 
@@ -489,6 +528,7 @@ firstShotDelay = 3.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret35" parent="Room2Turrets" index="34" instance=ExtResource( 5 )]
 
@@ -500,6 +540,7 @@ firstShotDelay = 4.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret36" parent="Room2Turrets" index="35" instance=ExtResource( 5 )]
 
@@ -511,8 +552,11 @@ firstShotDelay = 5.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Room3Turrets" type="Node" parent="." index="9"]
+
+editor/display_folded = true
 
 [node name="Turret2" parent="Room3Turrets" index="0" instance=ExtResource( 5 )]
 
@@ -523,6 +567,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret3" parent="Room3Turrets" index="1" instance=ExtResource( 5 )]
 
@@ -533,6 +578,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret4" parent="Room3Turrets" index="2" instance=ExtResource( 5 )]
 
@@ -543,6 +589,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret5" parent="Room3Turrets" index="3" instance=ExtResource( 5 )]
 
@@ -553,6 +600,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret6" parent="Room3Turrets" index="4" instance=ExtResource( 5 )]
 
@@ -563,6 +611,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret7" parent="Room3Turrets" index="5" instance=ExtResource( 5 )]
 
@@ -573,6 +622,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret9" parent="Room3Turrets" index="6" instance=ExtResource( 5 )]
 
@@ -583,6 +633,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret8" parent="Room3Turrets" index="7" instance=ExtResource( 5 )]
 
@@ -593,6 +644,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret10" parent="Room3Turrets" index="8" instance=ExtResource( 5 )]
 
@@ -602,6 +654,7 @@ fire_rate = 1.5
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="Turret11" parent="Room3Turrets" index="9" instance=ExtResource( 5 )]
 
@@ -611,6 +664,7 @@ fire_rate = 2.0
 bulletSpeed = 2
 rotatingTurret = false
 usesTargeting = false
+paletteType = 1
 
 [node name="SwitchDoor" parent="." index="10" instance=ExtResource( 6 )]
 
