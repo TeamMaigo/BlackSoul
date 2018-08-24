@@ -3,6 +3,8 @@ extends Node2D
 export var time = 10 # in seconds
 var pressed = false
 onready var timer = $timer
+enum PALETTETYPE { lab,acid,core }
+export(PALETTETYPE) var paletteType = PALETTETYPE.lab
 
 signal counterFinished
 signal steppedOn
@@ -10,7 +12,10 @@ signal steppedOn
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	if paletteType == PALETTETYPE.lab:
+		$sprite.frame = 0
+	if paletteType == PALETTETYPE.acid:
+		$sprite.frame += 2
 
 func timer(sec):
 	timer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
@@ -23,4 +28,5 @@ func _on_area2D_body_entered(body):
 		if not pressed:
 			emit_signal("steppedOn")
 			pressed = true
+			$sprite.frame += 1
 			timer(time)

@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=3]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -40,7 +40,7 @@ newScene = "Djstouhousimulator"
 [node name="TransferPointA" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 322.532, -255.939 )
-newScene = "AcidA"
+newScene = "LabB"
 
 [node name="TransferPointA2" parent="." index="2" instance=ExtResource( 2 )]
 
