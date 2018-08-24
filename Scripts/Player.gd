@@ -38,6 +38,8 @@ var maxDashInvulnSpeed = 1800
 var piecesOfHeart = 0
 var trauma = 0
 
+onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
+
 func _ready():
 	set_physics_process(true)
 	#RayNode = get_node("RayCast2D")	#For directions
@@ -214,15 +216,9 @@ func takeDamage(damage):
 			respawn()
 
 func updateHealthBar():
-		for child in $CanvasLayer/PlayerUI/PlayerHealth.get_children():
-			if int(child.name[-1]) <= health:
-				child.activate()
-				child.show()
-			elif int(child.name[-1]) <= maxHealth:
-				child.deactivate()
-				child.show()
-			else:
-				child.hide()
+	healthBar.setMaxValue(maxHealth)
+	healthBar.setValue(health)
+
 
 func setHealth(value):
 	health = value

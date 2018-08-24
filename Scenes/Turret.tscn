@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Turret.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BulletLinear.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/TURRET SPRITESHEET.png" type="Texture" id=3]
+[ext_resource path="res://Audio/GunBlap.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -234,7 +235,7 @@ tracks/0/keys = {
 "values": [ 20, 21, 22, 23, 24 ]
 }
 
-[node name="Turret" type="KinematicBody2D" index="0"]
+[node name="Turret" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 16
@@ -258,6 +259,9 @@ bulletDecayTime = 10.0
 angleBulletUpdateDelay = 1.0
 trackingDelayTime = 0.25
 rotationSpeed = 0.0
+burst_fire = false
+burst_pattern = null
+paletteType = null
 defeated = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -265,7 +269,7 @@ defeated = false
 texture = ExtResource( 3 )
 vframes = 8
 hframes = 5
-frame = 24
+frame = 19
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -321,18 +325,15 @@ anims/upDeactivate = SubResource( 13 )
 anims/upStartup = SubResource( 14 )
 blend_times = [  ]
 
-[node name="audioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="audioStreamPlayer" type="AudioStreamPlayer2D" parent="." index="5"]
 
-stream = null
+stream = ExtResource( 4 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
-mix_target = 0
+max_distance = 2000.0
+attenuation = 1.0
 bus = "Master"
-
-[node name="visibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="6"]
-
-rect = Rect2( -10, -10, 20, 20 )
+area_mask = 1
 
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 

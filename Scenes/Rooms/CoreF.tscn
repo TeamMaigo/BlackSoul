@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Nuclear Core.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Nuclear Core.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/LightController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Light/square.png" type="Texture" id=8]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 
@@ -38,49 +40,33 @@ position = Vector2( -1.48181, 408.18 )
 
 [node name="TransferPoint" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -111.579, -1272 )
+position = Vector2( -94.8773, -1292.04 )
 newScene = "CoreG"
+unlocked = false
 
 [node name="Turret" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( -481.873, -391.65 )
+position = Vector2( -917.715, -548.799 )
+detect_radius = 600
+Bullet = ExtResource( 5 )
 bulletSpeed = 7
 fireType = "shotgun"
 
 [node name="Turret2" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 364.993, -313.73 )
+position = Vector2( 760.54, -322.548 )
+detect_radius = 600
+Bullet = ExtResource( 5 )
 bulletSpeed = 7
 fireType = "shotgun"
 
-[node name="Nuclear Core" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Nuclear Core" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( -38.8625, -442.293 )
+position = Vector2( -37.3552, -442.293 )
+health = 10
+respawnable = true
 
-[node name="label" type="Label" parent="." index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -193.0
-margin_top = -181.0
-margin_right = -40.0
-margin_bottom = -167.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "WELCOME TO THE CORE"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
-[node name="MeltingText" type="Label" parent="." index="7"]
+[node name="MeltingText" type="Label" parent="." index="6"]
 
 visible = false
 anchor_left = 0.0
@@ -104,11 +90,64 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="BreakableBlock" parent="." index="8" instance=ExtResource( 6 )]
+[node name="LightController" parent="." index="7" instance=ExtResource( 7 )]
 
-position = Vector2( -128.666, -1028.33 )
-scale = Vector2( 3.77155, 1.54501 )
+editor/display_folded = true
+energy = 0.8
+strobe = true
 
-[connection signal="destroyed" from="Nuclear Core" to="BreakableBlock" method="destroy"]
+[node name="light2D" type="Light2D" parent="LightController" index="0"]
+
+position = Vector2( -65.7878, -369.737 )
+scale = Vector2( 17.427, 17.7963 )
+enabled = true
+editor_only = false
+texture = ExtResource( 8 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 0, 0, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="label" type="Label" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -193.0
+margin_top = -181.0
+margin_right = -40.0
+margin_bottom = -167.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "WELCOME TO THE CORE"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[connection signal="destroyed" from="Nuclear Core" to="TransferPoint" method="switch" binds= [ true ]]
 
 

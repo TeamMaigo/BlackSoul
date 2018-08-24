@@ -76,3 +76,8 @@ func _on_ScenePlayer_animation_finished(anim_name):
 		
 func setCanvasModulate(boolean):
 	$canvasModulate.visible = boolean
+
+func _on_CountdownClock_countdownFinished():
+	var newScene = "res://Scenes/Rooms/CoreF.tscn"
+	var transferGoal = "TransferGoalA"
+	goto_scene(newScene, transferGoal)

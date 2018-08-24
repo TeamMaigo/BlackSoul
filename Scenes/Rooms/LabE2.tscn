@@ -5,35 +5,35 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=4]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 
 [node name="TransferPointA" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 1217.5, -23.0784 )
+position = Vector2( 1216.03, -128.197 )
 newScene = "LabE"
 transferGoalTemp = "F"
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
-position = Vector2( -80, -190.493 )
+position = Vector2( -64.1951, -319.991 )
 newScene = "LabE"
 transferGoalTemp = "E"
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 0, -62.4927 )
+position = Vector2( -47.882, -95.6418 )
 
 [node name="TransferGoalB" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 1215.93, 124.252 )
+position = Vector2( 1215.93, 75.0006 )
 
 [node name="Turret" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 354.226, -159.779 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
@@ -42,7 +42,7 @@ usesTargeting = false
 
 position = Vector2( 420.549, -159.779 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
@@ -51,7 +51,7 @@ usesTargeting = false
 
 position = Vector2( 350.708, 283.21 )
 rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
@@ -60,7 +60,7 @@ usesTargeting = false
 
 position = Vector2( 1056, 673.507 )
 rotation = 3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
@@ -69,7 +69,7 @@ usesTargeting = false
 
 position = Vector2( 1056, 739.831 )
 rotation = 3.14159
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 firstShotDelay = 0.5
 bulletSpeed = 10
 rotatingTurret = false

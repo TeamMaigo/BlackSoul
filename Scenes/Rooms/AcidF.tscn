@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=6]
 
-[node name="tileMap" type="TileMap"]
+[node name="tileMap" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -122,9 +122,10 @@ respawnable = false
 [node name="Turret" parent="." index="14" instance=ExtResource( 5 )]
 
 position = Vector2( 97.0131, 24.1174 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 600
 bulletSpeed = 2
+paletteType = 1
 
 [node name="HealthPickup" parent="." index="15" instance=ExtResource( 6 )]
 
@@ -134,5 +135,6 @@ position = Vector2( 392.609, -644.737 )
 
 position = Vector2( -715.644, -842.778 )
 bulletSpeed = 2
+paletteType = 1
 
 

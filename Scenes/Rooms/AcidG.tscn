@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=7]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 
@@ -79,7 +79,7 @@ position = Vector2( -65.0925, -1367.48 )
 
 position = Vector2( -892.403, -755.103 )
 rotation = -1.5708
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 500
 fire_rate = 0.4
 bulletSpeed = 4
@@ -89,6 +89,7 @@ fireType = "shotgun"
 shotgunBulletAmount = 10
 shotgunSpread = 36
 rotationSpeed = -1.0
+paletteType = 1
 
 [node name="Turret2" parent="." index="6" instance=ExtResource( 6 )]
 
@@ -96,6 +97,7 @@ position = Vector2( -903.906, 63.5164 )
 detect_radius = 500
 bulletSpeed = 6
 fireType = "shotgun"
+paletteType = 1
 
 [node name="holeLayer" type="TileMap" parent="." index="7"]
 
@@ -139,17 +141,17 @@ position = Vector2( -397.871, -1274.51 )
 scale = Vector2( 1.39028, 2.00321 )
 enemiesLeftToKill = 3
 
-[connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onDeactivate"]
-
-[connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor2" method="_onDeactivate"]
+[connection signal="counterFinished" from="tileMap/PressurePlate" to="Turret" method="deactivate"]
 
 [connection signal="counterFinished" from="tileMap/PressurePlate" to="Turret2" method="deactivate"]
 
-[connection signal="counterFinished" from="tileMap/PressurePlate" to="Turret" method="deactivate"]
+[connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor2" method="_onDeactivate"]
 
-[connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onActivate"]
+[connection signal="counterFinished" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onDeactivate"]
 
 [connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor3" method="_onDeactivate"]
+
+[connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor" method="_onActivate"]
 
 [connection signal="steppedOn" from="tileMap/PressurePlate" to="tileMap/SwitchDoor4" method="_onDeactivate"]
 

@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/TILESETTEST.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/cornertile1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/cornertile2.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/LABTILESET_DLC.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/DARKLABTILE.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/GREYLABTILE.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/SIDEDOORLIGHTS.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/DARKLABTILE.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GREYLABTILE.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Tileset" type="Node2D" index="0"]
+[node name="Tileset" type="Node2D"]
 
 position = Vector2( 33.5329, 34.0677 )
 
@@ -554,19 +555,70 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="Floor1" type="Sprite" parent="." index="21"]
+[node name="Ceiling22" type="Sprite" parent="." index="21"]
+
+editor/display_folded = true
+position = Vector2( 709.154, 138.629 )
+texture = ExtResource( 5 )
+vframes = 2
+hframes = 2
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling22" index="0"]
+
+visible = false
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling22/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Ceiling24" type="Sprite" parent="." index="22"]
+
+editor/display_folded = true
+position = Vector2( 709.154, 215.814 )
+texture = ExtResource( 5 )
+vframes = 2
+hframes = 2
+frame = 2
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling24" index="0"]
+
+visible = false
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling24/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Floor1" type="Sprite" parent="." index="23"]
 
 position = Vector2( 334.472, 0.895435 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="Floor2" type="Sprite" parent="." index="22"]
+[node name="Floor2" type="Sprite" parent="." index="24"]
 
 position = Vector2( 402.022, 0.397217 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Animation" ]
 
-[node name="WallTop1" type="Sprite" parent="." index="23"]
+[node name="WallTop1" type="Sprite" parent="." index="25"]
 
 editor/display_folded = true
 position = Vector2( 193.072, 204.182 )
@@ -592,7 +644,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop2" type="Sprite" parent="." index="24"]
+[node name="WallTop2" type="Sprite" parent="." index="26"]
 
 editor/display_folded = true
 position = Vector2( 258.908, 204.182 )
@@ -618,7 +670,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop4" type="Sprite" parent="." index="25"]
+[node name="WallTop4" type="Sprite" parent="." index="27"]
 
 editor/display_folded = true
 position = Vector2( 333.531, 204.182 )
@@ -644,7 +696,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop5" type="Sprite" parent="." index="26"]
+[node name="WallTop5" type="Sprite" parent="." index="28"]
 
 editor/display_folded = true
 position = Vector2( 400.83, 204.182 )
@@ -670,7 +722,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorTop1" type="Sprite" parent="." index="27"]
+[node name="DoorTop1" type="Sprite" parent="." index="29"]
 
 editor/display_folded = true
 position = Vector2( 468.459, 204.182 )
@@ -696,7 +748,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorTop2" type="Sprite" parent="." index="28"]
+[node name="DoorTop2" type="Sprite" parent="." index="30"]
 
 editor/display_folded = true
 position = Vector2( 533.147, 204.182 )
@@ -722,7 +774,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot1" type="Sprite" parent="." index="29"]
+[node name="WallBot1" type="Sprite" parent="." index="31"]
 
 editor/display_folded = true
 position = Vector2( 193.072, 273.415 )
@@ -748,7 +800,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot2" type="Sprite" parent="." index="30"]
+[node name="WallBot2" type="Sprite" parent="." index="32"]
 
 editor/display_folded = true
 position = Vector2( 258.955, 273.415 )
@@ -774,7 +826,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot4" type="Sprite" parent="." index="31"]
+[node name="WallBot4" type="Sprite" parent="." index="33"]
 
 editor/display_folded = true
 position = Vector2( 333.531, 273.415 )
@@ -800,7 +852,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot5" type="Sprite" parent="." index="32"]
+[node name="WallBot5" type="Sprite" parent="." index="34"]
 
 editor/display_folded = true
 position = Vector2( 400.83, 273.415 )
@@ -826,7 +878,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorBot1" type="Sprite" parent="." index="33"]
+[node name="DoorBot1" type="Sprite" parent="." index="35"]
 
 editor/display_folded = true
 position = Vector2( 468.459, 273.415 )
@@ -852,8 +904,9 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorBot2" type="Sprite" parent="." index="34"]
+[node name="DoorBot2" type="Sprite" parent="." index="36"]
 
+editor/display_folded = true
 position = Vector2( 533.147, 273.415 )
 texture = ExtResource( 1 )
 vframes = 5

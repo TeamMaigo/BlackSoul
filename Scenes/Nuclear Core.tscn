@@ -26,12 +26,10 @@ respawnable = false
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="." index="1"]
 
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 

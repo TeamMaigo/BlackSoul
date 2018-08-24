@@ -1,17 +1,21 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/LightController.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/LightController.gd" type="Script" id=10]
+[ext_resource path="res://Sprites/Light/square.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=14]
 
-[node name="tileMap" type="TileMap" index="0"]
+[node name="tileMap" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -44,113 +48,28 @@ newScene = "CoreH"
 
 position = Vector2( -227.609, -30.1468 )
 
-[node name="EnemyMob" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Switch" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 390.428, -58.4962 )
-fireType = "shotgun"
-respawns = false
-
-[node name="EnemyMob2" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 900.271, 1079.95 )
-hp = 8
-fireType = "shotgun"
-respawns = false
-
-[node name="EnemyMob3" parent="." index="4" instance=ExtResource( 4 )]
-
-position = Vector2( 486.283, 987.993 )
-hp = 8
-fireType = "shotgun"
-respawns = false
-
-[node name="EnemyMob6" parent="." index="5" instance=ExtResource( 4 )]
-
-position = Vector2( 231.649, 2185.5 )
-fireType = "shotgun"
-respawns = false
-
-[node name="EnemyMob8" parent="." index="6" instance=ExtResource( 4 )]
-
-position = Vector2( 688.922, 2501.28 )
-fireType = "shotgun"
-respawns = false
-
-[node name="EnemyMob7" parent="." index="7" instance=ExtResource( 4 )]
-
-position = Vector2( 1239.27, 2071.14 )
-fireType = "shotgun"
-respawns = false
-
-[node name="Turret3" parent="." index="8" instance=ExtResource( 5 )]
-
-position = Vector2( 2525.59, 675.916 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-bulletSpeed = 10
-
-[node name="Turret8" parent="." index="9" instance=ExtResource( 5 )]
-
-position = Vector2( 214.526, 348.641 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-bulletSpeed = 10
-
-[node name="Turret5" parent="." index="10" instance=ExtResource( 5 )]
-
-position = Vector2( 2144.36, 672.214 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-bulletSpeed = 10
-rotatingTurret = false
-usesTargeting = false
-
-[node name="Turret7" parent="." index="11" instance=ExtResource( 5 )]
-
-position = Vector2( 1695.44, 865.385 )
-rotation = 1.5708
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-bulletSpeed = 10
-rotatingTurret = false
-usesTargeting = false
-
-[node name="Turret4" parent="." index="12" instance=ExtResource( 5 )]
-
-position = Vector2( 2099.95, 1179.28 )
-rotation = -1.5708
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-bulletSpeed = 10
-
-[node name="Turret6" parent="." index="13" instance=ExtResource( 5 )]
-
-position = Vector2( 2588.51, 1182.99 )
-rotation = -1.5708
-_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-bulletSpeed = 10
-rotatingTurret = false
-usesTargeting = false
-
-[node name="Switch" parent="." index="14" instance=ExtResource( 6 )]
-
+editor/display_folded = true
 position = Vector2( 754.095, 2129.43 )
-on = true
+connectedGroup = "WireGroupA"
 
-[node name="SwitchDoor" parent="Switch" index="3" instance=ExtResource( 7 )]
+[node name="SwitchDoor" parent="Switch" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 615.781, -1123.57 )
 scale = Vector2( 4.10635, 3.12708 )
 
-[node name="Switch2" parent="." index="15" instance=ExtResource( 6 )]
+[node name="Switch2" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 2296.84, 935.014 )
-on = true
+position = Vector2( 2304, 896 )
+connectedGroup = "WireGroupB"
 
-[node name="SwitchDoor" parent="Switch2" index="3" instance=ExtResource( 7 )]
+[node name="SwitchDoor" parent="Switch2" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 540.124, -4.35571 )
+position = Vector2( 544, 32 )
 scale = Vector2( 4.10635, 3.12708 )
 
-[node name="HoleLayer" type="TileMap" parent="." index="16"]
+[node name="HoleLayer" type="TileMap" parent="." index="4"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -174,74 +93,436 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BreakableBlock" parent="." index="17" instance=ExtResource( 8 )]
+[node name="BreakableBlock" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 599.023, 139.3 )
 
-[node name="Turret2" parent="." index="18" instance=ExtResource( 5 )]
+[node name="Dummy" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 259.542, 2390.28 )
+
+[node name="Dummy6" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 89.5441, 1954.46 )
+
+[node name="Dummy2" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 673.06, 2574.31 )
+
+[node name="Dummy3" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 988.879, 2490.25 )
+
+[node name="Dummy4" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 1104.79, 1758.04 )
+
+[node name="Dummy7" parent="." index="11" instance=ExtResource( 7 )]
+
+position = Vector2( 672, -32 )
+
+[node name="Dummy5" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 611.078, 1434.44 )
+
+[node name="HealthPickup" parent="." index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 914.493, 2118.27 )
+
+[node name="LightController" type="Node" parent="." index="14" instance=ExtResource( 9 )]
+
+editor/display_folded = true
+script = ExtResource( 10 )
+energy = 0.8
+strobe = true
+low_energy = 0
+high_energy = 1
+transition_time = 2.5
+
+[node name="light2D" type="Light2D" parent="LightController" index="0"]
+
+position = Vector2( 1527.42, 1166.36 )
+scale = Vector2( 31.8057, 24.9371 )
+enabled = true
+editor_only = false
+texture = ExtResource( 11 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 0, 0, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Breakable" type="Node2D" parent="." index="15"]
+
+[node name="BreakableBlock2" parent="Breakable" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 1888, 953.339 )
+scale = Vector2( 1, 2.29183 )
+
+[node name="BreakableBlock3" parent="Breakable" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 2240, 896 )
+
+[node name="BreakableBlock4" parent="Breakable" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 2304, 832 )
+
+[node name="BreakableBlock5" parent="Breakable" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 2368, 896 )
+
+[node name="BreakableBlock6" parent="Breakable" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 2368, 832 )
+
+[node name="BreakableBlock7" parent="Breakable" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 2304, 960 )
+
+[node name="BreakableBlock8" parent="Breakable" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 2368, 960 )
+
+[node name="BreakableBlock9" parent="Breakable" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 2240, 960 )
+
+[node name="BreakableBlock10" parent="Breakable" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 2240, 832 )
+
+[node name="Enemies" type="Node2D" parent="." index="16"]
+
+[node name="EnemyMob" parent="Enemies" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( 390.428, -58.4962 )
+fireType = "shotgun"
+
+[node name="EnemyMob2" parent="Enemies" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1056 )
+hp = 8
+fireType = "shotgun"
+
+[node name="EnemyMob3" parent="Enemies" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 486.283, 987.993 )
+hp = 8
+fireType = "shotgun"
+
+[node name="EnemyMob6" parent="Enemies" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 231.649, 2185.5 )
+fireType = "shotgun"
+
+[node name="EnemyMob8" parent="Enemies" index="4" instance=ExtResource( 12 )]
+
+position = Vector2( 688.922, 2501.28 )
+fireType = "shotgun"
+
+[node name="EnemyMob7" parent="Enemies" index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 1239.27, 2071.14 )
+fireType = "shotgun"
+
+[node name="Turrets" type="Node2D" parent="." index="17"]
+
+editor/display_folded = true
+
+[node name="Turret3" parent="Turrets" index="0" instance=ExtResource( 13 )]
+
+position = Vector2( 2525.59, 675.916 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+
+[node name="Turret8" parent="Turrets" index="1" instance=ExtResource( 13 )]
+
+position = Vector2( 214.526, 348.641 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+
+[node name="Turret5" parent="Turrets" index="2" instance=ExtResource( 13 )]
+
+position = Vector2( 2144.36, 672.214 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret7" parent="Turrets" index="3" instance=ExtResource( 13 )]
+
+position = Vector2( 1695.44, 865.385 )
+rotation = 1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret4" parent="Turrets" index="4" instance=ExtResource( 13 )]
+
+position = Vector2( 2099.95, 1179.28 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+
+[node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 2588.51, 1182.99 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 10
+rotatingTurret = false
+usesTargeting = false
+
+[node name="Turret2" parent="Turrets" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 535.083, 2087.01 )
 detect_radius = 200
 bulletSpeed = 3
 
-[node name="Dummy" parent="." index="19" instance=ExtResource( 9 )]
+[node name="WireGroup" type="Node2D" parent="." index="18"]
 
-position = Vector2( 259.542, 2390.28 )
+[node name="Wires" parent="WireGroup" index="0" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="Dummy6" parent="." index="20" instance=ExtResource( 9 )]
+position = Vector2( 800, 2080 )
 
-position = Vector2( 89.5441, 1954.46 )
+[node name="Wires2" parent="WireGroup" index="1" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="Dummy2" parent="." index="21" instance=ExtResource( 9 )]
+position = Vector2( 800, 2016 )
+frame = 9
 
-position = Vector2( 673.06, 2574.31 )
+[node name="Wires3" parent="WireGroup" index="2" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="Dummy3" parent="." index="22" instance=ExtResource( 9 )]
+position = Vector2( 800, 1952 )
+frame = 9
 
-position = Vector2( 988.879, 2490.25 )
+[node name="Wires4" parent="WireGroup" index="3" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="Dummy4" parent="." index="23" instance=ExtResource( 9 )]
+position = Vector2( 800, 1888 )
+z_index = -1
+frame = 9
 
-position = Vector2( 1104.79, 1758.04 )
+[node name="Wires5" parent="WireGroup" index="4" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="Dummy5" parent="." index="24" instance=ExtResource( 9 )]
+position = Vector2( 800, 1824 )
+z_index = -1
+frame = 9
 
-position = Vector2( 611.078, 1434.44 )
+[node name="Wires6" parent="WireGroup" index="5" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="BreakableBlock2" parent="." index="25" instance=ExtResource( 8 )]
+position = Vector2( 800, 1760 )
+z_index = -1
+frame = 9
 
-position = Vector2( 1902.04, 956.603 )
+[node name="Wires7" parent="WireGroup" index="6" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="BreakableBlock3" parent="." index="26" instance=ExtResource( 8 )]
+position = Vector2( 800, 1696 )
+z_index = -1
+frame = 9
 
-position = Vector2( 2218.49, 939.948 )
+[node name="Wires8" parent="WireGroup" index="7" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="BreakableBlock4" parent="." index="27" instance=ExtResource( 8 )]
+position = Vector2( 800, 1696 )
+z_index = -1
+frame = 9
 
-position = Vector2( 2292.49, 866.948 )
+[node name="Wires9" parent="WireGroup" index="8" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="BreakableBlock5" parent="." index="28" instance=ExtResource( 8 )]
+position = Vector2( 800, 1632 )
+z_index = -1
+frame = 9
 
-position = Vector2( 2377.49, 889.948 )
+[node name="Wires10" parent="WireGroup" index="9" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="BreakableBlock6" parent="." index="29" instance=ExtResource( 8 )]
+position = Vector2( 800, 1568 )
+z_index = -1
+frame = 9
 
-position = Vector2( 2382.49, 978.948 )
+[node name="Wires11" parent="WireGroup" index="10" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="BreakableBlock7" parent="." index="30" instance=ExtResource( 8 )]
+position = Vector2( 800, 1504 )
+frame = 9
 
-position = Vector2( 2291.49, 1014.95 )
+[node name="Wires12" parent="WireGroup" index="11" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[node name="HealthPickup" parent="." index="31" instance=ExtResource( 10 )]
+position = Vector2( 800, 1440 )
+frame = 9
 
-position = Vector2( 914.493, 2118.27 )
+[node name="Wires13" parent="WireGroup" index="12" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onDeactivate"]
+position = Vector2( 800, 1376 )
+frame = 4
 
-[connection signal="turn_on" from="Switch" to="Switch/SwitchDoor" method="_onActivate"]
+[node name="Wires14" parent="WireGroup" index="13" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
 
-[connection signal="turn_off" from="Switch2" to="Switch2/SwitchDoor" method="_onDeactivate"]
+position = Vector2( 864, 1376 )
+frame = 8
 
-[connection signal="turn_on" from="Switch2" to="Switch2/SwitchDoor" method="_onActivate"]
+[node name="Wires15" parent="WireGroup" index="14" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 928, 1376 )
+frame = 8
+
+[node name="Wires16" parent="WireGroup" index="15" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 992, 1376 )
+frame = 8
+
+[node name="Wires17" parent="WireGroup" index="16" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1056, 1376 )
+frame = 8
+
+[node name="Wires18" parent="WireGroup" index="17" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1120, 1376 )
+frame = 8
+
+[node name="Wires19" parent="WireGroup" index="18" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1184, 1376 )
+frame = 8
+
+[node name="Wires20" parent="WireGroup" index="19" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1248, 1376 )
+frame = 7
+
+[node name="Wires21" parent="WireGroup" index="20" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1248, 1312 )
+frame = 9
+
+[node name="Wires22" parent="WireGroup" index="21" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1248, 1248 )
+frame = 9
+
+[node name="Wires23" parent="WireGroup" index="22" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1248, 1184 )
+frame = 9
+
+[node name="Wires24" parent="WireGroup" index="23" groups=[
+"WireGroupB",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 2400, 928 )
+frame = 2
+
+[node name="Wires26" parent="WireGroup" index="24" groups=[
+"WireGroupB",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 2720, 928 )
+frame = 3
+
+[node name="Wires27" parent="WireGroup" index="25" groups=[
+"WireGroupB",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 2528, 928 )
+frame = 8
+
+[node name="Wires30" parent="WireGroup" index="26" groups=[
+"WireGroupB",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 2464, 928 )
+frame = 8
+
+[node name="Wires28" parent="WireGroup" index="27" groups=[
+"WireGroupB",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 2592, 928 )
+frame = 8
+
+[node name="Wires29" parent="WireGroup" index="28" groups=[
+"WireGroupB",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 2656, 928 )
+frame = 8
+
+[node name="Wires25" parent="WireGroup" index="29" groups=[
+"WireGroupA",
+] instance=ExtResource( 14 )]
+
+position = Vector2( 1248, 1120 )
+frame = 1
+
+[connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onActivate"]
+
+[connection signal="turn_on" from="Switch" to="Switch/SwitchDoor" method="_onDeactivate"]
+
+[connection signal="turn_off" from="Switch2" to="Switch2/SwitchDoor" method="_onActivate"]
+
+[connection signal="turn_on" from="Switch2" to="Switch2/SwitchDoor" method="_onDeactivate"]
 
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeaponSwing.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/goldwingspritesheet.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/UI_Life.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -201,10 +201,10 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
-"team_Player",
-"Player",
-"Persist",
 "Damageable",
+"Persist",
+"Player",
+"team_Player",
 ]]
 
 input_pickable = false
@@ -277,45 +277,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="PlayerHealth" type="Control" parent="CanvasLayer/PlayerUI" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 168.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="UI_Life01" parent="CanvasLayer/PlayerUI/PlayerHealth" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 20, 20 )
-
-[node name="UI_Life2" parent="CanvasLayer/PlayerUI/PlayerHealth" index="1" instance=ExtResource( 4 )]
-
-position = Vector2( 60, 20 )
-
-[node name="UI_Life3" parent="CanvasLayer/PlayerUI/PlayerHealth" index="2" instance=ExtResource( 4 )]
-
-position = Vector2( 100, 20 )
-
-[node name="UI_Life4" parent="CanvasLayer/PlayerUI/PlayerHealth" index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 140, 20 )
-
-[node name="UI_Life5" parent="CanvasLayer/PlayerUI/PlayerHealth" index="4" instance=ExtResource( 4 )]
-
-position = Vector2( 180, 20 )
+[node name="HealthBar" parent="CanvasLayer/PlayerUI" index="0" instance=ExtResource( 4 )]
 
 [node name="PlayerAudio" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 5 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
