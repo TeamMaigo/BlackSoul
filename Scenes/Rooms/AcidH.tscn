@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=7]
 
-[node name="Room1" type="TileMap" index="0"]
+[node name="Room1" type="TileMap"]
 
 mode = 0
 tile_set = ExtResource( 1 )

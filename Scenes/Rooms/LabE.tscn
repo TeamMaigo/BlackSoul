@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -76,64 +76,40 @@ position = Vector2( 768, 1312 )
 scale = Vector2( 2, 1 )
 respawnable = false
 
-[node name="SignAcidSector" type="Label" parent="." index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -1248.0
-margin_top = 224.0
-margin_right = -1033.0
-margin_bottom = 274.0
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Acid Sector
-(That's a door toggled by a switch)"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
-[node name="TransferPoint" parent="." index="13" instance=ExtResource( 1 )]
+[node name="TransferPoint" parent="." index="12" instance=ExtResource( 1 )]
 
 position = Vector2( 2367.93, 775.319 )
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 newScene = "Save1"
 
-[node name="TransferPoint2" parent="." index="14" instance=ExtResource( 1 )]
+[node name="TransferPoint2" parent="." index="13" instance=ExtResource( 1 )]
 
 position = Vector2( 2371.56, -1535.93 )
 newScene = "LabE1"
 transferGoalTemp = "B"
 
-[node name="TransferGoalC" parent="." index="15" instance=ExtResource( 3 )]
+[node name="TransferGoalC" parent="." index="14" instance=ExtResource( 3 )]
 
 position = Vector2( -450.694, -147.719 )
 
-[node name="TransferGoalD" parent="." index="16" instance=ExtResource( 3 )]
+[node name="TransferGoalD" parent="." index="15" instance=ExtResource( 3 )]
 
 position = Vector2( 2366.19, -1230.54 )
 
-[node name="TransferGoalE" parent="." index="17" instance=ExtResource( 3 )]
+[node name="TransferGoalE" parent="." index="16" instance=ExtResource( 3 )]
 
 position = Vector2( -630.014, 1532.19 )
 
-[node name="TransferGoalF" parent="." index="18" instance=ExtResource( 3 )]
+[node name="TransferGoalF" parent="." index="17" instance=ExtResource( 3 )]
 
 position = Vector2( 1304.98, 1635.3 )
 
-[node name="TransferGoalG" parent="." index="19" instance=ExtResource( 3 )]
+[node name="TransferGoalG" parent="." index="18" instance=ExtResource( 3 )]
 
-position = Vector2( -992, 1120 )
+position = Vector2( -928, 544 )
 
-[node name="Turrets" type="Node2D" parent="." index="20"]
+[node name="Turrets" type="Node2D" parent="." index="19"]
 
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 5 )]
 
@@ -395,7 +371,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 600
 bulletSpeed = 14
 
-[node name="holeLayer" type="TileMap" parent="." index="21"]
+[node name="holeLayer" type="TileMap" parent="." index="20"]
 
 mode = 0
 tile_set = ExtResource( 6 )
@@ -419,20 +395,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Switch" parent="." index="22" instance=ExtResource( 7 )]
+[node name="Switch" parent="." index="21" instance=ExtResource( 7 )]
 
 position = Vector2( -992, 928 )
 connectedGroup = "WireGroupA"
 
-[node name="EnemyMob8" parent="." index="23" instance=ExtResource( 8 )]
+[node name="EnemyMob8" parent="." index="22" instance=ExtResource( 8 )]
 
 position = Vector2( 803.454, -318.184 )
 
-[node name="EnemyMob7" parent="." index="24" instance=ExtResource( 8 )]
+[node name="EnemyMob7" parent="." index="23" instance=ExtResource( 8 )]
 
 position = Vector2( 434.37, -316.848 )
 
-[node name="LabRoom" type="TileMap" parent="." index="25"]
+[node name="LabRoom" type="TileMap" parent="." index="24"]
 
 z_index = -1
 mode = 0
@@ -457,11 +433,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PieceOfHeart" parent="." index="26" instance=ExtResource( 10 )]
+[node name="PieceOfHeart" parent="." index="25" instance=ExtResource( 10 )]
 
 position = Vector2( 2366.37, -851.623 )
 
-[node name="WireGroupA" type="Node2D" parent="." index="27"]
+[node name="WireGroupA" type="Node2D" parent="." index="26"]
 
 editor/display_folded = true
 

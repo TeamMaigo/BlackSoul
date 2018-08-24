@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=8 format=2]
+[gd_resource type="TileSet" load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/ACIDTILESET.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/ACIDTILESET_DLC.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/ACIDSIDEDOORLIGHTS.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/ACIDFLOORTILES.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/ACIDTILESETDLC_WALLS.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/ACIDUP_DOOR.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -791,6 +792,34 @@ extents = Vector2( 32, 32 )
 56/occluder_offset = Vector2( 32, 32 )
 56/navigation_offset = Vector2( 32, 32 )
 56/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
+} ]
+57/name = "Ceiling25"
+57/texture = ExtResource( 6 )
+57/tex_offset = Vector2( 0, 0 )
+57/modulate = Color( 1, 1, 1, 1 )
+57/region = Rect2( 0, 0, 64, 64 )
+57/is_autotile = false
+57/occluder_offset = Vector2( 32, 32 )
+57/navigation_offset = Vector2( 32, 32 )
+57/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
+} ]
+58/name = "Ceiling26"
+58/texture = ExtResource( 6 )
+58/tex_offset = Vector2( 0, 0 )
+58/modulate = Color( 1, 1, 1, 1 )
+58/region = Rect2( 0, 64, 64, 64 )
+58/is_autotile = false
+58/occluder_offset = Vector2( 32, 32 )
+58/navigation_offset = Vector2( 32, 32 )
+58/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 1 ),

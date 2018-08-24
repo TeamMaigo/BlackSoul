@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=8]
 
-[node name="LabRoom" type="Node" index="0"]
+[node name="LabRoom" type="Node"]
 
 [node name="tileMap" type="TileMap" parent="." index="0"]
 

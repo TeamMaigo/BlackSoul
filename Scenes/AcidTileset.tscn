@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/ACIDTILESET.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/ACIDTILESET_DLC.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/ACIDSIDEDOORLIGHTS.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/ACIDFLOORTILES.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/ACIDTILESETDLC_WALLS.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/ACIDUP_DOOR.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/ACIDFLOORTILES.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/ACIDTILESETDLC_WALLS.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -615,34 +616,85 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="Floor1" type="Sprite" parent="." index="23"]
+[node name="Ceiling25" type="Sprite" parent="." index="23"]
+
+editor/display_folded = true
+position = Vector2( 707.349, 285.201 )
+texture = ExtResource( 4 )
+vframes = 2
+hframes = 2
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling25" index="0"]
+
+visible = false
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling25/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Ceiling26" type="Sprite" parent="." index="24"]
+
+editor/display_folded = true
+position = Vector2( 789.644, 285.6 )
+texture = ExtResource( 4 )
+vframes = 2
+hframes = 2
+frame = 2
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling26" index="0"]
+
+visible = false
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling26/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Floor1" type="Sprite" parent="." index="25"]
 
 position = Vector2( 310.337, -96.1318 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 6
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="Floor2" type="Sprite" parent="." index="24"]
+[node name="Floor2" type="Sprite" parent="." index="26"]
 
 position = Vector2( 387.957, -96.1318 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 6
 frame = 1
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="Floor3" type="Sprite" parent="." index="25"]
+[node name="Floor3" type="Sprite" parent="." index="27"]
 
 position = Vector2( 472.875, -96.1318 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 6
 frame = 2
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="Floor4" type="Sprite" parent="." index="26"]
+[node name="Floor4" type="Sprite" parent="." index="28"]
 
 editor/display_folded = true
 position = Vector2( 544.525, -96.1318 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 6
 frame = 3
 _sections_unfolded = [ "Animation", "Transform" ]
@@ -662,11 +714,11 @@ bounce = 0.0
 
 shape = SubResource( 2 )
 
-[node name="Floor5" type="Sprite" parent="." index="27"]
+[node name="Floor5" type="Sprite" parent="." index="29"]
 
 editor/display_folded = true
 position = Vector2( 621.6, -96.1318 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 6
 frame = 4
 _sections_unfolded = [ "Animation", "Transform" ]
@@ -686,15 +738,15 @@ bounce = 0.0
 
 shape = SubResource( 2 )
 
-[node name="Floor6" type="Sprite" parent="." index="28"]
+[node name="Floor6" type="Sprite" parent="." index="30"]
 
 position = Vector2( 701.756, -96.1318 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 6
 frame = 5
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="WallTop1" type="Sprite" parent="." index="29"]
+[node name="WallTop1" type="Sprite" parent="." index="31"]
 
 editor/display_folded = true
 position = Vector2( 193.072, 204.182 )
@@ -720,11 +772,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop3" type="Sprite" parent="." index="30"]
+[node name="WallTop3" type="Sprite" parent="." index="32"]
 
 editor/display_folded = true
 position = Vector2( 193.072, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 _sections_unfolded = [ "Animation" ]
@@ -745,11 +797,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop4" type="Sprite" parent="." index="31"]
+[node name="WallTop4" type="Sprite" parent="." index="33"]
 
 editor/display_folded = true
 position = Vector2( 267.316, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 1
@@ -771,11 +823,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop5" type="Sprite" parent="." index="32"]
+[node name="WallTop5" type="Sprite" parent="." index="34"]
 
 editor/display_folded = true
 position = Vector2( 342.158, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 2
@@ -797,11 +849,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop6" type="Sprite" parent="." index="33"]
+[node name="WallTop6" type="Sprite" parent="." index="35"]
 
 editor/display_folded = true
 position = Vector2( 414.605, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 3
@@ -823,11 +875,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop7" type="Sprite" parent="." index="34"]
+[node name="WallTop7" type="Sprite" parent="." index="36"]
 
 editor/display_folded = true
 position = Vector2( 488.849, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 4
@@ -849,11 +901,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop8" type="Sprite" parent="." index="35"]
+[node name="WallTop8" type="Sprite" parent="." index="37"]
 
 editor/display_folded = true
 position = Vector2( 562.001, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 5
@@ -875,11 +927,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop9" type="Sprite" parent="." index="36"]
+[node name="WallTop9" type="Sprite" parent="." index="38"]
 
 editor/display_folded = true
 position = Vector2( 633.25, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 6
@@ -901,11 +953,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop10" type="Sprite" parent="." index="37"]
+[node name="WallTop10" type="Sprite" parent="." index="39"]
 
 editor/display_folded = true
 position = Vector2( 706.297, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 7
@@ -927,11 +979,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop11" type="Sprite" parent="." index="38"]
+[node name="WallTop11" type="Sprite" parent="." index="40"]
 
 editor/display_folded = true
 position = Vector2( 779.936, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 8
@@ -953,11 +1005,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop12" type="Sprite" parent="." index="39"]
+[node name="WallTop12" type="Sprite" parent="." index="41"]
 
 editor/display_folded = true
 position = Vector2( 856.013, 362.249 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 9
@@ -979,7 +1031,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallTop2" type="Sprite" parent="." index="40"]
+[node name="WallTop2" type="Sprite" parent="." index="42"]
 
 editor/display_folded = true
 position = Vector2( 258.908, 204.182 )
@@ -1005,7 +1057,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorTop1" type="Sprite" parent="." index="41"]
+[node name="DoorTop1" type="Sprite" parent="." index="43"]
 
 editor/display_folded = true
 position = Vector2( 468.459, 204.182 )
@@ -1031,7 +1083,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorTop2" type="Sprite" parent="." index="42"]
+[node name="DoorTop2" type="Sprite" parent="." index="44"]
 
 editor/display_folded = true
 position = Vector2( 533.147, 204.182 )
@@ -1057,7 +1109,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot1" type="Sprite" parent="." index="43"]
+[node name="WallBot1" type="Sprite" parent="." index="45"]
 
 editor/display_folded = true
 position = Vector2( 193.072, 273.415 )
@@ -1083,11 +1135,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot3" type="Sprite" parent="." index="44"]
+[node name="WallBot3" type="Sprite" parent="." index="46"]
 
 editor/display_folded = true
 position = Vector2( 193.072, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 10
@@ -1109,11 +1161,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot4" type="Sprite" parent="." index="45"]
+[node name="WallBot4" type="Sprite" parent="." index="47"]
 
 editor/display_folded = true
 position = Vector2( 267.316, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 11
@@ -1135,11 +1187,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot5" type="Sprite" parent="." index="46"]
+[node name="WallBot5" type="Sprite" parent="." index="48"]
 
 editor/display_folded = true
 position = Vector2( 342.158, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 12
@@ -1161,11 +1213,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot6" type="Sprite" parent="." index="47"]
+[node name="WallBot6" type="Sprite" parent="." index="49"]
 
 editor/display_folded = true
 position = Vector2( 414.605, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 13
@@ -1187,11 +1239,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot7" type="Sprite" parent="." index="48"]
+[node name="WallBot7" type="Sprite" parent="." index="50"]
 
 editor/display_folded = true
 position = Vector2( 488.849, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 14
@@ -1213,11 +1265,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot8" type="Sprite" parent="." index="49"]
+[node name="WallBot8" type="Sprite" parent="." index="51"]
 
 editor/display_folded = true
 position = Vector2( 562.001, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 15
@@ -1239,11 +1291,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot9" type="Sprite" parent="." index="50"]
+[node name="WallBot9" type="Sprite" parent="." index="52"]
 
 editor/display_folded = true
 position = Vector2( 633.25, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 16
@@ -1265,11 +1317,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot10" type="Sprite" parent="." index="51"]
+[node name="WallBot10" type="Sprite" parent="." index="53"]
 
 editor/display_folded = true
 position = Vector2( 706.297, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 17
@@ -1291,11 +1343,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot11" type="Sprite" parent="." index="52"]
+[node name="WallBot11" type="Sprite" parent="." index="54"]
 
 editor/display_folded = true
 position = Vector2( 779.936, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 18
@@ -1317,11 +1369,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot12" type="Sprite" parent="." index="53"]
+[node name="WallBot12" type="Sprite" parent="." index="55"]
 
 editor/display_folded = true
 position = Vector2( 856.013, 431.482 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 10
 frame = 19
@@ -1343,7 +1395,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="WallBot2" type="Sprite" parent="." index="54"]
+[node name="WallBot2" type="Sprite" parent="." index="56"]
 
 editor/display_folded = true
 position = Vector2( 258.955, 273.415 )
@@ -1369,7 +1421,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorBot1" type="Sprite" parent="." index="55"]
+[node name="DoorBot1" type="Sprite" parent="." index="57"]
 
 editor/display_folded = true
 position = Vector2( 468.459, 273.415 )
@@ -1395,7 +1447,7 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
-[node name="DoorBot2" type="Sprite" parent="." index="56"]
+[node name="DoorBot2" type="Sprite" parent="." index="58"]
 
 editor/display_folded = true
 position = Vector2( 533.147, 273.415 )
