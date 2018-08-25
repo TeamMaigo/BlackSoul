@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/LIFE POINTS ACTIVE.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/LIFE POINTS SILHOUETTE.png" type="Texture" id=3]
 
-[node name="HealthIcon" type="Control"]
+[node name="HealthIcon" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeaponSwing.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/goldwingspritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/UI/HealthUpProgress.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -201,10 +202,10 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
-"Damageable",
 "Persist",
-"Player",
 "team_Player",
+"Player",
+"Damageable",
 ]]
 
 input_pickable = false
@@ -279,11 +280,17 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="HealthBar" parent="CanvasLayer/PlayerUI" index="0" instance=ExtResource( 4 )]
 
+[node name="HealthUpProgress" parent="CanvasLayer/PlayerUI" index="1" instance=ExtResource( 5 )]
+
+margin_left = 981.0
+margin_top = 1.0
+margin_right = 1026.0
+margin_bottom = 41.0
+
 [node name="PlayerAudio" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

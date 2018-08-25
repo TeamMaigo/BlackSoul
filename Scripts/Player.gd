@@ -39,6 +39,7 @@ var piecesOfHeart = 0
 var trauma = 0
 
 onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
+onready var healthUpProgress = $CanvasLayer/PlayerUI/HealthUpProgress
 
 func _ready():
 	set_physics_process(true)
@@ -47,6 +48,7 @@ func _ready():
 	lastTransferPoint = position
 	$RotationNode.hide()
 	updateHealthBar()
+	healthUpProgress.setMaxValue(3)
 
 func _physics_process(delta):
 	mousePos = get_global_mouse_position()
@@ -219,6 +221,15 @@ func updateHealthBar():
 	healthBar.setMaxValue(maxHealth)
 	healthBar.setValue(health)
 
+func updateHealthUpProgress():
+	if piecesOfHeart == 3:
+		piecesOfHeart = 0
+		maxHealth += 1
+		setHealth(maxHealth)
+	get_node("PlayerAudio").stream = load("res://Audio/RecievedChat.ogg")
+	get_node("PlayerAudio").playing = true
+	get_node("PlayerAudio").volume_db = Global.masterSound
+	healthUpProgress.setValue(piecesOfHeart)
 
 func setHealth(value):
 	health = value
