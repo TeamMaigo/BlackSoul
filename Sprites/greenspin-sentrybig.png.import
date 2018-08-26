@@ -7,10 +7,7 @@ path="res://.import/greenspin-sentrybig.png-0eaae02743cb80aefd13784fa9718428.ste
 [deps]
 
 source_file="res://Sprites/greenspin-sentrybig.png"
-source_md5="3ebdb8d4096bde1c531c25cec47741f2"
-
 dest_files=[ "res://.import/greenspin-sentrybig.png-0eaae02743cb80aefd13784fa9718428.stex" ]
-dest_md5="58dbb8ec81d2da74415570bc52366718"
 
 [params]
 

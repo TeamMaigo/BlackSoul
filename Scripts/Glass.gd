@@ -12,11 +12,11 @@ export(PALETTETYPE) var paletteType = PALETTETYPE.lab
 
 func _ready():
 	if paletteType == PALETTETYPE.lab:
-		$Sprite.texture = load("res://Sprites/BREAKABLE_BLUE.png")
+		$sprite.texture = load("res://Sprites/BREAKABLE_BLUE.png")
 	if paletteType == PALETTETYPE.acid:
-		$Sprite.texture = load("res://Sprites/BREAKABLE_GREEN.png")
+		$sprite.texture = load("res://Sprites/BREAKABLE_GREEN.png")
 	if paletteType == PALETTETYPE.core:
-		$Sprite.texture = load("res://Sprites/BREAKABLE_BLUE.png")
+		$sprite.texture = load("res://Sprites/BREAKABLE_BLUE.png")
 
 func shatterParams(pos, rot, speed):
 	shatterPos = pos

@@ -7,10 +7,7 @@ path="res://.import/ACIDSIDEDOORLIGHTS.png-92e3ed96fbaf42f1f58c58bdebea9252.stex
 [deps]
 
 source_file="res://Sprites/ACIDSIDEDOORLIGHTS.png"
-source_md5="e3b92d910eb86fcdd34fde2681414ee9"
-
 dest_files=[ "res://.import/ACIDSIDEDOORLIGHTS.png-92e3ed96fbaf42f1f58c58bdebea9252.stex" ]
-dest_md5="b92ba3e222a2d09a3557c5e677637e48"
 
 [params]
 

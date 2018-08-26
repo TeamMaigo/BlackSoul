@@ -15,7 +15,7 @@ extents = Vector2( 15.754, 32 )
 render_priority = 0
 trail_divisor = 1
 emission_shape = 2
-emission_box_extents = Vector3( 32, 32, 1 )
+emission_box_extents = Vector3( 16, 32, 1 )
 flag_align_y = true
 flag_rotate_y = false
 flag_disable_z = true
@@ -70,17 +70,20 @@ tracks/0/keys = {
 }
 
 [node name="BreakableBlock" type="StaticBody2D" index="0" groups=[
+"Breakable",
 "Damageable",
+"Shatterable",
 ]]
 
 input_pickable = false
-collision_layer = 4
-collision_mask = 1
+collision_layer = 8
+collision_mask = 17
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 health = 1
 paletteType = null
 
@@ -99,6 +102,7 @@ shape = SubResource( 1 )
 
 stream = ExtResource( 3 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0

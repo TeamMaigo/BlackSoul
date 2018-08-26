@@ -7,10 +7,7 @@ path="res://.import/ACIDTURRET_SPRITESHEET.png-d52dfc0f49fb1210523bdc92ce0f2d75.
 [deps]
 
 source_file="res://Sprites/ACIDTURRET_SPRITESHEET.png"
-source_md5="d5202b65a47af0f6289f8d6dbf89ccf9"
-
 dest_files=[ "res://.import/ACIDTURRET_SPRITESHEET.png-d52dfc0f49fb1210523bdc92ce0f2d75.stex" ]
-dest_md5="03360e10825104702195a52a8536b03d"
 
 [params]
 

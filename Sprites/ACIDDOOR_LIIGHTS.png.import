@@ -7,10 +7,7 @@ path="res://.import/ACIDDOOR_LIIGHTS.png-958c472b4ac3d5603de689866598f6e9.stex"
 [deps]
 
 source_file="res://Sprites/ACIDDOOR_LIIGHTS.png"
-source_md5="b1d485c81334b2ac6bde2947f8e30507"
-
 dest_files=[ "res://.import/ACIDDOOR_LIIGHTS.png-958c472b4ac3d5603de689866598f6e9.stex" ]
-dest_md5="5855f7059d43f9d0afe6b22766a16fe0"
 
 [params]
 
