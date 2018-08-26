@@ -41,12 +41,11 @@ func _ready():
 	# Initialization here
 	if paletteType == PALETTETYPE.lab:
 		$Sprite.texture = load("res://Sprites/TURRET SPRITESHEET.png")
-	elif paletteType == PALETTETYPE.acid:
+	if paletteType == PALETTETYPE.acid:
 		$Sprite.texture = load("res://Sprites/ACIDTURRET_SPRITESHEET.png")
-	elif paletteType == PALETTETYPE.core:
+	if paletteType == PALETTETYPE.core:
 		$Sprite.texture = load("res://Sprites/TURRET SPRITESHEET.png")
-	else:
-		pass
+
 	if burst_fire && burst_pattern != null:
 		burstSize = len(burst_pattern)
 	else:

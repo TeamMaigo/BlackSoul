@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=6]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -68,8 +68,6 @@ position = Vector2( 1120, -416 )
 position = Vector2( 1120, -352 )
 
 [node name="Breakable2" type="Node" parent="." index="6"]
-
-editor/display_folded = true
 
 [node name="BreakableBlock11" parent="Breakable2" index="0" instance=ExtResource( 4 )]
 

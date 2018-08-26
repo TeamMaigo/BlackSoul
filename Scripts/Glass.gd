@@ -7,8 +7,16 @@ onready var shatterPos = position #Might be used later
 var shatterRot = 0
 var shatterSpeed = 0
 
+enum PALETTETYPE { lab,acid,core }
+export(PALETTETYPE) var paletteType = PALETTETYPE.lab
+
 func _ready():
-	pass
+	if paletteType == PALETTETYPE.lab:
+		$Sprite.texture = load("res://Sprites/BREAKABLE_BLUE.png")
+	if paletteType == PALETTETYPE.acid:
+		$Sprite.texture = load("res://Sprites/BREAKABLE_GREEN.png")
+	if paletteType == PALETTETYPE.core:
+		$Sprite.texture = load("res://Sprites/BREAKABLE_BLUE.png")
 
 func shatterParams(pos, rot, speed):
 	shatterPos = pos
@@ -29,11 +37,15 @@ func takeDamage(dmg):
 		$audioStreamPlayer.stream = load("res://Audio/glassBreak.ogg")
 		$audioStreamPlayer.volume_db = Global.masterSound
 		$audioStreamPlayer.play()
-		$animationPlayer.play("particle fade")
+		$animationPlayer.play("particleFadeout")
 		destroyed = true
 
 #func _process(delta):
 
+func _on_animationPlayer_animation_finished(anim_name):
+	if anim_name == "particleFadeout":
+		queue_free()
 
-func finishedParticleFadeout(anim_name):
-	queue_free()
+
+func _on_audioStreamPlayer_finished():
+	pass # replace with function body

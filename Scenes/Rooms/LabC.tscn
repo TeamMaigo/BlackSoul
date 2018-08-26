@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=5]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -61,8 +61,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-burst_fire = false
-burst_pattern = null
 
 [node name="Turret3" parent="Turrets" index="1" instance=ExtResource( 3 )]
 
@@ -71,8 +69,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-burst_fire = false
-burst_pattern = null
 
 [node name="Turret4" parent="Turrets" index="2" instance=ExtResource( 3 )]
 
@@ -82,8 +78,6 @@ firstShotDelay = 0.5
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-burst_fire = false
-burst_pattern = null
 
 [node name="Turret2" parent="Turrets" index="3" instance=ExtResource( 3 )]
 
@@ -93,8 +87,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-burst_fire = false
-burst_pattern = null
 
 [node name="Turret5" parent="Turrets" index="4" instance=ExtResource( 3 )]
 
@@ -104,8 +96,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-burst_fire = false
-burst_pattern = null
 
 [node name="Turret7" parent="Turrets" index="5" instance=ExtResource( 3 )]
 
@@ -114,8 +104,6 @@ rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 detect_radius = 500
 bulletSpeed = 10
-burst_fire = false
-burst_pattern = null
 
 [node name="Turret6" parent="Turrets" index="6" instance=ExtResource( 3 )]
 
@@ -125,8 +113,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
-burst_fire = false
-burst_pattern = null
 
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 4 )]
 

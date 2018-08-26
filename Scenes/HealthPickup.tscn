@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="HealthPickup" type="StaticBody2D" index="0" groups=[
+[node name="HealthPickup" type="StaticBody2D" groups=[
 "Pickup",
 ]]
 
@@ -26,6 +26,7 @@ respawnable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
