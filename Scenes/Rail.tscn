@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 16.0
 
-[node name="Rail" type="KinematicBody2D" index="0"]
+[node name="Rail" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 16
@@ -18,7 +18,11 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 railStart = Vector2( 0, 0 )
 railEnd = Vector2( 50, 0 )
+multiPoint = false
+railPoints = null
+backtrack = true
 railSpeed = 2
+traversingForwards = true
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

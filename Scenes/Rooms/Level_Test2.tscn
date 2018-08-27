@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Rail.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=7]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -95,5 +97,19 @@ __meta__ = {
 [node name="Enemy" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 2125.23, 324.125 )
+
+[node name="Rail" parent="." index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 1152.43, 185.39 )
+multiPoint = true
+railPoints = [ Vector2( 0, 0 ) ]
+backtrack = false
+railSpeed = 3
+traversingForwards = false
+
+[node name="Turret" parent="Rail" index="2" instance=ExtResource( 7 )]
+
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
+bulletSpeed = 4
 
 
