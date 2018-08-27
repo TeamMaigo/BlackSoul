@@ -32,10 +32,16 @@ func _onActivate():
 	$animationPlayer.play_backwards("deactivate")
 	active = true
 	collision_layer = collisionL
+	$AudioStreamPlayer.stream = load("res://Audio/DoorOpen.wav")
+	$AudioStreamPlayer.volume_db = Global.masterSound
+	$AudioStreamPlayer.play()
 
 func _onDeactivate():
 	$animationPlayer.play("deactivate")
 	active = false
+	$AudioStreamPlayer.stream = load("res://Audio/DoorOpen.wav")
+	$AudioStreamPlayer.volume_db = Global.masterSound
+	$AudioStreamPlayer.play()
 
 func enemyDeath():
 	enemiesLeftToKill -= 1

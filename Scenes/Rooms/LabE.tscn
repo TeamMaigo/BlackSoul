@@ -56,33 +56,40 @@ position = Vector2( 2367.92, 650.146 )
 
 position = Vector2( 285.462, -29.9995 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = false
 
 [node name="BreakableBlock6" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 348.62, -29.9995 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = false
 
 [node name="BreakableBlock2" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 549.559, -484.268 )
+respawnable = true
 
 [node name="BreakableBlock5" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 484.261, -482.908 )
+respawnable = true
 
 [node name="BreakableBlock4" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 615.705, -482.217 )
+respawnable = true
 
 [node name="BreakableBlock3" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 740.299, 1310.89 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = false
 
 [node name="BreakableBlock7" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( 796.809, 1310.89 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = false
 
 [node name="TransferPoint" parent="." index="14" instance=ExtResource( 1 )]
 

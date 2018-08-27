@@ -35,6 +35,7 @@ position = Vector2( -98.1797, -183.742 )
 [node name="BreakableBlock" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 241.966, -194.803 )
+respawnable = false
 
 [node name="Turret" parent="." index="5" instance=ExtResource( 4 )]
 

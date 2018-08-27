@@ -94,14 +94,17 @@ position = Vector2( 34.0887, 228.264 )
 [node name="BreakableBlock" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 34.6688, -214.042 )
+respawnable = true
 
 [node name="BreakableBlock2" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 663.23, 227.608 )
+respawnable = true
 
 [node name="BreakableBlock3" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 161.285, -94.9624 )
+respawnable = true
 
 [node name="TransferGoalA" parent="." index="13" instance=ExtResource( 5 )]
 
@@ -110,7 +113,6 @@ position = Vector2( -501.164, -579.612 )
 [node name="PieceOfHeart" parent="." index="14" instance=ExtResource( 6 )]
 
 position = Vector2( 512.624, 64.772 )
-respawnable = false
 
 [node name="tileMap" type="TileMap" parent="." index="15"]
 
@@ -161,18 +163,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="collected" from="PieceOfHeart" to="Turret" method="deactivate"]
+[connection signal="collected" from="PieceOfHeart" to="Turret5" method="deactivate"]
 
-[connection signal="collected" from="PieceOfHeart" to="Turret3" method="deactivate"]
+[connection signal="collected" from="PieceOfHeart" to="Turret" method="deactivate"]
 
 [connection signal="collected" from="PieceOfHeart" to="Turret4" method="deactivate"]
 
+[connection signal="collected" from="PieceOfHeart" to="Turret3" method="deactivate"]
+
 [connection signal="collected" from="PieceOfHeart" to="Turret2" method="deactivate"]
 
-[connection signal="collected" from="PieceOfHeart" to="Turret5" method="deactivate"]
+[connection signal="collected" from="PieceOfHeart" to="Turret7" method="deactivate"]
 
 [connection signal="collected" from="PieceOfHeart" to="Turret6" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="Turret7" method="deactivate"]
 
 

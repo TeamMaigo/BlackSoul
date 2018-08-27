@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/AcidTileset.tres" type="TileSet" id=7]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -56,16 +56,19 @@ newScene = "AcidC"
 [node name="BreakableBlock" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 1183.12, 1024.51 )
+respawnable = true
 
 [node name="BreakableBlock2" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( -110.596, 285.955 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = true
 
 [node name="BreakableBlock3" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( -110.596, 219.473 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = true
 
 [node name="Turrets" type="Node2D" parent="." index="11"]
 
