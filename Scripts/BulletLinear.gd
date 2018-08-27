@@ -71,5 +71,7 @@ func hitPlayer(player):
 func waitToReflect():
 	reflectionTimer.set_wait_time(reflectionTime) # Set Timer's delay to "sec" seconds
 	reflectionTimer.start() # Start the Timer counting down
+	collision_mask = 5
 	yield(reflectionTimer, "timeout") # Wait for the timer to wind down
 	reflectedRecently = false
+	collision_mask = 7

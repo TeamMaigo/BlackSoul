@@ -379,7 +379,7 @@ func takeDamage(damage):
 	if hp <= 0 && !dead:
 		if not respawns:
 			Global.destroyedObjects.append(Global.currentScene+name)
-		$audioStreamPlayer.stream = load("res://Audio/HitSound.wav")
+		$audioStreamPlayer.stream = load("res://Audio/enemyhit.wav")
 		$audioStreamPlayer.volume_db = Global.masterSound
 		$audioStreamPlayer.play()
 		collision_layer = 0

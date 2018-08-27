@@ -87,5 +87,7 @@ func waitToReflect():
 func waitToTrack():
 	trackingDelayTimer.set_wait_time(trackingDelayTime) # Set Timer's delay to "sec" seconds
 	trackingDelayTimer.start() # Start the Timer counting down
+	collision_mask = 5
 	yield(trackingDelayTimer, "timeout") # Wait for the timer to wind down
 	target = get_tree().get_root().get_node("World/Player")
+	collision_mask = 7
