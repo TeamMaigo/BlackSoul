@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
@@ -9,11 +9,10 @@
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/LightController.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/LightController.gd" type="Script" id=10]
-[ext_resource path="res://Sprites/Light/square.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Sprites/Light/square.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=13]
 
 [node name="tileMap" type="TileMap"]
 
@@ -33,7 +32,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -131078, 0, 0, -196598, 0, 0, -65542, 0, 0, -131061, 0, 0, -6, 0, 0, -65525, 0, 0, 65530, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 131065, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 196601, 0, 0, 196602, 0, 0, 131086, 0, 0, 131087, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196615, 0, 0, 196616, 0, 0, 196624, 0, 0, 196625, 0, 0, 262144, 0, 0, 262151, 0, 0, 262161, 0, 0, 327681, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327697, 0, 0, 327698, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393233, 0, 0, 393234, 0, 0, 458759, 0, 0, 458760, 0, 0, 458769, 0, 0, 524296, 0, 0, 524304, 0, 0, 524305, 0, 0, 524322, 0, 0, 524323, 0, 0, 524324, 0, 0, 524325, 0, 0, 524326, 0, 0, 589833, 0, 0, 589834, 0, 0, 589839, 0, 0, 589840, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589862, 0, 0, 589863, 0, 0, 655370, 0, 0, 655375, 0, 0, 655391, 0, 0, 655392, 0, 0, 655400, 0, 0, 655401, 0, 0, 655407, 0, 0, 655408, 0, 0, 655409, 0, 0, 655410, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720911, 0, 0, 720926, 0, 0, 720937, 0, 0, 720942, 0, 0, 720943, 0, 0, 720946, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786447, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786482, 0, 0, 851969, 0, 0, 851970, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851997, 0, 0, 852018, 0, 0, 917505, 0, 0, 917522, 0, 0, 917523, 0, 0, 917554, 0, 0, 983041, 0, 0, 983090, 0, 0, 1048577, 0, 0, 1048605, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114154, 0, 0, 1179650, 0, 0, 1179666, 0, 0, 1179678, 0, 0, 1179679, 0, 0, 1179689, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245202, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1441799, 0, 0, 1441803, 0, 0, 1507335, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572880, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638417, 0, 0, 1703938, 0, 0, 1703954, 0, 0, 1703955, 0, 0, 1769472, 0, 0, 1769473, 0, 0, 1769492, 0, 0, 1835008, 0, 0, 1835029, 0, 0, 1900544, 0, 0, 1900565, 0, 0, 1966080, 0, 0, 1966087, 0, 0, 1966088, 0, 0, 1966089, 0, 0, 1966090, 0, 0, 1966091, 0, 0, 1966092, 0, 0, 1966093, 0, 0, 1966094, 0, 0, 1966101, 0, 0, 2031616, 0, 0, 2031622, 0, 0, 2031630, 0, 0, 2031631, 0, 0, 2031637, 0, 0, 2097152, 0, 0, 2097158, 0, 0, 2097167, 0, 0, 2097173, 0, 0, 2162688, 0, 0, 2162694, 0, 0, 2162703, 0, 0, 2162709, 0, 0, 2228224, 0, 0, 2228231, 0, 0, 2228238, 0, 0, 2228239, 0, 0, 2228245, 0, 0, 2293760, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293772, 0, 0, 2293773, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2359296, 0, 0, 2359316, 0, 0, 2424833, 0, 0, 2424852, 0, 0, 2424853, 0, 0, 2490369, 0, 0, 2490386, 0, 0, 2490387, 0, 0, 2490388, 0, 0, 2555906, 0, 0, 2555907, 0, 0, 2555920, 0, 0, 2555921, 0, 0, 2555922, 0, 0, 2621444, 0, 0, 2621445, 0, 0, 2621446, 0, 0, 2621454, 0, 0, 2621455, 0, 0, 2621456, 0, 0, 2686983, 0, 0, 2686984, 0, 0, 2686985, 0, 0, 2686986, 0, 0, 2686987, 0, 0, 2686988, 0, 0, 2686989, 0, 0 )
+tile_data = PoolIntArray( -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -131078, 0, 0, -196598, 0, 0, -65542, 0, 0, -131061, 0, 0, -6, 0, 0, -65525, 0, 0, 65530, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 131065, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 196601, 0, 0, 196602, 0, 0, 131086, 0, 0, 131087, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196615, 0, 0, 196616, 0, 0, 196624, 0, 0, 196625, 0, 0, 262144, 0, 0, 262151, 0, 0, 262161, 0, 0, 327681, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327697, 0, 0, 327698, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393233, 0, 0, 393234, 0, 0, 458759, 0, 0, 458760, 0, 0, 458769, 0, 0, 524296, 0, 0, 524304, 0, 0, 524305, 0, 0, 524322, 0, 0, 524323, 0, 0, 524324, 0, 0, 524325, 0, 0, 524326, 0, 0, 589833, 0, 0, 589834, 0, 0, 589839, 0, 0, 589840, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589862, 0, 0, 589863, 0, 0, 655370, 0, 0, 655375, 0, 0, 655391, 0, 0, 655392, 0, 0, 655400, 0, 0, 655401, 0, 0, 655407, 0, 0, 655408, 0, 0, 655409, 0, 0, 655410, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720911, 0, 0, 720926, 0, 0, 720937, 0, 0, 720942, 0, 0, 720943, 0, 0, 720946, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786447, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786474, 0, 0, 786477, 0, 0, 786478, 0, 0, 786482, 0, 0, 851969, 0, 0, 851970, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851997, 0, 0, 852011, 0, 0, 852012, 0, 0, 852018, 0, 0, 917505, 0, 0, 917522, 0, 0, 917523, 0, 0, 917554, 0, 0, 983041, 0, 0, 983090, 0, 0, 1048577, 0, 0, 1048605, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114154, 0, 0, 1179650, 0, 0, 1179666, 0, 0, 1179678, 0, 0, 1179679, 0, 0, 1179689, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245202, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1441799, 0, 0, 1441803, 0, 0, 1507335, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572880, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638417, 0, 0, 1703938, 0, 0, 1703954, 0, 0, 1703955, 0, 0, 1769472, 0, 0, 1769473, 0, 0, 1769492, 0, 0, 1835008, 0, 0, 1835029, 0, 0, 1900544, 0, 0, 1900565, 0, 0, 1966080, 0, 0, 1966087, 0, 0, 1966088, 0, 0, 1966089, 0, 0, 1966090, 0, 0, 1966091, 0, 0, 1966092, 0, 0, 1966093, 0, 0, 1966094, 0, 0, 1966101, 0, 0, 2031616, 0, 0, 2031622, 0, 0, 2031630, 0, 0, 2031631, 0, 0, 2031637, 0, 0, 2097152, 0, 0, 2097158, 0, 0, 2097167, 0, 0, 2097173, 0, 0, 2162688, 0, 0, 2162694, 0, 0, 2162703, 0, 0, 2162709, 0, 0, 2228224, 0, 0, 2228231, 0, 0, 2228238, 0, 0, 2228239, 0, 0, 2228245, 0, 0, 2293760, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293772, 0, 0, 2293773, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2359296, 0, 0, 2359316, 0, 0, 2424833, 0, 0, 2424852, 0, 0, 2424853, 0, 0, 2490369, 0, 0, 2490386, 0, 0, 2490387, 0, 0, 2490388, 0, 0, 2555906, 0, 0, 2555907, 0, 0, 2555920, 0, 0, 2555921, 0, 0, 2555922, 0, 0, 2621444, 0, 0, 2621445, 0, 0, 2621446, 0, 0, 2621454, 0, 0, 2621455, 0, 0, 2621456, 0, 0, 2686983, 0, 0, 2686984, 0, 0, 2686985, 0, 0, 2686986, 0, 0, 2686987, 0, 0, 2686988, 0, 0, 2686989, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -50,14 +49,13 @@ position = Vector2( -227.609, -30.1468 )
 
 [node name="Switch" parent="." index="2" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 position = Vector2( 754.095, 2129.43 )
 connectedGroup = "WireGroupA"
 
 [node name="SwitchDoor" parent="Switch" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 615.781, -1123.57 )
-scale = Vector2( 4.10635, 3.12708 )
+position = Vector2( 465.513, -1107.25 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Switch2" parent="." index="3" instance=ExtResource( 4 )]
 
@@ -66,8 +64,8 @@ connectedGroup = "WireGroupB"
 
 [node name="SwitchDoor" parent="Switch2" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 544, 32 )
-scale = Vector2( 4.10635, 3.12708 )
+position = Vector2( 507.168, 62.6935 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="HoleLayer" type="TileMap" parent="." index="4"]
 
@@ -129,15 +127,11 @@ position = Vector2( 611.078, 1434.44 )
 
 position = Vector2( 914.493, 2118.27 )
 
-[node name="LightController" type="Node" parent="." index="14" instance=ExtResource( 9 )]
+[node name="LightController" parent="." index="14" instance=ExtResource( 9 )]
 
 editor/display_folded = true
-script = ExtResource( 10 )
 energy = 0.8
 strobe = true
-low_energy = 0
-high_energy = 1
-transition_time = 2.5
 
 [node name="light2D" type="Light2D" parent="LightController" index="0"]
 
@@ -145,7 +139,7 @@ position = Vector2( 1527.42, 1166.36 )
 scale = Vector2( 31.8057, 24.9371 )
 enabled = true
 editor_only = false
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 0, 0, 1 )
@@ -172,71 +166,76 @@ __meta__ = {
 
 [node name="BreakableBlock2" parent="Breakable" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( 1888, 953.339 )
-scale = Vector2( 1, 2.29183 )
+position = Vector2( 1888, 928.852 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BreakableBlock3" parent="Breakable" index="1" instance=ExtResource( 6 )]
+[node name="BreakableBlock11" parent="Breakable" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 1888, 998.231 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BreakableBlock3" parent="Breakable" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 2240, 896 )
 
-[node name="BreakableBlock4" parent="Breakable" index="2" instance=ExtResource( 6 )]
+[node name="BreakableBlock4" parent="Breakable" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 2304, 832 )
 
-[node name="BreakableBlock5" parent="Breakable" index="3" instance=ExtResource( 6 )]
+[node name="BreakableBlock5" parent="Breakable" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 2368, 896 )
 
-[node name="BreakableBlock6" parent="Breakable" index="4" instance=ExtResource( 6 )]
+[node name="BreakableBlock6" parent="Breakable" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 2368, 832 )
 
-[node name="BreakableBlock7" parent="Breakable" index="5" instance=ExtResource( 6 )]
+[node name="BreakableBlock7" parent="Breakable" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 2304, 960 )
 
-[node name="BreakableBlock8" parent="Breakable" index="6" instance=ExtResource( 6 )]
+[node name="BreakableBlock8" parent="Breakable" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 2368, 960 )
 
-[node name="BreakableBlock9" parent="Breakable" index="7" instance=ExtResource( 6 )]
+[node name="BreakableBlock9" parent="Breakable" index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 2240, 960 )
 
-[node name="BreakableBlock10" parent="Breakable" index="8" instance=ExtResource( 6 )]
+[node name="BreakableBlock10" parent="Breakable" index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 2240, 832 )
 
 [node name="Enemies" type="Node2D" parent="." index="16"]
 
-[node name="EnemyMob" parent="Enemies" index="0" instance=ExtResource( 12 )]
+[node name="EnemyMob" parent="Enemies" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 390.428, -58.4962 )
 fireType = "shotgun"
 
-[node name="EnemyMob2" parent="Enemies" index="1" instance=ExtResource( 12 )]
+[node name="EnemyMob2" parent="Enemies" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 928, 1056 )
 hp = 8
 fireType = "shotgun"
 
-[node name="EnemyMob3" parent="Enemies" index="2" instance=ExtResource( 12 )]
+[node name="EnemyMob3" parent="Enemies" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( 486.283, 987.993 )
 hp = 8
 fireType = "shotgun"
 
-[node name="EnemyMob6" parent="Enemies" index="3" instance=ExtResource( 12 )]
+[node name="EnemyMob6" parent="Enemies" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 231.649, 2185.5 )
 fireType = "shotgun"
 
-[node name="EnemyMob8" parent="Enemies" index="4" instance=ExtResource( 12 )]
+[node name="EnemyMob8" parent="Enemies" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 688.922, 2501.28 )
 fireType = "shotgun"
 
-[node name="EnemyMob7" parent="Enemies" index="5" instance=ExtResource( 12 )]
+[node name="EnemyMob7" parent="Enemies" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 1239.27, 2071.14 )
 fireType = "shotgun"
@@ -245,21 +244,21 @@ fireType = "shotgun"
 
 editor/display_folded = true
 
-[node name="Turret3" parent="Turrets" index="0" instance=ExtResource( 13 )]
+[node name="Turret3" parent="Turrets" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 2525.59, 675.916 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret8" parent="Turrets" index="1" instance=ExtResource( 13 )]
+[node name="Turret8" parent="Turrets" index="1" instance=ExtResource( 12 )]
 
 position = Vector2( 214.526, 348.641 )
 rotation = 1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret5" parent="Turrets" index="2" instance=ExtResource( 13 )]
+[node name="Turret5" parent="Turrets" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 2144.36, 672.214 )
 rotation = 1.5708
@@ -268,7 +267,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret7" parent="Turrets" index="3" instance=ExtResource( 13 )]
+[node name="Turret7" parent="Turrets" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 1695.44, 865.385 )
 rotation = 1.5708
@@ -277,14 +276,14 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret4" parent="Turrets" index="4" instance=ExtResource( 13 )]
+[node name="Turret4" parent="Turrets" index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 2099.95, 1179.28 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
 bulletSpeed = 10
 
-[node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 13 )]
+[node name="Turret6" parent="Turrets" index="5" instance=ExtResource( 12 )]
 
 position = Vector2( 2588.51, 1182.99 )
 rotation = -1.5708
@@ -293,7 +292,7 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="Turret2" parent="Turrets" index="6" instance=ExtResource( 13 )]
+[node name="Turret2" parent="Turrets" index="6" instance=ExtResource( 12 )]
 
 position = Vector2( 535.083, 2087.01 )
 detect_radius = 200
@@ -303,27 +302,27 @@ bulletSpeed = 3
 
 [node name="Wires" parent="WireGroup" index="0" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 2080 )
 
 [node name="Wires2" parent="WireGroup" index="1" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 2016 )
 frame = 9
 
 [node name="Wires3" parent="WireGroup" index="2" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1952 )
 frame = 9
 
 [node name="Wires4" parent="WireGroup" index="3" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1888 )
 z_index = -1
@@ -331,7 +330,7 @@ frame = 9
 
 [node name="Wires5" parent="WireGroup" index="4" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1824 )
 z_index = -1
@@ -339,7 +338,7 @@ frame = 9
 
 [node name="Wires6" parent="WireGroup" index="5" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1760 )
 z_index = -1
@@ -347,7 +346,7 @@ frame = 9
 
 [node name="Wires7" parent="WireGroup" index="6" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1696 )
 z_index = -1
@@ -355,7 +354,7 @@ frame = 9
 
 [node name="Wires8" parent="WireGroup" index="7" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1696 )
 z_index = -1
@@ -363,7 +362,7 @@ frame = 9
 
 [node name="Wires9" parent="WireGroup" index="8" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1632 )
 z_index = -1
@@ -371,7 +370,7 @@ frame = 9
 
 [node name="Wires10" parent="WireGroup" index="9" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1568 )
 z_index = -1
@@ -379,140 +378,140 @@ frame = 9
 
 [node name="Wires11" parent="WireGroup" index="10" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1504 )
 frame = 9
 
 [node name="Wires12" parent="WireGroup" index="11" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1440 )
 frame = 9
 
 [node name="Wires13" parent="WireGroup" index="12" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1376 )
 frame = 4
 
 [node name="Wires14" parent="WireGroup" index="13" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1376 )
 frame = 8
 
 [node name="Wires15" parent="WireGroup" index="14" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1376 )
 frame = 8
 
 [node name="Wires16" parent="WireGroup" index="15" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1376 )
 frame = 8
 
 [node name="Wires17" parent="WireGroup" index="16" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1376 )
 frame = 8
 
 [node name="Wires18" parent="WireGroup" index="17" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1376 )
 frame = 8
 
 [node name="Wires19" parent="WireGroup" index="18" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1376 )
 frame = 8
 
 [node name="Wires20" parent="WireGroup" index="19" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1376 )
 frame = 7
 
 [node name="Wires21" parent="WireGroup" index="20" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1312 )
 frame = 9
 
 [node name="Wires22" parent="WireGroup" index="21" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1248 )
 frame = 9
 
 [node name="Wires23" parent="WireGroup" index="22" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1184 )
 frame = 9
 
 [node name="Wires24" parent="WireGroup" index="23" groups=[
 "WireGroupB",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 2400, 928 )
 frame = 2
 
 [node name="Wires26" parent="WireGroup" index="24" groups=[
 "WireGroupB",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 2720, 928 )
 frame = 3
 
 [node name="Wires27" parent="WireGroup" index="25" groups=[
 "WireGroupB",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 2528, 928 )
 frame = 8
 
 [node name="Wires30" parent="WireGroup" index="26" groups=[
 "WireGroupB",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 2464, 928 )
 frame = 8
 
 [node name="Wires28" parent="WireGroup" index="27" groups=[
 "WireGroupB",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 2592, 928 )
 frame = 8
 
 [node name="Wires29" parent="WireGroup" index="28" groups=[
 "WireGroupB",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 2656, 928 )
 frame = 8
 
 [node name="Wires25" parent="WireGroup" index="29" groups=[
 "WireGroupA",
-] instance=ExtResource( 14 )]
+] instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1120 )
 frame = 1

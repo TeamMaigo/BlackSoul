@@ -7,7 +7,10 @@ path="res://.import/BREAKABLE_SHARD_BLUE.png-660bec00dd20ee76db6edc1b7d1c0a42.st
 [deps]
 
 source_file="res://Sprites/BREAKABLE_SHARD_BLUE.png"
+source_md5="ebfa4c739ade6f0091de79595aff0edc"
+
 dest_files=[ "res://.import/BREAKABLE_SHARD_BLUE.png-660bec00dd20ee76db6edc1b7d1c0a42.stex" ]
+dest_md5="de35c1d21a7886898a6485d8fc97bd85"
 
 [params]
 

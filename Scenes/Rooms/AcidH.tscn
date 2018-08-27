@@ -106,13 +106,11 @@ position = Vector2( -189.423, -949.063 )
 [node name="BreakableBlock" parent="." index="10" instance=ExtResource( 6 )]
 
 position = Vector2( 32, 292 )
-_sections_unfolded = [ "Transform" ]
-respawnable = false
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="HealthPickup" parent="." index="11" instance=ExtResource( 7 )]
 
 position = Vector2( -544, 288 )
-_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="EnemyMob" parent="." index="12" instance=ExtResource( 8 )]
 

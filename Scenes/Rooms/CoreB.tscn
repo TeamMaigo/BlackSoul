@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/SwitchDoor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Switch.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -241,10 +242,40 @@ paletteType = 2
 [node name="Switch" parent="." index="21" instance=ExtResource( 10 )]
 
 position = Vector2( -413.388, -1533.45 )
-on = true
+connectedGroup = "WireGroupA"
 
-[connection signal="turn_off" from="Switch" to="SwitchDoor" method="_onDeactivate"]
+[node name="Wires" type="Node2D" parent="." index="22"]
 
-[connection signal="turn_on" from="Switch" to="SwitchDoor" method="_onActivate"]
+[node name="Wires" parent="Wires" index="0" groups=[
+"WireGroupA",
+] instance=ExtResource( 11 )]
+
+position = Vector2( -288, -1568 )
+frame = 2
+
+[node name="Wires3" parent="Wires" index="1" groups=[
+"WireGroupA",
+] instance=ExtResource( 11 )]
+
+position = Vector2( -224, -1568 )
+frame = 8
+
+[node name="Wires4" parent="Wires" index="2" groups=[
+"WireGroupA",
+] instance=ExtResource( 11 )]
+
+position = Vector2( -160, -1568 )
+frame = 8
+
+[node name="Wires2" parent="Wires" index="3" groups=[
+"WireGroupA",
+] instance=ExtResource( 11 )]
+
+position = Vector2( -96, -1568 )
+frame = 3
+
+[connection signal="turn_off" from="Switch" to="SwitchDoor" method="_onActivate"]
+
+[connection signal="turn_on" from="Switch" to="SwitchDoor" method="_onDeactivate"]
 
 

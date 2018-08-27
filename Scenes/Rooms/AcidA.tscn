@@ -228,69 +228,57 @@ paletteType = 1
 [node name="BreakableBlock" parent="Breakable" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( -32, -288 )
-_sections_unfolded = [ "Transform" ]
-respawnable = false
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="BreakableBlock12" parent="Breakable" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( -96, -288 )
-_sections_unfolded = [ "Transform" ]
-respawnable = false
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="BreakableBlock5" parent="Breakable" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( -1120, -1952 )
-respawnable = false
 
 [node name="BreakableBlock13" parent="Breakable" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( -1120, -2016 )
-respawnable = false
 
 [node name="BreakableBlock6" parent="Breakable" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( -2070.98, -2016.93 )
-respawnable = false
 
 [node name="BreakableBlock3" parent="Breakable" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 160, 736 )
-respawnable = false
 
 [node name="BreakableBlock7" parent="Breakable" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 160, 800 )
-respawnable = false
 
 [node name="BreakableBlock8" parent="Breakable" index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 160, 864 )
-respawnable = false
 
 [node name="BreakableBlock9" parent="Breakable" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 160, 928 )
-respawnable = false
 
 [node name="BreakableBlock10" parent="Breakable" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 160, 992 )
-respawnable = false
 
 [node name="BreakableBlock4" parent="Breakable" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( -544, 1184 )
-respawnable = false
 
 [node name="BreakableBlock11" parent="Breakable" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( -544, 1120 )
-respawnable = false
 
 [node name="BreakableBlock2" parent="Breakable" index="12" instance=ExtResource( 8 )]
 
-position = Vector2( -2022.45, 445.73 )
-scale = Vector2( 1.07662, 2.0227 )
+position = Vector2( -2018.84, 479.123 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onActivate"]
 
