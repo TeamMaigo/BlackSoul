@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -55,7 +55,7 @@ newScene = "AcidA"
 
 visible = false
 modulate = Color( 0.121094, 0.485016, 1, 1 )
-position = Vector2( -583.633, -71.8132 )
+position = Vector2( -588.705, -106.374 )
 scale = Vector2( 6.21229, 5.59653 )
 _sections_unfolded = [ "Visibility" ]
 newScene = "Level_Test2"

@@ -70,9 +70,9 @@ tracks/0/keys = {
 }
 
 [node name="BreakableBlock" type="StaticBody2D" index="0" groups=[
-"Breakable",
-"Damageable",
 "Shatterable",
+"Damageable",
+"Breakable",
 ]]
 
 input_pickable = false
@@ -129,7 +129,7 @@ texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [node name="animationPlayer" type="AnimationPlayer" parent="." index="4"]
 
