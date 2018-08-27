@@ -131,11 +131,12 @@ func controls_loop():
 	mousePos = get_global_mouse_position()
 	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
 	RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
+	
 	if BARRIER and barrierAvailable:
 		barrierAvailable = false
 		$RotationNode.show()
+		$Sprite.modulate.g = 0
 		WeaponNode.attack(attackDirection)
-
 
 func movement_loop():
 	var motion = movedir.normalized() * MOTION_SPEED
@@ -248,6 +249,7 @@ func _on_InvulPlayer_animation_finished(anim_name):
 
 func _on_WeaponSwing_attack_finished():
 	barrierAvailable = true
+	$Sprite.modulate.g = 1
 
 func save():
 	var saveDict = {

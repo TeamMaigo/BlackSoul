@@ -7,7 +7,10 @@ path="res://.import/Pressure Plates.png-dbbf6ff1d6c37f9f425bc28104557298.stex"
 [deps]
 
 source_file="res://Sprites/Pressure Plates.png"
+source_md5="06e0a5c989b7ec96157c50460f5a89f4"
+
 dest_files=[ "res://.import/Pressure Plates.png-dbbf6ff1d6c37f9f425bc28104557298.stex" ]
+dest_md5="8f7fb18c81bd253dbd7a7ddfa3dcd3bc"
 
 [params]
 

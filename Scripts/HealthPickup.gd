@@ -5,6 +5,8 @@ export var respawnable = true
 signal collected
 
 func _ready():
+	if has_node("animationPlayer"):
+		$animationPlayer.play("Default")
 	if Global.currentScene+name in Global.destroyedObjects:
 		queue_free()
 

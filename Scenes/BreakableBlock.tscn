@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.754, 32 )
+extents = Vector2( 18.1753, 32 )
 
 [sub_resource type="ParticlesMaterial" id=2]
 
@@ -69,7 +69,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="BreakableBlock" type="StaticBody2D" index="0" groups=[
+[node name="BreakableBlock" type="StaticBody2D" groups=[
 "Breakable",
 "Damageable",
 "Shatterable",
@@ -95,14 +95,12 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
 shape = SubResource( 1 )
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer2D" parent="." index="2"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0

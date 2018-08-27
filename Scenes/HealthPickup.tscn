@@ -1,18 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/HealthPickup.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/LIFE POINTS ACTIVE.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/HEALTH PICKUP.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 10.8214, 17.3509 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Default"
+length = 1.7
+loop = true
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
 
 [node name="HealthPickup" type="StaticBody2D" groups=[
 "Pickup",
 ]]
 
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 2, 2 )
 input_pickable = false
 collision_layer = 32
 collision_mask = 2
@@ -21,19 +40,29 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 respawnable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-visible = false
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="animationPlayer" type="AnimationPlayer" parent="." index="1"]
 
-self_modulate = Color( 0.535461, 0.496094, 1, 1 )
-scale = Vector2( 2, 2 )
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Default = SubResource( 2 )
+blend_times = [  ]
+
+[node name="sprite" type="Sprite" parent="." index="2"]
+
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+vframes = 2
+hframes = 3
+frame = 1
+_sections_unfolded = [ "Animation", "Transform" ]
 
 

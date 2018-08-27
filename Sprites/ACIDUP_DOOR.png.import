@@ -7,7 +7,10 @@ path="res://.import/ACIDUP_DOOR.png-812e8a2b9c99d1eac391bdf5ecabc81e.stex"
 [deps]
 
 source_file="res://Sprites/ACIDUP_DOOR.png"
+source_md5="44e4f797fa07b9614ad32ed5f8bc7be8"
+
 dest_files=[ "res://.import/ACIDUP_DOOR.png-812e8a2b9c99d1eac391bdf5ecabc81e.stex" ]
+dest_md5="d5b7ec47576ab00fbcc3c2ea629e4e11"
 
 [params]
 

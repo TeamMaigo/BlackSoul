@@ -7,7 +7,10 @@ path="res://.import/GATEACID_HORIZONTAL.png-c3d3794cc23a9cf29b1d96766a082f21.ste
 [deps]
 
 source_file="res://Sprites/GATEACID_HORIZONTAL.png"
+source_md5="38907d60b4007df8ccebdeb790f122a9"
+
 dest_files=[ "res://.import/GATEACID_HORIZONTAL.png-c3d3794cc23a9cf29b1d96766a082f21.stex" ]
+dest_md5="9d0ac34e1ff94f6171f1b7533b44d880"
 
 [params]
 

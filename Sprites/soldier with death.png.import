@@ -7,7 +7,10 @@ path="res://.import/soldier with death.png-f0d979c1091a0eb7865fbc2809c9a9b8.stex
 [deps]
 
 source_file="res://Sprites/soldier with death.png"
+source_md5="3a7c22d7b47cdf495ff063f31b4abada"
+
 dest_files=[ "res://.import/soldier with death.png-f0d979c1091a0eb7865fbc2809c9a9b8.stex" ]
+dest_md5="a3cfc622985e4ada30884479913514a5"
 
 [params]
 

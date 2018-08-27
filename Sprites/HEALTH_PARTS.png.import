@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GATE_HORIZONTAL.png-66ed54d1be6f27dfdc77ab6fc2767da0.stex"
+path="res://.import/HEALTH_PARTS.png-3164ea32b83e0ec3b7aa9ecdc2de47b6.stex"
 
 [deps]
 
-source_file="res://Sprites/GATE_HORIZONTAL.png"
-source_md5="b1f9bdbfae05ab545af13e6114fb685d"
+source_file="res://Sprites/HEALTH_PARTS.png"
+source_md5="4ab07c710b4fceadd0c3ba736040076e"
 
-dest_files=[ "res://.import/GATE_HORIZONTAL.png-66ed54d1be6f27dfdc77ab6fc2767da0.stex" ]
-dest_md5="7b0c32e976e7037783f4fc033bb7bfe5"
+dest_files=[ "res://.import/HEALTH_PARTS.png-3164ea32b83e0ec3b7aa9ecdc2de47b6.stex" ]
+dest_md5="4742d74f828fb69a125e0f0dd6b23585"
 
 [params]
 

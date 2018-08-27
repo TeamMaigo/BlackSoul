@@ -201,11 +201,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
+"Damageable",
 "Persist",
 "team_Player",
 "Player",
-"Damageable",
 ]]
 
 input_pickable = false
@@ -218,6 +218,7 @@ NORMAL_SPEED = 500
 
 [node name="Collision" type="CollisionShape2D" parent="." index="0"]
 
+visible = false
 position = Vector2( 1.57889, 8.73373 )
 scale = Vector2( 0.960912, 2.4959 )
 shape = SubResource( 1 )

@@ -7,7 +7,10 @@ path="res://.import/BREAKABLE_BLUE.png-7848bb885ec662f53a931a8ff1255ace.stex"
 [deps]
 
 source_file="res://Sprites/BREAKABLE_BLUE.png"
+source_md5="9212ebbdbb8e458ca6bdb5d0cb82c01f"
+
 dest_files=[ "res://.import/BREAKABLE_BLUE.png-7848bb885ec662f53a931a8ff1255ace.stex" ]
+dest_md5="59b8600d516aaa56ab80ba053ea91a25"
 
 [params]
 

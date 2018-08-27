@@ -7,7 +7,10 @@ path="res://.import/ACIDTILESETDLC_WALLS.png-e55a679a2d31ab22a500c3c6feb26ef6.st
 [deps]
 
 source_file="res://Sprites/ACIDTILESETDLC_WALLS.png"
+source_md5="edfafd642162a8576d036ec64433bb92"
+
 dest_files=[ "res://.import/ACIDTILESETDLC_WALLS.png-e55a679a2d31ab22a500c3c6feb26ef6.stex" ]
+dest_md5="d55c954d9283a6dc8547d19564be3175"
 
 [params]
 
