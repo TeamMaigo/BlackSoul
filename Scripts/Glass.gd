@@ -3,6 +3,8 @@ extends StaticBody2D
 export var health = 1
 var destroyed = false
 
+export var respawnable = true
+
 onready var shatterPos = position #Might be used later
 var shatterRot = 0
 var shatterSpeed = 0
