@@ -16,7 +16,6 @@ func _on_New_Game_pressed():
 	Global.destroyedObjects.clear()
 	get_tree().change_scene("res://Scenes/World.tscn")
 
-
 func _on_Exit_pressed():
 	get_tree().quit()
 
