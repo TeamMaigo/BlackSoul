@@ -65,6 +65,7 @@ fireType = "shotgun"
 position = Vector2( -37.3552, -442.293 )
 health = 10
 respawnable = true
+countdownSeconds = 90
 
 [node name="MeltingText" type="Label" parent="." index="6"]
 

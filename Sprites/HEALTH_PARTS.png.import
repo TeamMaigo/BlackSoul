@@ -7,7 +7,10 @@ path="res://.import/HEALTH_PARTS.png-3164ea32b83e0ec3b7aa9ecdc2de47b6.stex"
 [deps]
 
 source_file="res://Sprites/HEALTH_PARTS.png"
+source_md5="4ab07c710b4fceadd0c3ba736040076e"
+
 dest_files=[ "res://.import/HEALTH_PARTS.png-3164ea32b83e0ec3b7aa9ecdc2de47b6.stex" ]
+dest_md5="4742d74f828fb69a125e0f0dd6b23585"
 
 [params]
 

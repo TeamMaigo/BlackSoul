@@ -34,32 +34,42 @@ connectedGroup = "WireGroupA"
 
 [node name="SwitchDoor" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( -120.957, -293.706 )
-scale = Vector2( 2.37176, 1.94855 )
+position = Vector2( -132.061, -251.142 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 733.33, 1917.5 )
-scale = Vector2( 1, 1.89071 )
+position = Vector2( 733.33, 1872.61 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BreakableBlock2" parent="." index="6" instance=ExtResource( 5 )]
+[node name="BreakableBlock3" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 224.07, 765.554 )
-scale = Vector2( 1, 1.90493 )
+position = Vector2( 733.33, 1943.35 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="HealthPickup" parent="." index="7" instance=ExtResource( 6 )]
+[node name="BreakableBlock2" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 220.387, 797.475 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="BreakableBlock4" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 219.159, 731.177 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="HealthPickup" parent="." index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 640.838, 800.556 )
 
-[node name="HealthPickup3" parent="." index="8" instance=ExtResource( 6 )]
+[node name="HealthPickup3" parent="." index="10" instance=ExtResource( 6 )]
 
 position = Vector2( 620.93, 1926.68 )
 
-[node name="HealthPickup2" parent="." index="9" instance=ExtResource( 6 )]
+[node name="HealthPickup2" parent="." index="11" instance=ExtResource( 6 )]
 
 position = Vector2( -939.133, 49.7688 )
 
-[node name="Enemies" type="Node" parent="." index="10"]
+[node name="Enemies" type="Node" parent="." index="12"]
 
 editor/display_folded = true
 
@@ -129,7 +139,7 @@ position = Vector2( 684.491, 1544.58 )
 MOTION_SPEED = 0
 fireType = "shotgun"
 
-[node name="Turrets" type="Node" parent="." index="11"]
+[node name="Turrets" type="Node" parent="." index="13"]
 
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 8 )]
 
@@ -185,14 +195,14 @@ Bullet = ExtResource( 9 )
 bulletSpeed = 10
 paletteType = 1
 
-[node name="TransferPoint2" parent="." index="12" instance=ExtResource( 2 )]
+[node name="TransferPoint2" parent="." index="14" instance=ExtResource( 2 )]
 
 visible = false
 position = Vector2( -399.07, -96.1097 )
 newScene = "AcidA"
 transferGoalTemp = "C"
 
-[node name="tileMap" type="TileMap" parent="." index="13"]
+[node name="tileMap" type="TileMap" parent="." index="15"]
 
 z_index = -1
 mode = 0
@@ -217,7 +227,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="WireGroupA" type="Node2D" parent="." index="14"]
+[node name="WireGroupA" type="Node2D" parent="." index="16"]
 
 [node name="Wires" parent="WireGroupA" index="0" groups=[
 "WireGroupA",

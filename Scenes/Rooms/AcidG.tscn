@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/PressurePlate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/AcidTileset.tres" type="TileSet" id=7]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="TransferPoint" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -148,13 +148,13 @@ __meta__ = {
 
 [connection signal="enemyDeath" from="EnemyMob3" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
-
 [connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
 
-[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
+[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
 
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor2" method="_onActivate"]
 
