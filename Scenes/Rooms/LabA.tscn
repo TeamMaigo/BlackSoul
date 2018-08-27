@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
