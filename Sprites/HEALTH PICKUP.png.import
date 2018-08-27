@@ -7,10 +7,7 @@ path="res://.import/HEALTH PICKUP.png-8af7587ddbc9a440dcee7716a060b15c.stex"
 [deps]
 
 source_file="res://Sprites/HEALTH PICKUP.png"
-source_md5="1b845f866c0dea37678b2443cbb17e9b"
-
 dest_files=[ "res://.import/HEALTH PICKUP.png-8af7587ddbc9a440dcee7716a060b15c.stex" ]
-dest_md5="4824024d709a9b809978cf9d7529a05c"
 
 [params]
 

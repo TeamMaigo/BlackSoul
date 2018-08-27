@@ -5,7 +5,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="TransferGoal" type="Node2D" index="0"]
+[node name="TransferGoal" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -14,8 +14,10 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 

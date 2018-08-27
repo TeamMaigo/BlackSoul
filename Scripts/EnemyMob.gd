@@ -63,7 +63,6 @@ var animSpeeds = []
 var cds = []
 
 func _ready():
-	randomize() #REMOVE THIS
 	$Vision/CollisionShape2D.shape.radius = detect_radius
 	$TransformRange/collisionShape2D.shape.radius = detect_radius + 100
 	setAnim_idle()
