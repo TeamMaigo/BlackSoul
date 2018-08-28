@@ -57,13 +57,13 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 [node name="Team" type="Label" parent="Container" index="1"]
 
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -199.5
-margin_top = -112.0
-margin_right = 112.5
-margin_bottom = 55.0
+anchor_bottom = 0.0
+margin_left = -254.5
+margin_top = 142.0
+margin_right = 144.5
+margin_bottom = 360.0
 rect_scale = Vector2( 1.3, 1.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -71,17 +71,20 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Executive Producer: Kieran
-Lead Designer: Boris
-Lead Developer: Boris
-Lead Artist: Nelson
-Audio: Kieran
+text = "Executive Producer: Kieran Downs
+Lead Designer: Boris Fleysher
+Lead Developer: Boris Fleysher
+Lead Artist: Nelson 
+Audio: Kieran Downs
 Story Direction: Jonas
-Code Monkeys: Boris, Taylor, Omer
-Notable Mentions: Daniel, Jeff
+Code Monkeys: Boris Fleysher, Taylor Folkersen, Omer Ahmed
+Notable Mentions: Jeff Cho, Daniel Jin
+
+Thank you to all our friends and family for your support and
+playing through this game too many times!
 
 
-Made in Godot with love and care. Summer 2018"
+Made in Godot with love and care. Spring/Summer 2018"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
