@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=7]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -46,52 +47,64 @@ editor/display_folded = true
 [node name="BreakableBlock" parent="Breakable1" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 1056, -416 )
+respawnable = true
 
 [node name="BreakableBlock4" parent="Breakable1" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1056, -480 )
+respawnable = true
 
 [node name="BreakableBlock6" parent="Breakable1" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 1056, -352 )
+respawnable = true
 
 [node name="BreakableBlock2" parent="Breakable1" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 1120, -480 )
+respawnable = true
 
 [node name="BreakableBlock3" parent="Breakable1" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 1120, -416 )
+respawnable = true
 
 [node name="BreakableBlock5" parent="Breakable1" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 1120, -352 )
+respawnable = true
 
 [node name="Breakable2" type="Node" parent="." index="6"]
 
 [node name="BreakableBlock11" parent="Breakable2" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 1696, -672 )
+respawnable = true
 
 [node name="BreakableBlock12" parent="Breakable2" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1696, -608 )
+respawnable = true
 
 [node name="BreakableBlock8" parent="Breakable2" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 1824, -608 )
+respawnable = true
 
 [node name="BreakableBlock9" parent="Breakable2" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 1760, -672 )
+respawnable = true
 
 [node name="BreakableBlock7" parent="Breakable2" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 1760, -608 )
+respawnable = true
 
 [node name="BreakableBlock10" parent="Breakable2" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 1824, -672 )
+respawnable = true
 
 [node name="Turrets" type="Node" parent="." index="7"]
 
@@ -233,5 +246,25 @@ _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="doodads" type="TileMap" parent="." index="9"]
+
+mode = 0
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -393185, 536870931, 0, -327674, 536870928, 0, -262136, 536870913, 0, -262129, 536870920, 0, -262120, 536870919, 0, -65489, 536870928, 0 )
 
 

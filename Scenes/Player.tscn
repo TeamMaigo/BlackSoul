@@ -201,10 +201,10 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
-"team_Player",
-"Player",
 "Damageable",
+"Player",
 "Persist",
+"team_Player",
 ]]
 
 z_index = 5
@@ -218,8 +218,8 @@ NORMAL_SPEED = 500
 
 [node name="Collision" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 1.57889, 14.4344 )
-scale = Vector2( 0.960912, 2.05739 )
+position = Vector2( 1.57889, 16.0781 )
+scale = Vector2( 0.960912, 1.93095 )
 shape = SubResource( 1 )
 
 [node name="RotationNode" type="Node2D" parent="." index="1"]

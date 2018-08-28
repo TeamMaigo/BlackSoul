@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/AcidTileset.tres" type="TileSet" id=7]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -95,16 +95,19 @@ position = Vector2( 34.0887, 228.264 )
 
 position = Vector2( 34.6688, -214.042 )
 respawnable = true
+paletteType = 1
 
 [node name="BreakableBlock2" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 663.23, 227.608 )
 respawnable = true
+paletteType = 1
 
 [node name="BreakableBlock3" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 161.285, -94.9624 )
 respawnable = true
+paletteType = 1
 
 [node name="TransferGoalA" parent="." index="13" instance=ExtResource( 5 )]
 
@@ -163,18 +166,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="collected" from="PieceOfHeart" to="Turret5" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="Turret" method="deactivate"]
-
 [connection signal="collected" from="PieceOfHeart" to="Turret4" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="Turret3" method="deactivate"]
 
 [connection signal="collected" from="PieceOfHeart" to="Turret2" method="deactivate"]
 
-[connection signal="collected" from="PieceOfHeart" to="Turret7" method="deactivate"]
+[connection signal="collected" from="PieceOfHeart" to="Turret5" method="deactivate"]
 
 [connection signal="collected" from="PieceOfHeart" to="Turret6" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="Turret7" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="Turret" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="Turret3" method="deactivate"]
 
 

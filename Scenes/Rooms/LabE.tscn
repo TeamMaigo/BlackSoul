@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=9]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=12]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -117,7 +118,7 @@ position = Vector2( -450.694, -147.719 )
 
 [node name="TransferGoalD" parent="." index="18" instance=ExtResource( 3 )]
 
-position = Vector2( 2366.19, -1230.54 )
+position = Vector2( 2369.53, -1334.09 )
 
 [node name="TransferGoalE" parent="." index="19" instance=ExtResource( 3 )]
 
@@ -381,7 +382,7 @@ modulate = Color( 0.705719, 0.709953, 0.722656, 1 )
 position = Vector2( 1567.79, -1055.36 )
 rotation = 3.14159
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-detect_radius = 600
+detect_radius = 400
 bulletSpeed = 14
 
 [node name="Turret18" parent="Turrets" index="28" instance=ExtResource( 5 )]
@@ -390,7 +391,6 @@ modulate = Color( 0.705719, 0.709953, 0.722656, 1 )
 position = Vector2( 794.42, -863.395 )
 rotation = 3.14159
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-detect_radius = 600
 bulletSpeed = 14
 
 [node name="holeLayer" type="TileMap" parent="." index="23"]
@@ -589,6 +589,29 @@ frame = 8
 editor/display_folded = true
 position = Vector2( -1248, 672 )
 frame = 6
+
+[node name="doodads" type="TileMap" parent="." index="30"]
+
+mode = 0
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1179644, 12, 0, -1114108, 3, 0, -983036, 19, 0, -917480, 3, 0, -655342, 13, 0, 65537, 13, 0, 65546, 7, 0, 65575, 14, 0, 196608, 14, 0, 327688, 0, 0, 458746, 13, 0, 458747, 12, 0, 458749, 8, 0, 393229, 15, 0, 720892, 11, 0, 851992, 5, 0, 983019, 0, 0, 917519, 3, 0, 1245169, 4, 0, 1310705, 1, 0, 1376234, 16, 0, 1310734, 13, 0, 1441770, 16, 0, 1376270, 12, 0, 1900557, 13, 0, 1900558, 6, 0, 1900559, 5, 0, 1966093, 13, 0, 1966094, 12, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="turn_off" from="Switch" to="TransferPointB2" method="switch" binds= [ false ]]
 

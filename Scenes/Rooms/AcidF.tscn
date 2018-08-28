@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/AcidTileset.tres" type="TileSet" id=6]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 [node name="TransferGoalA" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -59,64 +59,72 @@ paletteType = 1
 
 [node name="BreakableBlocks" type="Node2D" parent="." index="9"]
 
-editor/display_folded = true
-
 [node name="BreakableBlock5" parent="BreakableBlocks" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 99.3003, 23.7757 )
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock6" parent="BreakableBlocks" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 98.1002, 90.7956 )
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock7" parent="BreakableBlocks" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 98.1001, 157.046 )
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock10" parent="BreakableBlocks" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( -161.254, -322.523 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock13" parent="BreakableBlocks" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 74.9792, -358.773 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock14" parent="BreakableBlocks" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 74.9792, -291.183 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock11" parent="BreakableBlocks" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( -1508.78, -1082.69 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock15" parent="BreakableBlocks" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( -1508.78, -1167.53 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock12" parent="BreakableBlocks" index="8" instance=ExtResource( 5 )]
 
 position = Vector2( -727.23, -1453.7 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
+paletteType = 1
 
 [node name="BreakableBlock16" parent="BreakableBlocks" index="9" instance=ExtResource( 5 )]
 
 position = Vector2( -681.389, -1453.7 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
+paletteType = 1
 
 [node name="tileMap" type="TileMap" parent="." index="10"]
 
