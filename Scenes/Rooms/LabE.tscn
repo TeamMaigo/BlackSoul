@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -425,10 +425,12 @@ connectedGroup = "WireGroupA"
 [node name="EnemyMob8" parent="." index="25" instance=ExtResource( 8 )]
 
 position = Vector2( 803.454, -318.184 )
+detect_radius = 200
 
 [node name="EnemyMob7" parent="." index="26" instance=ExtResource( 8 )]
 
 position = Vector2( 434.37, -316.848 )
+detect_radius = 200
 
 [node name="LabRoom" type="TileMap" parent="." index="27"]
 

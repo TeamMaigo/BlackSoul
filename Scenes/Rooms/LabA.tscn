@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -34,7 +33,7 @@ __meta__ = {
 [node name="TransferPointA" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 321.532, -255.939 )
-newScene = "LabD"
+newScene = "LabB"
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -93,29 +92,5 @@ _sections_unfolded = [ "Rect" ]
 [node name="EnemyMob" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 1189.29, 189.925 )
-
-[node name="PieceOfHeart" parent="." index="5" instance=ExtResource( 4 )]
-
-position = Vector2( 183.651, 59.8566 )
-
-[node name="PieceOfHeart2" parent="." index="6" instance=ExtResource( 4 )]
-
-position = Vector2( 270.715, 57.1359 )
-
-[node name="PieceOfHeart3" parent="." index="7" instance=ExtResource( 4 )]
-
-position = Vector2( 326.491, -53.0547 )
-
-[node name="PieceOfHeart4" parent="." index="8" instance=ExtResource( 4 )]
-
-position = Vector2( 375.464, -21.766 )
-
-[node name="PieceOfHeart5" parent="." index="9" instance=ExtResource( 4 )]
-
-position = Vector2( 429.879, -91.1453 )
-
-[node name="PieceOfHeart6" parent="." index="10" instance=ExtResource( 4 )]
-
-position = Vector2( 412.194, 87.0642 )
 
 
