@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=13]
 
-[node name="tileMap" type="TileMap"]
+[node name="tileMap" type="TileMap" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -94,6 +94,7 @@ __meta__ = {
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 599.023, 139.3 )
+respawnable = true
 
 [node name="Dummy" parent="." index="6" instance=ExtResource( 7 )]
 
@@ -117,7 +118,7 @@ position = Vector2( 1104.79, 1758.04 )
 
 [node name="Dummy7" parent="." index="11" instance=ExtResource( 7 )]
 
-position = Vector2( 672, -32 )
+position = Vector2( 544, -96 )
 
 [node name="Dummy5" parent="." index="12" instance=ExtResource( 7 )]
 
@@ -168,43 +169,53 @@ __meta__ = {
 
 position = Vector2( 1888, 928.852 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = true
 
 [node name="BreakableBlock11" parent="Breakable" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 1888, 998.231 )
 _sections_unfolded = [ "Collision", "Transform" ]
+respawnable = true
 
 [node name="BreakableBlock3" parent="Breakable" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 2240, 896 )
+respawnable = true
 
 [node name="BreakableBlock4" parent="Breakable" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 2304, 832 )
+respawnable = true
 
 [node name="BreakableBlock5" parent="Breakable" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 2368, 896 )
+respawnable = true
 
 [node name="BreakableBlock6" parent="Breakable" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 2368, 832 )
+respawnable = true
 
 [node name="BreakableBlock7" parent="Breakable" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 2304, 960 )
+respawnable = true
 
 [node name="BreakableBlock8" parent="Breakable" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 2368, 960 )
+respawnable = true
 
 [node name="BreakableBlock9" parent="Breakable" index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 2240, 960 )
+respawnable = true
 
 [node name="BreakableBlock10" parent="Breakable" index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 2240, 832 )
+respawnable = true
 
 [node name="Enemies" type="Node2D" parent="." index="16"]
 

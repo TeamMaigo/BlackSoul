@@ -100,9 +100,6 @@ func controls_loop():
 	elif movedir.x < 0:
 		anim = "PlayerWalkingLeft"
 
-	#if not $WeaponSwing.attackIsActive():
-	#	look_at(mousePos) #If we want player to rotate to face mouse
-
 	if DASH && dashAvailable && dashUnlocked:
 		MOTION_SPEED = maxDashSpeed
 		dashAvailable = false
@@ -124,12 +121,12 @@ func controls_loop():
 				$PlayerAudio.stream = load("res://Audio/Warp.wav")
 				$PlayerAudio.volume_db = Global.masterSound
 				$PlayerAudio.play()
-		swapAvailable = false
-		SpriteNode.set("modulate",Color(1,0.3,0.3,1))
-		swapInvuln = true
-		swapDelay(SWAP_DELAY)
-		swapInvuln(swapInvulnTime)
-		swapNotice(swapNoticeTime)
+				swapAvailable = false
+				SpriteNode.set("modulate",Color(1,0.3,0.3,1))
+				swapInvuln = true
+				swapDelay(SWAP_DELAY)
+				swapInvuln(swapInvulnTime)
+				swapNotice(swapNoticeTime)
 	
 	mousePos = get_global_mouse_position()
 	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
