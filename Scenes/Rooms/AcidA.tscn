@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=8]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -288,7 +288,7 @@ respawnable = true
 
 [node name="BreakableBlock2" parent="Breakable" index="12" instance=ExtResource( 8 )]
 
-position = Vector2( -2018.84, 479.123 )
+position = Vector2( -2016.57, 479.123 )
 _sections_unfolded = [ "Collision", "Transform" ]
 respawnable = false
 

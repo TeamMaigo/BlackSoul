@@ -76,7 +76,7 @@ paletteType = 1
 
 [node name="PressurePlate" parent="." index="10" instance=ExtResource( 6 )]
 
-position = Vector2( -675.714, -318.75 )
+position = Vector2( -876.068, -319.413 )
 z_index = -1
 _sections_unfolded = [ "Z Index" ]
 paletteType = 1
@@ -148,13 +148,13 @@ __meta__ = {
 
 [connection signal="enemyDeath" from="EnemyMob3" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
-
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
 
-[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
+[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
 
 [connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor2" method="_onActivate"]
 

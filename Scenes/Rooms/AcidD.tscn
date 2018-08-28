@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/AcidTileset.tres" type="TileSet" id=10]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="TransferGoalA" parent="." index="0" instance=ExtResource( 1 )]
 

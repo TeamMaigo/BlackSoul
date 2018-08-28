@@ -39,12 +39,12 @@ tracks/1/keys = {
 "values": [ 1, 0 ]
 }
 
-[node name="SwitchDoor" type="StaticBody2D" groups=[
+[node name="SwitchDoor" type="StaticBody2D" index="0" groups=[
 "Damageable",
 ]]
 
 input_pickable = false
-collision_layer = 1
+collision_layer = 0
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
@@ -69,6 +69,7 @@ bus = "Master"
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 5
+frame = 7
 _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
