@@ -12,7 +12,7 @@
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -318,21 +318,21 @@ usesTargeting = false
 
 [node name="Turret24" parent="Turrets" index="21" instance=ExtResource( 5 )]
 
-position = Vector2( 542.688, 1951.63 )
+position = Vector2( 544, 1948.12 )
 rotation = 3.14159
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-fire_rate = 1.2
+fire_rate = 1.4
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
 [node name="Turret25" parent="Turrets" index="22" instance=ExtResource( 5 )]
 
-position = Vector2( 542.688, 1891.51 )
+position = Vector2( 544, 1888 )
 rotation = 3.14159
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "collision" ]
-fire_rate = 1.2
-firstShotDelay = 0.6
+fire_rate = 1.4
+firstShotDelay = 0.7
 bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
