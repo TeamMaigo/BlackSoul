@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[node name="BulletLinear" type="KinematicBody2D" index="0" groups=[
+[node name="BulletLinear" type="KinematicBody2D" groups=[
 "Projectile",
 ]]
 
@@ -36,7 +36,7 @@ collision_layer = 16
 collision_mask = 7
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "collision" ]
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index", "collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

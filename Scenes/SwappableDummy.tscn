@@ -7,11 +7,11 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Dummy" type="KinematicBody2D" index="0" groups=[
+[node name="Dummy" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 
-modulate = Color( 0.455246, 0.457031, 0.45605, 0.55 )
+modulate = Color( 0.6875, 0.00805664, 0.00805664, 1 )
 z_index = 2
 input_pickable = false
 collision_layer = 4
@@ -21,9 +21,9 @@ _sections_unfolded = [ "Collision", "Visibility", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 0.941406, 0, 0, 1 )
 texture = ExtResource( 1 )
 flip_v = true
+_sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

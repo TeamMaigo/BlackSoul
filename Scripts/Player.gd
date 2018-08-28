@@ -13,8 +13,11 @@ var CollisionNode
 onready var dashTimer = $dashTimer
 onready var swapTimer = $swapTimer
 var dashAvailable = true
+var dashUnlocked = false
 var swapAvailable = true
+var swapUnlocked = false
 var barrierAvailable = true
+var barrierUnlocked = false
 var playerPos
 var mousePos
 var DASH_DELAY = 1	# in seconds
@@ -48,7 +51,7 @@ func _ready():
 	lastTransferPoint = position
 	$RotationNode.hide()
 	updateHealthBar()
-	healthUpProgress.setMaxValue(3)
+	#healthUpProgress.setMaxValue(3)
 
 func _physics_process(delta):
 	mousePos = get_global_mouse_position()
@@ -100,7 +103,7 @@ func controls_loop():
 	#if not $WeaponSwing.attackIsActive():
 	#	look_at(mousePos) #If we want player to rotate to face mouse
 
-	if DASH && dashAvailable:
+	if DASH && dashAvailable && dashUnlocked:
 		MOTION_SPEED = maxDashSpeed
 		dashAvailable = false
 		dashDelay(DASH_DELAY)	# Start dash cooldown timer
@@ -109,7 +112,7 @@ func controls_loop():
 		$PlayerAudio.volume_db = Global.masterSound
 		$PlayerAudio.play()
 
-	if SWAP && swapAvailable:
+	if SWAP && swapAvailable && swapUnlocked:
 		playerPos = SpriteNode.position
 		var space_state = get_world_2d().direct_space_state
 		var result = space_state.intersect_ray(position, mousePos, [self], 5) # 5 refers to layer mask
@@ -132,7 +135,7 @@ func controls_loop():
 	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
 	RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
 	
-	if BARRIER and barrierAvailable:
+	if BARRIER and barrierAvailable && barrierUnlocked:
 		barrierAvailable = false
 		$RotationNode.show()
 		$Sprite.modulate.g = 0
@@ -257,6 +260,9 @@ func save():
 		"parent": get_parent().get_path(),
 		"health": maxHealth,
 		"maxHealth": maxHealth,
-		"position": position
+		"position": position,
+		"dashUnlocked": dashUnlocked,
+		"swapUnlocked": swapUnlocked,
+		"barrierUnlocked": barrierUnlocked
 	}
 	return saveDict

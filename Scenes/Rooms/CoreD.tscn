@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/SwappableDummy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PowerUpUnlock.tscn" type="PackedScene" id=6]
 
 [node name="LabRoom" type="Node2D"]
 
@@ -108,6 +109,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Label2" type="Label" parent="." index="9"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -132,5 +134,12 @@ _sections_unfolded = [ "Rect" ]
 [node name="HealthPickup" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 201.715, -899.392 )
+
+[node name="PowerUpUnlock" parent="." index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 611.648, -463.858 )
+scale = Vector2( 1.93187, 1.90743 )
+unlockType = "swapUnlocked"
+objectToShow = "Label2"
 
 

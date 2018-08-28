@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeaponSwing.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/goldwingspritesheet.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/UI/HealthBar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/UI/HealthUpProgress.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/UI/PlayerUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -201,11 +200,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
-"Damageable",
+[node name="Player" type="KinematicBody2D" groups=[
 "Persist",
-"Player",
 "team_Player",
+"Player",
+"Damageable",
 ]]
 
 z_index = 5
@@ -266,32 +265,11 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="PlayerUI" type="Control" parent="CanvasLayer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
-
-[node name="HealthBar" parent="CanvasLayer/PlayerUI" index="0" instance=ExtResource( 4 )]
-
-[node name="HealthUpProgress" parent="CanvasLayer/PlayerUI" index="1" instance=ExtResource( 5 )]
-
-margin_left = 981.0
-margin_top = 1.0
-margin_right = 1026.0
-margin_bottom = 41.0
+[node name="PlayerUI" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
 
 [node name="PlayerAudio" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0

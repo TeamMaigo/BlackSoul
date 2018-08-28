@@ -235,7 +235,7 @@ tracks/0/keys = {
 "values": [ 20, 21, 22, 23, 24 ]
 }
 
-[node name="Turret" type="KinematicBody2D"]
+[node name="Turret" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 16
