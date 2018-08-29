@@ -9,6 +9,6 @@ func setValue(icon):
 	if icon == 0:
 		$sprite.texture = load("res://Sprites/LIFE POINTS SILHOUETTE.png")
 	if icon == 1:
-		pass
+		$sprite.texture = load("res://Sprites/LIFESHARD1.png")
 	if icon == 2:
-		$sprite.texture = load("res://Sprites/LIFE POINTS ACTIVE.png")
+		$sprite.texture = load("res://Sprites/LIFESHARD2.png")
