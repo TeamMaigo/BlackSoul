@@ -13,7 +13,7 @@
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=12]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 [node name="holeLayer" type="TileMap" parent="." index="0"]
 
@@ -45,7 +45,7 @@ position = Vector2( 0.448608, 738.651 )
 
 [node name="TransferGoalB" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 33.4468, -2221.19 )
+position = Vector2( 32, -1952 )
 
 [node name="TransferGoalC" parent="." index="3" instance=ExtResource( 2 )]
 
@@ -71,7 +71,7 @@ transferGoalTemp = "C"
 
 [node name="TransferPoint2" parent="." index="8" instance=ExtResource( 3 )]
 
-position = Vector2( 29.9219, -2417.29 )
+position = Vector2( 32, -2144 )
 newScene = "CoreF"
 
 [node name="TransferPoint3" parent="." index="9" instance=ExtResource( 3 )]
