@@ -7,7 +7,7 @@ onready var animation_player = $AnimationPlayer
 enum STATES {IDLE, ATTACK}
 var current_state = IDLE
 var activation_vector = null
-var rotationVariance = 10 # how much bullet angles when you hit it
+var rotationVariance = 0 # how much bullet angles when you hit it
 onready var player = get_tree().get_root().get_node("World/Player")
 var minMouseDist = 80
 
@@ -52,7 +52,6 @@ func _physics_process(delta):
 				newDirection = get_global_mouse_position()-player.position
 			else:
 				newDirection = get_global_mouse_position()-body.position
-			newDirection = newDirection.rotated(deg2rad(randi()%rotationVariance-rotationVariance))
 			body.setDirection(newDirection) # Bullet changes direction
 			body.get_node("Sprite").set("modulate",Color(0.6,0.6,0.6)) # Temp to visualize hit
 			body.setTarget(null)

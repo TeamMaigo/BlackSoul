@@ -8,11 +8,14 @@ export var transferGoalTemp = "A"
 export var unlocked = true
 var transferGoal
 var transfering = false
+export var relocks = false
 
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	if Global.currentScene+name in Global.unlockedThings:
+		unlocked = true
 	if unlocked:
 		$Sprite.frame = 1
 	else:
@@ -32,6 +35,8 @@ func switch(power):
 	if power:
 		unlocked = true
 		$Sprite.frame = 1
+		if not relocks:
+			Global.unlockedThings.append(Global.currentScene+name)
 	else:
 		unlocked = false
 		$Sprite.frame = 0

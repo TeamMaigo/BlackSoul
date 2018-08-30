@@ -70,8 +70,8 @@ tracks/0/keys = {
 }
 
 [node name="BreakableBlock" type="StaticBody2D" groups=[
-"Breakable",
 "Damageable",
+"Breakable",
 "Shatterable",
 ]]
 
@@ -85,6 +85,7 @@ bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 health = 1
+respawnable = true
 paletteType = null
 
 [node name="sprite" type="Sprite" parent="." index="0"]

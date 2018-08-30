@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=4]
 
 [node name="LabRoom" type="Node2D"]
 
@@ -25,11 +26,13 @@ position = Vector2( 2.54581, -2379.87 )
 visible = false
 position = Vector2( 533.573, -863.925 )
 newScene = "Save3"
+relocks = false
 
 [node name="TransferPoint3" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 3.23672, -2540.05 )
 newScene = "CoreB"
+relocks = false
 
 [node name="TransferPoint4" parent="." index="5" instance=ExtResource( 2 )]
 
@@ -37,6 +40,7 @@ visible = false
 position = Vector2( 1.38653, 720.16 )
 newScene = "AcidH"
 transferGoalTemp = "C"
+relocks = false
 
 [node name="tileMap" type="TileMap" parent="." index="6"]
 
@@ -62,5 +66,9 @@ _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="DoorMat" parent="." index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 475.855, -840.203 )
 
 

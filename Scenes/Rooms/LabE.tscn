@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=12]
+[ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=13]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -23,12 +24,14 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 visible = false
 position = Vector2( -421.872, 1544.67 )
 newScene = "LabE2"
+relocks = false
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( 1470.67, 1536.1 )
 newScene = "LabE2"
 transferGoalTemp = "B"
+relocks = false
 
 [node name="TransferPointA3" parent="." index="2" instance=ExtResource( 1 )]
 
@@ -36,17 +39,20 @@ visible = false
 position = Vector2( 2640, 544 )
 newScene = "LabD"
 transferGoalTemp = "B"
+relocks = false
 
 [node name="TransferPointB" parent="." index="3" instance=ExtResource( 1 )]
 
 position = Vector2( -447.705, -388.839 )
 newScene = "LabE1"
+relocks = false
 
 [node name="TransferPointB2" parent="." index="4" instance=ExtResource( 1 )]
 
 position = Vector2( -1029.54, 448.067 )
 newScene = "AcidA"
 unlocked = false
+relocks = false
 
 [node name="Pickup" parent="." index="5" instance=ExtResource( 2 )]
 
@@ -105,12 +111,14 @@ position = Vector2( 2367.93, 775.319 )
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 newScene = "Save1"
+relocks = false
 
 [node name="TransferPoint2" parent="." index="16" instance=ExtResource( 1 )]
 
 position = Vector2( 2371.56, -1535.93 )
 newScene = "LabE1"
 transferGoalTemp = "B"
+relocks = false
 
 [node name="TransferGoalC" parent="." index="17" instance=ExtResource( 3 )]
 
@@ -612,6 +620,10 @@ tile_data = PoolIntArray( -1179644, 12, 0, -1114108, 3, 0, -983036, 19, 0, -9174
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="DoorMat" parent="." index="31" instance=ExtResource( 13 )]
+
+position = Vector2( -480, 1568 )
 
 [connection signal="turn_off" from="Switch" to="TransferPointB2" method="switch" binds= [ false ]]
 

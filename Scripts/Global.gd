@@ -6,6 +6,7 @@ var masterMusic = -20
 var masterSound = -20
 var masterWindowMode = 0
 var destroyedObjects = []
+var unlockedThings = [] # Doors and gates specifically
 var currentScene = "LabA"
 var worldNode
 
@@ -16,10 +17,6 @@ func _ready():
 	loadOptions()
 	BGMPlayer.playing = true
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 
 func save_game(fileNumber):
 	var save_game = File.new()
@@ -83,6 +80,7 @@ func _deferred_load_game(fileNumber):
 func save():
 	var saveDict = {
 		"destroyedObjects": destroyedObjects,
+		"unlockedThings": unlockedThings,
 	}
 	return saveDict
 

@@ -4,11 +4,6 @@ extends Control
 func _ready():
 	randomize()
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
 
 func _on_New_Game_pressed():
 	Global.destroyedObjects.clear()

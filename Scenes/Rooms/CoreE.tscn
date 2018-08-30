@@ -31,12 +31,14 @@ tile_data = PoolIntArray( -720896, 536870912, 0, -720895, 536870912, 0, -720894,
 position = Vector2( 620.27, 65.8894 )
 newScene = "CoreB"
 transferGoalTemp = "C"
+relocks = false
 
 [node name="TransferPoint2" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 1063.32, -456.682 )
 newScene = "CoreB"
 transferGoalTemp = "F"
+relocks = false
 
 [node name="TransferGoalA" parent="." index="3" instance=ExtResource( 3 )]
 

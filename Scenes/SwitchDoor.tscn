@@ -55,6 +55,7 @@ _sections_unfolded = [ "Collision", "Visibility" ]
 enemiesLeftToKill = 0
 active = true
 paletteType = null
+relocks = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0"]
 
@@ -69,7 +70,6 @@ bus = "Master"
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 5
-frame = 7
 _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]

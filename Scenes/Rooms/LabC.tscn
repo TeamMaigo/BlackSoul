@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=7]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -17,12 +18,14 @@ _sections_unfolded = [ "Collision" ]
 visible = false
 position = Vector2( 1962.81, 992.79 )
 newScene = "LabD"
+relocks = false
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( -69.7006, -767.836 )
 newScene = "LabB"
 transferGoalTemp = "B"
+relocks = false
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
 
@@ -189,5 +192,9 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -720899, 536870914, 0, -786432, 536870917, 0, 65554, 536870922, 0, 458770, 536870924, 0 )
+
+[node name="DoorMat" parent="." index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 2008.62, 1015.54 )
 
 

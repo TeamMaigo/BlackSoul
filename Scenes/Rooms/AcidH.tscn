@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=8]
 
-[node name="Room1" type="Node2D" index="0"]
+[node name="Room1" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -85,17 +85,20 @@ paletteType = 1
 position = Vector2( 1530.46, 585.055 )
 newScene = "AcidF"
 transferGoalTemp = "C"
+relocks = false
 
 [node name="TransferPointB" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( -1155.18, 132.912 )
 newScene = "AcidG"
 transferGoalTemp = "B"
+relocks = false
 
 [node name="TransferPointB2" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( -191.423, -1072.81 )
 newScene = "CoreA"
+relocks = false
 
 [node name="TransferGoalA" parent="." index="7" instance=ExtResource( 5 )]
 

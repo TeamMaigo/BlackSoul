@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[node name="PressurePlate" type="Node2D"]
+[node name="PressurePlate" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 time = 10
@@ -19,7 +19,8 @@ paletteType = null
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 2
-_sections_unfolded = [ "Animation" ]
+frame = 2
+_sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="area2D" type="Area2D" parent="." index="1"]
 
@@ -39,6 +40,13 @@ scale = Vector2( 1.13036, 1.1581 )
 shape = SubResource( 1 )
 
 [node name="timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="blinkTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 1.0

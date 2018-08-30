@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/Light/square.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=8]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="TransferGoalA" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -17,9 +17,10 @@ position = Vector2( -1.48181, 408.18 )
 
 [node name="TransferPoint" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -94.8773, -1292.04 )
+position = Vector2( -99.9123, -1410.36 )
 newScene = "CoreG"
 unlocked = false
+relocks = false
 
 [node name="Turret" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -42,7 +43,7 @@ fireType = "shotgun"
 position = Vector2( -37.3552, -442.293 )
 health = 10
 respawnable = true
-countdownSeconds = 90
+countdownSeconds = 150
 
 [node name="MeltingText" type="Label" parent="." index="5"]
 
@@ -126,7 +127,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="tileMap2" type="TileMap" parent="." index="8"]
+[node name="tileMap" type="TileMap" parent="." index="8"]
 
 z_index = -1
 mode = 0

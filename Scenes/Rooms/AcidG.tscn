@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Scenes/PressurePlate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/AcidTileset.tres" type="TileSet" id=7]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=8]
+[ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=9]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="TransferPoint" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -17,11 +18,13 @@ visible = false
 position = Vector2( 1030.59, -84.9192 )
 newScene = "AcidF"
 transferGoalTemp = "B"
+relocks = false
 
 [node name="TransferPoint2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( -65.2585, -1604.29 )
 newScene = "AcidH"
+relocks = false
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
 
@@ -74,6 +77,7 @@ position = Vector2( -384.001, -1281.16 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 enemiesLeftToKill = 3
 paletteType = 1
+relocks = false
 
 [node name="PressurePlate" parent="." index="10" instance=ExtResource( 6 )]
 
@@ -87,11 +91,13 @@ paletteType = 1
 position = Vector2( -578.162, -322.411 )
 active = false
 paletteType = 1
+relocks = false
 
 [node name="SwitchDoor3" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( -1218.9, -319.689 )
 paletteType = 1
+relocks = false
 
 [node name="tileMap" type="TileMap" parent="." index="13"]
 
@@ -162,6 +168,13 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -851986, 11, 0, -589851, 16, 0, -458757, 4, 0, -327678, 3, 0, -327672, 12, 0, -262136, 11, 0, -262135, 10, 0, 65525, 13, 0, 65537, 16, 0, 131077, 0, 0, 131078, 6, 0, 196611, 21, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DoorMat" parent="." index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 985.702, -69.0654 )
 
 [connection signal="enemyDeath" from="EnemyMob" to="SwitchDoor" method="enemyDeath"]
 
@@ -169,13 +182,13 @@ tile_data = PoolIntArray( -851986, 11, 0, -589851, 16, 0, -458757, 4, 0, -327678
 
 [connection signal="enemyDeath" from="EnemyMob3" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
-
 [connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
 
-[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
+[connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
 
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor2" method="_onActivate"]
 

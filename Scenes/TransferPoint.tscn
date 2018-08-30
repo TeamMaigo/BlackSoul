@@ -33,6 +33,7 @@ script = ExtResource( 1 )
 newScene = "Room1"
 transferGoalTemp = "A"
 unlocked = true
+relocks = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
