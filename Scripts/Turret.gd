@@ -89,7 +89,7 @@ func _physics_process(delta):
 			if can_shoot:
 				playFireAnimation()
 				updateFacing()
-				$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
+				$audioStreamPlayer.stream = load("res://Audio/NewGunBlap.wav")
 				$audioStreamPlayer.volume_db = Global.masterSound
 				$audioStreamPlayer.play()
 				if fireType == "singleFire" or null:
@@ -98,7 +98,7 @@ func _physics_process(delta):
 					shootShotgunAtTarget(target.position)
 		elif not usesTargeting:
 			if can_shoot:
-				$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
+				$audioStreamPlayer.stream = load("res://Audio/NewGunBlap.wav")
 				$audioStreamPlayer.volume_db = Global.masterSound
 				$audioStreamPlayer.play()
 				playFireAnimation()

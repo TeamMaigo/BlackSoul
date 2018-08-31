@@ -148,7 +148,7 @@ func tryShoot(targ):
 				startedBurst = true
 
 func shootAt(targ):
-	$audioStreamPlayer.stream = load("res://Audio/GunBlap.wav")
+	$audioStreamPlayer.stream = load("res://Audio/NewGunBlap.wav")
 	$audioStreamPlayer.volume_db = Global.masterSound
 	$audioStreamPlayer.play()
 	if fireType == "singleFire":

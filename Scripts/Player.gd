@@ -105,7 +105,7 @@ func controls_loop():
 		dashAvailable = false
 		dashDelay(DASH_DELAY)	# Start dash cooldown timer
 		trauma = 40
-		$PlayerAudio.stream = load("res://Audio/Warp.wav")
+		$PlayerAudio.stream = load("res://Audio/WarpSFX.wav")
 		$PlayerAudio.volume_db = Global.masterSound
 		$PlayerAudio.play()
 
