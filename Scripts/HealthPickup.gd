@@ -13,7 +13,7 @@ func _ready():
 func applyEffect(player):
 	emit_signal("collected")
 	player.setHealth(player.maxHealth)
-	player.get_node("PlayerAudio").stream = load("res://Audio/RecievedChat.ogg")
+	player.get_node("PlayerAudio").stream = load("res://Audio/ItemPickup.wav")
 	player.get_node("PlayerAudio").playing = true
 	player.get_node("PlayerAudio").volume_db = Global.masterSound
 	if not respawnable:

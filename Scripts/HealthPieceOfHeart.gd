@@ -13,6 +13,9 @@ func applyEffect(player):
 		player.piecesOfHeart += 1
 		player.updateHealthUpProgress()
 		emit_signal("collected")
+		player.get_node("PlayerAudio").stream = load("res://Audio/ItemPickup.wav")
+		player.get_node("PlayerAudio").playing = true
+		player.get_node("PlayerAudio").volume_db = Global.masterSound
 		if not respawnable:
 			Global.destroyedObjects.append(Global.currentScene+name)
 		queue_free()

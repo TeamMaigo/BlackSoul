@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11.0624, 12.6617 )
 
-[node name="PieceOfHeart" type="StaticBody2D" groups=[
+[node name="PieceOfHeart" type="StaticBody2D" index="0" groups=[
 "Pickup",
 ]]
 

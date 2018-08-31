@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=6]
 
-[node name="LabRoom" type="TileMap" index="0"]
+[node name="LabRoom" type="TileMap"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -119,28 +120,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PieceOfHeart" parent="." index="6" instance=ExtResource( 5 )]
+[node name="HealthPickup" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 218.538, 47.8819 )
+position = Vector2( 290.974, 52.7928 )
 
-[node name="PieceOfHeart2" parent="." index="7" instance=ExtResource( 5 )]
+[node name="PieceOfHeart" parent="." index="7" instance=ExtResource( 6 )]
 
-position = Vector2( 297.113, -15.9606 )
-
-[node name="PieceOfHeart3" parent="." index="8" instance=ExtResource( 5 )]
-
-position = Vector2( 419.887, -67.5257 )
-
-[node name="PieceOfHeart4" parent="." index="9" instance=ExtResource( 5 )]
-
-position = Vector2( 338.856, 62.6147 )
-
-[node name="PieceOfHeart5" parent="." index="10" instance=ExtResource( 5 )]
-
-position = Vector2( 227.132, -65.0703 )
-
-[node name="PieceOfHeart6" parent="." index="11" instance=ExtResource( 5 )]
-
-position = Vector2( 340.084, -90.8528 )
+position = Vector2( 347.45, -109.269 )
 
 
