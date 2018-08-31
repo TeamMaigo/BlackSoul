@@ -118,7 +118,7 @@ func controls_loop():
 				swappedRecently = true
 				swapPlaces(self, result.collider)
 				trauma = 110
-				$PlayerAudio.stream = load("res://Audio/Warp.wav")
+				$PlayerAudio.stream = load("res://Audio/ActualWarpSFX.wav")
 				$PlayerAudio.volume_db = Global.masterSound
 				$PlayerAudio.play()
 				swapAvailable = false
