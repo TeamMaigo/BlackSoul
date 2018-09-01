@@ -19,6 +19,8 @@ func _ready():
 		$Sprite.texture = load("res://Sprites/GATE_HORIZONTAL.png")
 	if not active:
 		_onDeactivate()
+	else:
+		collision_layer = collisionL
 
 func _onActivate():
 	$animationPlayer.play_backwards("deactivate")

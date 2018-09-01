@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeaponSwing.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/goldwingspritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/PLAYER_CHARACTER_SPRITESHEET.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/PlayerUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
 
@@ -14,7 +14,7 @@ extents = Vector2( 15.3528, 10 )
 [sub_resource type="Animation" id=2]
 
 resource_name = "Idle"
-length = 0.7
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -24,10 +24,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 8, 9, 10, 11, 12, 13, 14, 15 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -36,10 +36,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -63,7 +63,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 
-length = 0.7
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -73,10 +73,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 40, 41, 42, 43, 44, 45, 46, 47 ]
+"values": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -85,15 +85,15 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector2( 0, 9 ) ]
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=5]
 
-length = 0.7
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -103,10 +103,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 88, 89, 90, 91, 92, 93, 94, 95 ]
+"values": [ 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -115,15 +115,15 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=6]
 
-length = 0.7
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -133,10 +133,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 56, 57, 58, 59, 60, 61, 62, 63 ]
+"values": [ 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -145,15 +145,15 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=7]
 
-length = 0.7
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -163,10 +163,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 72, 73, 74, 75, 76, 77, 78, 79 ]
+"values": [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -175,10 +175,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ Vector2( 0, 9 ) ]
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -200,11 +200,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
-"team_Player",
-"Persist",
-"Player",
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Damageable",
+"team_Player",
+"Player",
+"Persist",
 ]]
 
 z_index = 5
@@ -234,12 +234,13 @@ collision_mask = 21
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
+position = Vector2( 0, 9 )
 texture = ExtResource( 3 )
-vframes = 22
-hframes = 8
-frame = 36
+vframes = 6
+hframes = 10
+frame = 49
 region_rect = Rect2( 160, 30, 110, 90 )
-_sections_unfolded = [ "Animation", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 

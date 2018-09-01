@@ -41,6 +41,7 @@ var maxDashInvulnSpeed = 1800
 var piecesOfHeart = 0
 var trauma = 0
 
+
 onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
 onready var healthUpProgress = $CanvasLayer/PlayerUI/HealthUpProgress
 
@@ -97,8 +98,10 @@ func controls_loop():
 		anim = "PlayerWalkingUp"
 	if movedir.x > 0:
 		anim = "PlayerWalkingRight"
+		$Sprite.flip_h = false
 	elif movedir.x < 0:
-		anim = "PlayerWalkingLeft"
+		anim = "PlayerWalkingRight"
+		$Sprite.flip_h = true
 
 	if DASH && dashAvailable && dashUnlocked:
 		MOTION_SPEED = maxDashSpeed
