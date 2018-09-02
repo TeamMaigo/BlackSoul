@@ -24,14 +24,12 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 visible = false
 position = Vector2( -421.872, 1544.67 )
 newScene = "LabE2"
-relocks = false
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( 1470.67, 1536.1 )
 newScene = "LabE2"
 transferGoalTemp = "B"
-relocks = false
 
 [node name="TransferPointA3" parent="." index="2" instance=ExtResource( 1 )]
 
@@ -39,20 +37,17 @@ visible = false
 position = Vector2( 2640, 544 )
 newScene = "LabD"
 transferGoalTemp = "B"
-relocks = false
 
 [node name="TransferPointB" parent="." index="3" instance=ExtResource( 1 )]
 
 position = Vector2( -447.705, -388.839 )
 newScene = "LabE1"
-relocks = false
 
 [node name="TransferPointB2" parent="." index="4" instance=ExtResource( 1 )]
 
 position = Vector2( -1029.54, 448.067 )
 newScene = "AcidA"
 unlocked = false
-relocks = false
 
 [node name="Pickup" parent="." index="5" instance=ExtResource( 2 )]
 
@@ -81,17 +76,14 @@ respawnable = false
 [node name="BreakableBlock2" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 549.559, -484.268 )
-respawnable = true
 
 [node name="BreakableBlock5" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 484.261, -482.908 )
-respawnable = true
 
 [node name="BreakableBlock4" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 615.705, -482.217 )
-respawnable = true
 
 [node name="BreakableBlock3" parent="." index="13" instance=ExtResource( 4 )]
 
@@ -111,14 +103,12 @@ position = Vector2( 2367.93, 775.319 )
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 newScene = "Save1"
-relocks = false
 
 [node name="TransferPoint2" parent="." index="16" instance=ExtResource( 1 )]
 
 position = Vector2( 2371.56, -1535.93 )
 newScene = "LabE1"
 transferGoalTemp = "B"
-relocks = false
 
 [node name="TransferGoalC" parent="." index="17" instance=ExtResource( 3 )]
 
@@ -624,6 +614,14 @@ __meta__ = {
 [node name="DoorMat" parent="." index="31" instance=ExtResource( 13 )]
 
 position = Vector2( -480, 1568 )
+
+[node name="DoorMat2" parent="." index="32" instance=ExtResource( 13 )]
+
+position = Vector2( 2589.8, 579.304 )
+
+[node name="PieceOfHeart2" parent="." index="33" instance=ExtResource( 10 )]
+
+position = Vector2( -1244.69, 1407.87 )
 
 [connection signal="turn_off" from="Switch" to="TransferPointB2" method="switch" binds= [ false ]]
 

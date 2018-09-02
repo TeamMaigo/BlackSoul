@@ -20,7 +20,6 @@ position = Vector2( -1.48181, 408.18 )
 position = Vector2( -99.9123, -1410.36 )
 newScene = "CoreG"
 unlocked = false
-relocks = false
 
 [node name="Turret" parent="." index="2" instance=ExtResource( 3 )]
 

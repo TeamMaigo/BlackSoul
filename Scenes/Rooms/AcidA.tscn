@@ -104,14 +104,12 @@ position = Vector2( 232.855, 264.39 )
 z_index = -1
 _sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
 paletteType = 1
-relocks = false
 
 [node name="TransferPoint" parent="." index="10" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( -330.005, 1827.52 )
 newScene = "AcidB"
-relocks = false
 
 [node name="TransferGoalB" parent="." index="11" instance=ExtResource( 2 )]
 
@@ -123,40 +121,34 @@ visible = false
 position = Vector2( 788.938, -86.0205 )
 newScene = "LabE"
 transferGoalTemp = "G"
-relocks = false
 
 [node name="TransferPoint3" parent="." index="13" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( -689.947, -2025.4 )
 newScene = "AcidD"
-relocks = false
 
 [node name="TransferPoint4" parent="." index="14" instance=ExtResource( 5 )]
 
 position = Vector2( -1602.7, -2636.67 )
 newScene = "AcidE"
 transferGoalTemp = "B"
-relocks = false
 
 [node name="TransferPoint5" parent="." index="15" instance=ExtResource( 5 )]
 
 position = Vector2( -3049.06, 515.711 )
 newScene = "AcidF"
-relocks = false
 
 [node name="TransferPoint6" parent="." index="16" instance=ExtResource( 5 )]
 
 position = Vector2( -66.6344, -842.163 )
 newScene = "AcidA1"
-relocks = false
 
 [node name="TransferPoint7" parent="." index="17" instance=ExtResource( 5 )]
 
 visible = false
 position = Vector2( -1151.57, 1158.8 )
 newScene = "Save2"
-relocks = false
 
 [node name="Turrets" type="Node2D" parent="." index="18"]
 
@@ -252,13 +244,11 @@ paletteType = 1
 [node name="BreakableBlock5" parent="Breakable" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( -1120, -1952 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock14" parent="Breakable" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( -1120, -1891 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock13" parent="Breakable" index="4" instance=ExtResource( 8 )]
@@ -276,43 +266,36 @@ paletteType = 1
 [node name="BreakableBlock3" parent="Breakable" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 173.032, 736 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock7" parent="Breakable" index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 173.032, 800 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock8" parent="Breakable" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 173.032, 864 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock9" parent="Breakable" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 173.032, 928 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock10" parent="Breakable" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 173.032, 992 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock4" parent="Breakable" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( -530.229, 1184 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock11" parent="Breakable" index="12" instance=ExtResource( 8 )]
 
 position = Vector2( -530.229, 1120 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock2" parent="Breakable" index="13" instance=ExtResource( 8 )]
@@ -349,21 +332,33 @@ __meta__ = {
 
 position = Vector2( -2907.33, -411.022 )
 
-[node name="DoorMat" parent="." index="22" instance=ExtResource( 11 )]
+[node name="Dummy2" parent="." index="22" instance=ExtResource( 10 )]
 
-position = Vector2( -748.345, -1984.51 )
+position = Vector2( -2400, -550 )
 
-[node name="DoorMat2" parent="." index="23" instance=ExtResource( 11 )]
+[node name="DoorMat" parent="." index="23" instance=ExtResource( 11 )]
 
-position = Vector2( 725.538, -94.2931 )
+position = Vector2( -740.808, -1976.97 )
+paletteType = 1
 
-[node name="DoorMat3" parent="." index="24" instance=ExtResource( 11 )]
+[node name="DoorMat2" parent="." index="24" instance=ExtResource( 11 )]
 
-position = Vector2( -287.192, 1833.65 )
+position = Vector2( 730.953, -69.9255 )
+paletteType = 1
 
-[node name="DoorMat4" parent="." index="25" instance=ExtResource( 11 )]
+[node name="DoorMat3" parent="." index="25" instance=ExtResource( 11 )]
+
+position = Vector2( -287.192, 1855.65 )
+paletteType = 1
+
+[node name="DoorMat4" parent="." index="26" instance=ExtResource( 11 )]
 
 position = Vector2( -1151.44, 1117.46 )
+
+[node name="TransferPoint8" parent="." index="27" instance=ExtResource( 5 )]
+
+position = Vector2( -2819.75, -643.412 )
+newScene = "AcidSecret"
 
 [connection signal="turn_off" from="Switch" to="Switch/SwitchDoor" method="_onActivate"]
 

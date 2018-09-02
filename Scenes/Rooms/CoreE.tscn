@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/BulletSeeking.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/BulletAngle.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=13]
 
 [node name="LabRoom" type="Node2D" groups=[
 "WireGroupA",
@@ -322,6 +323,10 @@ frame = 2
 
 position = Vector2( -800, 608 )
 
+[node name="PieceOfHeart" parent="." index="24" instance=ExtResource( 13 )]
+
+position = Vector2( -3110.31, 856.382 )
+
 [connection signal="enemyDeath" from="Enemy" to="SwitchDoor" method="enemyDeath"]
 
 [connection signal="enemyDeath" from="Enemy2" to="SwitchDoor" method="enemyDeath"]
@@ -330,9 +335,9 @@ position = Vector2( -800, 608 )
 
 [connection signal="enemyDeath" from="Enemy4" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor5" method="_onDeactivate"]
-
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor4" method="_onDeactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor5" method="_onDeactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor5" method="_onActivate"]
 
