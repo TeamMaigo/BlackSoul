@@ -18,14 +18,14 @@ _sections_unfolded = [ "Collision" ]
 visible = false
 position = Vector2( 1962.81, 992.79 )
 newScene = "LabD"
-relocks = false
+finalTransition = false
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( -69.7006, -767.836 )
 newScene = "LabB"
 transferGoalTemp = "B"
-relocks = false
+finalTransition = false
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
 
@@ -121,32 +121,26 @@ usesTargeting = false
 [node name="BreakableBlock" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 1956.23, 279.708 )
-respawnable = true
 
 [node name="BreakableBlock4" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 1956.23, 346.006 )
-respawnable = true
 
 [node name="BreakableBlock2" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 1380.61, 99.7632 )
-respawnable = true
 
 [node name="BreakableBlock7" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 1081.33, 290.216 )
-respawnable = true
 
 [node name="BreakableBlock5" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 1078.61, 356.874 )
-respawnable = true
 
 [node name="BreakableBlock3" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 1474.06, 557.993 )
-respawnable = true
 
 [node name="tileMap" type="TileMap" parent="." index="11"]
 
@@ -195,6 +189,6 @@ tile_data = PoolIntArray( -720899, 536870914, 0, -786432, 536870917, 0, 65554, 5
 
 [node name="DoorMat" parent="." index="13" instance=ExtResource( 7 )]
 
-position = Vector2( 2008.62, 1015.54 )
+position = Vector2( 2023.32, 1015.54 )
 
 

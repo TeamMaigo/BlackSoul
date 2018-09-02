@@ -9,7 +9,7 @@ export var unlocked = true
 var transferGoal
 var transfering = false
 export var relocks = false
-
+export var finalTransition = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -29,7 +29,10 @@ func _on_Area2D_body_entered(body):
 			body.get_node("./").playerControlEnabled = false
 			transfering = true
 			newScene = "res://Scenes/Rooms/" + newScene + ".tscn"
-			get_node("/root/World/").goto_scene(newScene, transferGoal)
+			if finalTransition:
+				get_tree().change_scene("res://Scenes/GameFinished.tscn")
+			else:
+				get_node("/root/World/").goto_scene(newScene, transferGoal)
 
 func switch(power):
 	if power:

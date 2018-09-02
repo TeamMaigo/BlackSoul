@@ -290,7 +290,6 @@ seconds = 90
 
 [node name="ScenePlayer" type="AnimationPlayer" parent="CanvasLayer" index="2"]
 
-editor/display_folded = true
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1

@@ -32,14 +32,14 @@ position = Vector2( -696.073, -1550.48 )
 visible = false
 position = Vector2( -1875.1, -1168.7 )
 newScene = "AcidG"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint3" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( -703.857, -1794.9 )
 newScene = "AcidH"
 transferGoalTemp = "B"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint2" parent="." index="6" instance=ExtResource( 2 )]
 
@@ -47,14 +47,14 @@ visible = false
 position = Vector2( 329.887, 520.912 )
 newScene = "AcidA"
 transferGoalTemp = "F"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint4" parent="." index="7" instance=ExtResource( 2 )]
 
 visible = false
 position = Vector2( -192.883, 771.441 )
 newScene = "Save2A"
-relocks = false
+finalTransition = false
 
 [node name="Turret" parent="." index="8" instance=ExtResource( 3 )]
 
@@ -218,14 +218,17 @@ __meta__ = {
 
 [node name="DoorMat" parent="." index="15" instance=ExtResource( 8 )]
 
-position = Vector2( 272.241, 542.813 )
+position = Vector2( 275.181, 545.753 )
+paletteType = 1
 
 [node name="DoorMat2" parent="." index="16" instance=ExtResource( 8 )]
 
 position = Vector2( -193.742, 724.864 )
+paletteType = 1
 
 [node name="DoorMat3" parent="." index="17" instance=ExtResource( 8 )]
 
-position = Vector2( -1829.98, -1155.57 )
+position = Vector2( -1820.3, -1140.61 )
+paletteType = 1
 
 

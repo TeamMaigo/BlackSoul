@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/HealthPickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/HealthPieceOfHeart.tscn" type="PackedScene" id=6]
 
-[node name="LabRoom" type="TileMap"]
+[node name="LabRoom" type="TileMap" index="0"]
 
 position = Vector2( -344.179, -1.50732 )
 z_index = -1
@@ -38,6 +38,7 @@ __meta__ = {
 
 position = Vector2( 321.532, -255.939 )
 newScene = "LabB"
+finalTransition = false
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -45,6 +46,7 @@ visible = false
 position = Vector2( -629.29, -119.047 )
 scale = Vector2( 7.18063, 4.85393 )
 newScene = "Level_Test2"
+finalTransition = false
 
 [node name="Label" type="Label" parent="." index="2"]
 

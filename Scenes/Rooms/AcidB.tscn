@@ -35,14 +35,14 @@ position = Vector2( -818.912, -176.929 )
 position = Vector2( 877.717, -278.179 )
 newScene = "AcidA"
 transferGoalTemp = "B"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint2" parent="." index="5" instance=ExtResource( 2 )]
 
 position = Vector2( -833.529, -369.674 )
 newScene = "AcidA"
 transferGoalTemp = "D"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint4" parent="." index="6" instance=ExtResource( 2 )]
 
@@ -50,14 +50,14 @@ visible = false
 position = Vector2( -1091.31, 763.309 )
 newScene = "AcidC"
 transferGoalTemp = "B"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint3" parent="." index="7" instance=ExtResource( 2 )]
 
 visible = false
 position = Vector2( -1685.23, 2005.29 )
 newScene = "AcidC"
-relocks = false
+finalTransition = false
 
 [node name="BreakableBlock" parent="." index="8" instance=ExtResource( 3 )]
 
@@ -69,14 +69,12 @@ paletteType = 1
 
 position = Vector2( -110.596, 285.955 )
 _sections_unfolded = [ "Collision", "Transform" ]
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock3" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( -110.596, 219.473 )
 _sections_unfolded = [ "Collision", "Transform" ]
-respawnable = true
 paletteType = 1
 
 [node name="Turrets" type="Node2D" parent="." index="11"]
@@ -242,6 +240,12 @@ __meta__ = {
 
 [node name="DoorMat" parent="." index="17" instance=ExtResource( 9 )]
 
-position = Vector2( -1628.55, 2035.31 )
+position = Vector2( -1623.79, 2040.07 )
+paletteType = 1
+
+[node name="DoorMat2" parent="." index="18" instance=ExtResource( 9 )]
+
+position = Vector2( -1090.79, 712.354 )
+paletteType = 1
 
 

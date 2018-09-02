@@ -49,13 +49,11 @@ _sections_unfolded = [ "Rect" ]
 [node name="BreakableBlock" parent="." index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 272, 96 )
-respawnable = true
 paletteType = 1
 
 [node name="BreakableBlock2" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 272, 160 )
-respawnable = true
 paletteType = 1
 
 [node name="Turret" parent="." index="5" instance=ExtResource( 3 )]
@@ -79,14 +77,14 @@ fireType = "shotgun"
 visible = false
 position = Vector2( 1547.36, 17.8852 )
 newScene = "AcidB"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint2" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 512.183, -964.071 )
 newScene = "AcidB"
 transferGoalTemp = "C"
-relocks = false
+finalTransition = false
 
 [node name="SwitchDoor" parent="." index="9" instance=ExtResource( 6 )]
 
@@ -94,7 +92,6 @@ position = Vector2( -577.85, 130.599 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 enemiesLeftToKill = 1
 paletteType = 1
-relocks = false
 
 [node name="tileMap" type="TileMap" parent="." index="10"]
 
@@ -148,6 +145,9 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -65543, 26, 0, -65542, 26, 0, -7, 27, 0, -6, 27, 0, 65532, 27, 0, 327673, 27, 0, 393209, 27, 0, 393210, 27, 0, 393211, 27, 0 )
 _sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="doodads" type="TileMap" parent="." index="13"]
 
@@ -168,10 +168,14 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -917499, 2, 0, -786430, 0, 0, -524295, 1, 0, -262156, 5, 0, -262132, 9, 0, -196602, 5, 0, -196593, 12, 0, -196588, 13, 0, -196587, 10, 0, -196586, 12, 0, -131059, 15, 0, 131095, 13, 0, 196614, 3, 0, 196622, 13, 0, 196624, 5, 0, 196628, 3, 0, 196629, 19, 0, 262153, 14, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DoorMat" parent="." index="14" instance=ExtResource( 10 )]
 
-position = Vector2( 1504, 32 )
+position = Vector2( 1504, 64 )
+paletteType = 1
 
 [connection signal="enemyDeath" from="EnemyMob" to="SwitchDoor" method="enemyDeath"]
 

@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=6]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 [node name="BreakableBlock" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -63,20 +63,20 @@ visible = false
 position = Vector2( -1349.66, -155.657 )
 newScene = "CoreB"
 transferGoalTemp = "E"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint2" parent="." index="11" instance=ExtResource( 4 )]
 
 visible = false
 position = Vector2( 2696.03, 224.692 )
 newScene = "CoreC1"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint3" parent="." index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 2175.86, -1022.88 )
 newScene = "CoreD"
-relocks = false
+finalTransition = false
 
 [node name="tileMap" type="TileMap" parent="." index="13"]
 
@@ -104,10 +104,12 @@ __meta__ = {
 
 [node name="DoorMat" parent="." index="14" instance=ExtResource( 6 )]
 
-position = Vector2( 2654.7, 246.412 )
+position = Vector2( 2653.5, 256.59 )
+paletteType = 2
 
 [node name="DoorMat2" parent="." index="15" instance=ExtResource( 6 )]
 
-position = Vector2( -1317.12, -129.159 )
+position = Vector2( -1309.13, -125.359 )
+paletteType = 2
 
 

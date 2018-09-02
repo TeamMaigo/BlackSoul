@@ -70,41 +70,41 @@ visible = false
 position = Vector2( -1.65875, 1069.52 )
 newScene = "CoreA"
 transferGoalTemp = "C"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint2" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 0.266846, -2561.54 )
 newScene = "CoreF"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint3" parent="." index="9" instance=ExtResource( 3 )]
 
 visible = false
 position = Vector2( -1548.47, -792.203 )
 newScene = "CoreE"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint6" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( -418.261, -2239.76 )
 newScene = "CoreE"
 transferGoalTemp = "B"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint4" parent="." index="11" instance=ExtResource( 3 )]
 
 visible = false
 position = Vector2( 2568.11, -856.983 )
 newScene = "Save3"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint5" parent="." index="12" instance=ExtResource( 3 )]
 
 visible = false
 position = Vector2( 2563.64, -162.34 )
 newScene = "CoreC"
-relocks = false
+finalTransition = false
 
 [node name="Dummy" parent="." index="13" instance=ExtResource( 4 )]
 
@@ -137,102 +137,82 @@ editor/display_folded = true
 [node name="BreakableBlock" parent="BreakableBlocks" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( -96, -544 )
-respawnable = true
 
 [node name="BreakableBlock5" parent="BreakableBlocks" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( -96, -480 )
-respawnable = true
 
 [node name="BreakableBlock12" parent="BreakableBlocks" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( -96, -800 )
-respawnable = true
 
 [node name="BreakableBlock6" parent="BreakableBlocks" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( -32, -480 )
-respawnable = true
 
 [node name="BreakableBlock11" parent="BreakableBlocks" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( -32, -800 )
-respawnable = true
 
 [node name="BreakableBlock7" parent="BreakableBlocks" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 32, -480 )
-respawnable = true
 
 [node name="BreakableBlock9" parent="BreakableBlocks" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 32, -800 )
-respawnable = true
 
 [node name="BreakableBlock8" parent="BreakableBlocks" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 96, -480 )
-respawnable = true
 
 [node name="BreakableBlock14" parent="BreakableBlocks" index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 160, -544 )
-respawnable = true
 
 [node name="BreakableBlock18" parent="BreakableBlocks" index="9" instance=ExtResource( 7 )]
 
 position = Vector2( -160, -544 )
-respawnable = true
 
 [node name="BreakableBlock10" parent="BreakableBlocks" index="10" instance=ExtResource( 7 )]
 
 position = Vector2( 96, -800 )
-respawnable = true
 
 [node name="BreakableBlock15" parent="BreakableBlocks" index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 160, -736 )
-respawnable = true
 
 [node name="BreakableBlock19" parent="BreakableBlocks" index="12" instance=ExtResource( 7 )]
 
 position = Vector2( -160, -736 )
-respawnable = true
 
 [node name="BreakableBlock21" parent="BreakableBlocks" index="13" instance=ExtResource( 7 )]
 
 position = Vector2( -160, -672 )
-respawnable = true
 
 [node name="BreakableBlock2" parent="BreakableBlocks" index="14" instance=ExtResource( 7 )]
 
 position = Vector2( 96, -544 )
-respawnable = true
 
 [node name="BreakableBlock16" parent="BreakableBlocks" index="15" instance=ExtResource( 7 )]
 
 position = Vector2( 160, -608 )
-respawnable = true
 
 [node name="BreakableBlock3" parent="BreakableBlocks" index="16" instance=ExtResource( 7 )]
 
 position = Vector2( 96, -736 )
-respawnable = true
 
 [node name="BreakableBlock13" parent="BreakableBlocks" index="17" instance=ExtResource( 7 )]
 
 position = Vector2( 160, -672 )
-respawnable = true
 
 [node name="BreakableBlock20" parent="BreakableBlocks" index="18" instance=ExtResource( 7 )]
 
 position = Vector2( -160, -608 )
-respawnable = true
 
 [node name="BreakableBlock4" parent="BreakableBlocks" index="19" instance=ExtResource( 7 )]
 
 position = Vector2( -96, -736 )
-respawnable = true
 
 [node name="EnemyMob" parent="." index="17" instance=ExtResource( 8 )]
 
@@ -247,7 +227,6 @@ position = Vector2( -856.245, -1122.08 )
 position = Vector2( -2.45955, -1541.3 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 paletteType = 2
-relocks = false
 
 [node name="Switch" parent="." index="20" instance=ExtResource( 10 )]
 
@@ -314,18 +293,22 @@ __meta__ = {
 [node name="DoorMat" parent="." index="23" instance=ExtResource( 13 )]
 
 position = Vector2( -1504, -768 )
+paletteType = 2
 
 [node name="DoorMat2" parent="." index="24" instance=ExtResource( 13 )]
 
-position = Vector2( 2528, -144 )
+position = Vector2( 2528, -128 )
+paletteType = 2
 
 [node name="DoorMat3" parent="." index="25" instance=ExtResource( 13 )]
 
 position = Vector2( 2528, -832 )
+paletteType = 2
 
 [node name="DoorMat4" parent="." index="26" instance=ExtResource( 13 )]
 
 position = Vector2( 0, 1040 )
+paletteType = 2
 
 [node name="Dummy2" parent="." index="27" instance=ExtResource( 4 )]
 

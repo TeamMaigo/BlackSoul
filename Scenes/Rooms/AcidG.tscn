@@ -18,13 +18,13 @@ visible = false
 position = Vector2( 1030.59, -84.9192 )
 newScene = "AcidF"
 transferGoalTemp = "B"
-relocks = false
+finalTransition = false
 
 [node name="TransferPoint2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( -65.2585, -1604.29 )
 newScene = "AcidH"
-relocks = false
+finalTransition = false
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
 
@@ -32,7 +32,7 @@ position = Vector2( 760.608, -64.772 )
 
 [node name="TransferGoalB" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( -65.0925, -1367.48 )
+position = Vector2( -70.6716, -1412.11 )
 
 [node name="Turret" parent="." index="4" instance=ExtResource( 3 )]
 
@@ -77,7 +77,6 @@ position = Vector2( -384.001, -1281.16 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 enemiesLeftToKill = 3
 paletteType = 1
-relocks = false
 
 [node name="PressurePlate" parent="." index="10" instance=ExtResource( 6 )]
 
@@ -91,13 +90,11 @@ paletteType = 1
 position = Vector2( -578.162, -322.411 )
 active = false
 paletteType = 1
-relocks = false
 
 [node name="SwitchDoor3" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( -1218.9, -319.689 )
 paletteType = 1
-relocks = false
 
 [node name="tileMap" type="TileMap" parent="." index="13"]
 
@@ -175,6 +172,7 @@ __meta__ = {
 [node name="DoorMat" parent="." index="16" instance=ExtResource( 9 )]
 
 position = Vector2( 985.702, -69.0654 )
+paletteType = 1
 
 [connection signal="enemyDeath" from="EnemyMob" to="SwitchDoor" method="enemyDeath"]
 
@@ -182,13 +180,13 @@ position = Vector2( 985.702, -69.0654 )
 
 [connection signal="enemyDeath" from="EnemyMob3" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
-
-[connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
-
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
 
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor2" method="_onActivate"]
 
