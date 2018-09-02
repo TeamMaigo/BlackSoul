@@ -43,33 +43,29 @@ __meta__ = {
 
 position = Vector2( -976.444, -457.114 )
 
-[node name="TransferGoalA2" parent="." index="2" instance=ExtResource( 2 )]
-
-position = Vector2( 8031.21, 604.826 )
-
-[node name="BreakableBlock" parent="." index="3" instance=ExtResource( 3 )]
+[node name="BreakableBlock" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 5792, 544 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BreakableBlock2" parent="." index="4" instance=ExtResource( 3 )]
+[node name="BreakableBlock2" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 5792, 608 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="BreakableBlock3" parent="." index="5" instance=ExtResource( 3 )]
+[node name="BreakableBlock3" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 5792, 672 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="TransferPoint" parent="." index="6" instance=ExtResource( 4 )]
+[node name="TransferPoint" parent="." index="5" instance=ExtResource( 4 )]
 
 visible = false
 position = Vector2( 8257.16, 589.912 )
 newScene = "GameFinished"
 finalTransition = true
 
-[node name="Enemies" type="Node2D" parent="." index="7"]
+[node name="Enemies" type="Node2D" parent="." index="6"]
 
 [node name="EnemyMob" parent="Enemies" index="0" instance=ExtResource( 5 )]
 
@@ -123,7 +119,7 @@ position = Vector2( 6496, 608 )
 
 position = Vector2( 6310.23, 607.063 )
 
-[node name="LightController" parent="." index="8" instance=ExtResource( 6 )]
+[node name="LightController" parent="." index="7" instance=ExtResource( 6 )]
 
 energy = 0.8
 strobe = true
@@ -157,7 +153,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Turrets" type="Node2D" parent="." index="9"]
+[node name="Turrets" type="Node2D" parent="." index="8"]
 
 [node name="Turret" parent="Turrets" index="0" instance=ExtResource( 8 )]
 
@@ -247,7 +243,7 @@ fireType = "shotgun"
 bulletRotationSpeed = 2.0
 bulletConeDegrees = 60.0
 
-[node name="tileMap2" type="TileMap" parent="." index="10"]
+[node name="tileMap2" type="TileMap" parent="." index="9"]
 
 z_index = -1
 mode = 0
@@ -272,7 +268,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DoorMat" parent="." index="11" instance=ExtResource( 12 )]
+[node name="DoorMat" parent="." index="10" instance=ExtResource( 12 )]
 
 position = Vector2( 8224, 608 )
 paletteType = 2

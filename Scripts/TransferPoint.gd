@@ -29,10 +29,7 @@ func _on_Area2D_body_entered(body):
 			body.get_node("./").playerControlEnabled = false
 			transfering = true
 			newScene = "res://Scenes/Rooms/" + newScene + ".tscn"
-			if finalTransition:
-				get_tree().change_scene("res://Scenes/GameFinished.tscn")
-			else:
-				get_node("/root/World/").goto_scene(newScene, transferGoal)
+			get_node("/root/World/").goto_scene(newScene, transferGoal, finalTransition)
 
 func switch(power):
 	if power:

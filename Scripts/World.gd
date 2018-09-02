@@ -12,6 +12,7 @@ var transferGoalPath
 var path
 onready var respawnPoint = player.position
 var pauseState = 0
+var endGame = false
 
 func _ready():
 	Global.worldNode = get_node("./")
@@ -23,7 +24,7 @@ func _process(delta):
 	# Update game logic here.
 	pass
 
-func goto_scene(path, transferGoalPath):
+func goto_scene(path, transferGoalPath, finalTransition):
 	#pass
     # This function will usually be called from a signal callback,
     # or some other function from the running scene.
@@ -33,12 +34,18 @@ func goto_scene(path, transferGoalPath):
 
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
+	if finalTransition:
+		endGame = true
 	$CanvasLayer/ScenePlayer.play("Scene Transition")
 	self.transferGoalPath = transferGoalPath
 	self.path = path
 
 func sceneTransition():
-	call_deferred("_deferred_goto_scene", path, transferGoalPath)
+	if endGame:
+		endGame = false
+		get_tree().change_scene("res://Scenes/GameFinished.tscn")
+	else:
+		call_deferred("_deferred_goto_scene", path, transferGoalPath)
 
 func _deferred_goto_scene(path, transferGoalPath):
     # Immediately free the current scene,
