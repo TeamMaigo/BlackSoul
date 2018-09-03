@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=10]
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=11]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=13]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -368,5 +369,25 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -412.185, -57.6172 )
 paletteType = 2
+
+[node name="tileMap2" type="TileMap" parent="." index="12"]
+
+mode = 0
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1114114, 9, 0, -1048581, 10, 0, -1048516, 0, 0, -917483, 12, 0, -720865, 13, 0, -524292, 16, 0, -589808, 14, 0, -196575, 16, 0, -131028, 4, 0, 131122, 0, 0, 786470, 3, 0, 1179714, 16, 0, 1245213, 8, 0, 1245250, 13, 0, 1310761, 12, 0, 1310785, 12, 0, 1441858, 15, 0, 1507394, 10, 0, 1703995, 2, 0, 1769501, 12, 0, 2031657, 13, 0, 2162708, 13, 0, 2228254, 13, 0, 2293790, 12, 0 )
 
 

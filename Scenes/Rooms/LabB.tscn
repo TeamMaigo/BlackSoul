@@ -16,7 +16,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 visible = false
 position = Vector2( 881.001, 847.64 )
 newScene = "LabC"
-relocks = false
+finalTransition = false
 
 [node name="TransferGoalA" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -73,6 +73,6 @@ tile_data = PoolIntArray( -524289, 536870914, 0, -589814, 536870920, 0, -589813,
 
 [node name="DoorMat" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 917.905, 888.295 )
+position = Vector2( 931.954, 894.239 )
 
 

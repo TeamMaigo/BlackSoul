@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/BreakableBlock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=7]
 
 [node name="LabRoom" type="Node2D" index="0"]
 
@@ -111,5 +112,25 @@ paletteType = 2
 
 position = Vector2( -1309.13, -125.359 )
 paletteType = 2
+
+[node name="doodads" type="TileMap" parent="." index="16"]
+
+mode = 0
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -589796, 14, 0, -458762, 7, 0, -458730, 10, 0, -327662, 9, 0, -196602, 5, 0, -131051, 12, 0, 196597, 4, 0, 131089, 13, 0 )
 
 

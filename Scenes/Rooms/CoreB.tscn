@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -13,8 +13,9 @@
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=12]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=14]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 [node name="holeLayer" type="TileMap" parent="." index="0"]
 
@@ -317,6 +318,26 @@ position = Vector2( -1056, -800 )
 [node name="Dummy3" parent="." index="28" instance=ExtResource( 4 )]
 
 position = Vector2( -928, -736 )
+
+[node name="doodads" type="TileMap" parent="." index="29"]
+
+mode = 0
+tile_set = ExtResource( 14 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1572870, 16, 0, -1507326, 5, 0, -1114119, 1, 0, -1114106, 10, 0, -1048563, 2, 0, -720874, 7, 0, -589794, 12, 0, -589792, 13, 0, -131078, 9, 0, -131049, 15, 0, 65537, 8, 0 )
 
 [connection signal="turn_off" from="Switch" to="SwitchDoor" method="_onActivate"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/TransferPoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TransferGoal.tscn" type="PackedScene" id=2]
@@ -14,8 +14,9 @@
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=12]
 [ext_resource path="res://Scenes/Wires.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=15]
 
-[node name="LabRoom" type="Node2D" groups=[
+[node name="LabRoom" type="Node2D" index="0" groups=[
 "WireGroupA",
 ]]
 
@@ -67,40 +68,44 @@ position = Vector2( -4246.96, 858.489 )
 
 position = Vector2( -3760.94, 111.925 )
 
-[node name="Enemy3" parent="." index="9" instance=ExtResource( 4 )]
+[node name="Enemy5" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( -919.109, -425.778 )
+
+[node name="Enemy3" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( -4272.01, 273.931 )
 
-[node name="Enemy4" parent="." index="10" instance=ExtResource( 4 )]
+[node name="Enemy4" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( -3786.69, 891.346 )
 
-[node name="PressurePlate" parent="." index="11" instance=ExtResource( 5 )]
+[node name="PressurePlate" parent="." index="12" instance=ExtResource( 5 )]
 
 position = Vector2( 71.5544, 1686.54 )
 paletteType = 1
 
-[node name="Switch" parent="." index="12" instance=ExtResource( 6 )]
+[node name="Switch" parent="." index="13" instance=ExtResource( 6 )]
 
 position = Vector2( -1056, 672 )
 connectedGroup = "WireGroupA"
 
-[node name="Switch2" parent="." index="13" instance=ExtResource( 6 )]
+[node name="Switch2" parent="." index="14" instance=ExtResource( 6 )]
 
 position = Vector2( -2011.97, -143.44 )
 
-[node name="SwitchDoor4" parent="." index="14" instance=ExtResource( 3 )]
+[node name="SwitchDoor4" parent="." index="15" instance=ExtResource( 3 )]
 
 position = Vector2( 383.075, 1211.02 )
 paletteType = 2
 
-[node name="SwitchDoor5" parent="." index="15" instance=ExtResource( 3 )]
+[node name="SwitchDoor5" parent="." index="16" instance=ExtResource( 3 )]
 
 position = Vector2( -709.854, 1984.07 )
 active = false
 paletteType = 2
 
-[node name="Rail" parent="." index="16" instance=ExtResource( 7 )]
+[node name="Rail" parent="." index="17" instance=ExtResource( 7 )]
 
 editor/display_folded = true
 position = Vector2( -150.411, 1470.11 )
@@ -120,7 +125,7 @@ shotgunBulletAmount = 6
 shotgunSpread = 60
 rotationSpeed = 1.0
 
-[node name="Rail2" parent="." index="17" instance=ExtResource( 7 )]
+[node name="Rail2" parent="." index="18" instance=ExtResource( 7 )]
 
 editor/display_folded = true
 position = Vector2( 294.942, 1847.32 )
@@ -140,7 +145,7 @@ shotgunBulletAmount = 10
 shotgunSpread = 36
 rotationSpeed = 1.0
 
-[node name="Rail3" parent="." index="18" instance=ExtResource( 7 )]
+[node name="Rail3" parent="." index="19" instance=ExtResource( 7 )]
 
 position = Vector2( -2340.64, 641.047 )
 railPoints = [ Vector2( 0, 0 ), Vector2( 1000, 0 ), Vector2( 1000, 400 ), Vector2( 500, 400 ), Vector2( 500, -400 ) ]
@@ -157,17 +162,17 @@ shotgunBulletAmount = 6
 shotgunSpread = 60
 rotationSpeed = 1.0
 
-[node name="Turret" parent="." index="19" instance=ExtResource( 8 )]
+[node name="Turret" parent="." index="20" instance=ExtResource( 8 )]
 
 position = Vector2( -2336.14, -398.268 )
 detect_radius = 200
 bulletSpeed = 3
 
-[node name="Turret2" parent="." index="20" instance=ExtResource( 8 )]
+[node name="Turret2" parent="." index="21" instance=ExtResource( 8 )]
 
 position = Vector2( -800, 608 )
 
-[node name="tileMap" type="TileMap" parent="." index="21"]
+[node name="tileMap" type="TileMap" parent="." index="22"]
 
 z_index = -1
 mode = 0
@@ -192,7 +197,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="holeLayer" type="TileMap" parent="." index="22"]
+[node name="holeLayer" type="TileMap" parent="." index="23"]
 
 mode = 0
 tile_set = ExtResource( 12 )
@@ -216,7 +221,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="WireGroupA" type="Node2D" parent="." index="23"]
+[node name="WireGroupA" type="Node2D" parent="." index="24"]
+
+editor/display_folded = true
 
 [node name="Wires" parent="WireGroupA" index="0" groups=[
 "WireGroupA",
@@ -332,15 +339,38 @@ frame = 8
 position = Vector2( -1696, 96 )
 frame = 2
 
-[node name="DoorMat" parent="." index="24" instance=ExtResource( 14 )]
+[node name="DoorMat" parent="." index="25" instance=ExtResource( 14 )]
 
 position = Vector2( 661.742, 61.3503 )
 paletteType = 2
 
-[node name="DoorMat2" parent="." index="25" instance=ExtResource( 14 )]
+[node name="DoorMat2" parent="." index="26" instance=ExtResource( 14 )]
 
 position = Vector2( 1089.74, -357.644 )
 paletteType = 2
+
+[node name="doodads" type="TileMap" parent="." index="27"]
+
+mode = 0
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -720889, 8, 0, -589846, 12, 0, -589835, 11, 0, -589834, 12, 0, -589829, 4, 0, -589810, 9, 0, -458790, 3, 0, -327704, 13, 0, -262160, 2, 0, -262152, 15, 0, 589777, 4, 0, 589821, 7, 0, 720845, 12, 0, 720903, 5, 0, 982990, 2, 0, 1310717, 12, 0, 1507322, 11, 0, 1572842, 16, 0, 1572857, 12, 0, 1769452, 13, 0, 1834998, 6, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="enemyDeath" from="Enemy" to="SwitchDoor" method="enemyDeath"]
 
