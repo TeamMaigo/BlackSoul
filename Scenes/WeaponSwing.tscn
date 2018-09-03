@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/WeaponSwing.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/BARRIER.png" type="Texture" id=2]
 [ext_resource path="res://Audio/SentChat.ogg" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -65,7 +65,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0.0636139, 0 )
-scale = Vector2( 0.62175, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
