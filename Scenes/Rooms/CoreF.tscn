@@ -41,7 +41,7 @@ fireType = "shotgun"
 
 [node name="Nuclear Core" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -37.3552, -442.293 )
+position = Vector2( -21.6418, -431.324 )
 health = 10
 respawnable = true
 countdownSeconds = 150
