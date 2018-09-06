@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=6]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=7]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
@@ -31,7 +31,11 @@ finalTransition = false
 
 position = Vector2( -73.124, -551.484 )
 
-[node name="Label" type="Label" parent="." index="3"]
+[node name="TransferGoalB" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 2139.22, 1027.14 )
+
+[node name="Label" type="Label" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -54,7 +58,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Turrets" type="Node" parent="." index="4"]
+[node name="Turrets" type="Node" parent="." index="5"]
 
 editor/display_folded = true
 
@@ -118,31 +122,31 @@ bulletSpeed = 10
 rotatingTurret = false
 usesTargeting = false
 
-[node name="BreakableBlock" parent="." index="5" instance=ExtResource( 4 )]
+[node name="BreakableBlock" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 1956.23, 279.708 )
 
-[node name="BreakableBlock4" parent="." index="6" instance=ExtResource( 4 )]
+[node name="BreakableBlock4" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 1956.23, 346.006 )
 
-[node name="BreakableBlock2" parent="." index="7" instance=ExtResource( 4 )]
+[node name="BreakableBlock2" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 1380.61, 99.7632 )
 
-[node name="BreakableBlock7" parent="." index="8" instance=ExtResource( 4 )]
+[node name="BreakableBlock7" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 1081.33, 290.216 )
 
-[node name="BreakableBlock5" parent="." index="9" instance=ExtResource( 4 )]
+[node name="BreakableBlock5" parent="." index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 1078.61, 356.874 )
 
-[node name="BreakableBlock3" parent="." index="10" instance=ExtResource( 4 )]
+[node name="BreakableBlock3" parent="." index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 1474.06, 557.993 )
 
-[node name="tileMap" type="TileMap" parent="." index="11"]
+[node name="tileMap" type="TileMap" parent="." index="12"]
 
 z_index = -1
 mode = 0
@@ -167,7 +171,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="doodads" type="TileMap" parent="." index="12"]
+[node name="doodads" type="TileMap" parent="." index="13"]
 
 mode = 0
 tile_set = ExtResource( 6 )
@@ -186,8 +190,11 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -720899, 536870914, 0, -786432, 536870917, 0, 65554, 536870922, 0, 458770, 536870924, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="DoorMat" parent="." index="13" instance=ExtResource( 7 )]
+[node name="DoorMat" parent="." index="14" instance=ExtResource( 7 )]
 
 position = Vector2( 2023.32, 1015.54 )
 

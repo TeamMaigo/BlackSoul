@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=5]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]

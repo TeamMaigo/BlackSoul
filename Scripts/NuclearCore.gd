@@ -9,10 +9,6 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 func takeDamage(dmg):
 	health -= dmg
 	player.trauma = 120
@@ -29,8 +25,10 @@ func destroy():
 	audioPlayer.stream = load("res://Audio/temp_wood.wav")
 	audioPlayer.volume_db = Global.masterSound
 	audioPlayer.play()
-	$sprite.hide()
-	$collisionShape2D.disabled = true
+	#$sprite.hide()
+	#$collisionShape2D.disabled = true
+	get_node("../LightController/light2D").color = Color(1,0,0)
+	$sprite.texture = load("res://Sprites/CORE_RED.png")
 	countdownTimer.paused = false
 	countdownTimer.show()
 	get_node("../MeltingText").show()
@@ -39,5 +37,5 @@ func destroy():
 	emit_signal("destroyed")
 	countdownTimer.waitToShake(5)
 
-func _on_audioStreamPlayer2D_finished():
-	queue_free()
+#func _on_audioStreamPlayer2D_finished():
+

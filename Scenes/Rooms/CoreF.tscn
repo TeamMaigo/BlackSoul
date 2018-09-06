@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=9]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 [node name="TransferGoalA" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -41,7 +41,7 @@ fireType = "shotgun"
 
 [node name="Nuclear Core" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -21.6418, -431.324 )
+position = Vector2( -48.9067, -440.412 )
 health = 10
 respawnable = true
 countdownSeconds = 150
@@ -53,10 +53,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -369.0
-margin_top = -452.0
-margin_right = -48.0
-margin_bottom = -438.0
+margin_left = -364.0
+margin_top = -88.0
+margin_right = -43.0
+margin_bottom = -74.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -72,7 +72,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="LightController" parent="." index="6" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 energy = 0.8
 strobe = true
 
@@ -85,7 +84,7 @@ editor_only = false
 texture = ExtResource( 7 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 1, 0, 0, 1 )
+color = Color( 0, 0.789063, 1, 1 )
 energy = 1.0
 mode = 0
 range_height = 0.0
