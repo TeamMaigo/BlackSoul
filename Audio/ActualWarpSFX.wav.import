@@ -7,10 +7,7 @@ path="res://.import/ActualWarpSFX.wav-a31819e0acfa312e0242396cfb7a05bb.sample"
 [deps]
 
 source_file="res://Audio/ActualWarpSFX.wav"
-source_md5="f1ad18feb3c8c7de07c55942d04487e8"
-
 dest_files=[ "res://.import/ActualWarpSFX.wav-a31819e0acfa312e0242396cfb7a05bb.sample" ]
-dest_md5="442dac0f213a03283500c0a0e4657e62"
 
 [params]
 

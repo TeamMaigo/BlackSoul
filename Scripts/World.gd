@@ -88,4 +88,4 @@ func _on_CountdownClock_countdownFinished():
 	var newScene = "res://Scenes/Rooms/CoreF.tscn"
 	var transferGoal = "TransferGoalA"
 	player.setHealth(player.maxHealth)
-	goto_scene(newScene, transferGoal)
+	goto_scene(newScene, transferGoal, false)

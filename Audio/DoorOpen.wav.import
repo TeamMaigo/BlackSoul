@@ -7,10 +7,7 @@ path="res://.import/DoorOpen.wav-830cd802c946cb4d18d9bff0292eb458.sample"
 [deps]
 
 source_file="res://Audio/DoorOpen.wav"
-source_md5="66b8b8c432e503d1bd5a14b9529663c7"
-
 dest_files=[ "res://.import/DoorOpen.wav-830cd802c946cb4d18d9bff0292eb458.sample" ]
-dest_md5="64b6ee39879eba5ad9c48bc44d407033"
 
 [params]
 

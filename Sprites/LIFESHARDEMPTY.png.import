@@ -7,10 +7,7 @@ path="res://.import/LIFESHARDEMPTY.png-5d4167317df8c8d0c070df85d8d6b25b.stex"
 [deps]
 
 source_file="res://Sprites/LIFESHARDEMPTY.png"
-source_md5="73585978ef5626c2ac6bf817c9413ac2"
-
 dest_files=[ "res://.import/LIFESHARDEMPTY.png-5d4167317df8c8d0c070df85d8d6b25b.stex" ]
-dest_md5="e8367e212fb35e82d5b6d8e791b55b46"
 
 [params]
 

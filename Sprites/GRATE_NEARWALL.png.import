@@ -7,10 +7,7 @@ path="res://.import/GRATE_NEARWALL.png-2e8f7098dc08bcd661a1df8677193a89.stex"
 [deps]
 
 source_file="res://Sprites/GRATE_NEARWALL.png"
-source_md5="e47b2faa33345f38bdd004760e231779"
-
 dest_files=[ "res://.import/GRATE_NEARWALL.png-2e8f7098dc08bcd661a1df8677193a89.stex" ]
-dest_md5="c2707652b1ca351c78d1ead26670d65c"
 
 [params]
 

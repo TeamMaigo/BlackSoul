@@ -7,10 +7,7 @@ path="res://.import/NewGunBlap.wav-6173538e0f6c59050d45771e693fa1e1.sample"
 [deps]
 
 source_file="res://Audio/NewGunBlap.wav"
-source_md5="cbfaef16a29c253ad96e411020e2de5b"
-
 dest_files=[ "res://.import/NewGunBlap.wav-6173538e0f6c59050d45771e693fa1e1.sample" ]
-dest_md5="154109551824159c4667044f5228d065"
 
 [params]
 

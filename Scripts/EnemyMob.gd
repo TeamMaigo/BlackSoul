@@ -377,6 +377,7 @@ func stopAllTimers():
 func takeDamage(damage):
 	hp -= damage
 	if hp <= 0 && !dead:
+		# If this shot damages and kills the enemy
 		if not respawns:
 			Global.destroyedObjects.append(Global.currentScene+name)
 		$audioStreamPlayer.stream = load("res://Audio/enemyhit.wav")
@@ -389,4 +390,9 @@ func takeDamage(damage):
 		stopAllTimers()
 		setAnim_death()
 		emit_signal("enemyDeath")
+	else:
+		# If this shot damages but does not kill the enemy
+		$audioStreamPlayer.stream = load("res://Audio/enemyhit.wav")
+		$audioStreamPlayer.volume_db = Global.masterSound
+		$audioStreamPlayer.play()
 		

@@ -7,10 +7,7 @@ path="res://.import/SAVE_POINT_ACID.png-571c5c4da70d68f03bb34f74288cfd1f.stex"
 [deps]
 
 source_file="res://Sprites/SAVE_POINT_ACID.png"
-source_md5="008ca76b455782e0ff70db73e59f0a34"
-
 dest_files=[ "res://.import/SAVE_POINT_ACID.png-571c5c4da70d68f03bb34f74288cfd1f.stex" ]
-dest_md5="708cb51dc86f58ff71f14d52cf613ab1"
 
 [params]
 

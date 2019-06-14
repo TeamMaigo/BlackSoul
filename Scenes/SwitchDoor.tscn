@@ -39,7 +39,7 @@ tracks/1/keys = {
 "values": [ 1, 0 ]
 }
 
-[node name="SwitchDoor" type="StaticBody2D" groups=[
+[node name="SwitchDoor" type="StaticBody2D" index="0" groups=[
 "Damageable",
 ]]
 
@@ -61,6 +61,7 @@ relocks = false
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

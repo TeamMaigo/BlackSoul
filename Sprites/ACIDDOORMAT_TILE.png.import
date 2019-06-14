@@ -7,10 +7,7 @@ path="res://.import/ACIDDOORMAT_TILE.png-2edbb99708a482d2874b65690d3fb9ff.stex"
 [deps]
 
 source_file="res://Sprites/ACIDDOORMAT_TILE.png"
-source_md5="6641d59dc670caebe3ce263161cc2621"
-
 dest_files=[ "res://.import/ACIDDOORMAT_TILE.png-2edbb99708a482d2874b65690d3fb9ff.stex" ]
-dest_md5="80b3fbc7f2519307d7156301a2577291"
 
 [params]
 

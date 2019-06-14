@@ -226,7 +226,6 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="Load Games" type="Panel" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -385,7 +384,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="optionsPopup" parent="." index="2" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 visible = false
 
 [node name="WindowButton" parent="optionsPopup/Container/WindowText" index="0"]
@@ -402,7 +400,6 @@ editor/display_folded = true
 
 [node name="Credits" parent="." index="3" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 visible = false
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/New Game" to="." method="_on_New_Game_pressed"]

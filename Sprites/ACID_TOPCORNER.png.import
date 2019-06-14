@@ -7,10 +7,7 @@ path="res://.import/ACID_TOPCORNER.png-3faf9a4ac37f7745c45177056d6495d7.stex"
 [deps]
 
 source_file="res://Sprites/ACID_TOPCORNER.png"
-source_md5="305d8ff52c0109e542c73b3a67a3827d"
-
 dest_files=[ "res://.import/ACID_TOPCORNER.png-3faf9a4ac37f7745c45177056d6495d7.stex" ]
-dest_md5="9b9c56f143cf21bd66565e6ee33a793c"
 
 [params]
 

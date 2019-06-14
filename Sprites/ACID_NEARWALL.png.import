@@ -7,10 +7,7 @@ path="res://.import/ACID_NEARWALL.png-86f4e6714be9a8b01c277b41d9cb8ed7.stex"
 [deps]
 
 source_file="res://Sprites/ACID_NEARWALL.png"
-source_md5="a1d9a78085a31757478abb9038acde6f"
-
 dest_files=[ "res://.import/ACID_NEARWALL.png-86f4e6714be9a8b01c277b41d9cb8ed7.stex" ]
-dest_md5="80afa423b61cfcd2f43be8ee768c2dba"
 
 [params]
 

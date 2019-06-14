@@ -7,10 +7,7 @@ path="res://.import/ACID_BOTTOMCORNER.png-16db90b1eaa9d22e67e670eb6ba67964.stex"
 [deps]
 
 source_file="res://Sprites/ACID_BOTTOMCORNER.png"
-source_md5="b755997c4f2d4a0382602b02e93b15b2"
-
 dest_files=[ "res://.import/ACID_BOTTOMCORNER.png-16db90b1eaa9d22e67e670eb6ba67964.stex" ]
-dest_md5="583164cec47d734dac76103ed73027b7"
 
 [params]
 

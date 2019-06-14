@@ -7,10 +7,7 @@ path="res://.import/LIFESHARD2.png-489f7693d99f03cb076fedebf7b2be4a.stex"
 [deps]
 
 source_file="res://Sprites/LIFESHARD2.png"
-source_md5="8fc5bc5a172451576e3d7ca0e2920f3b"
-
 dest_files=[ "res://.import/LIFESHARD2.png-489f7693d99f03cb076fedebf7b2be4a.stex" ]
-dest_md5="a64fd5acf8216226a17552be5ddca775"
 
 [params]
 

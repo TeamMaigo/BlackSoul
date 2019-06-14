@@ -7,10 +7,7 @@ path="res://.import/CORE_BLUE.png-006fa6f1a577396637f2f6ea44e05672.stex"
 [deps]
 
 source_file="res://Sprites/CORE_BLUE.png"
-source_md5="095ec89af96a4893b9be6150a228db7c"
-
 dest_files=[ "res://.import/CORE_BLUE.png-006fa6f1a577396637f2f6ea44e05672.stex" ]
-dest_md5="f8247b6f5bffe05ef7148674fb099686"
 
 [params]
 

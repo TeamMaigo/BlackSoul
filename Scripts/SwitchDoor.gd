@@ -29,8 +29,6 @@ func _onActivate():
 	$AudioStreamPlayer.stream = load("res://Audio/DoorOpen.wav")
 	$AudioStreamPlayer.volume_db = Global.masterSound
 	$AudioStreamPlayer.play()
-	if not relocks:
-		Global.unlockedThings.append(Global.currentScene+name)
 
 func _onDeactivate():
 	$animationPlayer.play("deactivate")
@@ -38,6 +36,8 @@ func _onDeactivate():
 	$AudioStreamPlayer.stream = load("res://Audio/DoorOpen.wav")
 	$AudioStreamPlayer.volume_db = Global.masterSound
 	$AudioStreamPlayer.play()
+	if not relocks:
+		Global.unlockedThings.append(Global.currentScene+name)
 
 func enemyDeath():
 	enemiesLeftToKill -= 1
