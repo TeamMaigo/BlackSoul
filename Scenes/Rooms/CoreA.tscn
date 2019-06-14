@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=4]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
