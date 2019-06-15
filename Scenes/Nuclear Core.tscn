@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 24.1513, 29.6642 )
 
-[node name="Nuclear Core" type="StaticBody2D"]
+[node name="Nuclear Core" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1

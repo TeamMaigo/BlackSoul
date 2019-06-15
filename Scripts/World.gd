@@ -15,6 +15,7 @@ var pauseState = 0
 var endGame = false
 var coreCountingDown = false
 var newMusic
+var newScene
 
 func _ready():
 	Global.worldNode = get_node("./")
@@ -43,20 +44,28 @@ func goto_scene(path, transferGoalPath, finalTransition):
 	else:
 		# Change BGM to area-appropriate music, unless core countdown is in effect
 		newMusic = BGMPlayer.stream
-		if "Lab" in transferGoalPath:
+		if path.begins_with("Lab"):# > -1:
+		#if "Lab" in path:
 			newMusic = load("res://Audio/BlueBGM.ogg")
-		elif "Acid" in transferGoalPath:
+		elif path.begins_with("Acid"):# > -1:
+		#elif "Acid" in path:
 			newMusic = load("res://Audio/AcidBGM.ogg")
-		elif "Core" in transferGoalPath:
+		elif path.begins_with("Core"):# > -1:
+		#elif "Core" in path:
 			newMusic = load("res://Audio/BlueReduxBGM.ogg")
 		else:
 			newMusic = load("res://Audio/BlueReduxBGM.ogg")
 		if coreCountingDown:
 			newMusic = load("res://Audio/CoreEscapeBGM.ogg")
 		if newMusic != BGMPlayer.stream:
+			print("SAD")
+			BGMPlayer.playing = false
 			BGMPlayer.stream = newMusic
 			BGMPlayer.playing = true
+		print(path)
+		print(path.begins_with("Core"))
 	$CanvasLayer/ScenePlayer.play("Scene Transition")
+	newScene = "res://Scenes/Rooms/" + path + ".tscn"
 	self.transferGoalPath = transferGoalPath
 	self.path = path
 
@@ -73,11 +82,12 @@ func _deferred_goto_scene(path, transferGoalPath):
 	currentScene.queue_free()
 
     # Load new scene
-	scene = load(path)
+	newScene = "res://Scenes/Rooms/" + path + ".tscn"
+	scene = load(newScene)
 
     # Instance the new scene
 	currentScene = scene.instance()
-	Global.currentScene = path
+	Global.currentScene = newScene
 	transferGoal = currentScene.get_node(transferGoalPath)
 	player.position = transferGoal.position
 
@@ -105,7 +115,7 @@ func setCanvasModulate(boolean):
 	$canvasModulate.visible = boolean
 
 func _on_CountdownClock_countdownFinished():
-	var newScene = "res://Scenes/Rooms/CoreF.tscn"
+	var newScene = "CoreF"
 	var transferGoal = "TransferGoalA"
 	player.setHealth(player.maxHealth)
 	goto_scene(newScene, transferGoal, false)

@@ -18,6 +18,8 @@ func _ready():
 
 func start():
 	world.coreCountingDown = true
+	BGMPlayer.stream = load("res://Audio/CoreEscapeBGM.ogg")
+	BGMPlayer.playing = true
 	while seconds > 60:
 		minutes += 1
 		seconds -= 60
