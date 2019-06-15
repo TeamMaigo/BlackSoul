@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeaponSwing.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/PLAYER_CHARACTER_SPRITESHEET.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/PlayerUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/barrierSound.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -200,11 +201,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "team_Player",
 "Player",
-"Persist",
 "Damageable",
+"Persist",
 ]]
 
 z_index = 5
@@ -278,7 +279,7 @@ bus = "Master"
 
 [node name="BarrierAudio" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
