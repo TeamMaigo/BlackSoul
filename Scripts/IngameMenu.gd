@@ -42,6 +42,7 @@ func _on_Options_pressed():
 
 func _on_Quit_pressed():
 	get_tree().paused = false	# Unpause stuff, otherwises the menus won't work!
+	BGMPlayer.stream = load("res://Audio/YaboiPlaceholderBGM.ogg")
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
 
