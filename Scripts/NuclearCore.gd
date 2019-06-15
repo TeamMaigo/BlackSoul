@@ -10,19 +10,21 @@ func _ready():
 	pass
 
 func takeDamage(dmg):
-	health -= dmg
-	player.trauma = 120
-	audioPlayer.stream = load("res://Audio/temp_wood.wav")
-	audioPlayer.volume_db = Global.masterSound
-	audioPlayer.play()
-	if health <= 0 && !destroyed:
-		destroy()
+	if player.trauma < 120:
+		player.trauma = 120
+	if health > 0:
+		health -= dmg
+		audioPlayer.stream = load("res://Audio/temp_wood.wav")
+		audioPlayer.volume_db = Global.masterSound
+		audioPlayer.play()
+		if health <= 0 && !destroyed:
+			destroy()
 
 func destroy():
 	if not respawnable:
 		Global.destroyedObjects.append(Global.currentScene+name)
 	destroyed = true
-	audioPlayer.stream = load("res://Audio/temp_wood.wav")
+	audioPlayer.stream = load("res://Audio/Explosion.wav")
 	audioPlayer.volume_db = Global.masterSound
 	audioPlayer.play()
 	#$sprite.hide()
