@@ -15,6 +15,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	loadOptions()
+	BGMPlayer.stream = load("res://Audio/YaboiPlaceholderBGM.ogg")
 	BGMPlayer.playing = true
 
 

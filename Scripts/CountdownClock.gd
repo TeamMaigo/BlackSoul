@@ -5,6 +5,7 @@ var milliSec = 0
 var paused = true
 
 onready var traumaTimer = $traumaClock
+onready var world = get_node("/root/World/")
 onready var player = get_tree().get_root().get_node("World/Player")
 onready var audioPlayer = $audioStreamPlayer2D
 
@@ -16,6 +17,7 @@ func _ready():
 	pass
 
 func start():
+	world.coreCountingDown = true
 	while seconds > 60:
 		minutes += 1
 		seconds -= 60
@@ -31,6 +33,10 @@ func _process(delta):
 				minutes -= 1
 		else:
 			seconds = 0
+			audioPlayer.stream = load("res://Audio/Explosion.wav")
+			audioPlayer.volume_db = Global.masterSound
+			audioPlayer.play()
+			world.coreCountingDown = false
 			emit_signal("countdownFinished")
 			paused = true
 			hide()

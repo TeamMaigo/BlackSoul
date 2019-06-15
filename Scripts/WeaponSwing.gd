@@ -44,8 +44,8 @@ func _physics_process(delta):
 		if is_owner(body):	#Can't hit yourself
 			return
 		if body.is_in_group("Projectile"):	# Hit a projectile
-			$BarrierAudio.playing = true
-			$BarrierAudio.volume_db = Global.masterSound
+			$BarrierHitAudio.playing = true
+			$BarrierHitAudio.volume_db = Global.masterSound
 			player.trauma = 60
 			var newDirection
 			if isMouseTooClose(): # Mouse too close to player character, use player to mouse angle instead

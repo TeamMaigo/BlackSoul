@@ -36,7 +36,7 @@ __meta__ = {
 
 position = Vector2( 321.532, -255.939 )
 _sections_unfolded = [ "Transform" ]
-newScene = "LabB"
+newScene = "CoreF"
 finalTransition = false
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 2 )]

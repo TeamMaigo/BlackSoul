@@ -13,6 +13,7 @@ var path
 onready var respawnPoint = player.position
 var pauseState = 0
 var endGame = false
+var coreCountingDown = false
 
 func _ready():
 	Global.worldNode = get_node("./")
@@ -36,6 +37,24 @@ func goto_scene(path, transferGoalPath, finalTransition):
     # it is ensured that no code from the current scene is running:
 	if finalTransition:
 		endGame = true
+		# Change BGM to title/end screen music
+		BGMPlayer.stream = load("res://Audio/YaboiPlaceholderBGM.ogg")
+	else:
+		# Change BGM to area-appropriate music, unless core countdown is in effect
+		newMusic = BGMPlayer.stream
+		if "Lab" in transferGoalPath:
+			newMusic = load("res://Audio/BlueBGM.ogg")
+		elif "Acid" in transferGoalPath:
+			newMusic = load("res://Audio/AcidBGM.ogg")
+		elif "Core" in transferGoalPath:
+			newMusic = load("res://Audio/BlueReduxBGM.ogg")
+		else:
+			newMusic = load("res://Audio/BlueReduxBGM.ogg")
+		if coreCountingDown:
+			newMusic = load("res://Audio/CoreEscapeBGM.ogg")
+		if newMusic != BGMPlayer.stream:
+			BGMPlayer.stream = newMusic
+			BGMPlayer.playing = true
 	$CanvasLayer/ScenePlayer.play("Scene Transition")
 	self.transferGoalPath = transferGoalPath
 	self.path = path

@@ -137,6 +137,8 @@ func controls_loop():
 	
 	if BARRIER and barrierAvailable && barrierUnlocked:
 		barrierAvailable = false
+		$BarrierAudio.playing = true
+		$BarrierAudio.volume_db = Global.masterSound
 		$RotationNode.show()
 		$Sprite.modulate.g = 0
 		WeaponNode.attack(attackDirection)

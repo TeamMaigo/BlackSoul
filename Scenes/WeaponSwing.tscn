@@ -47,7 +47,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="PlayerWeapon" type="Area2D"]
+[node name="PlayerWeapon" type="Area2D" index="0"]
 
 position = Vector2( 30, 0 )
 input_pickable = true
@@ -78,10 +78,11 @@ playback_speed = 1.0
 anims/WeaponSwing = SubResource( 1 )
 blend_times = [  ]
 
-[node name="BarrierAudio" type="AudioStreamPlayer" parent="." index="2"]
+[node name="BarrierHitAudio" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
