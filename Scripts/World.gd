@@ -14,6 +14,7 @@ onready var respawnPoint = player.position
 var pauseState = 0
 var endGame = false
 var coreCountingDown = false
+var newMusic
 
 func _ready():
 	Global.worldNode = get_node("./")
