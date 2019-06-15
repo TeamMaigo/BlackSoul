@@ -13,11 +13,11 @@ var CollisionNode
 onready var dashTimer = $dashTimer
 onready var swapTimer = $swapTimer
 var dashAvailable = true
-var dashUnlocked = true # WARNING: should be false
+var dashUnlocked = false # WARNING: should be false
 var swapAvailable = true
-var swapUnlocked = true # WARNING: should be false
+var swapUnlocked = false # WARNING: should be false
 var barrierAvailable = true
-var barrierUnlocked = true # WARNING: should be false
+var barrierUnlocked = false # WARNING: should be false
 var playerPos
 var mousePos
 var DASH_DELAY = 1	# in seconds
