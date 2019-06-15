@@ -62,7 +62,8 @@ func _deferred_load_game(fileNumber):
 	for i in current_line.keys():
 		set(i, current_line[i])
 
-	var scene = load(worldNode.path)
+	var loadPath = "res://Scenes/Rooms/" + worldNode.path + ".tscn"
+	var scene = load(loadPath)
 	var currentScene = scene.instance() # Create the new room
 	worldNode.currentScene = currentScene
 	worldNode.add_child(currentScene)
