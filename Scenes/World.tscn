@@ -348,10 +348,8 @@ items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1
 [node name="CountdownClock" parent="CanvasLayer" index="1" instance=ExtResource( 5 )]
 
 visible = false
-margin_left = 520.0
-margin_top = 25.0
-margin_right = 520.0
-margin_bottom = 25.0
+margin_top = 0.0
+margin_right = -280.0
 seconds = 90
 
 [node name="ScenePlayer" type="AnimationPlayer" parent="CanvasLayer" index="2"]

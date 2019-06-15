@@ -52,6 +52,17 @@ func waitToShake(sec):
 	traumaTimer.start() # Start the Timer counting down
 	yield(traumaTimer, "timeout") # Wait for the timer to wind down
 	waitToShake(randi()%10+5)
+	#if not paused: #Moved to new function on different delay: waitToScream
+	#	audioPlayer.stream = load("res://Audio/Wilhelm-Scream.wav")
+	#	audioPlayer.volume_db = Global.masterSound
+	#	audioPlayer.play()
+	#	player.trauma = 150
+
+func waitToScream(sec):
+	traumaTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	traumaTimer.start() # Start the Timer counting down
+	yield(traumaTimer, "timeout") # Wait for the timer to wind down
+	waitToScream(randi()%30+30)
 	if not paused:
 		audioPlayer.stream = load("res://Audio/Wilhelm-Scream.wav")
 		audioPlayer.volume_db = Global.masterSound

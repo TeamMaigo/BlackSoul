@@ -27,6 +27,7 @@ z_index = 1
 _sections_unfolded = [ "Z Index" ]
 newScene = "LabE"
 transferGoalTemp = "C"
+finalTransition = false
 
 [node name="HealthPickup" parent="." index="3" instance=ExtResource( 3 )]
 
@@ -39,6 +40,7 @@ z_index = 1
 _sections_unfolded = [ "Z Index" ]
 newScene = "LabE"
 transferGoalTemp = "D"
+finalTransition = false
 
 [node name="Breakable1" type="Node" parent="." index="5"]
 
@@ -47,64 +49,52 @@ editor/display_folded = true
 [node name="BreakableBlock" parent="Breakable1" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 1056, -416 )
-respawnable = true
 
 [node name="BreakableBlock4" parent="Breakable1" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1056, -480 )
-respawnable = true
 
 [node name="BreakableBlock6" parent="Breakable1" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 1056, -352 )
-respawnable = true
 
 [node name="BreakableBlock2" parent="Breakable1" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 1120, -480 )
-respawnable = true
 
 [node name="BreakableBlock3" parent="Breakable1" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 1120, -416 )
-respawnable = true
 
 [node name="BreakableBlock5" parent="Breakable1" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 1120, -352 )
-respawnable = true
 
 [node name="Breakable2" type="Node" parent="." index="6"]
 
 [node name="BreakableBlock11" parent="Breakable2" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 1696, -672 )
-respawnable = true
 
 [node name="BreakableBlock12" parent="Breakable2" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1696, -608 )
-respawnable = true
 
 [node name="BreakableBlock8" parent="Breakable2" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 1824, -608 )
-respawnable = true
 
 [node name="BreakableBlock9" parent="Breakable2" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 1760, -672 )
-respawnable = true
 
 [node name="BreakableBlock7" parent="Breakable2" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 1760, -608 )
-respawnable = true
 
 [node name="BreakableBlock10" parent="Breakable2" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 1824, -672 )
-respawnable = true
 
 [node name="Turrets" type="Node" parent="." index="7"]
 

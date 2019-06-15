@@ -180,13 +180,13 @@ paletteType = 1
 
 [connection signal="enemyDeath" from="EnemyMob3" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
-
-[connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
+[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
 
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor3" method="_onDeactivate"]
 
-[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor2" method="_onDeactivate"]
+[connection signal="counterFinished" from="PressurePlate" to="Turret" method="deactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="Turret2" method="deactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor2" method="_onActivate"]
 

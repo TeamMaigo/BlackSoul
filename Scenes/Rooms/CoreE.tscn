@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=15]
 
-[node name="LabRoom" type="Node2D" index="0" groups=[
+[node name="LabRoom" type="Node2D" groups=[
 "WireGroupA",
 ]]
 
@@ -380,9 +380,9 @@ __meta__ = {
 
 [connection signal="enemyDeath" from="Enemy4" to="SwitchDoor" method="enemyDeath"]
 
-[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor4" method="_onDeactivate"]
-
 [connection signal="counterFinished" from="PressurePlate" to="SwitchDoor5" method="_onDeactivate"]
+
+[connection signal="counterFinished" from="PressurePlate" to="SwitchDoor4" method="_onDeactivate"]
 
 [connection signal="steppedOn" from="PressurePlate" to="SwitchDoor5" method="_onActivate"]
 
