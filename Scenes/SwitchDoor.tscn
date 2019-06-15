@@ -39,7 +39,7 @@ tracks/1/keys = {
 "values": [ 1, 0 ]
 }
 
-[node name="SwitchDoor" type="StaticBody2D" index="0" groups=[
+[node name="SwitchDoor" type="StaticBody2D" groups=[
 "Damageable",
 ]]
 

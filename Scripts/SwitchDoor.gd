@@ -26,7 +26,7 @@ func _onActivate():
 	$animationPlayer.play_backwards("deactivate")
 	active = true
 	collision_layer = collisionL
-	$AudioStreamPlayer.stream = load("res://Audio/DoorOpen.wav")
+	$AudioStreamPlayer.stream = load("res://Audio/DoorClose.wav")
 	$AudioStreamPlayer.volume_db = Global.masterSound
 	$AudioStreamPlayer.play()
 

@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 7.03404, 15.4153 )
 
-[node name="Switch" type="StaticBody2D" index="0" groups=[
+[node name="Switch" type="StaticBody2D" groups=[
 "Damageable",
 ]]
 
