@@ -11,3 +11,6 @@ The Team:
 * Taylor Folkersen (Programmer/Developer)
 * Omer Ahmed (Programming Support)
 * Jonas Liew (Story Direction)
+
+
+Explosion SFX is licensed for use under BBC'S Remarc License, which can be found [here](https://github.com/bbcarchdev/Remarc/blob/master/doc/2016.09.27_RemArc_Content%20licence_Terms%20of%20Use_final.pdf). 
