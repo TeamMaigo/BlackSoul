@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/LabTileset.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=5]
 
-[node name="LabRoom" type="Node2D" index="0"]
+[node name="LabRoom" type="Node2D"]
 
 position = Vector2( 0, -1.50732 )
 
@@ -15,14 +15,14 @@ position = Vector2( 0, -1.50732 )
 position = Vector2( 1216.03, -128.197 )
 newScene = "LabE"
 transferGoalTemp = "F"
-relocks = false
+finalTransition = false
 
 [node name="TransferPointA2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( -64.1951, -319.991 )
 newScene = "LabE"
 transferGoalTemp = "E"
-relocks = false
+finalTransition = false
 
 [node name="TransferGoalA" parent="." index="2" instance=ExtResource( 2 )]
 

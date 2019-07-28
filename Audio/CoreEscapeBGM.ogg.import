@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CoreEscapeBGM.ogg-51943d1cc39f73aa36277c65e09e0246.oggstr"
+
+[deps]
+
+source_file="res://Audio/CoreEscapeBGM.ogg"
+dest_files=[ "res://.import/CoreEscapeBGM.ogg-51943d1cc39f73aa36277c65e09e0246.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

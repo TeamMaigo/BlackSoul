@@ -5,6 +5,7 @@ var milliSec = 0
 var paused = true
 
 onready var traumaTimer = $traumaClock
+onready var world = get_node("/root/World/")
 onready var player = get_tree().get_root().get_node("World/Player")
 onready var audioPlayer = $audioStreamPlayer2D
 
@@ -16,6 +17,9 @@ func _ready():
 	pass
 
 func start():
+	world.coreCountingDown = true
+	BGMPlayer.stream = load("res://Audio/CoreEscapeBGM.ogg")
+	BGMPlayer.playing = true
 	while seconds > 60:
 		minutes += 1
 		seconds -= 60
@@ -31,6 +35,10 @@ func _process(delta):
 				minutes -= 1
 		else:
 			seconds = 0
+			audioPlayer.stream = load("res://Audio/Explosion.wav")
+			audioPlayer.volume_db = Global.masterSound
+			audioPlayer.play()
+			world.coreCountingDown = false
 			emit_signal("countdownFinished")
 			paused = true
 			hide()
@@ -52,6 +60,17 @@ func waitToShake(sec):
 	traumaTimer.start() # Start the Timer counting down
 	yield(traumaTimer, "timeout") # Wait for the timer to wind down
 	waitToShake(randi()%10+5)
+	#if not paused: #Moved to new function on different delay: waitToScream
+	#	audioPlayer.stream = load("res://Audio/Wilhelm-Scream.wav")
+	#	audioPlayer.volume_db = Global.masterSound
+	#	audioPlayer.play()
+	#	player.trauma = 150
+
+func waitToScream(sec):
+	traumaTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	traumaTimer.start() # Start the Timer counting down
+	yield(traumaTimer, "timeout") # Wait for the timer to wind down
+	waitToScream(randi()%30+30)
 	if not paused:
 		audioPlayer.stream = load("res://Audio/Wilhelm-Scream.wav")
 		audioPlayer.volume_db = Global.masterSound

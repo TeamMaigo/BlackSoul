@@ -7,10 +7,7 @@ path="res://.import/ACID_TILE.png-186334212c6a3cd42fee6e709509a4bb.stex"
 [deps]
 
 source_file="res://Sprites/ACID_TILE.png"
-source_md5="4520b5c5277c7df96fa0f1c03c3fa233"
-
 dest_files=[ "res://.import/ACID_TILE.png-186334212c6a3cd42fee6e709509a4bb.stex" ]
-dest_md5="e9b9b6b333f7b956c7bb93fd08a42456"
 
 [params]
 

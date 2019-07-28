@@ -7,10 +7,7 @@ path="res://.import/DOORMAT_TILE.png-caa9cdde25e01e7900b97bd97bdd1b56.stex"
 [deps]
 
 source_file="res://Sprites/DOORMAT_TILE.png"
-source_md5="2eb599696979b077653a9bb63bfd4b46"
-
 dest_files=[ "res://.import/DOORMAT_TILE.png-caa9cdde25e01e7900b97bd97bdd1b56.stex" ]
-dest_md5="ce75ce3b13dde93d3f1cddb769be3f17"
 
 [params]
 

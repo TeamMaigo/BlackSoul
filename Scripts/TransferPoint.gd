@@ -28,7 +28,7 @@ func _on_Area2D_body_entered(body):
 			$animationPlayer.play("open")
 			body.get_node("./").playerControlEnabled = false
 			transfering = true
-			newScene = "res://Scenes/Rooms/" + newScene + ".tscn"
+			#newScene = "res://Scenes/Rooms/" + newScene + ".tscn"
 			get_node("/root/World/").goto_scene(newScene, transferGoal, finalTransition)
 
 func switch(power):

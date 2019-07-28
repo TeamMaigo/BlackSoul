@@ -172,16 +172,16 @@ paletteType = 1
 
 [connection signal="collected" from="PieceOfHeart" to="Turret" method="deactivate"]
 
-[connection signal="collected" from="PieceOfHeart" to="Turret6" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="Turret7" method="deactivate"]
-
-[connection signal="collected" from="PieceOfHeart" to="Turret5" method="deactivate"]
+[connection signal="collected" from="PieceOfHeart" to="Turret4" method="deactivate"]
 
 [connection signal="collected" from="PieceOfHeart" to="Turret2" method="deactivate"]
 
 [connection signal="collected" from="PieceOfHeart" to="Turret3" method="deactivate"]
 
-[connection signal="collected" from="PieceOfHeart" to="Turret4" method="deactivate"]
+[connection signal="collected" from="PieceOfHeart" to="Turret5" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="Turret6" method="deactivate"]
+
+[connection signal="collected" from="PieceOfHeart" to="Turret7" method="deactivate"]
 
 

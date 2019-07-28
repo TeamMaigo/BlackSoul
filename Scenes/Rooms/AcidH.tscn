@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/EnemyMob.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=9]
 
-[node name="Room1" type="Node2D" index="0"]
+[node name="Room1" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 

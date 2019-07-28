@@ -7,10 +7,7 @@ path="res://.import/CORE_RED.png-26d09dba5aec53e6092d4ef8fd1b032b.stex"
 [deps]
 
 source_file="res://Sprites/CORE_RED.png"
-source_md5="86fb5a92c0b70dc7eb2884d2d50e4d1e"
-
 dest_files=[ "res://.import/CORE_RED.png-26d09dba5aec53e6092d4ef8fd1b032b.stex" ]
-dest_md5="ab936c29166226363c589cb4e673e067"
 
 [params]
 

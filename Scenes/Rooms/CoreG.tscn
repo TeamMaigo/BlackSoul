@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/CoreTileset.tres" type="TileSet" id=14]
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=15]
 
-[node name="tileMap" type="Node2D" index="0"]
+[node name="tileMap" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 

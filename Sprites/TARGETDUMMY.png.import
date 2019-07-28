@@ -7,10 +7,7 @@ path="res://.import/TARGETDUMMY.png-2394700ef8d0209cb3d5ab71be30caee.stex"
 [deps]
 
 source_file="res://Sprites/TARGETDUMMY.png"
-source_md5="b71e94fa462ebd00b78399800f1688a2"
-
 dest_files=[ "res://.import/TARGETDUMMY.png-2394700ef8d0209cb3d5ab71be30caee.stex" ]
-dest_md5="355bec70e04bd4e33092bc219b1b9fa1"
 
 [params]
 

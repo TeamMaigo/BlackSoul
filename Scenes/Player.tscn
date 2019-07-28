@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WeaponSwing.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/PLAYER_CHARACTER_SPRITESHEET.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/PlayerUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Wilhelm-Scream.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/barrierSound.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -201,9 +202,9 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
-"Damageable",
 "team_Player",
 "Player",
+"Damageable",
 "Persist",
 ]]
 
@@ -271,11 +272,21 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 stream = ExtResource( 5 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="InvulPlayer" type="AnimationPlayer" parent="." index="6"]
+[node name="BarrierAudio" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="InvulPlayer" type="AnimationPlayer" parent="." index="7"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -285,35 +296,35 @@ playback_speed = 1.0
 anims/Invuln = SubResource( 8 )
 blend_times = [  ]
 
-[node name="swapTimer" type="Timer" parent="." index="7"]
+[node name="swapTimer" type="Timer" parent="." index="8"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="dashTimer" type="Timer" parent="." index="8"]
+[node name="dashTimer" type="Timer" parent="." index="9"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="swapInvulnTimer" type="Timer" parent="." index="9"]
+[node name="swapInvulnTimer" type="Timer" parent="." index="10"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="swapNoticeTimer" type="Timer" parent="." index="10"]
+[node name="swapNoticeTimer" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Camera2D" type="Camera2D" parent="." index="11"]
+[node name="Camera2D" type="Camera2D" parent="." index="12"]
 
 anchor_mode = 1
 rotating = true

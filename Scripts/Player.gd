@@ -13,11 +13,11 @@ var CollisionNode
 onready var dashTimer = $dashTimer
 onready var swapTimer = $swapTimer
 var dashAvailable = true
-var dashUnlocked = false
+var dashUnlocked = false # WARNING: should be false
 var swapAvailable = true
-var swapUnlocked = false
+var swapUnlocked = false # WARNING: should be false
 var barrierAvailable = true
-var barrierUnlocked = false
+var barrierUnlocked = false # WARNING: should be false
 var playerPos
 var mousePos
 var DASH_DELAY = 1	# in seconds
@@ -137,6 +137,8 @@ func controls_loop():
 	
 	if BARRIER and barrierAvailable && barrierUnlocked:
 		barrierAvailable = false
+		$BarrierAudio.playing = true
+		$BarrierAudio.volume_db = Global.masterSound
 		$RotationNode.show()
 		$Sprite.modulate.g = 0
 		WeaponNode.attack(attackDirection)

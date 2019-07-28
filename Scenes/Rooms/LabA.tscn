@@ -35,6 +35,7 @@ __meta__ = {
 [node name="TransferPointA" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 321.532, -255.939 )
+_sections_unfolded = [ "Transform" ]
 newScene = "LabB"
 finalTransition = false
 
@@ -43,6 +44,7 @@ finalTransition = false
 visible = false
 position = Vector2( -629.29, -119.047 )
 scale = Vector2( 7.18063, 4.85393 )
+_sections_unfolded = [ "Transform" ]
 newScene = "Level_Test2"
 finalTransition = false
 

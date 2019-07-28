@@ -7,10 +7,7 @@ path="res://.import/BARRIER.png-abca4e68bbc9051d0814b03eb190e2b3.stex"
 [deps]
 
 source_file="res://Sprites/BARRIER.png"
-source_md5="ef344dafdf201a212a41ab7c479328c7"
-
 dest_files=[ "res://.import/BARRIER.png-abca4e68bbc9051d0814b03eb190e2b3.stex" ]
-dest_md5="41418d298696b2b1e6212a034b78516d"
 
 [params]
 

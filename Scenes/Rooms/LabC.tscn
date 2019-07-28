@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/LabDoodads.tres" type="TileSet" id=6]
 [ext_resource path="res://Scenes/DoorMat.tscn" type="PackedScene" id=7]
 
-[node name="LabRoom" type="Node2D"]
+[node name="LabRoom" type="Node2D" index="0"]
 
 position = Vector2( 0, -1.50732 )
 _sections_unfolded = [ "Collision" ]
