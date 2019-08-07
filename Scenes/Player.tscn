@@ -201,11 +201,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
-"team_Player",
-"Player",
+[node name="Player" type="KinematicBody2D" groups=[
 "Damageable",
 "Persist",
+"Player",
+"team_Player",
 ]]
 
 z_index = 5
