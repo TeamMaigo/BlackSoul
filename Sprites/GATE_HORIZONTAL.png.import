@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/GATE_HORIZONTAL.png-66ed54d1be6f27dfdc77ab6fc2767da0.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/GATE_HORIZONTAL.png"
-source_md5="b1f9bdbfae05ab545af13e6114fb685d"
-
 dest_files=[ "res://.import/GATE_HORIZONTAL.png-66ed54d1be6f27dfdc77ab6fc2767da0.stex" ]
-dest_md5="7b0c32e976e7037783f4fc033bb7bfe5"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

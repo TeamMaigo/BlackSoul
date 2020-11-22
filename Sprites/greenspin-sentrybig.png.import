@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/greenspin-sentrybig.png-0eaae02743cb80aefd13784fa9718428.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/greenspin-sentrybig.png"
-source_md5="3ebdb8d4096bde1c531c25cec47741f2"
-
 dest_files=[ "res://.import/greenspin-sentrybig.png-0eaae02743cb80aefd13784fa9718428.stex" ]
-dest_md5="58dbb8ec81d2da74415570bc52366718"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

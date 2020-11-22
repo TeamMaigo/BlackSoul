@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	$ScenePlayer.play("Scene Transition")
+	$ScenePlayer.play("Ending Animation")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

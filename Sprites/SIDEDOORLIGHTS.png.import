@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/SIDEDOORLIGHTS.png-91668b1e1606ae5869d455b1bc158b39.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/SIDEDOORLIGHTS.png"
-source_md5="7e975dbb12a2642e89d7832b765da65f"
-
 dest_files=[ "res://.import/SIDEDOORLIGHTS.png-91668b1e1606ae5869d455b1bc158b39.stex" ]
-dest_md5="b470173828d2550ee55157e3462f93f7"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

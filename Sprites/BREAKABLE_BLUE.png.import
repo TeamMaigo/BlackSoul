@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/BREAKABLE_BLUE.png-7848bb885ec662f53a931a8ff1255ace.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/BREAKABLE_BLUE.png"
-source_md5="9212ebbdbb8e458ca6bdb5d0cb82c01f"
-
 dest_files=[ "res://.import/BREAKABLE_BLUE.png-7848bb885ec662f53a931a8ff1255ace.stex" ]
-dest_md5="59b8600d516aaa56ab80ba053ea91a25"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/ACIDTILESET.png-732bcf38ff9f2e3a37cf37394ea8d573.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/ACIDTILESET.png"
-source_md5="ecbeb8d0e885897d9e3f845ae58683b5"
-
 dest_files=[ "res://.import/ACIDTILESET.png-732bcf38ff9f2e3a37cf37394ea8d573.stex" ]
-dest_md5="b1b6c30409fee65c96566ddb7451b1c3"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -29,14 +29,14 @@ func _process(delta):
 
 func goto_scene(path, transferGoalPath, finalTransition):
 	#pass
-    # This function will usually be called from a signal callback,
-    # or some other function from the running scene.
-    # Deleting the current scene at this point might be
-    # a bad idea, because it may be inside of a callback or function of it.
-    # The worst case will be a crash or unexpected behavior.
+	# This function will usually be called from a signal callback,
+	# or some other function from the running scene.
+	# Deleting the current scene at this point might be
+	# a bad idea, because it may be inside of a callback or function of it.
+	# The worst case will be a crash or unexpected behavior.
 
-    # The way around this is deferring the load to a later time, when
-    # it is ensured that no code from the current scene is running:
+	# The way around this is deferring the load to a later time, when
+	# it is ensured that no code from the current scene is running:
 	if finalTransition:
 		endGame = true
 		# Change BGM to title/end screen music
@@ -77,35 +77,35 @@ func sceneTransition():
 		call_deferred("_deferred_goto_scene", path, transferGoalPath)
 
 func _deferred_goto_scene(path, transferGoalPath):
-    # Immediately free the current scene,
-    # there is no risk here.
+	# Immediately free the current scene,
+	# there is no risk here.
 	currentScene.queue_free()
 
-    # Load new scene
+	# Load new scene
 	newScene = "res://Scenes/Rooms/" + path + ".tscn"
 	scene = load(newScene)
 
-    # Instance the new scene
+	# Instance the new scene
 	currentScene = scene.instance()
 	Global.currentScene = newScene
 	transferGoal = currentScene.get_node(transferGoalPath)
 	player.position = transferGoal.position
 
-    # Add it to the active scene, as child of root
+	# Add it to the active scene, as child of root
 	get_tree().get_root().get_node("World").add_child(currentScene)
 	player.lastTransferPoint = transferGoal.position
 	respawnPoint = transferGoal.position
-    # optional, to make it compatible with the SceneTree.change_scene() API
+	# optional, to make it compatible with the SceneTree.change_scene() API
 	#get_tree().set_current_scene( currentScene ) # Currently gives debug message...?
 
 func reloadLastScene():
 	$CanvasLayer/ScenePlayer.play("Scene Transition")
 
 func _get_camera_center():
-    var vtrans = get_canvas_transform()
-    var top_left = -vtrans.get_origin() / vtrans.get_scale()
-    var vsize = get_viewport_rect().size
-    return top_left + 0.5*vsize/vtrans.get_scale()
+	var vtrans = get_canvas_transform()
+	var top_left = -vtrans.get_origin() / vtrans.get_scale()
+	var vsize = get_viewport_rect().size
+	return top_left + 0.5*vsize/vtrans.get_scale()
 
 func _on_ScenePlayer_animation_finished(anim_name):
 	if anim_name == "Scene Transition":

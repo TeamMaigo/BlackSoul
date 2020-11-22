@@ -21,17 +21,24 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="HealthBar" parent="." index="0" instance=ExtResource( 2 )]
 
+margin_right = 84.0
+margin_bottom = 84.0
+_sections_unfolded = [ "Rect" ]
+
 [node name="HealthUpProgress" parent="." index="1" instance=ExtResource( 3 )]
 
-margin_left = 981.0
-margin_top = 1.0
-margin_right = 1026.0
-margin_bottom = 41.0
+margin_left = 951.0
+margin_top = 16.0
+margin_right = 996.0
+margin_bottom = 56.0
+rect_scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Rect", "Size Flags", "Theme" ]
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

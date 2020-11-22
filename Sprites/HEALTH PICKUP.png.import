@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/HEALTH PICKUP.png-8af7587ddbc9a440dcee7716a060b15c.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/HEALTH PICKUP.png"
-source_md5="1b845f866c0dea37678b2443cbb17e9b"
-
 dest_files=[ "res://.import/HEALTH PICKUP.png-8af7587ddbc9a440dcee7716a060b15c.stex" ]
-dest_md5="4824024d709a9b809978cf9d7529a05c"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
