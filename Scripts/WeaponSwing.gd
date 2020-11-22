@@ -8,7 +8,8 @@ enum STATES {IDLE, ATTACK}
 var current_state = STATES.IDLE
 var activation_vector = null
 var rotationVariance = 0 # how much bullet angles when you hit it
-onready var player = get_tree().get_root().get_node("World/Player")
+export(NodePath) var playerPath
+onready var player = get_node(playerPath)
 var minMouseDist = 80
 
 func _ready():
