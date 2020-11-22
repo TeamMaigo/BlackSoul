@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/TURRET SPRITESHEET.png-96addc91d09fe7a6a8b1e819217e22dd.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/TURRET SPRITESHEET.png"
-source_md5="e9c5bf93a10f3cbf8dd16e6525b21a2a"
-
 dest_files=[ "res://.import/TURRET SPRITESHEET.png-96addc91d09fe7a6a8b1e819217e22dd.stex" ]
-dest_md5="7b432313cacbfb071c539a2f25e4fe31"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

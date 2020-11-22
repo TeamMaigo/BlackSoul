@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/CABLES_ON.png-72a17c54b7a8fb8ecc368206fa0d7e5a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/CABLES_ON.png"
-source_md5="22f8235168a9bbc93a14df88ee9549a1"
-
 dest_files=[ "res://.import/CABLES_ON.png-72a17c54b7a8fb8ecc368206fa0d7e5a.stex" ]
-dest_md5="2bd23d6b4cdceb43fbc0c5b598196956"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

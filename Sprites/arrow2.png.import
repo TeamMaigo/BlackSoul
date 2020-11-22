@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/arrow2.png-30ac0441a7442ccb4d621a124726ed83.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/arrow2.png"
-source_md5="d0b0f81c2d1f1aa46f7a08d39c0b9c88"
-
 dest_files=[ "res://.import/arrow2.png-30ac0441a7442ccb4d621a124726ed83.stex" ]
-dest_md5="21b1079d46f3d04608a88d71a548a939"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
