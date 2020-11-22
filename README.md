@@ -15,5 +15,5 @@ The Team:
 Visit [this itch.io](https://omergosh.itch.io/black-soul) for a trailer and cooler overall presentation
 
 ## Screenshots
-![Title screen](TitleScreen.PNG)
-![Navigating an area](InALevel.PNG)
+![Title screen](TitleScreen.png)
+![Navigating an area](InALevel.png)
