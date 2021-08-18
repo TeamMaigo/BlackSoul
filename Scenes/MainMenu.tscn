@@ -184,6 +184,9 @@ items = [ "1024x600", null, false, 0, null, "1440x900", null, false, 1, null, "1
 visible = false
 
 [node name="Team" parent="Credits/Container" index="1"]
+margin_left = -306.5
+margin_right = 163.5
+margin_bottom = 411.0
 text = "Executive Producer: Kieran Downs
 Lead Designer: Boris Fleysher
 Lead Developer: Boris Fleysher
@@ -199,6 +202,8 @@ for playing through this game too many times!
 
 Made in Godot with love and care. Spring/Summer 2018
 Further developed by Kieran, Nelson and Omer for Animethon. Spring/Summer 2019"
+autowrap = true
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Load Games" to="." method="_on_Load_Games_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
@@ -212,5 +217,4 @@ Further developed by Kieran, Nelson and Omer for Animethon. Spring/Summer 2019"
 [connection signal="pressed" from="Credits/Container/Back" to="." method="_on_Back_pressed"]
 
 [editable path="optionsPopup"]
-
 [editable path="Credits"]
